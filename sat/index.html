@@ -87,7 +87,7 @@ var graticule = d3.geo.graticule();
 
 var timeFormat = d3.time.format("%Y-%m-%d %H:%M");
 
-d3.json("/media/js/world-110m.json", function(error, world) {
+d3.json("/media/js/world-110m.txt", function(error, world) {
   console.log(world);
   if (error) throw error;
 
