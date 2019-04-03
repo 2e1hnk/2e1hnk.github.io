@@ -45,6 +45,7 @@
   <script src="/media/js/leaflet-heatmap.js"></script>
   <script src="/media/js/HamGridSquare.js"></script>
   <script src="/media/js/adif.js"></script>
+  <script src="/media/js/chart.min.js"></script>
           </head>
   <body id="fmac-ukac-august-2018">
     <div class="container">
@@ -165,7 +166,10 @@ Position: 31 (of 70) in AL section</p>              <h3>UKAC</h3>
 </script>
 
 
-                <div style="height: 450px" id="map-UKAC"></div>
+                <div id="container" style="width: 100%;">
+  <canvas id="rateChart-UKAC" class="rate-chart"></canvas>
+</div>
+<div style="height: 450px" id="map-UKAC"></div>
 
 <script>
   var myLocation = [];
@@ -220,6 +224,9 @@ Position: 31 (of 70) in AL section</p>              <h3>UKAC</h3>
   );
 
   readTextFile("/media/logs/2E1HNK_2018_08_07_144 MHz_1.adi", function(log) {
+    rateUKAC = {};
+    rateGroupInterval = 5;   // Interval (in minutes) to group QSOs for the rate graph
+
     for(var i=0; i<log.length; i++) {
       if ( log[i].latitude && log[i].longitude ) {
         heatmapLayerUKAC.addLatLng([log[i].latitude, log[i].longitude, 1]);
@@ -245,7 +252,46 @@ Position: 31 (of 70) in AL section</p>              <h3>UKAC</h3>
         latlng = gridSquareToLatLon(log[i].locator, log[i]);
         heatmapLayerUKAC.addLatLng([log[i].lat, log[i].lon, 1]);
       }
+
+      // Add QSO to rate object
+      rateKey = log[i].date + " " + Math.floor(parseInt(log[i].time) / rateGroupInterval) * rateGroupInterval;
+      rateKey in rateUKAC ? rateUKAC[rateKey]++ : rateUKAC[rateKey] = 1;
     }
+    console.log("rate", rateUKAC);
+
+    var chartDataUKAC = {
+      labels: Object.keys(rateUKAC),
+      datasets: [{
+        label: "QSOs per " + rateGroupInterval + " mins",
+        backgroundColor: '#5695c8',
+				borderColor: '#31517a',
+				borderWidth: 1,
+        fill: false,
+				data: Object.values(rateUKAC)
+      }]
+    };
+
+    console.log("chartData", chartDataUKAC);
+
+    // Draw the rate chart
+    window.onload = function() {
+      var ctxUKAC = document.getElementById('rateChart-UKAC').getContext('2d');
+      window.rateBarChartUKAC = new Chart(ctxUKAC, {
+        type: 'line',
+        data: chartDataUKAC,
+        options: {
+          responsive: true,
+          legend: {
+            position: 'top',
+          },
+          title: {
+            display: true,
+            text: 'UKAC Rate Chart'
+          }
+        }
+      });
+
+    };
   });
 
   heatmapLayerUKAC.redraw();
@@ -261,6 +307,7 @@ Position: 31 (of 70) in AL section</p>              <h3>UKAC</h3>
   mapUKAC.setView([51.945732, -1.926986], 6);
 
   L.control.layers(basemapsUKAC, overlayMapsUKAC).addTo(mapUKAC);
+
 </script>
 
 
@@ -297,7 +344,10 @@ Position: 31 (of 70) in AL section</p>              <h3>UKAC</h3>
 </script>
 
 
-                <div style="height: 450px" id="map-FMAC"></div>
+                <div id="container" style="width: 100%;">
+  <canvas id="rateChart-FMAC" class="rate-chart"></canvas>
+</div>
+<div style="height: 450px" id="map-FMAC"></div>
 
 <script>
   var myLocation = [];
@@ -352,6 +402,9 @@ Position: 31 (of 70) in AL section</p>              <h3>UKAC</h3>
   );
 
   readTextFile("/media/logs/2E1HNK_2018_08_07_144 MHz.adi", function(log) {
+    rateFMAC = {};
+    rateGroupInterval = 5;   // Interval (in minutes) to group QSOs for the rate graph
+
     for(var i=0; i<log.length; i++) {
       if ( log[i].latitude && log[i].longitude ) {
         heatmapLayerFMAC.addLatLng([log[i].latitude, log[i].longitude, 1]);
@@ -377,7 +430,46 @@ Position: 31 (of 70) in AL section</p>              <h3>UKAC</h3>
         latlng = gridSquareToLatLon(log[i].locator, log[i]);
         heatmapLayerFMAC.addLatLng([log[i].lat, log[i].lon, 1]);
       }
+
+      // Add QSO to rate object
+      rateKey = log[i].date + " " + Math.floor(parseInt(log[i].time) / rateGroupInterval) * rateGroupInterval;
+      rateKey in rateFMAC ? rateFMAC[rateKey]++ : rateFMAC[rateKey] = 1;
     }
+    console.log("rate", rateFMAC);
+
+    var chartDataFMAC = {
+      labels: Object.keys(rateFMAC),
+      datasets: [{
+        label: "QSOs per " + rateGroupInterval + " mins",
+        backgroundColor: '#5695c8',
+				borderColor: '#31517a',
+				borderWidth: 1,
+        fill: false,
+				data: Object.values(rateFMAC)
+      }]
+    };
+
+    console.log("chartData", chartDataFMAC);
+
+    // Draw the rate chart
+    window.onload = function() {
+      var ctxFMAC = document.getElementById('rateChart-FMAC').getContext('2d');
+      window.rateBarChartFMAC = new Chart(ctxFMAC, {
+        type: 'line',
+        data: chartDataFMAC,
+        options: {
+          responsive: true,
+          legend: {
+            position: 'top',
+          },
+          title: {
+            display: true,
+            text: 'FMAC Rate Chart'
+          }
+        }
+      });
+
+    };
   });
 
   heatmapLayerFMAC.redraw();
@@ -393,6 +485,7 @@ Position: 31 (of 70) in AL section</p>              <h3>UKAC</h3>
   mapFMAC.setView([51.945732, -1.926986], 6);
 
   L.control.layers(basemapsFMAC, overlayMapsFMAC).addTo(mapFMAC);
+
 </script>
 
 

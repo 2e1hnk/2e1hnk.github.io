@@ -45,6 +45,7 @@
   <script src="/media/js/leaflet-heatmap.js"></script>
   <script src="/media/js/HamGridSquare.js"></script>
   <script src="/media/js/adif.js"></script>
+  <script src="/media/js/chart.min.js"></script>
           </head>
   <body id="ukac-january-2019">
     <div class="container">
@@ -143,7 +144,10 @@ with activity levels being about normal, albeit with fewer people out portable. 
 </script>
 
 
-                <div style="height: 450px" id="map-UKAC"></div>
+                <div id="container" style="width: 100%;">
+  <canvas id="rateChart-UKAC" class="rate-chart"></canvas>
+</div>
+<div style="height: 450px" id="map-UKAC"></div>
 
 <script>
   var myLocation = [];
@@ -198,6 +202,9 @@ with activity levels being about normal, albeit with fewer people out portable. 
   );
 
   readTextFile("/media/logs/2E1HNK_2019_01_01_144 MHz.adi", function(log) {
+    rateUKAC = {};
+    rateGroupInterval = 5;   // Interval (in minutes) to group QSOs for the rate graph
+
     for(var i=0; i<log.length; i++) {
       if ( log[i].latitude && log[i].longitude ) {
         heatmapLayerUKAC.addLatLng([log[i].latitude, log[i].longitude, 1]);
@@ -223,7 +230,46 @@ with activity levels being about normal, albeit with fewer people out portable. 
         latlng = gridSquareToLatLon(log[i].locator, log[i]);
         heatmapLayerUKAC.addLatLng([log[i].lat, log[i].lon, 1]);
       }
+
+      // Add QSO to rate object
+      rateKey = log[i].date + " " + Math.floor(parseInt(log[i].time) / rateGroupInterval) * rateGroupInterval;
+      rateKey in rateUKAC ? rateUKAC[rateKey]++ : rateUKAC[rateKey] = 1;
     }
+    console.log("rate", rateUKAC);
+
+    var chartDataUKAC = {
+      labels: Object.keys(rateUKAC),
+      datasets: [{
+        label: "QSOs per " + rateGroupInterval + " mins",
+        backgroundColor: '#5695c8',
+				borderColor: '#31517a',
+				borderWidth: 1,
+        fill: false,
+				data: Object.values(rateUKAC)
+      }]
+    };
+
+    console.log("chartData", chartDataUKAC);
+
+    // Draw the rate chart
+    window.onload = function() {
+      var ctxUKAC = document.getElementById('rateChart-UKAC').getContext('2d');
+      window.rateBarChartUKAC = new Chart(ctxUKAC, {
+        type: 'line',
+        data: chartDataUKAC,
+        options: {
+          responsive: true,
+          legend: {
+            position: 'top',
+          },
+          title: {
+            display: true,
+            text: 'UKAC Rate Chart'
+          }
+        }
+      });
+
+    };
   });
 
   heatmapLayerUKAC.redraw();
@@ -239,6 +285,7 @@ with activity levels being about normal, albeit with fewer people out portable. 
   mapUKAC.setView([51.945732, -1.926986], 6);
 
   L.control.layers(basemapsUKAC, overlayMapsUKAC).addTo(mapUKAC);
+
 </script>
 
 

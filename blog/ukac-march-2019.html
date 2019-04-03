@@ -45,6 +45,7 @@
   <script src="/media/js/leaflet-heatmap.js"></script>
   <script src="/media/js/HamGridSquare.js"></script>
   <script src="/media/js/adif.js"></script>
+  <script src="/media/js/chart.min.js"></script>
           </head>
   <body id="ukac-march-2019">
     <div class="container">
@@ -135,7 +136,10 @@ Having been in touch with Mark M0RKX during the week, I used his regular site in
 </script>
 
 
-                <div style="height: 450px" id="map-70CM"></div>
+                <div id="container" style="width: 100%;">
+  <canvas id="rateChart-70CM" class="rate-chart"></canvas>
+</div>
+<div style="height: 450px" id="map-70CM"></div>
 
 <script>
   var myLocation = [];
@@ -190,6 +194,9 @@ Having been in touch with Mark M0RKX during the week, I used his regular site in
   );
 
   readTextFile("/media/logs/2E1HNK_2019_03_12_432 MHz.adi", function(log) {
+    rate70CM = {};
+    rateGroupInterval = 5;   // Interval (in minutes) to group QSOs for the rate graph
+
     for(var i=0; i<log.length; i++) {
       if ( log[i].latitude && log[i].longitude ) {
         heatmapLayer70CM.addLatLng([log[i].latitude, log[i].longitude, 1]);
@@ -215,7 +222,46 @@ Having been in touch with Mark M0RKX during the week, I used his regular site in
         latlng = gridSquareToLatLon(log[i].locator, log[i]);
         heatmapLayer70CM.addLatLng([log[i].lat, log[i].lon, 1]);
       }
+
+      // Add QSO to rate object
+      rateKey = log[i].date + " " + Math.floor(parseInt(log[i].time) / rateGroupInterval) * rateGroupInterval;
+      rateKey in rate70CM ? rate70CM[rateKey]++ : rate70CM[rateKey] = 1;
     }
+    console.log("rate", rate70CM);
+
+    var chartData70CM = {
+      labels: Object.keys(rate70CM),
+      datasets: [{
+        label: "QSOs per " + rateGroupInterval + " mins",
+        backgroundColor: '#5695c8',
+				borderColor: '#31517a',
+				borderWidth: 1,
+        fill: false,
+				data: Object.values(rate70CM)
+      }]
+    };
+
+    console.log("chartData", chartData70CM);
+
+    // Draw the rate chart
+    window.onload = function() {
+      var ctx70CM = document.getElementById('rateChart-70CM').getContext('2d');
+      window.rateBarChart70CM = new Chart(ctx70CM, {
+        type: 'line',
+        data: chartData70CM,
+        options: {
+          responsive: true,
+          legend: {
+            position: 'top',
+          },
+          title: {
+            display: true,
+            text: '70CM Rate Chart'
+          }
+        }
+      });
+
+    };
   });
 
   heatmapLayer70CM.redraw();
@@ -231,6 +277,7 @@ Having been in touch with Mark M0RKX during the week, I used his regular site in
   map70CM.setView([51.945732, -1.926986], 6);
 
   L.control.layers(basemaps70CM, overlayMaps70CM).addTo(map70CM);
+
 </script>
 
 

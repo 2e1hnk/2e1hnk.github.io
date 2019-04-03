@@ -45,6 +45,7 @@
   <script src="/media/js/leaflet-heatmap.js"></script>
   <script src="/media/js/HamGridSquare.js"></script>
   <script src="/media/js/adif.js"></script>
+  <script src="/media/js/chart.min.js"></script>
           </head>
   <body id="ukac-april-2019">
     <div class="container">
@@ -129,7 +130,10 @@
 </script>
 
 
-                <div style="height: 450px" id="map-2M"></div>
+                <div id="container" style="width: 100%;">
+  <canvas id="rateChart-2M" class="rate-chart"></canvas>
+</div>
+<div style="height: 450px" id="map-2M"></div>
 
 <script>
   var myLocation = [];
@@ -184,6 +188,9 @@
   );
 
   readTextFile("/media/logs/2E1HNK_2019_04_02_144 MHz.adi", function(log) {
+    rate2M = {};
+    rateGroupInterval = 5;   // Interval (in minutes) to group QSOs for the rate graph
+
     for(var i=0; i<log.length; i++) {
       if ( log[i].latitude && log[i].longitude ) {
         heatmapLayer2M.addLatLng([log[i].latitude, log[i].longitude, 1]);
@@ -209,7 +216,46 @@
         latlng = gridSquareToLatLon(log[i].locator, log[i]);
         heatmapLayer2M.addLatLng([log[i].lat, log[i].lon, 1]);
       }
+
+      // Add QSO to rate object
+      rateKey = log[i].date + " " + Math.floor(parseInt(log[i].time) / rateGroupInterval) * rateGroupInterval;
+      rateKey in rate2M ? rate2M[rateKey]++ : rate2M[rateKey] = 1;
     }
+    console.log("rate", rate2M);
+
+    var chartData2M = {
+      labels: Object.keys(rate2M),
+      datasets: [{
+        label: "QSOs per " + rateGroupInterval + " mins",
+        backgroundColor: '#5695c8',
+				borderColor: '#31517a',
+				borderWidth: 1,
+        fill: false,
+				data: Object.values(rate2M)
+      }]
+    };
+
+    console.log("chartData", chartData2M);
+
+    // Draw the rate chart
+    window.onload = function() {
+      var ctx2M = document.getElementById('rateChart-2M').getContext('2d');
+      window.rateBarChart2M = new Chart(ctx2M, {
+        type: 'line',
+        data: chartData2M,
+        options: {
+          responsive: true,
+          legend: {
+            position: 'top',
+          },
+          title: {
+            display: true,
+            text: '2M Rate Chart'
+          }
+        }
+      });
+
+    };
   });
 
   heatmapLayer2M.redraw();
@@ -225,6 +271,7 @@
   map2M.setView([51.945732, -1.926986], 6);
 
   L.control.layers(basemaps2M, overlayMaps2M).addTo(map2M);
+
 </script>
 
 

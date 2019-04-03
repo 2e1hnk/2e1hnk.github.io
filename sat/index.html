@@ -109,7 +109,7 @@ d3.json("/media/js/world-110m.json", function(error, world) {
   context.lineWidth = 1;
   context.stroke();
 
-  d3.text("nasabare.txt", function(error2, data) {
+  d3.text("/sat/nasabare.txt", function(error2, data) {
     if (error2) throw error2;
 
     var stations = [];
