@@ -1,0 +1,197 @@
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+	<title>2E1HNK Christman phasing calculator</title>
+  <meta charset="UTF-8">
+
+<script language="JavaScript">
+/* Christman length calculator II (by VA7ST with wavelength scripting from K7TJO, modified by 2E1HNK to add 1/8-wave spacing) */
+
+function calculate(form) {
+
+  freq = parseFloat(form.Input.value);
+  vf =  parseFloat(form.vf.value);  //factor for electrical wavelength
+  spacing_factor = form.spacing.value;
+
+  wlm = 299.793/freq; // full wavelength in meters
+  wlft = 983.56/freq;  // full wavelength in feet
+  wavemPerDeg = wlm/360; // meters per degree
+  waveftPerDeg = wlft/360; // feet per degree
+
+  if (spacing_factor == 4) {
+      console.log("Using spacing factor of 4");
+      phasing_line_angle = 71;
+      feed_line_angle = 84;
+  } else if (spacing_factor == 8) {
+      phasing_line_angle = 39;
+      feed_line_angle = 157;
+  } else {
+    alert ("Invalid spacing_factor");
+  }
+
+  form.spacingf1_4.value = (wlft / spacing_factor).toFixed(3); // physical element spacing in feet
+  form.spacingm1_4.value = (wlm / spacing_factor).toFixed(3); // physical element spacing in metres
+  updateSvg('element-spacing', (wlft / spacing_factor).toFixed(3) + "ft / " + (wlm / spacing_factor).toFixed(3) + "m");
+
+  form.cutft84.value = (waveftPerDeg * feed_line_angle * vf).toFixed(3); // physical length in feet
+  form.cutm84.value =  (wavemPerDeg * feed_line_angle * vf).toFixed(3); // physical length in meters
+  updateSvg('feed-line-length-a', (waveftPerDeg * feed_line_angle * vf).toFixed(3) + "ft / " + (wavemPerDeg * feed_line_angle * vf).toFixed(3) + "m");
+  updateSvg('feed-line-length-b', (waveftPerDeg * feed_line_angle * vf).toFixed(3) + "ft / " + (wavemPerDeg * feed_line_angle * vf).toFixed(3) + "m");
+
+  form.cutft71.value = (waveftPerDeg * phasing_line_angle * vf).toFixed(3); // physical length in feet
+  form.cutm71.value =  (wavemPerDeg * phasing_line_angle * vf).toFixed(3); // physical length in meters
+  updateSvg('phasing-line-length', (waveftPerDeg * phasing_line_angle * vf).toFixed(3) + "ft / " + (wavemPerDeg * phasing_line_angle * vf).toFixed(3) + "m");
+
+  form.degrees84.value = ((freq / feed_line_angle) * 90).toFixed(3); // frequency to measure quarter wave stub
+  form.degrees71.value = ((freq / phasing_line_angle) * 90).toFixed(3); // frequency to measure quarter wave stub
+
+  form.Input_repeat1.value = form.degrees71.value;
+  form.Input_repeat2.value = form.degrees84.value;
+
+  form.totalf1_4.value = ((waveftPerDeg * feed_line_angle * vf) * 2 + (waveftPerDeg * phasing_line_angle * vf)).toFixed(3); // Total amount of coax needed in feet
+  form.totalm1_4.value = ((wavemPerDeg * feed_line_angle * vf) * 2 + (wavemPerDeg * phasing_line_angle * vf)).toFixed(3); // Total amount of coax needed in feet
+
+  for ( i = 0; i < document.getElementsByClassName("phasing-line-angle").length; i++) {
+      document.getElementsByClassName("phasing-line-angle")[i].textContent = phasing_line_angle;
+  }
+
+  for ( i = 0; i < document.getElementsByClassName("feed-line-angle").length; i++) {
+      document.getElementsByClassName("feed-line-angle")[i].textContent = feed_line_angle;
+  }
+}
+
+function updateSvg(elementId, value) {
+  console.log("Setting " + elementId + " to " + value)
+  document.getElementById(elementId).textContent=value;
+}
+
+</script>
+
+</head>
+<body>
+<form name="christman_lengths">
+  <strong>Operating frequency:</strong> <input name="Input" size="7" type="text" value="7.050" /> Mhz
+  <strong>Coax velocity factor:</strong> <input name="vf" size="6" type="text" value="0.66" /> Vf
+  <strong>Element Spacing:</strong> <select name="spacing"><option value="4">1/4-wave</option><option value="8">1/8-wave</option></select>
+  <input name="DoIt" onclick="calculate(this.form)" type="button" value=" Calculate " />
+
+  <hr />
+
+        <p>
+          <b>Vertical Elements spacing should be:</b> <input disabled="disabled" name="spacingf1_4" size="5" type="text" value="0.00" /> ft or <input disabled="disabled" name="spacingm1_4" size="5" type="text" value="0.00" /> m
+        </p>
+
+        <p>
+          <b>The <span class="phasing-line-angle">71</span>-degree phasing line should be:</b> <input disabled="disabled" name="cutft71" size="5" type="text" value="0.00" /> ft or <input disabled="disabled" name="cutm71" size="5" type="text" value="0.00" /> m<br />
+          <br />
+          The <span class="phasing-line-angle">71</span>-degree phasing line is 90 degrees at <input disabled="disabled" name="degrees71" size="6" type="text" /> Mhz<br />
+          <br />
+          Cut the coax to the suggested length plus a few inches, in case your velocity factor is not quite right.<br />
+          <br />
+          Leaving one end of the coax open, set your RF analyzer to <input disabled="disabled" name="Input_repeat1" size="6" type="text" /> Mhz and trim the coax until you see minimum Z impedance. You now have a length of <span class="phasing-line-angle">71</span> degrees at your desired operating frequency.
+        </p>
+
+        <p>
+          <b>Each <span class="feed-line-angle">84</span>-degree feed lines should be:</b> <input disabled="disabled" name="cutft84" size="5" type="text" value="0.00" /> ft or <input disabled="disabled" name="cutm84" size="5" type="text" value="0.00" /> m<br />
+          <br />
+          The <span class="feed-line-angle">84</span>-degree feedlines are 90 degrees long at <input disabled="disabled" name="degrees84" size="6" type="text" /> Mhz<br />
+          <br />
+          Cut the coax to the suggested length plus a few inches, in case your velocity factor is not quite right.<br />
+          <br />
+          Leaving one end of the coax open, set your RF analyzer to <input disabled="disabled" name="Input_repeat2" size="6" type="text" /> Mhz and trim the coax until you see minimum Z impedance. You now have a length of 84 degrees at your desired operating frequency.
+        </p>
+
+        <p>
+          <b>Total amount of coax needed:</b> <input disabled="disabled" name="totalf1_4" size="5" type="text" value="0.00" /> ft or <input disabled="disabled" name="totalm1_4" size="5" type="text" value="0.00" /> m<br />
+        </p>
+
+  <center>
+    <svg width="1000" height="940" xmlns="http://www.w3.org/2000/svg">
+     <!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ -->
+     <defs>
+       <marker id='arrowhead' orient='auto-start-reverse' markerWidth='10' markerHeight='20'
+                refX='0.1' refY='10'>
+          <path d='M0,0 V20 L10,10 Z' fill='#000' />
+        </marker>
+      </defs>
+     <g>
+      <title>background</title>
+      <rect fill="#fff" id="canvas_background" height="942" width="1002" y="-1" x="-1"/>
+      <g display="none" overflow="visible" y="0" x="0" height="100%" width="100%" id="canvasGrid">
+       <rect fill="url(#gridpattern)" stroke-width="0" y="0" x="0" height="100%" width="100%"/>
+      </g>
+     </g>
+     <g>
+      <title>Layer 1</title>
+      <line stroke-linecap="undefined" stroke-linejoin="undefined" id="antenna-a" y2="300" x2="200" y1="20" x1="200" stroke-width="15" stroke="#000" fill="none"/>
+      <line stroke="#000" stroke-linecap="undefined" stroke-linejoin="undefined" id="antenna-b" y2="300" x2="800" y1="20" x1="800" stroke-width="15" fill="none"/>
+<!--
+      <path id="svg_3" d="m199.333309,307.250001" opacity="0.5" fill-opacity="null" stroke-opacity="null" stroke-width="5" stroke="#000" fill="none"/>
+-->
+      <path stroke="#894F3F" id="feed-line-a" d="m200.666645,316.583334c0,28.070179 132.670815,101.052643 240.000014,106.666679" stroke-width="5" fill="none"/>
+      <path stroke="#894F3F" id="feed-line-b" d="m798.83336,317.916668c0,41.333337 -135.213885,98.666675 -229.333354,101.333342" fill-opacity="null" stroke-width="5" fill="none"/>
+      <path stroke="#426373" id="phasing-line" d="m443.794302,417.25001c-13.627938,-50.17986 -32.211489,-182.134308 58.228461,-183.992821c90.439951,-1.858513 87.962144,98.501207 65.900785,179.417281" fill-opacity="null" stroke-width="5" fill="none"/>
+      <ellipse ry="12.333333" rx="12.333333" id="svg_10" cy="425" cx="451" fill-opacity="null" stroke-opacity="null" stroke-width="5" stroke="#000" fill="none"/>
+      <ellipse ry="12.333333" rx="12.333333" id="svg_11" cy="425" cx="560.333336" fill-opacity="null" stroke-opacity="null" stroke-width="5" stroke="#000" fill="none"/>
+      <line stroke-linecap="null" stroke-linejoin="null" id="svg_12" y2="381.333333" x2="554.666667" y1="418" x1="461.333333" fill-opacity="null" stroke-opacity="null" stroke-width="5" stroke="#000" fill="none"/>
+      <ellipse ry="12.333333" rx="12.333333" id="svg_13" cy="513" cx="450.333333" fill-opacity="null" stroke-opacity="null" stroke-width="5" stroke="#000" fill="none"/>
+      <ellipse ry="12.333333" rx="12.333333" id="svg_14" cy="513" cx="561.666664" fill-opacity="null" stroke-opacity="null" stroke-width="5" stroke="#000" fill="none"/>
+      <ellipse ry="12.333333" rx="12.333333" id="svg_15" cy="627.666672" cx="505" fill-opacity="null" stroke-opacity="null" stroke-width="5" stroke="#000" fill="none"/>
+      <line stroke-linecap="null" stroke-linejoin="null" id="svg_16" y2="494.442801" x2="505.333333" y1="614.666667" x1="505.333333" fill-opacity="null" stroke-opacity="null" stroke-width="5" stroke="#000" fill="none"/>
+      <line stroke-linecap="null" stroke-linejoin="null" id="svg_17" y2="749.333333" x2="504" y1="640" x1="504" fill-opacity="null" stroke-opacity="null" stroke-width="5" stroke="#000" fill="none"/>
+      <ellipse ry="7" rx="12.333333" id="svg_18" cy="667" cx="503.666667" fill-opacity="null" stroke-opacity="null" stroke-width="5" stroke="#000" fill="none"/>
+      <line stroke-linecap="null" stroke-linejoin="null" id="svg_19" y2="700.106497" x2="516" y1="666.666667" x1="516" fill-opacity="null" stroke-opacity="null" stroke-width="5" stroke="#000" fill="none"/>
+      <line stroke-linecap="null" stroke-linejoin="null" id="svg_20" y2="700.106497" x2="491.333333" y1="666.666667" x1="491.333333" fill-opacity="null" stroke-opacity="null" stroke-width="5" stroke="#000" fill="none"/>
+      <path id="svg_21" d="m442,502.666667c-10.666667,-23.333333 -12.666667,-52.666667 0,-68.666667" fill-opacity="null" stroke-opacity="null" stroke-width="5" stroke="#000" fill="none"/>
+      <path id="svg_22" d="m566,501.333333c10.666667,-18.666667 10,-54 1.333333,-68.666667" fill-opacity="null" stroke-opacity="null" stroke-width="5" stroke="#000" fill="none"/>
+      <g transform="rotate(56.26109313964844 773.0000000000001,353.3865661621094) " id="svg_27">
+       <ellipse ry="7" rx="12.333333" id="svg_24" cy="340.333326" cx="773.000006" fill-opacity="null" stroke-opacity="null" stroke-width="5" stroke="#894f3f" fill="none"/>
+       <line stroke-linecap="null" stroke-linejoin="null" id="svg_25" y2="373.439823" x2="785.33334" y1="339.999993" x1="785.33334" fill-opacity="null" stroke-opacity="null" stroke-width="5" stroke="#894f3f" fill="none"/>
+       <line stroke-linecap="null" stroke-linejoin="null" id="svg_26" y2="373.439823" x2="760.666672" y1="339.999993" x1="760.666672" fill-opacity="null" stroke-opacity="null" stroke-width="5" stroke="#894f3f" fill="none"/>
+      </g>
+      <g transform="rotate(-100.4505386352539 611.0000000000001,416.05322265625) " id="svg_31">
+       <ellipse ry="7" rx="12.333333" id="svg_28" cy="402.99999" cx="611.000011" fill-opacity="null" stroke-opacity="null" stroke-width="5" stroke="#894f3f" fill="none"/>
+       <line stroke-linecap="null" stroke-linejoin="null" id="svg_29" y2="436.106487" x2="623.333344" y1="402.666657" x1="623.333344" fill-opacity="null" stroke-opacity="null" stroke-width="5" stroke="#894f3f" fill="none"/>
+       <line stroke-linecap="null" stroke-linejoin="null" id="svg_30" y2="436.106487" x2="598.666677" y1="402.666657" x1="598.666677" fill-opacity="null" stroke-opacity="null" stroke-width="5" stroke="#894f3f" fill="none"/>
+      </g>
+      <g transform="rotate(99.78866577148438 398.3333129882813,416.71990966796875) " id="svg_35">
+       <ellipse ry="7" rx="12.333333" id="svg_32" cy="403.666657" cx="398.333337" fill-opacity="null" stroke-opacity="null" stroke-width="5" stroke="#894f3f" fill="none"/>
+       <line stroke-linecap="null" stroke-linejoin="null" id="svg_33" y2="436.773154" x2="410.666671" y1="403.333324" x1="410.666671" fill-opacity="null" stroke-opacity="null" stroke-width="5" stroke="#894f3f" fill="none"/>
+       <line stroke-linecap="null" stroke-linejoin="null" id="svg_34" y2="436.773154" x2="386.000003" y1="403.333324" x1="386.000003" fill-opacity="null" stroke-opacity="null" stroke-width="5" stroke="#894f3f" fill="none"/>
+      </g>
+      <g transform="rotate(-54.024898529052734 229.66665649414074,349.38656616210943) " id="svg_39">
+       <ellipse ry="7" rx="12.333333" id="svg_36" cy="336.333326" cx="229.666652" fill-opacity="null" stroke-opacity="null" stroke-width="5" stroke="#894f3f" fill="none"/>
+       <line stroke-linecap="null" stroke-linejoin="null" id="svg_37" y2="369.439823" x2="241.999985" y1="335.999993" x1="241.999985" fill-opacity="null" stroke-opacity="null" stroke-width="5" stroke="#894f3f" fill="none"/>
+       <line stroke-linecap="null" stroke-linejoin="null" id="svg_38" y2="369.439823" x2="217.333318" y1="335.999993" x1="217.333318" fill-opacity="null" stroke-opacity="null" stroke-width="5" stroke="#894f3f" fill="none"/>
+      </g>
+      <g transform="rotate(-173.62229919433594 578.3333740234375,364.05322265625) " id="svg_43">
+       <ellipse ry="7" rx="12.333333" id="svg_40" cy="350.99999" cx="578.333339" fill-opacity="null" stroke-opacity="null" stroke-width="5" stroke="#426373" fill="none"/>
+       <line stroke-linecap="null" stroke-linejoin="null" id="svg_41" y2="384.106487" x2="590.666673" y1="350.666657" x1="590.666673" fill-opacity="null" stroke-opacity="null" stroke-width="5" stroke="#426373" fill="none"/>
+       <line stroke-linecap="null" stroke-linejoin="null" id="svg_42" y2="384.106487" x2="566.000005" y1="350.666657" x1="566.000005" fill-opacity="null" stroke-opacity="null" stroke-width="5" stroke="#426373" fill="none"/>
+      </g>
+      <g transform="rotate(174.6649932861328 435.6666870117187,363.3865661621094) " id="svg_47">
+       <ellipse ry="7" rx="12.333333" id="svg_44" cy="350.333326" cx="435.666673" fill-opacity="null" stroke-opacity="null" stroke-width="5" stroke="#426373" fill="none"/>
+       <line stroke-linecap="null" stroke-linejoin="null" id="svg_45" y2="383.439823" x2="448.000006" y1="349.999993" x1="448.000006" fill-opacity="null" stroke-opacity="null" stroke-width="5" stroke="#426373" fill="none"/>
+       <line stroke-linecap="null" stroke-linejoin="null" id="svg_46" y2="383.439823" x2="423.333339" y1="349.999993" x1="423.333339" fill-opacity="null" stroke-opacity="null" stroke-width="5" stroke="#426373" fill="none"/>
+      </g>
+      <text xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="24" id="svg_48" y="185.999869" x="434.132451" stroke-width="0" stroke="#894f3f" fill="#000000">Phasing Line</text>
+      <text style="cursor: move;" xml:space="preserve" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="24" id="phasing-line-length" y="212.499853" x="500" stroke-width="0" stroke="#894f3f" fill="#000000"></text>
+      <text xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="24" id="svg_50" y="433.499726" x="677.6323" stroke-width="0" stroke="#894f3f" fill="#000000">Feed Line</text>
+      <text style="cursor: move;" xml:space="preserve" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="24" id="feed-line-length-b" y="459.99971" x="730" stroke-width="0" stroke="#894f3f" fill="#000000"></text>
+      <text xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="24" id="svg_52" y="432.500016" x="239.632574" stroke-width="0" stroke="#894f3f" fill="#000000">Feed Line</text>
+      <text style="cursor: move;" xml:space="preserve" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="24" id="feed-line-length-a" y="460" x="290" stroke-width="0" stroke="#894f3f" fill="#000000"></text>
+      <text transform="rotate(-90 39.91410064697269,152.72656250000003) " xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="24" id="svg_54" y="160.999884" x="-18.999992" stroke-width="0" stroke="#894f3f" fill="#000000">Direction A</text>
+      <line stroke-linecap="null" stroke-linejoin="null" id="svg_55" y1="152.499889" x1="160" y2="152.499889" x2="120" stroke-width="5" stroke="#000000" fill="none" marker-end="url(#arrowhead)" />
+      <text style="cursor: move;" transform="rotate(-270 952.0546875,148.94531249999997) " xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="24" id="svg_58" y="157.218159" x="893.382685" stroke-width="0" stroke="#894f3f" fill="#000000">Direction B</text>
+      <line stroke-linecap="null" stroke-linejoin="null" id="svg_59" y2="149.155847" x2="870" y1="149.155847" x1="840" stroke-width="5" stroke="#000000" fill="none"  marker-end='url(#arrowhead)'/>
+      <text xml:space="preserve" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-size="16" id="svg_63" y="521" x="430" fill-opacity="null" stroke-opacity="null" stroke-width="0" stroke="#000" fill="#805064">Dir B</text>
+      <text xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="16" id="svg_64" y="521" x="580" stroke-width="0" stroke="#805064" fill="#805064">Dir A</text>
+      <text style="cursor: move;" xml:space="preserve" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-size="16" id="svg_65" y="450" x="550" stroke-width="0" stroke="#805064" fill="#805064">Broadside</text>
+      <line stroke-linecap="null" stroke-linejoin="null" id="element-spacing-distance-line" y2="45.333333" x2="760.078997" y1="45.333333" x1="234" stroke="#000000" fill="none" marker-end='url(#arrowhead)' marker-start='url(#arrowhead)' />
+      <text style="cursor: move;" xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="24" id="svg_71" y="39.002349" x="409.288701" stroke-width="0" stroke="#894f3f" fill="#000000">Element Spacing</text>
+      <text style="cursor: move;" xml:space="preserve" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="24" id="element-spacing" y="65.502333" x="500" stroke-width="0" stroke="#894f3f" fill="#000000"></text>
+     </g>
+    </svg>
+  </center>
+</form>
+</body>
+</html>

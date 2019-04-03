@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>OGPS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css"
+   integrity="sha512-M2wvCLH6DSRazYeZRIm1JnYyh22purTM+FDB5CsyxtQJYeKq83arPe5wgbNmcFXGqiSH2XR8dT/fJISVA1r/zQ=="
+   crossorigin=""/>
+<link rel="stylesheet" href="../media/css/ogps.css" title="default" />
+<link rel="alternate stylesheet" href="../media/css/ogps-dark.css" title="dark" />
+<script type="text/javascript" src="../media/js/styleswitcher.js"></script>
+</head>
+<body>
+  <div class="flexbox">
+    <div class="warning" id="warning"></div>
+    <div class="menubar" id="menubar">
+      <button id="autoLogBtn" onclick="switchAutoLogging()">AutoLog: off</button>
+      <button id="logBtn" onclick="addToLog(currentPosition)">Log Position</button>
+      <button id="downloadLogBtn" onclick="downloadLog()">Download Log</button>
+      <button id="styleDefault" onclick="setActiveStyleSheet('default'); return false;">Default Style</button>
+      <button id="styleDark" onclick="setActiveStyleSheet('dark'); return false;">Dark Style</button>
+    </div>
+    <div class="infobox" id="latlng">
+    	<table>
+    		<tr><td class="addInfo right-align" width=50%>Latitude:</td><td width=50%  class="left-align"><span class="info" id="lat"></span></td></tr>
+    		<tr><td class="addInfo right-align">Longitude:</td><td class="left-align"><span class="info" id="lng"></span></td></tr>
+    		<tr><td class="addInfo right-align">Accuracy:</td><td class="left-align"><span class="info" id="accuracy"></span></td></tr>
+    	</table>
+    </div>
+    <div class="infobox" id="gridRefs">
+      <table>
+      	<thead>
+	      	<tr>
+	      		<th class="addInfo">Locator</th>
+	      		<th class="addInfo">OS Grid Ref</th>
+	      		<th class="addInfo">WAB Square</th>
+	      	</tr>
+      	</thead>
+      	<tbody>
+      		<tr>
+      			<td><span class="info" id="maidenhead"></span></td>
+      			<td><span class="info" id="os"></span></td>
+      			<td><span class="info" id="wab"></span></td>
+      	</tbody>
+      </table>
+    </div>
+    <div class="map" id="map" style="height: 500px; width: 100%;"></div>
+    <div class="infobox" id="log">
+    	<table>
+    		<thead>
+    			<th>Time</th>
+    			<th>Latitude</th>
+    			<th>Longitude</th>
+    			<th>Accuracy</th>
+    		</thead>
+    		<tbody id="logTable">
+
+    		</tbody>
+    	</table>
+    </div>
+  </div>
+
+  <script src="../media/js/HamGridSquare.js"></script>
+  <script src="../media/js/osgridref.js"></script>
+  <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"
+   integrity="sha512-lInM/apFSqyy1o6s89K4iQUKg6ppXEgsVxT35HbzUupEVRh2Eu9Wdl4tHj7dZO0s1uvplcYGmt3498TtHq+log=="
+   crossorigin=""></script>
+
+  <script>
+	var warningDiv = document.getElementById("warning");
+	var latSpan = document.getElementById("lat");
+	var lngSpan = document.getElementById("lng");
+	var accuracySpan = document.getElementById("accuracy");
+	var maidenheadSpan = document.getElementById("maidenhead");
+	var osSpan = document.getElementById("os");
+	var wabSpan = document.getElementById("wab");
+	var autoLogBtn = document.getElementById("autoLogBtn");
+	var logTable = document.getElementById("logTable");
+	var log = [];
+	var autoLog = 0;
+	var currentPosition;
+
+	function switchAutoLogging() {
+		if ( autoLog == 1 ) {
+			autoLog = 0;
+			autoLogBtn.innerHTML = "AutoLog: off";
+		} else {
+			autoLog = 1;
+			autoLogBtn.innerHTML = "AutoLog: on";
+		}
+		console.log("AutoLog: " + autoLog);
+	}
+
+	function downloadLog() {
+		var hiddenElement = document.createElement('a');
+		hiddenElement.href = 'data:attachment/text,' + encodeURI(JSON.stringify(log));
+		hiddenElement.target = '_blank';
+		hiddenElement.download = 'log.json';
+		hiddenElement.click();
+	}
+
+	function showPosition(e) {
+		lat = ConvertDDToDMS(e.latitude, false);
+		lng = ConvertDDToDMS(e.longitude, true);
+		maidenheadLocator = latLonToGridSquare(e.latitude, e.longitude);
+
+		pWGS = new LatLon(e.latitude, e.longitude);
+		pOSGB = convertWGS84toOSGB36(pWGS);
+		osGridRef = LatLongToOSGrid(pOSGB);
+		wabSquare = osGridRef.slice(0, 3) + osGridRef.slice(6, 7);
+
+	    latSpan.innerHTML = ConvertDDToDMSString(e.latitude, false);
+	    lngSpan.innerHTML = ConvertDDToDMSString(e.longitude, true);
+	    accuracySpan.innerHTML = (e.accuracy/2) + "m";
+
+	    maidenheadSpan.innerHTML = maidenheadLocator;
+	    osSpan.innerHTML = osGridRef;
+	    wabSpan.innerHTML = wabSquare;
+	}
+
+	function ConvertDDToDMSString(D, lng) {
+		var dms = ConvertDDToDMS(D, lng);
+		return dms.deg + "&deg; " + dms.min + "' " + dms.sec + "\" " + dms.dir;
+	}
+
+	function ConvertDDToDMS(D, lng){
+	    return {
+	        dir : D<0?lng?'W':'S':lng?'E':'N',
+	        deg : 0|(D<0?D=-D:D),
+	        min : 0|D%1*60,
+	        sec :(0|D*60%1*6000)/100
+	    };
+	}
+
+	function addToLog(e) {
+		var date = Date.now()
+		// Add to the log object
+		log.push({
+			time: date,
+			latitude: e.latitude,
+			longitude: e.longitude,
+			accuracy: e.accuracy/2
+		});
+
+		// Add to the polyline
+		pathLine.addLatLng(e.latlng);
+
+		// Add to the log table
+		logTable.insertAdjacentHTML('beforeend', '<td>' + formatDate(new Date(date)) + '</td><td>' + ConvertDDToDMSString(e.latitude, false) + '</td><td>' + ConvertDDToDMSString(e.longitude, true) + '</td><td>' + (e.accuracy/2) + 'm</td>');
+		console.log(log);
+	}
+
+	function formatDate(date) {
+		console.log(date);
+	    var year = date.getFullYear(),
+	        month = date.getMonth() + 1, // months are zero indexed
+	        day = date.getDate(),
+	        hour = date.getHours(),
+	        minute = date.getMinutes(),
+	        second = date.getSeconds(),
+	        hourFormatted = hour % 12 || 12, // hour returned in 24 hour format
+	        minuteFormatted = minute < 10 ? "0" + minute : minute,
+	        morning = hour < 12 ? "am" : "pm";
+
+	    return year + "/" + month + "/" + day + " " + hour + ":" +
+	            minuteFormatted + ":" + second;
+	}
+  </script>
+
+  <script>
+	var map = L.map('map').fitWorld();
+	var marker = L.icon.default;
+	var movingMarker = L.marker([0,0], 0, {icon: marker}).addTo(map);
+	var rangeCircle = L.circle([0,0], 0).addTo(map);
+	var pathLine = L.polyline([], {color: 'red'}).addTo(map);
+	/*
+	L.tileLayer('https://{s}.tile.thunderforest.com/outdoors/{z}/{x}/{y}.png?apikey={accessToken}', {
+	    attribution: 'Maps &copy; <a href="http://www.thunderforest.com">Thunderforest</a>, Data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>',
+	    maxZoom: 18,
+	    accessToken: 'ad929e95acdd439dbea7a0f629726e92'
+	}).addTo(map);
+	*/
+	L.tileLayer('https://tileserver.eastus.cloudapp.azure.com/{style}/{z}/{x}/{y}.png', {
+	    attribution: 'Data &copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>',
+	    style: 'ham',
+	    maxZoom: 18,
+	}).addTo(map);
+
+	function onLocationFound(e) {
+	    var radius = e.accuracy / 2;
+
+	    movingMarker.setLatLng(e.latlng);
+    	movingMarker.unbindPopup();
+    	movingMarker.bindPopup("You are within " + radius + " meters from this point");
+
+    	rangeCircle.setLatLng(e.latlng).setRadius(radius);
+
+    	if ( autoLog == 1 ) {
+	    	addToLog(e);
+	    }
+
+	    showPosition(e);
+
+	    currentPosition = e;
+	}
+
+	function onLocationError(e) {
+	    alert(e.message);
+	}
+
+	map.locate({watch: true, setView: true, maxZoom: 16, enableHighAccuracy: true, maximumAge: 10000});
+	map.on('locationfound', onLocationFound);
+	map.on('locationerror', onLocationError);
+  </script>
+</body>
+</html>

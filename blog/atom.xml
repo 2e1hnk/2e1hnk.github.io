@@ -1,0 +1,636 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>
+        BASIC blog full text feed    </title>
+        <link href="/blog\atom.xml" rel="self" />
+    
+        <link href="/"/>
+    
+        
+    <updated>2019-04-03T11:51:16Z</updated>
+
+    <id>/blog/atom.xml/</id>
+
+            <entry>
+            <title type="html">2m UKAC April 2019</title>
+            <author><name>Matt 2E1HNK</name></author>
+            <link href="/blog/ukac-april-2019.html"/>
+            <updated>2019-04-02T23:00:00Z</updated>
+            <published>2019-04-02T23:00:00Z</published>
+            <id>/blog/ukac-april-2019.html</id>
+                        <category   scheme="/blog/tags"
+                        term="UKAC"
+                        label="Ukac" />
+                        <category   scheme="/blog/tags"
+                        term="Activation"
+                        label="Activation" />
+            
+            <content type="html">
+                                            </content>
+        </entry>
+            <entry>
+            <title type="html">2m/70cm UKAC March 2019</title>
+            <author><name>Matt 2E1HNK</name></author>
+            <link href="/blog/ukac-march-2019.html"/>
+            <updated>2019-03-12T23:00:00Z</updated>
+            <published>2019-03-12T23:00:00Z</published>
+            <id>/blog/ukac-march-2019.html</id>
+                        <category   scheme="/blog/tags"
+                        term="UKAC"
+                        label="Ukac" />
+                        <category   scheme="/blog/tags"
+                        term="Activation"
+                        label="Activation" />
+            
+            <content type="html">
+                                &lt;p&gt;2m was a bust due to me being hit by a virus (human, not computer) about 20 minutes in to the &lt;span class=&#34;caps&#34;&gt;FMAC&lt;/span&gt; section. I was down on Burson Moor in Cornwall (IO70sw) and taking down the station whilst in a &amp;#8216;afflicted&amp;#8217; state was no fun at all. The less said about that the better. 70cm was much better, although &lt;span class=&#34;caps&#34;&gt;RF&lt;/span&gt; conditions were challenging and the &lt;span class=&#34;caps&#34;&gt;WX&lt;/span&gt; was not great either - no rain but high winds and bitterly cold.
+Having been in touch with Mark &lt;span class=&#34;caps&#34;&gt;M0RKX&lt;/span&gt; during the week, I used his regular site in IO92ba as he&amp;#8217;s not able to get out for the 2m and 70cm event for the time being. I was interested in how this site compared to my recular site at Sudeley Hill in IO91aw. Access at Mark&amp;#8217;s site is better - the ground is firmer and there is a very stout gatepost to lash a mast too, additionally he has explicit permission from the farmer to be there. &lt;span class=&#34;caps&#34;&gt;RF&lt;/span&gt;-wise - my initial impression was that Sudeley Hill was actually better, although I&amp;#8217;m fairly certain that prevailing &lt;span class=&#34;caps&#34;&gt;RF&lt;/span&gt; conditions played more of a part that the site itself. Mark&amp;#8217;s site certainly should be better (slightly more elevated and actually on the crest of a hill, rather than just off&amp;nbsp;it).&lt;/p&gt;
+&lt;p&gt;The &lt;span class=&#34;caps&#34;&gt;DX&lt;/span&gt; (&lt;span class=&#34;caps&#34;&gt;GD8EXI&lt;/span&gt; on the Isle of Man) had to be fought for, with plenty of patience on both ends - I&amp;#8217;m pretty certain we only managed it with the help of aircraft&amp;nbsp;reflections.&lt;/p&gt;
+&lt;p&gt;Hopefully next month will bring better conditions all&amp;nbsp;round!&lt;/p&gt;            </content>
+        </entry>
+            <entry>
+            <title type="html">2m UKAC February 2019</title>
+            <author><name>Matt 2E1HNK</name></author>
+            <link href="/blog/ukac-february-2019.html"/>
+            <updated>2019-02-12T23:00:00Z</updated>
+            <published>2019-02-12T23:00:00Z</published>
+            <id>/blog/ukac-february-2019.html</id>
+                        <category   scheme="/blog/tags"
+                        term="UKAC"
+                        label="Ukac" />
+                        <category   scheme="/blog/tags"
+                        term="Activation"
+                        label="Activation" />
+            
+            <content type="html">
+                                &lt;p&gt;This month I managed to take part in both the 2m and 70cm sections. The 2m section was my best (normalised) performance
+to date (performance was actually down compared to January, but it was for everyone). Additionally I managed to scope out a slightly better site for future use, once I manage to get in touch with the land owner. The 70cm section was not great.
+I was using my newly-constructed 7-element &lt;span class=&#34;caps&#34;&gt;DK7ZB&lt;/span&gt; yagi which I
+hadn&amp;#8217;t had a chance to test (or even tune) beforehand. Fortunately I had a borrowed Bird 43 wattmeter with me which
+at least allowed me to do some basic tuning with. Having filed down the &lt;span class=&#34;caps&#34;&gt;DE&lt;/span&gt; a bit to get the &lt;span class=&#34;caps&#34;&gt;SWR&lt;/span&gt; as low as possible
+I set up the mast and got going. Problems were obvious from the outset with strong stations such as &lt;span class=&#34;caps&#34;&gt;G1YBB&lt;/span&gt; and &lt;span class=&#34;caps&#34;&gt;G4ASR&lt;/span&gt;
+being barely readable, and them not being able to hear me at all. After some investigation I discovered that in putting the mast up I had obviously put some strain on the N-connector on the yagi which had caused the centre pin to not connect with
+the centre of the coax. It didn&amp;#8217;t help that I had to use an N connector that was for &lt;span class=&#34;caps&#34;&gt;RG213&lt;/span&gt; on my Ultraflex-7 coax. I considered
+just calling it a night but realised that I had sufficient items to effect a field repair along the lines of &amp;#8216;take all
+the connectors off and use electrical tape to make the connections&amp;#8217;. Surprisingly, this actually worked quite well and
+so I could gt on and work the rest of the contest, albeit with a &lt;span class=&#34;caps&#34;&gt;SWR&lt;/span&gt; of about&amp;nbsp;2.1:1.&lt;/p&gt;
+&lt;h3&gt;2m&lt;/h3&gt;
+&lt;p&gt;Section: &lt;span class=&#34;caps&#34;&gt;AL&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Total QSOs:&amp;nbsp;49&lt;/p&gt;
+&lt;p&gt;Total Points: 9,268 (4,768 + 4,500&amp;nbsp;bonus)&lt;/p&gt;
+&lt;p&gt;Normalised Points:&amp;nbsp;838&lt;/p&gt;
+&lt;p&gt;Position:&amp;nbsp;13/75&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;caps&#34;&gt;ODX&lt;/span&gt;: &lt;span class=&#34;caps&#34;&gt;GM3SEK&lt;/span&gt; (IO74sr -&amp;nbsp;352km)&lt;/p&gt;
+&lt;h3&gt;70cm&lt;/h3&gt;
+&lt;p&gt;Section: &lt;span class=&#34;caps&#34;&gt;AL&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Total QSOs:&amp;nbsp;33&lt;/p&gt;
+&lt;p&gt;Total Points: 5,844 (2,344 + 3,500&amp;nbsp;bonus)&lt;/p&gt;
+&lt;p&gt;Normalised Points:&amp;nbsp;597&lt;/p&gt;
+&lt;p&gt;Position:&amp;nbsp;32/77&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;caps&#34;&gt;ODX&lt;/span&gt;: &lt;span class=&#34;caps&#34;&gt;G3XDY&lt;/span&gt; (JO02ob -&amp;nbsp;218km)&lt;/p&gt;            </content>
+        </entry>
+            <entry>
+            <title type="html">2m UKAC January 2019</title>
+            <author><name>Matt 2E1HNK</name></author>
+            <link href="/blog/ukac-january-2019.html"/>
+            <updated>2019-01-01T23:00:00Z</updated>
+            <published>2019-01-01T23:00:00Z</published>
+            <id>/blog/ukac-january-2019.html</id>
+                        <category   scheme="/blog/tags"
+                        term="UKAC"
+                        label="Ukac" />
+                        <category   scheme="/blog/tags"
+                        term="Activation"
+                        label="Activation" />
+            
+            <content type="html">
+                                &lt;p&gt;Surprisingly I was let out to take part in the &lt;span class=&#34;caps&#34;&gt;UKAC&lt;/span&gt; on New Year&amp;#8217;s Day! I had asumed that this event would
+be less-well attended than normal due to it being on January 1st, however that didn&amp;#8217;t seem to deter many
+with activity levels being about normal, albeit with fewer people out portable. I was active again as
+&lt;span class=&#34;caps&#34;&gt;2E1HNK&lt;/span&gt;/P from Sudeley Hill (&lt;span class=&#34;caps&#34;&gt;IO91AW&lt;/span&gt;) using 10W from my &lt;span class=&#34;caps&#34;&gt;FT&lt;/span&gt;-857d and the 8-Element Yagi at 4.5m as&amp;nbsp;normal.&lt;/p&gt;
+&lt;h3&gt;&lt;span class=&#34;caps&#34;&gt;UKAC&lt;/span&gt;&lt;/h3&gt;
+&lt;p&gt;Section: &lt;span class=&#34;caps&#34;&gt;AL&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Total QSOs:&amp;nbsp;57&lt;/p&gt;
+&lt;p&gt;Total Points: 12,277 (5,777 + 6,500&amp;nbsp;bonus)&lt;/p&gt;
+&lt;p&gt;Normalised Points:&amp;nbsp;827&lt;/p&gt;
+&lt;p&gt;Position:&amp;nbsp;14/76&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;caps&#34;&gt;ODX&lt;/span&gt;: &lt;span class=&#34;caps&#34;&gt;GD8EXI&lt;/span&gt; (IO74pc -&amp;nbsp;304km)&lt;/p&gt;
+&lt;p&gt;Current&amp;nbsp;Standing:&lt;/p&gt;            </content>
+        </entry>
+            <entry>
+            <title type="html">2018 Wrap-up</title>
+            <author><name>Matt 2E1HNK</name></author>
+            <link href="/blog/2018-wrapup.html"/>
+            <updated>2018-12-31T23:59:59Z</updated>
+            <published>2018-12-31T23:59:59Z</published>
+            <id>/blog/2018-wrapup.html</id>
+                        <category   scheme="/blog/tags"
+                        term="UKAC"
+                        label="Ukac" />
+                        <category   scheme="/blog/tags"
+                        term="FMAC"
+                        label="Fmac" />
+                        <category   scheme="/blog/tags"
+                        term="Activation"
+                        label="Activation" />
+                        <category   scheme="/blog/tags"
+                        term="HF"
+                        label="Hf" />
+                        <category   scheme="/blog/tags"
+                        term="VHF"
+                        label="Vhf" />
+                        <category   scheme="/blog/tags"
+                        term="DATA"
+                        label="Data" />
+            
+            <content type="html">
+                                &lt;p&gt;Total QSOs -&amp;nbsp;615&lt;/p&gt;
+&lt;p&gt;Contests Entered -&amp;nbsp;14&lt;/p&gt;
+&lt;p&gt;Best &lt;span class=&#34;caps&#34;&gt;DX&lt;/span&gt; - &lt;span class=&#34;caps&#34;&gt;WB2REM&lt;/span&gt; @ 4267.8km (30m &lt;span class=&#34;caps&#34;&gt;FT8&lt;/span&gt;)&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;caps&#34;&gt;UKAC&lt;/span&gt; Final Position - 304/733 (49/210 on&amp;nbsp;2m)&lt;/p&gt;            </content>
+        </entry>
+            <entry>
+            <title type="html">2m FMAC/UKAC December 2018</title>
+            <author><name>Matt 2E1HNK</name></author>
+            <link href="/blog/ukac-december-2018.html"/>
+            <updated>2018-12-04T23:00:00Z</updated>
+            <published>2018-12-04T23:00:00Z</published>
+            <id>/blog/ukac-december-2018.html</id>
+                        <category   scheme="/blog/tags"
+                        term="UKAC"
+                        label="Ukac" />
+                        <category   scheme="/blog/tags"
+                        term="Activation"
+                        label="Activation" />
+            
+            <content type="html">
+                                &lt;p&gt;I was active again as &lt;span class=&#34;caps&#34;&gt;2E1HNK&lt;/span&gt;/P from Sudeley Hill (&lt;span class=&#34;caps&#34;&gt;IO91AW&lt;/span&gt;) using
+10W from my &lt;span class=&#34;caps&#34;&gt;FT&lt;/span&gt;-857d and the 8-Element Yagi at 4.5m. I may look at different sites as some post-contest
+analysis indicates that I have not managed any &lt;span class=&#34;caps&#34;&gt;UKAC&lt;/span&gt; contacts in &lt;span class=&#34;caps&#34;&gt;JO02&lt;/span&gt;. I suspect there is a hill in that&amp;nbsp;direction!&lt;/p&gt;
+&lt;h3&gt;&lt;span class=&#34;caps&#34;&gt;UKAC&lt;/span&gt;&lt;/h3&gt;
+&lt;p&gt;Section: &lt;span class=&#34;caps&#34;&gt;AL&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Total QSOs:&amp;nbsp;51&lt;/p&gt;
+&lt;p&gt;Total Points: 9,216 (4,216 + 5,000&amp;nbsp;bonus)&lt;/p&gt;
+&lt;p&gt;Normalised Points:&amp;nbsp;?&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;caps&#34;&gt;ODX&lt;/span&gt;: &lt;span class=&#34;caps&#34;&gt;G4RUL&lt;/span&gt;/P (JO00dr -&amp;nbsp;207km)&lt;/p&gt;
+&lt;p&gt;Current&amp;nbsp;Standing:&lt;/p&gt;            </content>
+        </entry>
+            <entry>
+            <title type="html">2m FMAC/UKAC November 2018</title>
+            <author><name>Matt 2E1HNK</name></author>
+            <link href="/blog/ukac-nov-2018.html"/>
+            <updated>2018-11-08T23:00:00Z</updated>
+            <published>2018-11-08T23:00:00Z</published>
+            <id>/blog/ukac-nov-2018.html</id>
+                        <category   scheme="/blog/tags"
+                        term="UKAC"
+                        label="Ukac" />
+                        <category   scheme="/blog/tags"
+                        term="Activation"
+                        label="Activation" />
+            
+            <content type="html">
+                                &lt;p&gt;I was active again as &lt;span class=&#34;caps&#34;&gt;2E1HNK&lt;/span&gt;/P from Sudeley Hill (&lt;span class=&#34;caps&#34;&gt;IO91AW&lt;/span&gt;) using
+10W from my &lt;span class=&#34;caps&#34;&gt;FT&lt;/span&gt;-857d and the 8-Element Yagi for the &lt;span class=&#34;caps&#34;&gt;UKAC&lt;/span&gt; section
+this evening. It also marked the first &lt;span class=&#34;caps&#34;&gt;UKAC&lt;/span&gt; activation that I
+used my Yaesu G450 rotator, which presented some additional&amp;nbsp;challenges.&lt;/p&gt;
+&lt;h3&gt;&lt;span class=&#34;caps&#34;&gt;UKAC&lt;/span&gt;&lt;/h3&gt;
+&lt;p&gt;Section: &lt;span class=&#34;caps&#34;&gt;AL&lt;/span&gt;
+Total QSOs: 41
+Total Points: 7,361 (3,361 + 4,000 bonus)
+Normalised Points: ?
+&lt;span class=&#34;caps&#34;&gt;ODX&lt;/span&gt;: &lt;span class=&#34;caps&#34;&gt;M0WGF&lt;/span&gt; (JO01kv - 198km)
+Current Standing (as of 9/11/18 - entries haven&amp;#8217;t closed yet): 26 (of 53) in &lt;span class=&#34;caps&#34;&gt;AL&lt;/span&gt; section, 107 (of 184)&amp;nbsp;overall&lt;/p&gt;            </content>
+        </entry>
+            <entry>
+            <title type="html">Yaesu FT-857d CAT Settings</title>
+            <author><name>Matt 2E1HNK</name></author>
+            <link href="/blog/ft857-cat-settings.html"/>
+            <updated>2018-11-05T08:00:00Z</updated>
+            <published>2018-11-05T08:00:00Z</published>
+            <id>/blog/ft857-cat-settings.html</id>
+                        <category   scheme="/blog/tags"
+                        term="TechNote"
+                        label="Technote" />
+                        <category   scheme="/blog/tags"
+                        term="FT857"
+                        label="Ft857" />
+            
+            <content type="html">
+                                &lt;p&gt;&lt;img alt=&#34;Yaesu FT-857d&#34; src=&#34;/media/images/ysu-ft-857d_xl.jpg&#34; /&gt;
+Just parking this here because I can never find these settings when I need&amp;nbsp;them&amp;#8230;&lt;/p&gt;
+&lt;p&gt;Baud: 4800, 9600, 38400 (must be 4800 with &lt;span class=&#34;caps&#34;&gt;LDG&lt;/span&gt;&amp;nbsp;tuner)&lt;/p&gt;
+&lt;p&gt;Start Bits:&amp;nbsp;1&lt;/p&gt;
+&lt;p&gt;Bits per Byte:&amp;nbsp;8&lt;/p&gt;
+&lt;p&gt;Stop Bits:&amp;nbsp;2&lt;/p&gt;
+&lt;p&gt;Parity:&amp;nbsp;None&lt;/p&gt;
+&lt;p&gt;Flow Control:&amp;nbsp;?&lt;/p&gt;            </content>
+        </entry>
+            <entry>
+            <title type="html">2m FMAC/UKAC October 2018</title>
+            <author><name>Matt 2E1HNK</name></author>
+            <link href="/blog/fmac-ukac-october-2018.html"/>
+            <updated>2018-10-03T08:00:00Z</updated>
+            <published>2018-10-03T08:00:00Z</published>
+            <id>/blog/fmac-ukac-october-2018.html</id>
+                        <category   scheme="/blog/tags"
+                        term="FMAC"
+                        label="Fmac" />
+                        <category   scheme="/blog/tags"
+                        term="UKAC"
+                        label="Ukac" />
+                        <category   scheme="/blog/tags"
+                        term="Activation"
+                        label="Activation" />
+            
+            <content type="html">
+                                &lt;p&gt;Active as &lt;span class=&#34;caps&#34;&gt;2E1HNK&lt;/span&gt;/P from a new location - Sudeley Hill (&lt;span class=&#34;caps&#34;&gt;IO91AW&lt;/span&gt;), using
+10W from the &lt;span class=&#34;caps&#34;&gt;FT&lt;/span&gt;-857d to the borrowed 8 element yagi on a hand-held&amp;nbsp;mast.&lt;/p&gt;
+&lt;h3&gt;&lt;span class=&#34;caps&#34;&gt;FMAC&lt;/span&gt;&lt;/h3&gt;
+&lt;p&gt;Section: 50R (still using 10W but was put in this category for using the yagi)
+Total QSOs: 1
+Total Points: 11
+Normalised Points: 53
+&lt;span class=&#34;caps&#34;&gt;ODX&lt;/span&gt;: &lt;span class=&#34;caps&#34;&gt;M0RKX&lt;/span&gt;/P (&lt;span class=&#34;caps&#34;&gt;IO91BA&lt;/span&gt; - 11km)
+Position: 19 (of 19) in 50R&amp;nbsp;section&lt;/p&gt;
+&lt;h3&gt;&lt;span class=&#34;caps&#34;&gt;UKAC&lt;/span&gt;&lt;/h3&gt;
+&lt;p&gt;Section: &lt;span class=&#34;caps&#34;&gt;AL&lt;/span&gt;
+Total QSOs: 37
+Total Points: 8,653 (3,653 + 5,000 bonus)
+Normalised Points: 528
+&lt;span class=&#34;caps&#34;&gt;ODX&lt;/span&gt;: &lt;span class=&#34;caps&#34;&gt;GD8EXI&lt;/span&gt; (&lt;span class=&#34;caps&#34;&gt;IO74PC&lt;/span&gt; - 304km)
+Position: 43 (of 90) in &lt;span class=&#34;caps&#34;&gt;AL&lt;/span&gt;&amp;nbsp;secti&lt;/p&gt;            </content>
+        </entry>
+            <entry>
+            <title type="html">2m FMAC/UKAC August 2018</title>
+            <author><name>Matt 2E1HNK</name></author>
+            <link href="/blog/fmac-ukac-august-2018.html"/>
+            <updated>2018-08-08T08:00:00Z</updated>
+            <published>2018-08-08T08:00:00Z</published>
+            <id>/blog/fmac-ukac-august-2018.html</id>
+                        <category   scheme="/blog/tags"
+                        term="FMAC"
+                        label="Fmac" />
+                        <category   scheme="/blog/tags"
+                        term="UKAC"
+                        label="Ukac" />
+                        <category   scheme="/blog/tags"
+                        term="Activation"
+                        label="Activation" />
+            
+            <content type="html">
+                                &lt;p&gt;Active as &lt;span class=&#34;caps&#34;&gt;2E1HNK&lt;/span&gt;/P from a new location - Sudeley Hill (&lt;span class=&#34;caps&#34;&gt;IO91AW&lt;/span&gt;), using
+10W from the &lt;span class=&#34;caps&#34;&gt;FT&lt;/span&gt;-857d to the Diamond X200 for the &lt;span class=&#34;caps&#34;&gt;FMAC&lt;/span&gt; section and a
+borrowed 8 element yagi for &lt;span class=&#34;caps&#34;&gt;UKAC&lt;/span&gt;. Generally a good evening however it
+seemed to be harder work than it should have been, given that I was
+using a much better antenna than&amp;nbsp;normal.&lt;/p&gt;
+&lt;p&gt;Sudeley Hill is a good location, possibly not quite as good as Cutsdean
+Hill &lt;span class=&#34;caps&#34;&gt;RF&lt;/span&gt;-wise but there is more space to set up antennas and to actually
+get the car off the road. Got some interesting looks form passers-by and
+one stopped to chat, who happened to be a G8 from Cheltenham who was out
+on his&amp;nbsp;bike!&lt;/p&gt;
+&lt;p&gt;I didn&amp;#8217;t get on the air with enough time to make an impact on &lt;span class=&#34;caps&#34;&gt;FMAC&lt;/span&gt; (currently
+in last place) but was reasonably busy for the whole of the &lt;span class=&#34;caps&#34;&gt;UKAC&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;The beam was mounted on 2 sections of mast, giving a height of 3m. The mast
+was braced against the side of the car putting the antenna about 1.2m above
+the car, which probably isn&amp;#8217;t high enough. Plan for next time is to use 3 or 4
+sections of mast putting the antenna at 4.5m or 6m &lt;span class=&#34;caps&#34;&gt;AGL&lt;/span&gt;, however the two sections
+that I used this time refused to come apart again. As it happens I can just
+about fit the two sections in the car fitted together, however that won&amp;#8217;t work
+if more sections get&amp;nbsp;stuck!&lt;/p&gt;
+&lt;h3&gt;&lt;span class=&#34;caps&#34;&gt;FMAC&lt;/span&gt;&lt;/h3&gt;
+&lt;p&gt;Section: 10W
+Total QSOs: 5
+Total Points: 281
+Normalised Points: ???
+&lt;span class=&#34;caps&#34;&gt;ODX&lt;/span&gt;: &lt;span class=&#34;caps&#34;&gt;MW6BWA&lt;/span&gt;/P (&lt;span class=&#34;caps&#34;&gt;IO82JC&lt;/span&gt; - 88km)
+Position: 13 (of 13) overall, 4 (of 4) in 10W section (based on claimed&amp;nbsp;scores)&lt;/p&gt;
+&lt;h3&gt;&lt;span class=&#34;caps&#34;&gt;UKAC&lt;/span&gt;&lt;/h3&gt;
+&lt;p&gt;Section: &lt;span class=&#34;caps&#34;&gt;AL&lt;/span&gt;
+Total QSOs: 37
+Total Points: 9,921 (3,921 + 6,000 bonus)
+Normalised Points: 571
+&lt;span class=&#34;caps&#34;&gt;ODX&lt;/span&gt;: &lt;span class=&#34;caps&#34;&gt;EI2SDR&lt;/span&gt;/P (&lt;span class=&#34;caps&#34;&gt;IO62XW&lt;/span&gt; - 299km)
+Position: 31 (of 70) in &lt;span class=&#34;caps&#34;&gt;AL&lt;/span&gt;&amp;nbsp;section&lt;/p&gt;            </content>
+        </entry>
+            <entry>
+            <title type="html">Finding Good Hill-Top Portable Sites (2)</title>
+            <author><name>Matt 2E1HNK</name></author>
+            <link href="/blog/finding-good-hilltop-sites-2.html"/>
+            <updated>2018-06-27T17:00:00Z</updated>
+            <published>2018-06-27T17:00:00Z</published>
+            <id>/blog/finding-good-hilltop-sites-2.html</id>
+                        <category   scheme="/blog/tags"
+                        term="TechNote"
+                        label="Technote" />
+                        <category   scheme="/blog/tags"
+                        term="UKAC"
+                        label="Ukac" />
+                        <category   scheme="/blog/tags"
+                        term="FMAC"
+                        label="Fmac" />
+            
+            <content type="html">
+                                &lt;p&gt;This is a quick update to the blog post about &lt;a href=&#34;/blog/finding-good-hilltop-sites.html&#34;&gt;Finding Good Hilltop Sites&lt;/a&gt;.
+The Overpass &lt;span class=&#34;caps&#34;&gt;API&lt;/span&gt; code given in the original blog post didn&amp;#8217;t take into account the presence of points in the vacinity with a higher elevation that the point in question. That is to say that it would find &amp;#8216;good&amp;#8217; sites which were elevate and had road access but which might also have other land around which is more elevated than the site itself (think of something like a mountain pass - elevated but probably going between two large mountains). This update should resolve that by excluding any sites which have any features with a greated elevation within 2km of the&amp;nbsp;site.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;json&#34;&gt;
+  [out:json][timeout:800];
+
+  ( way({{bbox}})(if:t[&#34;ele&#34;] &gt; 250);
+    node({{bbox}})(if:t[&#34;ele&#34;] &gt; 250);
+    rel({{bbox}})(if:t[&#34;ele&#34;] &gt; 250);
+  )-&gt;.summits;
+
+  foreach.summits-&gt;.this_summit (
+    ( node.summits(around.streets:2000)(if:t[&#34;ele&#34;] &gt; 250);
+      way.summits(around.streets:2000)(if:t[&#34;ele&#34;] &gt; 250);
+      rel.summits(around.streets:2000)(if:t[&#34;ele&#34;] &gt; 250);
+    )-&gt;.prominence;
+
+    if ( .prominence.count &lt; 1 ) {
+      (.selected_summits; .this_summit;)-&gt;.selected_summits;
+    }
+  );
+
+  way(around.selected_summits:100)[highway][highway!~&#34;^(footway|path|steps|bridleway|track|unclassified|cycleway|service)$&#34;]
+    -&gt;.streets;
+
+  ( node.selected_summits(around.streets:100);
+    way.selected_summits(around.streets:100);
+    rel.selected_summits(around.streets:100);
+  )-&gt;.matchingSummits;
+
+  (.matchingSummits; .streets;);
+  out geom;
+&lt;/code&gt;&lt;/pre&gt;            </content>
+        </entry>
+            <entry>
+            <title type="html">2m FMAC/UKAC June 2018</title>
+            <author><name>Matt 2E1HNK</name></author>
+            <link href="/blog/fmac-ukac-june-2018.html"/>
+            <updated>2018-06-26T17:00:00Z</updated>
+            <published>2018-06-26T17:00:00Z</published>
+            <id>/blog/fmac-ukac-june-2018.html</id>
+                        <category   scheme="/blog/tags"
+                        term="FMAC"
+                        label="Fmac" />
+                        <category   scheme="/blog/tags"
+                        term="UKAC"
+                        label="Ukac" />
+                        <category   scheme="/blog/tags"
+                        term="Activation"
+                        label="Activation" />
+            
+            <content type="html">
+                                &lt;p&gt;Active as &lt;span class=&#34;caps&#34;&gt;2E1HNK&lt;/span&gt;/P from Cutsdean Hill (&lt;span class=&#34;caps&#34;&gt;IO91BX&lt;/span&gt;) again, using
+10W from the &lt;span class=&#34;caps&#34;&gt;FT&lt;/span&gt;-857d and the Diamond X200 vertical for the last half
+hour of the &lt;span class=&#34;caps&#34;&gt;FMAC&lt;/span&gt; section then the same setup for the &lt;span class=&#34;caps&#34;&gt;UKAC&lt;/span&gt;&amp;nbsp;section.&lt;/p&gt;
+&lt;h3&gt;&lt;span class=&#34;caps&#34;&gt;FMAC&lt;/span&gt;&lt;/h3&gt;
+&lt;p&gt;Section: 10W
+Total QSOs: 2
+Total Points: 141
+Normalised Points: 111
+&lt;span class=&#34;caps&#34;&gt;ODX&lt;/span&gt;: &lt;span class=&#34;caps&#34;&gt;M1EYP&lt;/span&gt;/P (&lt;span class=&#34;caps&#34;&gt;IO83WE&lt;/span&gt; - 136km)
+Final Position: 17 (of&amp;nbsp;19)&lt;/p&gt;
+&lt;h3&gt;&lt;span class=&#34;caps&#34;&gt;UKAC&lt;/span&gt;&lt;/h3&gt;
+&lt;p&gt;Section: &lt;span class=&#34;caps&#34;&gt;AL&lt;/span&gt;
+Total QSOs: 39
+Total Points: 7,609 (3,609 + 4,000 bonus)
+Normalised Points: 432
+&lt;span class=&#34;caps&#34;&gt;ODX&lt;/span&gt;: &lt;span class=&#34;caps&#34;&gt;M1CJN&lt;/span&gt;/P (&lt;span class=&#34;caps&#34;&gt;IO93OX&lt;/span&gt; - 234km)
+Final Position: 43 (of&amp;nbsp;74).&lt;/p&gt;
+&lt;h3&gt;Lessons&amp;nbsp;Learnt&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;I need a&amp;nbsp;yagi.&lt;/li&gt;
+&lt;li&gt;If 1, I need a rotator (I don&amp;#8217;t fancy sitting out in the rain that we had last night to turn the&amp;nbsp;beam).&lt;/li&gt;
+&lt;li&gt;I have a terrible callsign for&amp;nbsp;contests.&lt;/li&gt;
+&lt;li&gt;I need a voice&amp;nbsp;keyer.&lt;/li&gt;
+&lt;li&gt;Cutsdean Hill is a good location &lt;span class=&#34;caps&#34;&gt;RF&lt;/span&gt;-wise, however there isn&amp;#8217;t much space for parking and antennas. I lashed the mast to a convenient fence post but that wouldn&amp;#8217;t have worked for a yagi as the trees would have got in the way. A guyed mast would be needed, however there isn&amp;#8217;t much space on the verge for&amp;nbsp;guys.&lt;/li&gt;
+&lt;/ul&gt;            </content>
+        </entry>
+            <entry>
+            <title type="html">2m FMAC/UKAC May 2018</title>
+            <author><name>Matt 2E1HNK</name></author>
+            <link href="/blog/fmac-ukac-may-2018.html"/>
+            <updated>2018-05-01T23:00:00Z</updated>
+            <published>2018-05-01T23:00:00Z</published>
+            <id>/blog/fmac-ukac-may-2018.html</id>
+                        <category   scheme="/blog/tags"
+                        term="FMAC"
+                        label="Fmac" />
+                        <category   scheme="/blog/tags"
+                        term="UKAC"
+                        label="Ukac" />
+                        <category   scheme="/blog/tags"
+                        term="Activation"
+                        label="Activation" />
+            
+            <content type="html">
+                                &lt;p&gt;I was active as &lt;span class=&#34;caps&#34;&gt;2E1HNK&lt;/span&gt;/P from Cutsdean Hill (&lt;span class=&#34;caps&#34;&gt;IO91BX&lt;/span&gt;) using
+10W from my &lt;span class=&#34;caps&#34;&gt;FT&lt;/span&gt;-857d and a Diamond X200 vertical for the last half
+hour of the &lt;span class=&#34;caps&#34;&gt;FMAC&lt;/span&gt; section then the same setup for the &lt;span class=&#34;caps&#34;&gt;UKAC&lt;/span&gt;&amp;nbsp;section.&lt;/p&gt;
+&lt;h3&gt;&lt;span class=&#34;caps&#34;&gt;FMAC&lt;/span&gt;&lt;/h3&gt;
+&lt;p&gt;Section: 10W
+Total QSOs: 7
+Total Points: 398
+Normalised Points: 667
+&lt;span class=&#34;caps&#34;&gt;ODX&lt;/span&gt;: &lt;span class=&#34;caps&#34;&gt;G3ZNU&lt;/span&gt; (&lt;span class=&#34;caps&#34;&gt;IO91PQ&lt;/span&gt; - 87km)
+Final Position: 7 (of&amp;nbsp;18)&lt;/p&gt;
+&lt;h3&gt;&lt;span class=&#34;caps&#34;&gt;UKAC&lt;/span&gt;&lt;/h3&gt;
+&lt;p&gt;Section: &lt;span class=&#34;caps&#34;&gt;AL&lt;/span&gt;
+Total QSOs: 29
+Total Points: 4,920 (1,920 + 3,000 bonus)
+Normalised Points: 427
+&lt;span class=&#34;caps&#34;&gt;ODX&lt;/span&gt;: &lt;span class=&#34;caps&#34;&gt;M0DXR&lt;/span&gt;/P (&lt;span class=&#34;caps&#34;&gt;JO01DH&lt;/span&gt; - 167km) - Also got &lt;span class=&#34;caps&#34;&gt;G3CZP&lt;/span&gt;/P (&lt;span class=&#34;caps&#34;&gt;IO90JO&lt;/span&gt; - 160km) on the
+  Isle of Wight, which I class as overseas :)
+Final Standing 44 (of 75). Interestingly I&amp;#8217;m the highest placed entry in low power section to use a vertical antenna, which is&amp;nbsp;positive.&lt;/p&gt;
+&lt;h3&gt;Lessons&amp;nbsp;Learnt&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;I need a&amp;nbsp;yagi.&lt;/li&gt;
+&lt;li&gt;If 1, I need a rotator (I don&amp;#8217;t fancy sitting out in the rain that we had last night to turn the&amp;nbsp;beam).&lt;/li&gt;
+&lt;li&gt;I have a terrible callsign for&amp;nbsp;contests.&lt;/li&gt;
+&lt;li&gt;I need a voice&amp;nbsp;keyer.&lt;/li&gt;
+&lt;li&gt;Cutsdean Hill is a good location &lt;span class=&#34;caps&#34;&gt;RF&lt;/span&gt;-wise, however there isn&amp;#8217;t much space for parking and antennas. I lashed the mast to a convenient fence post but that wouldn&amp;#8217;t have worked for a yagi as the trees would have got in the way. A guyed mast would be needed, however there isn&amp;#8217;t much space on the verge for&amp;nbsp;guys.&lt;/li&gt;
+&lt;/ul&gt;            </content>
+        </entry>
+            <entry>
+            <title type="html">Finding Good Hill-Top Portable Sites</title>
+            <author><name>Matt 2E1HNK</name></author>
+            <link href="/blog/finding-good-hilltop-sites.html"/>
+            <updated>2018-04-26T23:00:00Z</updated>
+            <published>2018-04-26T23:00:00Z</published>
+            <id>/blog/finding-good-hilltop-sites.html</id>
+                        <category   scheme="/blog/tags"
+                        term="TechNote"
+                        label="Technote" />
+                        <category   scheme="/blog/tags"
+                        term="UKAC"
+                        label="Ukac" />
+                        <category   scheme="/blog/tags"
+                        term="FMAC"
+                        label="Fmac" />
+            
+            <content type="html">
+                                &lt;p&gt;Finding good portable operating sites historically relied on local
+knowledge, anecdotal evidence from other amateurs, plenty of
+experimentation and a good dose of luck. Whilst there&amp;#8217;s nothing
+wrong with this approach it does rely on either knowing the local
+area well, or having contact with someone who does. This isn&amp;#8217;t
+always available, for example holiday operation, moving to a new
+area or simply that all the good peaks have been taken. There must
+be a better way&amp;#8230;
+My approach to finding new hilltops to
+activate involves finding candidate hilltops, assessing whether
+operation is possible from that location, and then working out
+whether it&amp;#8217;s worth the effort of attempting to activate it. These
+are some of the resources I use to do&amp;nbsp;this.&lt;/p&gt;
+&lt;h3&gt;Find Candidate&amp;nbsp;Sites&lt;/h3&gt;
+&lt;h4&gt;Overpass&amp;nbsp;Turbo&lt;/h4&gt;
+&lt;p&gt;&lt;a href=&#34;http://overpass-turbo.eu&#34;&gt;Overpass Turbo&lt;/a&gt; allows users to run scripts against the Overpass &lt;span class=&#34;caps&#34;&gt;API&lt;/span&gt;, part
+of the OpenStreetMap project. The script below finds ways, nodes
+and relationships (i.e. any object) with an elevation greater
+than 300m a.s.l (which works well for the area I&amp;#8217;m interested in,
+depending on your local area you might need to change this). It
+then searches the area around those objects up to a radius to
+100m (you can tune this too, if you need to) to see if there are
+any highways, but excluding footpaths, bridleways, tracks,
+service roads, unclassified roads etc. This theoretically returns
+a list/map of summits which are accessible by&amp;nbsp;car.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;json&#34;&gt;
+[out:json][timeout:800];
+(
+  way()(if:t[&#34;ele&#34;] &gt; 300);
+  node()(if:t[&#34;ele&#34;] &gt; 300);
+  rel()(if:t[&#34;ele&#34;] &gt; 300);
+)-&gt;.summits;
+
+way
+  (around.summits:100)
+  [highway]
+  [highway!~&#34;^(footway|path|bridleway|track|unclassified|cycleway|service)$&#34;]
+-&gt;.streets;
+
+(
+  node.summits(around.streets:100);
+  way.summits(around.streets:100);
+  rel.summits(around.streets:100);
+)-&gt;.matchingSummits;
+
+(.matchingSummits; .streets;);
+out geom;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4&gt;UKACMap&lt;/h4&gt;
+&lt;p&gt;&lt;a href=&#34;ukacmap.html&#34;&gt;UKACMap&lt;/a&gt; queries the Google
+Maps &lt;span class=&#34;caps&#34;&gt;API&lt;/span&gt; to try to find the highest point in view. In some ways
+this is more reliable that the OverPass &lt;span class=&#34;caps&#34;&gt;API&lt;/span&gt; approach as the
+Google Maps elevation data comes from surveys rather than
+user-entered data, however there are limitations in how many
+times the Google Maps &lt;span class=&#34;caps&#34;&gt;API&lt;/span&gt; can be queried, so the application is
+not as accurate as it could&amp;nbsp;be.&lt;/p&gt;
+&lt;h3&gt;Assess&amp;nbsp;Accessability&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Is the land privately&amp;nbsp;owned?&lt;/li&gt;
+&lt;li&gt;Is it possible to get a vehicle to the&amp;nbsp;site?&lt;/li&gt;
+&lt;li&gt;Are there time restrictions (for example a car park that closes at&amp;nbsp;dusk)?&lt;/li&gt;
+&lt;li&gt;Is there sufficient space to set up&amp;nbsp;antennas?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The answers to many of these questions can be found using online
+mapping services including &lt;a href=&#34;https://www.bing.com/maps&#34;&gt;Bing Maps&lt;/a&gt; which has Ordnance Survey maps available and Google Maps
+which has aerial photography and also Google&amp;#8217;s fantastic Street
+View&amp;nbsp;service.&lt;/p&gt;
+&lt;h3&gt;Assess Radio&amp;nbsp;Coverage&lt;/h3&gt;
+&lt;p&gt;Of cource there&amp;#8217;s no point investing time and energy into
+climbing a peak is it&amp;#8217;s not going to give you the coverage you
+need.
+&lt;a href=&#34;http://www.ve2dbe.com/rmonline.html&#34;&gt;Radio Mobile Online&lt;/a&gt; (and also the offline version) and Splat! are fantastic
+tools for assessing a site&amp;#8217;s radio coverage. Their use cannot be
+described briefly here but there are plenty of tutorials
+available. One I particularly like for Radio Mobile&amp;#8217;s offline
+versions can be found &lt;a href=&#34;http://radiomobile.pe1mew.nl/?How_to:A_first_example&#34;&gt;here&lt;/a&gt;&lt;/p&gt;            </content>
+        </entry>
+            <entry>
+            <title type="html">Yaesu FT-857d Power Output Stuck</title>
+            <author><name>Matt 2E1HNK</name></author>
+            <link href="/blog/ft857-power-output-stuck.html"/>
+            <updated>2018-04-04T23:00:00Z</updated>
+            <published>2018-04-04T23:00:00Z</published>
+            <id>/blog/ft857-power-output-stuck.html</id>
+                        <category   scheme="/blog/tags"
+                        term="TechNote"
+                        label="Technote" />
+                        <category   scheme="/blog/tags"
+                        term="FT857"
+                        label="Ft857" />
+            
+            <content type="html">
+                                &lt;p&gt;&lt;img alt=&#34;Yaesu FT-857d&#34; src=&#34;/media/images/ysu-ft-857d_xl.jpg&#34; /&gt;
+I fired up my Yaesu FT857d to take part in the &lt;span class=&#34;caps&#34;&gt;RSGB&lt;/span&gt;&amp;#8217;s April 2018 2m
+&lt;span class=&#34;caps&#34;&gt;UKAC&lt;/span&gt; Contest a couple of days ago to discover that the &lt;span class=&#34;caps&#34;&gt;RF&lt;/span&gt; power
+output (Menu Option 75) was stuck at 50W and wouldn&amp;#8217;t change by
+rotating the &lt;span class=&#34;caps&#34;&gt;VFO&lt;/span&gt; knob as it should.
+Thankfully, despite being /P, I
+was in an area with good mobile coverage I had a quick google and
+although I found a few others who had experienced a few similar
+&lt;a href=&#34;http://www.eham.net/ehamforum/smf/index.php?topic=74837.0&#34;&gt;issues&lt;/a&gt;,
+there was only one viable suggestion for resolving the problem,
+which was to perform a reset. There are three variations of reset
+available on an FT857d detailed &lt;a href=&#34;https://www.hamradio.hanklambert.com/8-ham-radio/23-yaesu-ft-857d-reset-procedures&#34;&gt;here&lt;/a&gt;.
+It was the &lt;span class=&#34;caps&#34;&gt;FUNC&lt;/span&gt; + &lt;span class=&#34;caps&#34;&gt;PWR&lt;/span&gt; one that worked for me, however it wasn&amp;#8217;t
+clear to me that this is a power-on reset, so the rig has to be off
+for it to work. There is a sort of &amp;#8216;confirmation beep&amp;#8217; to indicate
+that the memory has been reset and you&amp;#8217;ll also notice that the &lt;span class=&#34;caps&#34;&gt;VFO&lt;/span&gt;
+will probably have changed (in my case it reset to&amp;nbsp;7MHz).&lt;/p&gt;            </content>
+        </entry>
+            <entry>
+            <title type="html">2m FMAC/UKAC April 2018</title>
+            <author><name>Matt 2E1HNK</name></author>
+            <link href="/blog/fmac-ukac-april-2018.html"/>
+            <updated>2018-04-03T23:00:00Z</updated>
+            <published>2018-04-03T23:00:00Z</published>
+            <id>/blog/fmac-ukac-april-2018.html</id>
+                        <category   scheme="/blog/tags"
+                        term="FMAC"
+                        label="Fmac" />
+                        <category   scheme="/blog/tags"
+                        term="UKAC"
+                        label="Ukac" />
+                        <category   scheme="/blog/tags"
+                        term="Activation"
+                        label="Activation" />
+            
+            <content type="html">
+                                &lt;p&gt;Participated in both the 2m &lt;span class=&#34;caps&#34;&gt;FMAC&lt;/span&gt; and &lt;span class=&#34;caps&#34;&gt;UKAC&lt;/span&gt; events with a family meal
+in the middle.
+&lt;span class=&#34;caps&#34;&gt;FMAC&lt;/span&gt; was just a single contact with the ever-present
+&lt;span class=&#34;caps&#34;&gt;M0RKX&lt;/span&gt;/P. I was hoping to get &lt;span class=&#34;caps&#34;&gt;M0RSD&lt;/span&gt; too as I’d heard him a few
+minutes earlier doing a demo for some foundation students but he
+either had other commitments or Alcester-Dudley was a no-go.
+Operated from the car park of the Moat House, Alcester (&lt;span class=&#34;caps&#34;&gt;IO92BF&lt;/span&gt;, 21m
+asl) using a Baofeng &lt;span class=&#34;caps&#34;&gt;UV5R&lt;/span&gt; and the 2m/70cm mini magnetic whip that I
+picked up in the Maplin closing-down sale a few weeks ago. I
+started operating for the &lt;span class=&#34;caps&#34;&gt;UKAC&lt;/span&gt; at about 9pm (2000 &lt;span class=&#34;caps&#34;&gt;UTC&lt;/span&gt;), having
+missed the first hour of the contest due to family commitments. I
+made 11 contacts across 4 grid squares with the best &lt;span class=&#34;caps&#34;&gt;DX&lt;/span&gt; being
+&lt;span class=&#34;caps&#34;&gt;G0HEL&lt;/span&gt;/P in &lt;span class=&#34;caps&#34;&gt;IO81WG&lt;/span&gt; at about 107km - not too bad off a vertical.
+Operating location was chosen primarily for its proximity to my
+route home from the restaurant and was a lay-by off the B4088 just
+south of the junction with the A422 (&lt;span class=&#34;caps&#34;&gt;IO92AF&lt;/span&gt;, 122m asl). It was
+surprisingly comfortable with the lay-by being set back from the
+road and separated from it by some trees. This reduced the sound of
+passing vehicles (not that there were many) and reduced the chance
+of muggles taking an interest. This was the first outing for both
+my Yaesu FT857d and Diamond X200. There was a small issue with the
+FT857d (&lt;a href=&#34;/blog/TechNote/1.html&#34;&gt;see TechNote#1&lt;/a&gt;) but
+that was resolved on-site. The setup performed well, but has left
+me wanting a 2m Yagi! The next problem that I encountered was when
+I tried to submit the log the following day - I submitted it fine
+but got an email enquiring about my &lt;span class=&#34;caps&#34;&gt;RSGB&lt;/span&gt; membership status - I
+hadn&amp;#8217;t realised that membership was a prerequisite for&amp;nbsp;entering.&lt;/p&gt;
+&lt;p&gt;Total QSOs:&amp;nbsp;1&lt;/p&gt;
+&lt;p&gt;Total Points:&amp;nbsp;24&lt;/p&gt;
+&lt;p&gt;Normalised Points:&amp;nbsp;143&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;caps&#34;&gt;ODX&lt;/span&gt;: &lt;span class=&#34;caps&#34;&gt;M0RKX&lt;/span&gt;/P (&lt;span class=&#34;caps&#34;&gt;IO92BA&lt;/span&gt; -&amp;nbsp;24km)&lt;/p&gt;
+&lt;p&gt;Final Position: 19 (of&amp;nbsp;21)&lt;/p&gt;            </content>
+        </entry>
+    </feed>
