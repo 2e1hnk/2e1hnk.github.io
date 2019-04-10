@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="/dashboard/css/style.css" />
+    <style type="text/css">
+
+      #states path {
+        fill: #3D3D3D;
+        stroke: black;
+      }
+
+      path.arc {
+        pointer-events: none;
+        fill: none;
+        stroke: lightyellow;
+        opacity:.4;
+      }
+
+      path.cell {
+        fill: none;
+        pointer-events: all;
+      }
+
+      circle {
+        fill: steelblue;
+        fill-opacity: .8;
+        stroke: #fff;
+      }
+
+      #cells.voronoi path.cell {
+        stroke: brown;
+      }
+
+      #cells g:hover path.arc {
+        display: inherit;
+      }
+
+      #airportText {
+        position:absolute;
+        top:20px;
+        font-size:18px;
+        width:200px;
+      }
+
+      .info-box {
+        background-color: rgba(255,255,255,0.05);
+        border-radius: 5px;
+        color: green;
+      }
+
+      #station-info {
+        position: absolute;
+        height: 19.5%;
+        top: 80%;
+        width: 49.25%;
+        left: 50.5%;
+      }
+
+      #log {
+        position: absolute;
+        height: 19.5%;
+        top: 80%;
+        width: 49.25%;
+        left: 0.5%;
+      }
+
+      #log th {
+        border-bottom: 1px solid green;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div id="airportText">
+      <h2>
+        <span id="airports"></span><br>
+      </h2>
+    </div>
+    <center>
+      <div id="map"></div>
+      <div id="log" class="info-box">
+        <table>
+          <thead>
+            <tr>
+              <th>Date/Time</th>
+              <th>Our Station</th>
+              <th>Remote Station</th>
+              <th>Frequency</th>
+              <th>Mode</th>
+              <th>Report Sent</th>
+              <th>Report Received</th>
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+      </div>
+      <div id="station-info" class="info-box">Test</div>
+    </center>
+    <script src="/dashboard/js/d3.v3.min.js"></script>
+    <script type="text/javascript">
+
+      var w = document.documentElement.clientWidth * .85,
+      h = document.documentElement.clientHeight;
+
+      var projection = d3.geo.mercator()
+      .scale((w + 1) / 2 / Math.PI)
+      .translate([w / 2, h / 2])
+      .precision(.1);
+
+      var path = d3.geo.path()
+      .projection(projection);
+
+      var svg = d3.select("#map").insert("svg:svg")
+      .attr("width", w)
+      .attr("height", h);
+
+      var states = svg.append("svg:g")
+      .attr("id", "states");
+
+      var circles = svg.append("svg:g")
+      .attr("id", "circles");
+
+      var cells = svg.append("svg:g")
+      .attr("id", "cells");
+
+      d3.json("/dashboard/data/world-countries.json", function(collection) {
+        states.selectAll("path")
+          .data(collection.features)
+          .enter().append("svg:path")
+          .attr("d", path);
+        });
+
+        d3.csv("/dashboard/data/contacts.csv", function(contacts) {
+          var linksByOrigin = {},
+            countByStation = {},
+            locationByStation = {},
+            positions = [];
+
+          var arc = d3.geo.greatArc()
+            .source(function(d) { return locationByStation[d.source]; })
+            .target(function(d) { return locationByStation[d.target]; });
+
+          contacts.forEach(function(contact) {
+            var origin = contact.origin,
+                destination = contact.destination,
+                links = linksByOrigin[origin] || (linksByOrigin[origin] = []);
+            links.push({source: origin, target: destination});
+            countByStation[origin] = (countByStation[origin] || 0) + 1;
+            countByStation[destination] = (countByStation[destination] || 0) + 1;
+            addLogRow(contact);
+          });
+
+          d3.csv("/dashboard/data/stations.csv", function(stations) {
+
+          // Only consider airports with at least one flight.
+          station = stations.filter(function(station) {
+            if (countByStation[station.callsign]) {
+              var location = [+station.longitude, +station.latitude];
+              locationByStation[station.callsign] = location;
+              positions.push(projection(location));
+              return true;
+            }
+          });
+
+          // Compute the Voronoi diagram of airports' projected positions.
+          var polygons = d3.geom.voronoi(positions);
+
+          var g = cells.selectAll("g")
+              .data(stations)
+              .enter().append("svg:g");
+
+          g.append("svg:path")
+              .attr("class", "cell")
+              .attr("d", function(d, i) { return "M" + polygons[i].join("L") + "Z"; })
+              .on("mouseover", function(d, i) {
+                d3.select("#station-info").text(d.callsign + " " + d.latitude);
+              });
+
+
+          g.selectAll("path.arc")
+              .data(function(d) { return linksByOrigin[d.callsign] || []; })
+              .enter().append("svg:path")
+              .attr("class", "arc")
+              .attr("d", function(d) { return path(arc(d)); });
+
+
+          g.selectAll("path.arc")
+              .data(stations)
+              .attr("stroke-width", function(d, i) { return Math.sqrt(countByStation[d.callsign]) + "px"; });
+
+
+          circles.selectAll("circle")
+              .data(stations)
+              .enter().append("svg:circle")
+              .attr("cx", function(d, i) { return positions[i][0]; })
+              .attr("cy", function(d, i) { return positions[i][1]; })
+              .attr("r", function(d, i) { return Math.sqrt(countByStation[d.callsign] +10); })
+              .sort(function(a, b) { return countByStation[b.callsign] - countByStation[a.callsign]; });
+
+          });
+        });
+
+        function addLogRow(contact) {
+          var logTable = document.getElementById('log').getElementsByTagName('tbody')[0];
+
+          // Insert a row in the table at the last row
+          var newRow   = logTable.insertRow(logTable.rows.length - 1);
+
+          // Insert a cell in the row at index 0
+          var dateTimeCell  = newRow.insertCell(0);
+          var ourStationCell  = newRow.insertCell(1);
+          var remoteStationCell  = newRow.insertCell(2);
+          var frequencyCell  = newRow.insertCell(3);
+          var modeCell  = newRow.insertCell(4);
+          var rstsCell  = newRow.insertCell(5);
+          var rstrCell  = newRow.insertCell(6);
+
+          // Append a text node to the cell
+          dateTimeCell.appendChild(document.createTextNode(contact.date + " " + contact.time));
+          ourStationCell.appendChild(document.createTextNode(contact.origin));
+          remoteStationCell.appendChild(document.createTextNode(contact.destination));
+          frequencyCell.appendChild(document.createTextNode(contact.frequency));
+          modeCell.appendChild(document.createTextNode(contact.mode));
+          rstsCell.appendChild(document.createTextNode(contact.rsts));
+          rstrCell.appendChild(document.createTextNode(contact.rstr));
+        }
+      </script>
+  </body>
+</html>

@@ -38,3 +38,20 @@ a.nav-previous::before {
 a.nav-next::after {
   content: "\00a0\2192";
 }
+
+/* Styles for project status */
+.status-completed {
+  background-color: green;
+}
+
+.status-in-progress {
+  background-color: yellow;
+}
+
+.status-stalled {
+  background-color: red;
+}
+
+.status-future {
+  background-color: purple;
+}

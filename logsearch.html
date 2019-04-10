@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+  <head>
+        <meta charset="">
+    <meta http-equiv="X-UA-Compatible" content="">
+    <meta name="description" content="Search the 2E1HNK online logbook">
+    <meta name="author" content="Matt, 2E1HNK">
+    <meta name="viewport" content="">
+    <title>Log Search</title>
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="192x192" href="/media/images/android-desktop.png">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Material Design Lite">
+    <link rel="apple-touch-icon-precomposed" href="/media/images/ios-desktop.png">
+
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="/media/images/touch/ms-touch-icon-144x144-precomposed.png">
+    <meta name="msapplication-TileColor" content="#3372DF">
+
+    <link rel="shortcut icon" href="/media/images/favicon.png">
+
+    <!-- LeafletJS CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css" integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ==" crossorigin="">
+
+        <!-- Place favicon.ico & apple-touch-icon.png
+          in the root of your domain and delete these references -->
+    <link rel="shortcut icon" href="/media/images/favicon.ico">
+    <link rel="apple-touch-icon" href="/media/images/apple-touch-icon.png">
+    
+    <!-- SEO: If your mobile URL is different from the desktop URL, add a canonical link to the desktop page https://developers.google.com/webmasters/smartphone-sites/feature-phones -->
+    <!--
+    <link rel="canonical" href="http://www.example.com/">
+    -->
+
+        <link rel="stylesheet" href="/media/css/framework.css">
+    <link rel="stylesheet" href="/media/css/style.css">
+    
+        
+          </head>
+  <body id="logsearch">
+    <div class="container">
+    <div class="card drop-shadow">
+      <div class="card-header card-default">
+        2E1HNK       Log Search
+          </div>
+      <div class="card-content">
+        <ul class="nav">
+          <li><a href="/">Home</a></li>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/blog">Blog</a></li>
+          <li><a href="/projects">Projects</a></li>
+          <li><a href="/ogps">OGPS</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    
+<div class="card drop-shadow">
+
+  <div class="card-header">
+          Log Search
+      </div>
+
+  <div class="card-meta">
+    <div class="avatar">&nbsp;</div><span>Matt, 2E1HNK</span>,
+    <span>
+      <time datetime="2010-01-01">
+        Fri, 01 Jan 2010
+      </time>
+    </span>
+    <br />
+      </div>
+
+  <div class="card-content">
+    <div id="status"></div>
+  <table id="worked-table" style="width: 100%">
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Band</th>
+        <th>Mode</th>
+        <th>I sent</th>
+        <th>You sent<th>
+    </thead>
+    <tbody>
+
+    </tbody>
+  </table>
+
+    <script src="/media/js/HamGridSquare.js"></script>
+    <script src="/media/js/adif.js"></script>
+
+    <script>
+      var urlParams = new URLSearchParams(window.location.search);
+      if ( urlParams.has('callsign') ) {
+        document.getElementById('status').innerHTML = "Checking...";
+        readAdiManifest("/media/logs/adi.manifest", function(log) {
+          for(var i=0; i<log.length; i++) {
+            if ( log[i].callsign.toUpperCase().startsWith(urlParams.get('callsign').toUpperCase()) || log[i].callsign.toUpperCase().endsWith(urlParams.get('callsign').toUpperCase()) ) {
+              var table = document.getElementById('worked-table').getElementsByTagName('tbody')[0];
+              var newRow = table.insertRow(table.rows.length);
+              var dateCell  = newRow.insertCell(0);
+              dateCell.innerHTML = log[i].date;
+              var timeCell  = newRow.insertCell(1);
+              timeCell.innerHTML = log[i].time;
+              var bandCell = newRow.insertCell(2);
+              bandCell.innerHTML = log[i].band;
+              var modeCell = newRow.insertCell(3);
+              modeCell.innerHTML = log[i].mode;
+              var rstsCell  = newRow.insertCell(4);
+              rstsCell.innerHTML = log[i].rst_tx + "/" + log[i].serial_tx;
+              var rstrCell  = newRow.insertCell(5);
+              rstrCell.innerHTML = log[i].rst_rx + "/" + log[i].serial_rx;
+
+
+            }
+          }
+        });
+        document.getElementById('status').innerHTML = "";
+      }
+    </script>
+
+  </div>
+
+</div>
+
+  </div>
+
+                  
+                        
+  </body>
+</html>

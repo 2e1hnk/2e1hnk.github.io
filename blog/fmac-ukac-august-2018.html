@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="">
     <meta name="description" content="Test
 ">
-    <meta name="author" content="Matt 2E1HNK">
+    <meta name="author" content="Matt, 2E1HNK">
     <meta name="viewport" content="">
     <title>2m FMAC/UKAC August 2018</title>
 
@@ -50,14 +50,14 @@
   <body id="fmac-ukac-august-2018">
     <div class="container">
     <div class="card drop-shadow">
-      <div class="card-header">
-        2E1HNK
-      </div>
+      <div class="card-header card-default">
+        2E1HNK       </div>
       <div class="card-content">
         <ul class="nav">
           <li><a href="/">Home</a></li>
           <li><a href="/about.html">About</a></li>
           <li><a href="/blog">Blog</a></li>
+          <li><a href="/projects">Projects</a></li>
           <li><a href="/ogps">OGPS</a></li>
         </ul>
       </div>
@@ -88,7 +88,7 @@
     </div>
 
     <div class="card-meta">
-      <div class="avatar">&nbsp;</div><span>Matt 2E1HNK</span>,
+      <div class="avatar">&nbsp;</div><span>Matt, 2E1HNK</span>,
       <span>
         <time datetime="2018-08-08">
           Wed, 08 Aug 2018
@@ -136,7 +136,7 @@ ODX: EI2SDR/P (IO62XW - 299km)
 Position: 31 (of 70) in AL section</p>              <h3>UKAC</h3>
                   <div id="stats-UKAC">
   <p>Total QSOs: <span id="stats-UKAC-totalqsos">?</span></p>
-  <p>QSO Points: <span id="stats-UKAC-points">?</span></p>
+  <p>Total Points: <span id="stats-UKAC-total">?</span> (<span id="stats-UKAC-points">?</span> QSO points + <span id="stats-UKAC-bonus">?</span> bonus points)</p>
   <p>ODX: <span id="stats-UKAC-odx">?</span></p>
 </div>
 
@@ -148,6 +148,7 @@ Position: 31 (of 70) in AL section</p>              <h3>UKAC</h3>
     totalQsos = 0;
     odxDist = 0;
     points = 0;
+    bonusSquares = [];
     odx = "";
     for(var i=0; i<log.length; i++) {
       if ( log[i].latitude && log[i].longitude ) {
@@ -156,11 +157,16 @@ Position: 31 (of 70) in AL section</p>              <h3>UKAC</h3>
           odx = log[i].callsign + " (" + log[i].locator + ", " + Math.round(odxDist) + "km)"
         }
       }
+      if ( !bonusSquares.includes(log[i].locator.substring(0,4)) ) {
+        bonusSquares.push(log[i].locator.substring(0,4));
+      }
       totalQsos++;
       points += log[i].points;
     }
     document.getElementById("stats-UKAC-totalqsos").textContent = totalQsos;
     document.getElementById("stats-UKAC-points").textContent = points;
+    document.getElementById("stats-UKAC-bonus").textContent = bonusSquares.length * 500;
+    document.getElementById("stats-UKAC-total").textContent = points + bonusSquares.length * 500;
     document.getElementById("stats-UKAC-odx").textContent = odx;
   });
 </script>
@@ -274,7 +280,7 @@ Position: 31 (of 70) in AL section</p>              <h3>UKAC</h3>
     console.log("chartData", chartDataUKAC);
 
     // Draw the rate chart
-    window.onload = function() {
+    //window.onload = function() {
       var ctxUKAC = document.getElementById('rateChart-UKAC').getContext('2d');
       window.rateBarChartUKAC = new Chart(ctxUKAC, {
         type: 'line',
@@ -291,7 +297,7 @@ Position: 31 (of 70) in AL section</p>              <h3>UKAC</h3>
         }
       });
 
-    };
+    //};
   });
 
   heatmapLayerUKAC.redraw();
@@ -314,7 +320,7 @@ Position: 31 (of 70) in AL section</p>              <h3>UKAC</h3>
               <h3>FMAC</h3>
                   <div id="stats-FMAC">
   <p>Total QSOs: <span id="stats-FMAC-totalqsos">?</span></p>
-  <p>QSO Points: <span id="stats-FMAC-points">?</span></p>
+  <p>Total Points: <span id="stats-FMAC-total">?</span> (<span id="stats-FMAC-points">?</span> QSO points + <span id="stats-FMAC-bonus">?</span> bonus points)</p>
   <p>ODX: <span id="stats-FMAC-odx">?</span></p>
 </div>
 
@@ -326,6 +332,7 @@ Position: 31 (of 70) in AL section</p>              <h3>UKAC</h3>
     totalQsos = 0;
     odxDist = 0;
     points = 0;
+    bonusSquares = [];
     odx = "";
     for(var i=0; i<log.length; i++) {
       if ( log[i].latitude && log[i].longitude ) {
@@ -334,11 +341,16 @@ Position: 31 (of 70) in AL section</p>              <h3>UKAC</h3>
           odx = log[i].callsign + " (" + log[i].locator + ", " + Math.round(odxDist) + "km)"
         }
       }
+      if ( !bonusSquares.includes(log[i].locator.substring(0,4)) ) {
+        bonusSquares.push(log[i].locator.substring(0,4));
+      }
       totalQsos++;
       points += log[i].points;
     }
     document.getElementById("stats-FMAC-totalqsos").textContent = totalQsos;
     document.getElementById("stats-FMAC-points").textContent = points;
+    document.getElementById("stats-FMAC-bonus").textContent = bonusSquares.length * 500;
+    document.getElementById("stats-FMAC-total").textContent = points + bonusSquares.length * 500;
     document.getElementById("stats-FMAC-odx").textContent = odx;
   });
 </script>
@@ -452,7 +464,7 @@ Position: 31 (of 70) in AL section</p>              <h3>UKAC</h3>
     console.log("chartData", chartDataFMAC);
 
     // Draw the rate chart
-    window.onload = function() {
+    //window.onload = function() {
       var ctxFMAC = document.getElementById('rateChart-FMAC').getContext('2d');
       window.rateBarChartFMAC = new Chart(ctxFMAC, {
         type: 'line',
@@ -469,7 +481,7 @@ Position: 31 (of 70) in AL section</p>              <h3>UKAC</h3>
         }
       });
 
-    };
+    //};
   });
 
   heatmapLayerFMAC.redraw();

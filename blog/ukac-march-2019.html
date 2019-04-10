@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="">
     <meta name="description" content="Test
 ">
-    <meta name="author" content="Matt 2E1HNK">
+    <meta name="author" content="Matt, 2E1HNK">
     <meta name="viewport" content="">
     <title>2m/70cm UKAC March 2019</title>
 
@@ -50,14 +50,14 @@
   <body id="ukac-march-2019">
     <div class="container">
     <div class="card drop-shadow">
-      <div class="card-header">
-        2E1HNK
-      </div>
+      <div class="card-header card-default">
+        2E1HNK       </div>
       <div class="card-content">
         <ul class="nav">
           <li><a href="/">Home</a></li>
           <li><a href="/about.html">About</a></li>
           <li><a href="/blog">Blog</a></li>
+          <li><a href="/projects">Projects</a></li>
           <li><a href="/ogps">OGPS</a></li>
         </ul>
       </div>
@@ -74,8 +74,8 @@
             </a>
                   </div>
         <div class="col-6 right-align">
-                      <a class="nav-next" href="/blog/ukac-april-2019.html">
-              2m UKAC April 2019
+                      <a class="nav-next" href="/projects/wx-sat.html">
+              Weather Satellite Reception Kit
             </a>
                   </div>
       </div>
@@ -88,7 +88,7 @@
     </div>
 
     <div class="card-meta">
-      <div class="avatar">&nbsp;</div><span>Matt 2E1HNK</span>,
+      <div class="avatar">&nbsp;</div><span>Matt, 2E1HNK</span>,
       <span>
         <time datetime="2019-03-12">
           Tue, 12 Mar 2019
@@ -106,7 +106,7 @@ Having been in touch with Mark M0RKX during the week, I used his regular site in
 <p>Hopefully next month will bring better conditions all round!</p>              <h3>70CM</h3>
                   <div id="stats-70CM">
   <p>Total QSOs: <span id="stats-70CM-totalqsos">?</span></p>
-  <p>QSO Points: <span id="stats-70CM-points">?</span></p>
+  <p>Total Points: <span id="stats-70CM-total">?</span> (<span id="stats-70CM-points">?</span> QSO points + <span id="stats-70CM-bonus">?</span> bonus points)</p>
   <p>ODX: <span id="stats-70CM-odx">?</span></p>
 </div>
 
@@ -118,6 +118,7 @@ Having been in touch with Mark M0RKX during the week, I used his regular site in
     totalQsos = 0;
     odxDist = 0;
     points = 0;
+    bonusSquares = [];
     odx = "";
     for(var i=0; i<log.length; i++) {
       if ( log[i].latitude && log[i].longitude ) {
@@ -126,11 +127,16 @@ Having been in touch with Mark M0RKX during the week, I used his regular site in
           odx = log[i].callsign + " (" + log[i].locator + ", " + Math.round(odxDist) + "km)"
         }
       }
+      if ( !bonusSquares.includes(log[i].locator.substring(0,4)) ) {
+        bonusSquares.push(log[i].locator.substring(0,4));
+      }
       totalQsos++;
       points += log[i].points;
     }
     document.getElementById("stats-70CM-totalqsos").textContent = totalQsos;
     document.getElementById("stats-70CM-points").textContent = points;
+    document.getElementById("stats-70CM-bonus").textContent = bonusSquares.length * 500;
+    document.getElementById("stats-70CM-total").textContent = points + bonusSquares.length * 500;
     document.getElementById("stats-70CM-odx").textContent = odx;
   });
 </script>
@@ -244,7 +250,7 @@ Having been in touch with Mark M0RKX during the week, I used his regular site in
     console.log("chartData", chartData70CM);
 
     // Draw the rate chart
-    window.onload = function() {
+    //window.onload = function() {
       var ctx70CM = document.getElementById('rateChart-70CM').getContext('2d');
       window.rateBarChart70CM = new Chart(ctx70CM, {
         type: 'line',
@@ -261,7 +267,7 @@ Having been in touch with Mark M0RKX during the week, I used his regular site in
         }
       });
 
-    };
+    //};
   });
 
   heatmapLayer70CM.redraw();

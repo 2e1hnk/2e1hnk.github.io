@@ -1,0 +1,2 @@
+date,time,origin,destination,frequency,mode,rsts,rstr,count
+2000-01-01,1234,GB100GCHQ,M0ABC,14.123,USB,59,59,1

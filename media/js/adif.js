@@ -1,16 +1,22 @@
-function readAdiManifest(file)
+function readAdiManifest(file, callback)
 {
     var rawFile = new XMLHttpRequest();
     rawFile.onload = function() {
-      if(rawFile.status == 200 && rawFile.status == 0) {
+      if(rawFile.status == 200) {
         // success!
-  var allText = rawFile.responseText;
+        var allText = rawFile.responseText;
         var lines = allText.split('\n');
+
+        // Work out the relative path to the manifest file and pre-pend it to the requests for adif files
+        var path = file.substring(0, file.lastIndexOf("/"));
+
         for(var i = 0;i < lines.length;i++){
-          readTextFile(lines[i]);
+          console.log(path + "/" + lines[i]);
+          readTextFile(path + "/" + lines[i], callback);
         }
       } else {
         // something went wrong
+        console.log("oops", rawFile);
       }
     }
 

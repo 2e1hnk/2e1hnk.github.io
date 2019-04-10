@@ -15,6 +15,12 @@ canvas {
 var width = 960,
     height = 600;
 
+    //variables for scaling circle radius
+    var totPixels = (width * height);
+    var totWorldMeters = 510000000000;
+    var metersPerPixel = (totWorldMeters / totPixels);
+    var scaledRadius;
+
 var radius = height / 2 - 5,
     scale = radius,
     velocity = .02;
@@ -109,7 +115,7 @@ d3.json("/media/js/world-110m.txt", function(error, world) {
   context.lineWidth = 1;
   context.stroke();
 
-  d3.text("/sat/nasabare.txt", function(error2, data) {
+  d3.text("/sat/iss.txt", function(error2, data) {
     if (error2) throw error2;
 
     var stations = [];
@@ -186,6 +192,8 @@ d3.json("/media/js/world-110m.txt", function(error, world) {
       var positionEci = positionAndVelocity.position,
           velocityEci = positionAndVelocity.velocity;
 
+      console.log(positionEci);
+
       var positionGd = satellite.eciToGeodetic(positionEci, gmst)
       drawSat(station, positionGd);
     };
@@ -194,6 +202,8 @@ d3.json("/media/js/world-110m.txt", function(error, world) {
   function drawSat(sat, pos) {
     var name = sat.name;
     var xy = projection([pos.longitude*180/Math.PI, pos.latitude*180/Math.PI]);
+    var earthRadius = 6371;
+
     context2.fillStyle = color(name);
     context2.beginPath();
     context2.arc(xy[0],xy[1],2,0,2*Math.PI);
@@ -202,6 +212,24 @@ d3.json("/media/js/world-110m.txt", function(error, world) {
     context2.font = "bold 11px sans-serif";
     context2.textAlign = "center";
     context2.fillText(name, xy[0], xy[1]+14);
+
+    // Get height
+    console.log("height (km)", pos.height);
+
+    // Range radius
+    var s = earthRadius * Math.acos(earthRadius/(earthRadius + pos.height));
+    console.log("range (km)", s);
+
+    //scale the radius given in meters to pixels on the map
+    scaledRadius = (100 * (s*1000 / metersPerPixel));
+    if(scaledRadius < 2) {
+        scaledRadius = 2;
+    }
+
+    context2.beginPath();
+    context2.arc(xy[0],xy[1],scaledRadius,0,2*Math.PI);
+    context2.stroke();
+
   };
 });
 
