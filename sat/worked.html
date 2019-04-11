@@ -13,9 +13,14 @@
       border: 1px solid black;
     }
 
-    .worked {
-      background-color: green;
+    .confirmed {
+      background-color: green !important;
     }
+
+    .worked {
+      background-color: yellow;
+    }
+
   </style>
 </head>
 <body>
@@ -44,8 +49,13 @@
     readAdiManifest("/media/logs/adi.manifest", function(log) {
       for(var i=0; i<log.length; i++) {
         if ( log[i].locator ) {
-          console.log("Adding worked tag to " + log[i].locator.substring(0,4));
-          $('#' + log[i].locator.substring(0,4)).addClass('worked');
+          if ( log[i].qsl.lotw_rcvd == "Y" || log[i].qsl.eqsl_rcvd == "Y") {
+            console.log("Adding confirmed tag to " + log[i].locator.substring(0,4));
+            $('#' + log[i].locator.substring(0,4)).addClass('confirmed');
+          } else {
+            console.log("Adding worked tag to " + log[i].locator.substring(0,4));
+            $('#' + log[i].locator.substring(0,4)).addClass('worked');
+          }
         }
       }
     });

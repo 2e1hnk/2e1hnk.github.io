@@ -93,6 +93,22 @@ function readTextFile(file, callback)
                       if ( lines[i].match(/<QSO_PTS:[0-9]+>([0-9]+)/) ) {
                         record.points = parseInt(lines[i].match(/<QSO_PTS:[0-9]+>([0-9]+)/)[1], 10);
                       }
+
+                      // Process QSL info
+                      record.qsl = {};
+                      if ( lines[i].match(/<LOTW_QSL_SENT:1>([YN])/) ) {
+                        record.qsl.lotw_sent = lines[i].match(/<LOTW_QSL_SENT:1>([YN])/)[1];
+                      }
+                      if ( lines[i].match(/<LOTW_QSL_RCVD:1>([YNR])/) ) {
+                        record.qsl.lotw_rcvd = lines[i].match(/<LOTW_QSL_RCVD:1>([YNR])/)[1];
+                      }
+                      if ( lines[i].match(/<EQSL_QSL_SENT:1>([YN])/) ) {
+                        record.qsl.eqsl_sent = lines[i].match(/<EQSL_QSL_SENT:1>([YN])/)[1];
+                      }
+                      if ( lines[i].match(/<EQSL_QSL_RCVD:1>([YNR])/) ) {
+                        record.qsl.eqsl_rcvd = lines[i].match(/<EQSL_QSL_RCVD:1>([YNR])/)[1];
+                      }
+
     // TODO: Lat/Lon needs converting to decimal notation. For now, just use gridsquare, if present
 //			if ( lines[i].match(/<LAT:[0-9]+>[NS][0-9]{2,3] [0-9]{2}.[0-9]{3}/) ) {
 //			  record.latitude = lines[i].match(/<LAT:[0-9]+>[NS][0-9]{2,3] [0-9]{2}.[0-9]{3}/)[1];
