@@ -1,8 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-        <meta charset="">
-    <meta http-equiv="X-UA-Compatible" content="">
+        <meta charset="utf-8">
     <meta name="description" content="Test
 ">
     <meta name="author" content="Matt, 2E1HNK">
@@ -193,10 +192,9 @@ with activity levels being about normal, albeit with fewer people out portable. 
     popupAnchor:  [0, -30]  // point from which the popup should open relative to the iconAnchor
   });
 
-
   var heatmapLayerUKAC = L.heatLayer([], {radius: 25, maxZoom: 8});
 
-  var stationsLayerUKAC = L.layerGroup([]);
+  var stationsLayerUKAC = L.featureGroup([]);
 
   stationsLayerUKAC.addLayer(
     L.marker(
@@ -241,6 +239,9 @@ with activity levels being about normal, albeit with fewer people out portable. 
       rateKey = log[i].date + " " + Math.floor(parseInt(log[i].time) / rateGroupInterval) * rateGroupInterval;
       rateKey in rateUKAC ? rateUKAC[rateKey]++ : rateUKAC[rateKey] = 1;
     }
+
+    mapUKAC.fitBounds(stationsLayerUKAC.getBounds().pad(0.5));
+
     console.log("rate", rateUKAC);
 
     var chartDataUKAC = {
@@ -288,7 +289,8 @@ with activity levels being about normal, albeit with fewer people out portable. 
     attributionControl: true,
     layers: [osmLayerUKAC, heatmapLayerUKAC, stationsLayerUKAC]
   });
-  mapUKAC.setView([51.945732, -1.926986], 6);
+  //mapUKAC.setView([51.945732, -1.926986], 6);
+  mapUKAC.fitBounds(stationsLayerUKAC.getBounds().pad(0.5));
 
   L.control.layers(basemapsUKAC, overlayMapsUKAC).addTo(mapUKAC);
 

@@ -7,7 +7,7 @@
         <link href="/"/>
     
         
-    <updated>2019-04-10T10:09:33Z</updated>
+    <updated>2019-04-16T11:52:31Z</updated>
 
     <id>/blog/atom.xml/</id>
 
@@ -632,5 +632,22 @@ hadn&amp;#8217;t realised that membership was a prerequisite for&amp;nbsp;enteri
 &lt;p&gt;Normalised Points:&amp;nbsp;143&lt;/p&gt;
 &lt;p&gt;&lt;span class=&#34;caps&#34;&gt;ODX&lt;/span&gt;: &lt;span class=&#34;caps&#34;&gt;M0RKX&lt;/span&gt;/P (&lt;span class=&#34;caps&#34;&gt;IO92BA&lt;/span&gt; -&amp;nbsp;24km)&lt;/p&gt;
 &lt;p&gt;Final Position: 19 (of&amp;nbsp;21)&lt;/p&gt;            </content>
+        </entry>
+            <entry>
+            <title type="html">6m Worked All Britain July 200</title>
+            <author><name>Matt, 2E1HNK</name></author>
+            <link href="/blog/wab6m-july-2000.html"/>
+            <updated>2000-07-09T23:00:00Z</updated>
+            <published>2000-07-09T23:00:00Z</published>
+            <id>/blog/wab6m-july-2000.html</id>
+                        <category   scheme="/blog/tags"
+                        term="WAB"
+                        label="Wab" />
+                        <category   scheme="/blog/tags"
+                        term="Activation"
+                        label="Activation" />
+            
+            <content type="html">
+                                &lt;p&gt;Note: Scoring will be incorrect&amp;nbsp;below.&lt;/p&gt;            </content>
         </entry>
     </feed>

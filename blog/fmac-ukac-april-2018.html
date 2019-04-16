@@ -1,8 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-        <meta charset="">
-    <meta http-equiv="X-UA-Compatible" content="">
+        <meta charset="utf-8">
     <meta name="description" content="Test
 ">
     <meta name="author" content="Matt, 2E1HNK">
@@ -69,6 +68,9 @@
     <div class="card-content">
       <div class="row">
         <div class="col-6">
+                      <a class="nav-previous" href="/blog/wab6m-july-2000.html">
+              6m Worked All Britain July 200
+            </a>
                   </div>
         <div class="col-6 right-align">
                       <a class="nav-next" href="/blog/ft857-power-output-stuck.html">
@@ -211,10 +213,9 @@ hadn't realised that membership was a prerequisite for entering.</p>
     popupAnchor:  [0, -30]  // point from which the popup should open relative to the iconAnchor
   });
 
-
   var heatmapLayerUKAC = L.heatLayer([], {radius: 25, maxZoom: 8});
 
-  var stationsLayerUKAC = L.layerGroup([]);
+  var stationsLayerUKAC = L.featureGroup([]);
 
   stationsLayerUKAC.addLayer(
     L.marker(
@@ -259,6 +260,9 @@ hadn't realised that membership was a prerequisite for entering.</p>
       rateKey = log[i].date + " " + Math.floor(parseInt(log[i].time) / rateGroupInterval) * rateGroupInterval;
       rateKey in rateUKAC ? rateUKAC[rateKey]++ : rateUKAC[rateKey] = 1;
     }
+
+    mapUKAC.fitBounds(stationsLayerUKAC.getBounds().pad(0.5));
+
     console.log("rate", rateUKAC);
 
     var chartDataUKAC = {
@@ -306,7 +310,8 @@ hadn't realised that membership was a prerequisite for entering.</p>
     attributionControl: true,
     layers: [osmLayerUKAC, heatmapLayerUKAC, stationsLayerUKAC]
   });
-  mapUKAC.setView([51.945732, -1.926986], 6);
+  //mapUKAC.setView([51.945732, -1.926986], 6);
+  mapUKAC.fitBounds(stationsLayerUKAC.getBounds().pad(0.5));
 
   L.control.layers(basemapsUKAC, overlayMapsUKAC).addTo(mapUKAC);
 
@@ -395,10 +400,9 @@ hadn't realised that membership was a prerequisite for entering.</p>
     popupAnchor:  [0, -30]  // point from which the popup should open relative to the iconAnchor
   });
 
-
   var heatmapLayerFMAC = L.heatLayer([], {radius: 25, maxZoom: 8});
 
-  var stationsLayerFMAC = L.layerGroup([]);
+  var stationsLayerFMAC = L.featureGroup([]);
 
   stationsLayerFMAC.addLayer(
     L.marker(
@@ -443,6 +447,9 @@ hadn't realised that membership was a prerequisite for entering.</p>
       rateKey = log[i].date + " " + Math.floor(parseInt(log[i].time) / rateGroupInterval) * rateGroupInterval;
       rateKey in rateFMAC ? rateFMAC[rateKey]++ : rateFMAC[rateKey] = 1;
     }
+
+    mapFMAC.fitBounds(stationsLayerFMAC.getBounds().pad(0.5));
+
     console.log("rate", rateFMAC);
 
     var chartDataFMAC = {
@@ -490,7 +497,8 @@ hadn't realised that membership was a prerequisite for entering.</p>
     attributionControl: true,
     layers: [osmLayerFMAC, heatmapLayerFMAC, stationsLayerFMAC]
   });
-  mapFMAC.setView([51.945732, -1.926986], 6);
+  //mapFMAC.setView([51.945732, -1.926986], 6);
+  mapFMAC.fitBounds(stationsLayerFMAC.getBounds().pad(0.5));
 
   L.control.layers(basemapsFMAC, overlayMapsFMAC).addTo(mapFMAC);
 

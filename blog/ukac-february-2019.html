@@ -1,8 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-        <meta charset="">
-    <meta http-equiv="X-UA-Compatible" content="">
+        <meta charset="utf-8">
     <meta name="description" content="Test
 ">
     <meta name="author" content="Matt, 2E1HNK">
@@ -206,10 +205,9 @@ so I could gt on and work the rest of the contest, albeit with a SWR of about 2.
     popupAnchor:  [0, -30]  // point from which the popup should open relative to the iconAnchor
   });
 
-
   var heatmapLayer2M = L.heatLayer([], {radius: 25, maxZoom: 8});
 
-  var stationsLayer2M = L.layerGroup([]);
+  var stationsLayer2M = L.featureGroup([]);
 
   stationsLayer2M.addLayer(
     L.marker(
@@ -254,6 +252,9 @@ so I could gt on and work the rest of the contest, albeit with a SWR of about 2.
       rateKey = log[i].date + " " + Math.floor(parseInt(log[i].time) / rateGroupInterval) * rateGroupInterval;
       rateKey in rate2M ? rate2M[rateKey]++ : rate2M[rateKey] = 1;
     }
+
+    map2M.fitBounds(stationsLayer2M.getBounds().pad(0.5));
+
     console.log("rate", rate2M);
 
     var chartData2M = {
@@ -301,7 +302,8 @@ so I could gt on and work the rest of the contest, albeit with a SWR of about 2.
     attributionControl: true,
     layers: [osmLayer2M, heatmapLayer2M, stationsLayer2M]
   });
-  map2M.setView([51.945732, -1.926986], 6);
+  //map2M.setView([51.945732, -1.926986], 6);
+  map2M.fitBounds(stationsLayer2M.getBounds().pad(0.5));
 
   L.control.layers(basemaps2M, overlayMaps2M).addTo(map2M);
 
@@ -390,10 +392,9 @@ so I could gt on and work the rest of the contest, albeit with a SWR of about 2.
     popupAnchor:  [0, -30]  // point from which the popup should open relative to the iconAnchor
   });
 
-
   var heatmapLayer70CM = L.heatLayer([], {radius: 25, maxZoom: 8});
 
-  var stationsLayer70CM = L.layerGroup([]);
+  var stationsLayer70CM = L.featureGroup([]);
 
   stationsLayer70CM.addLayer(
     L.marker(
@@ -438,6 +439,9 @@ so I could gt on and work the rest of the contest, albeit with a SWR of about 2.
       rateKey = log[i].date + " " + Math.floor(parseInt(log[i].time) / rateGroupInterval) * rateGroupInterval;
       rateKey in rate70CM ? rate70CM[rateKey]++ : rate70CM[rateKey] = 1;
     }
+
+    map70CM.fitBounds(stationsLayer70CM.getBounds().pad(0.5));
+
     console.log("rate", rate70CM);
 
     var chartData70CM = {
@@ -485,7 +489,8 @@ so I could gt on and work the rest of the contest, albeit with a SWR of about 2.
     attributionControl: true,
     layers: [osmLayer70CM, heatmapLayer70CM, stationsLayer70CM]
   });
-  map70CM.setView([51.945732, -1.926986], 6);
+  //map70CM.setView([51.945732, -1.926986], 6);
+  map70CM.fitBounds(stationsLayer70CM.getBounds().pad(0.5));
 
   L.control.layers(basemaps70CM, overlayMaps70CM).addTo(map70CM);
 

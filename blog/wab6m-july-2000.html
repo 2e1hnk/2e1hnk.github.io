@@ -6,7 +6,7 @@
 ">
     <meta name="author" content="Matt, 2E1HNK">
     <meta name="viewport" content="">
-    <title>2m FMAC/UKAC December 2018</title>
+    <title>6m Worked All Britain July 200</title>
 
     <!-- Add to homescreen for Chrome on Android -->
     <meta name="mobile-web-app-capable" content="yes">
@@ -46,7 +46,7 @@
   <script src="/media/js/adif.js"></script>
   <script src="/media/js/chart.min.js"></script>
           </head>
-  <body id="ukac-december-2018">
+  <body id="wab6m-july-2000">
     <div class="container">
     <div class="card drop-shadow">
       <div class="card-header card-default">
@@ -68,13 +68,10 @@
     <div class="card-content">
       <div class="row">
         <div class="col-6">
-                      <a class="nav-previous" href="/blog/ukac-nov-2018.html">
-              2m FMAC/UKAC November 2018
-            </a>
                   </div>
         <div class="col-6 right-align">
-                      <a class="nav-next" href="/blog/2018-wrapup.html">
-              2018 Wrap-up
+                      <a class="nav-next" href="/blog/fmac-ukac-april-2018.html">
+              2m FMAC/UKAC April 2018
             </a>
                   </div>
       </div>
@@ -83,43 +80,34 @@
 
   <div class="card drop-shadow">
     <div class="card-header">
-      2m FMAC/UKAC December 2018
+      6m Worked All Britain July 200
     </div>
 
     <div class="card-meta">
       <div class="avatar">&nbsp;</div><span>Matt, 2E1HNK</span>,
       <span>
-        <time datetime="2018-12-04">
-          Tue, 04 Dec 2018
+        <time datetime="2000-07-09">
+          Sun, 09 Jul 2000
         </time>
       </span>
       <br />
-                        <a class="pill" href="/blog/tags/UKAC.html" class="pill">UKAC</a>
+                        <a class="pill" href="/blog/tags/WAB.html" class="pill">WAB</a>
                   <a class="pill" href="/blog/tags/Activation.html" class="pill">Activation</a>
                   </div>
 
     <div class="card-content">
-      <p>I was active again as 2E1HNK/P from Sudeley Hill (IO91AW) using
-10W from my FT-857d and the 8-Element Yagi at 4.5m. I may look at different sites as some post-contest
-analysis indicates that I have not managed any UKAC contacts in JO02. I suspect there is a hill in that direction!</p>
-<h3>UKAC</h3>
-<p>Section: AL</p>
-<p>Total QSOs: 51</p>
-<p>Total Points: 9,216 (4,216 + 5,000 bonus)</p>
-<p>Normalised Points: ?</p>
-<p>ODX: G4RUL/P (JO00dr - 207km)</p>
-<p>Current Standing:</p>              <h3>UKAC</h3>
-                  <div id="stats-UKAC">
-  <p>Total QSOs: <span id="stats-UKAC-totalqsos">?</span></p>
-  <p>Total Points: <span id="stats-UKAC-total">?</span> (<span id="stats-UKAC-points">?</span> QSO points + <span id="stats-UKAC-bonus">?</span> bonus points)</p>
-  <p>ODX: <span id="stats-UKAC-odx">?</span></p>
+      <p>Note: Scoring will be incorrect below.</p>              <h3>6m</h3>
+                  <div id="stats-6m">
+  <p>Total QSOs: <span id="stats-6m-totalqsos">?</span></p>
+  <p>Total Points: <span id="stats-6m-total">?</span> (<span id="stats-6m-points">?</span> QSO points + <span id="stats-6m-bonus">?</span> bonus points)</p>
+  <p>ODX: <span id="stats-6m-odx">?</span></p>
 </div>
 
 <script>
   var myLocation = [];
-  gridSquareToLatLon("IO91aw", myLocation);
+  gridSquareToLatLon("IO92de", myLocation);
 
-  readTextFile("/media/logs/2E1HNK_2018_12_04_144 MHz_UKAC.adi", function(log) {
+  readTextFile("/media/logs/2E1HNK_2000_07_09_50 MHz.adi", function(log) {
     totalQsos = 0;
     odxDist = 0;
     points = 0;
@@ -138,25 +126,25 @@ analysis indicates that I have not managed any UKAC contacts in JO02. I suspect 
       totalQsos++;
       points += log[i].points;
     }
-    document.getElementById("stats-UKAC-totalqsos").textContent = totalQsos;
-    document.getElementById("stats-UKAC-points").textContent = points;
-    document.getElementById("stats-UKAC-bonus").textContent = bonusSquares.length * 500;
-    document.getElementById("stats-UKAC-total").textContent = points + bonusSquares.length * 500;
-    document.getElementById("stats-UKAC-odx").textContent = odx;
+    document.getElementById("stats-6m-totalqsos").textContent = totalQsos;
+    document.getElementById("stats-6m-points").textContent = points;
+    document.getElementById("stats-6m-bonus").textContent = bonusSquares.length * 500;
+    document.getElementById("stats-6m-total").textContent = points + bonusSquares.length * 500;
+    document.getElementById("stats-6m-odx").textContent = odx;
   });
 </script>
 
 
                 <div id="container" style="width: 100%;">
-  <canvas id="rateChart-UKAC" class="rate-chart"></canvas>
+  <canvas id="rateChart-6m" class="rate-chart"></canvas>
 </div>
-<div style="height: 450px" id="map-UKAC"></div>
+<div style="height: 450px" id="map-6m"></div>
 
 <script>
   var myLocation = [];
-  gridSquareToLatLon("IO91aw", myLocation);
+  gridSquareToLatLon("IO92de", myLocation);
 
-  var osmLayerUKAC = L.tileLayer('//tileserver.eastus.cloudapp.azure.com/{id}/{z}/{x}/{y}.png', {
+  var osmLayer6m = L.tileLayer('//tileserver.eastus.cloudapp.azure.com/{id}/{z}/{x}/{y}.png', {
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery &copy; <a href="https://www.mapbox.com/">Mapbox</a>',
     maxZoom: 18,
     id: 'ham'
@@ -190,26 +178,26 @@ analysis indicates that I have not managed any UKAC contacts in JO02. I suspect 
     popupAnchor:  [0, -30]  // point from which the popup should open relative to the iconAnchor
   });
 
-  var heatmapLayerUKAC = L.heatLayer([], {radius: 25, maxZoom: 8});
+  var heatmapLayer6m = L.heatLayer([], {radius: 25, maxZoom: 8});
 
-  var stationsLayerUKAC = L.featureGroup([]);
+  var stationsLayer6m = L.featureGroup([]);
 
-  stationsLayerUKAC.addLayer(
+  stationsLayer6m.addLayer(
     L.marker(
       [myLocation.lat, myLocation.lon],
       {icon: myIcon}
     ).bindPopup(
-      "<b>IO91aw<br />"
+      "<b>IO92de<br />"
     )
   );
 
-  readTextFile("/media/logs/2E1HNK_2018_12_04_144 MHz_UKAC.adi", function(log) {
-    rateUKAC = {};
+  readTextFile("/media/logs/2E1HNK_2000_07_09_50 MHz.adi", function(log) {
+    rate6m = {};
     rateGroupInterval = 5;   // Interval (in minutes) to group QSOs for the rate graph
 
     for(var i=0; i<log.length; i++) {
       if ( log[i].latitude && log[i].longitude ) {
-        heatmapLayerUKAC.addLatLng([log[i].latitude, log[i].longitude, 1]);
+        heatmapLayer6m.addLatLng([log[i].latitude, log[i].longitude, 1]);
         if ( log[i].callsign.endsWith("/P") ) {
           var iconType = portableIcon;
         } else if ( log[i].callsign.endsWith("/M") ) {
@@ -217,7 +205,7 @@ analysis indicates that I have not managed any UKAC contacts in JO02. I suspect 
         } else {
           var iconType = baseIcon;
         }
-          stationsLayerUKAC.addLayer(
+          stationsLayer6m.addLayer(
             L.marker(
               [log[i].latitude, log[i].longitude],
               {icon: iconType}
@@ -230,38 +218,38 @@ analysis indicates that I have not managed any UKAC contacts in JO02. I suspect 
           );
       } else if ( log[i].locator ) {
         latlng = gridSquareToLatLon(log[i].locator, log[i]);
-        heatmapLayerUKAC.addLatLng([log[i].lat, log[i].lon, 1]);
+        heatmapLayer6m.addLatLng([log[i].lat, log[i].lon, 1]);
       }
 
       // Add QSO to rate object
       rateKey = log[i].date + " " + Math.floor(parseInt(log[i].time) / rateGroupInterval) * rateGroupInterval;
-      rateKey in rateUKAC ? rateUKAC[rateKey]++ : rateUKAC[rateKey] = 1;
+      rateKey in rate6m ? rate6m[rateKey]++ : rate6m[rateKey] = 1;
     }
 
-    mapUKAC.fitBounds(stationsLayerUKAC.getBounds().pad(0.5));
+    map6m.fitBounds(stationsLayer6m.getBounds().pad(0.5));
 
-    console.log("rate", rateUKAC);
+    console.log("rate", rate6m);
 
-    var chartDataUKAC = {
-      labels: Object.keys(rateUKAC),
+    var chartData6m = {
+      labels: Object.keys(rate6m),
       datasets: [{
         label: "QSOs per " + rateGroupInterval + " mins",
         backgroundColor: '#5695c8',
 				borderColor: '#31517a',
 				borderWidth: 1,
         fill: false,
-				data: Object.values(rateUKAC)
+				data: Object.values(rate6m)
       }]
     };
 
-    console.log("chartData", chartDataUKAC);
+    console.log("chartData", chartData6m);
 
     // Draw the rate chart
     //window.onload = function() {
-      var ctxUKAC = document.getElementById('rateChart-UKAC').getContext('2d');
-      window.rateBarChartUKAC = new Chart(ctxUKAC, {
+      var ctx6m = document.getElementById('rateChart-6m').getContext('2d');
+      window.rateBarChart6m = new Chart(ctx6m, {
         type: 'line',
-        data: chartDataUKAC,
+        data: chartData6m,
         options: {
           responsive: true,
           legend: {
@@ -269,7 +257,7 @@ analysis indicates that I have not managed any UKAC contacts in JO02. I suspect 
           },
           title: {
             display: true,
-            text: 'UKAC Rate Chart'
+            text: '6m Rate Chart'
           }
         }
       });
@@ -277,20 +265,20 @@ analysis indicates that I have not managed any UKAC contacts in JO02. I suspect 
     //};
   });
 
-  heatmapLayerUKAC.redraw();
+  heatmapLayer6m.redraw();
 
-  var basemapsUKAC = {"OpenStreetMap": osmLayerUKAC};
-  var overlayMapsUKAC = {"Heatmap (UKAC)": heatmapLayerUKAC, "Stations": stationsLayerUKAC};
+  var basemaps6m = {"OpenStreetMap": osmLayer6m};
+  var overlayMaps6m = {"Heatmap (6m)": heatmapLayer6m, "Stations": stationsLayer6m};
 
-  var mapUKAC = new L.map('map-UKAC', {
+  var map6m = new L.map('map-6m', {
     zoom: 6,
     attributionControl: true,
-    layers: [osmLayerUKAC, heatmapLayerUKAC, stationsLayerUKAC]
+    layers: [osmLayer6m, heatmapLayer6m, stationsLayer6m]
   });
-  //mapUKAC.setView([51.945732, -1.926986], 6);
-  mapUKAC.fitBounds(stationsLayerUKAC.getBounds().pad(0.5));
+  //map6m.setView([51.945732, -1.926986], 6);
+  map6m.fitBounds(stationsLayer6m.getBounds().pad(0.5));
 
-  L.control.layers(basemapsUKAC, overlayMapsUKAC).addTo(mapUKAC);
+  L.control.layers(basemaps6m, overlayMaps6m).addTo(map6m);
 
 </script>
 
@@ -306,8 +294,8 @@ analysis indicates that I have not managed any UKAC contacts in JO02. I suspect 
 *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
 /*
 var disqus_config = function () {
-this.page.url = '/blog\ukac-december-2018.html';  // Replace PAGE_URL with your page's canonical URL variable
-this.page.identifier = '/blog\ukac-december-2018.html'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+this.page.url = '/blog\wab6m-july-2000.html';  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = '/blog\wab6m-july-2000.html'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
 };
 */
 (function() { // DON'T EDIT BELOW THIS LINE
