@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+  <head>
+        <meta charset="utf-8">
+    <meta name="description" content="Test
+">
+    <meta name="author" content="Matt, 2E1HNK">
+    <meta name="viewport" content="">
+    <title>Emsystech RaspiLCD</title>
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="192x192" href="/media/images/android-desktop.png">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Material Design Lite">
+    <link rel="apple-touch-icon-precomposed" href="/media/images/ios-desktop.png">
+
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="/media/images/touch/ms-touch-icon-144x144-precomposed.png">
+    <meta name="msapplication-TileColor" content="#3372DF">
+
+    <link rel="shortcut icon" href="/media/images/favicon.png">
+
+    <!-- LeafletJS CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css" integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ==" crossorigin="">
+
+        <!-- Place favicon.ico & apple-touch-icon.png
+          in the root of your domain and delete these references -->
+    <link rel="shortcut icon" href="/media/images/favicon.ico">
+    <link rel="apple-touch-icon" href="/media/images/apple-touch-icon.png">
+    
+    <!-- SEO: If your mobile URL is different from the desktop URL, add a canonical link to the desktop page https://developers.google.com/webmasters/smartphone-sites/feature-phones -->
+    <!--
+    <link rel="canonical" href="http://www.example.com/">
+    -->
+
+        <link rel="stylesheet" href="/media/css/framework.css">
+    <link rel="stylesheet" href="/media/css/style.css">
+    
+    <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js" integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw==" crossorigin=""></script>
+  <script src="/media/js/leaflet-heatmap.js"></script>
+  <script src="/media/js/HamGridSquare.js"></script>
+  <script src="/media/js/adif.js"></script>
+  <script src="/media/js/chart.min.js"></script>
+          </head>
+  <body id="emsystech-raspi-lcd">
+    <div class="container">
+    <div class="card drop-shadow">
+      <div class="card-header card-default">
+        2E1HNK       </div>
+      <div class="card-content">
+        <ul class="nav">
+          <li><a href="/">Home</a></li>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/blog">Blog</a></li>
+          <li><a href="/projects">Projects</a></li>
+          <li><a href="/ogps">OGPS</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="card drop-shadow">
+    <div class="card-content">
+      <div class="row">
+        <div class="col-6">
+                      <a class="nav-previous" href="/projects/magloop.html">
+              HF Magnetic Loop Antenna
+            </a>
+                  </div>
+        <div class="col-6 right-align">
+                  </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card drop-shadow">
+    <div class="card-header">
+      Emsystech RaspiLCD
+    </div>
+
+    <div class="card-meta">
+      <div class="avatar">&nbsp;</div><span>Matt, 2E1HNK</span>,
+      <span>
+        <time datetime="2019-04-22">
+          Mon, 22 Apr 2019
+        </time>
+      </span>
+      <br />
+                        <a class="pill" href="/blog/tags/Raspberry%20Pi.html" class="pill">Raspberry Pi</a>
+                  </div>
+
+    <div class="card-content">
+      <p>A number of years ago I bought a neet little LCD/Button add-on module for my 1st Gen Raspberry Pi. The company that produced these (Emsystech Engineering, Germany) no longer produce them and they no longer host information about them on their website. This is a mirror of the info that I've managed to collate from a number of sources, primarity the <a href="https://archive.org/web/">Wayback Machine</a>.
+The following is text that has been copied from Emsystech's website after being auto-translated by Google, as the original was in German which I don't understand. It has been lightly edited to remove information that is either no longer relevant or refers to websites/products that can no longer be found and to include additional information that was not originally provided (or available to) Emsystech. This includes projects that have implemented support for the module in other programming languages. I have also corrected some of Google Translate idiosyncrasies. I've kept it here for my own reference, and to assist anyone else who may have purchased these modules and is struggling to find information on them. I can't offer any support on the product itself, other than what information is present here.</p>
+<hr />
+
+<p><img alt="RaspiLCD 1" src="/media/images/raspberrypi-lcd-display-1.jpg" title="RaspiLCD 1" />
+<img alt="RaspiLCD 2" src="/media/images/raspberrypi-lcd-display-2.jpg" title="RaspiLCD 2" />
+<img alt="RaspiLCD 1" src="/media/images/Raspi-LCD-1.jpg" title="RaspiLCD 1" />
+<img alt="RaspiLCD with PI R2" src="/media/images/Raspi-LCD-Mit-Rev2.0.jpg" title="RaspiLCD with RPi 2" />
+<img alt="RaspiLCD Retro" src="/media/images/Raspi-LCD-Retro-1.jpg" title="RaspiLCD Retro" /></p>
+<p>With this module, a Raspberry Pi can be extended by a display and buttons. For many applications, a typical PC monitor and keyboard is too large and unwieldy. This gap closes the Raspi LCD. Projects such as web radios, streaming clients, home automation systems, ... can use this hardware. The circuit and a source code in C are available as open source. The basic "driver functionality" and necessary hardware access functions are implemented in this sample application. The keyboard area can be equipped with various buttons or separated. On the back of pads for receiving pin headers are already provided.</p>
+<ul>
+<li>1.8 inch display</li>
+<li>Software adjustable contrast</li>
+<li>White LED backlight (software controllable)</li>
+<li>5 buttons (6 × 6 or 12x12mm)</li>
+<li>Connection possibility for UART and I2C</li>
+</ul>
+<h2>Reference Documents</h2>
+<ul>
+<li><a href="/media/pdf/Raspi-LCD-SCHEMATIC.pdf">Raspi-LCD (SCHEMATIC)</a></li>
+<li><a href="/media/pdf/Raspi-LCD-MECHANIC.pdf">Raspi-LCD (MECHANIC)</a></li>
+<li><a href="/media/pdf/Raspi-LCD-PLACE.pdf">Raspi-LCD (PLACE)</a></li>
+<li><a href="/media/zip/RaspiLCD-V0.9.0.zip">RaspiLCD V0.9.0 (Open-Source / GPL)</a></li>
+</ul>
+<h2>Language Bindings</h2>
+<ul>
+<li><a href="/media/zip/RaspiLCD-master.zip">Java</a></li>
+<li><a href="https://bitbucket.org/Svedrin/raspilcd">Python</a></li>
+<li><a href="https://web.archive.org/web/20150112053140/http://www.nook24.eu/?p=678">PHP</a></li>
+<li><a href="https://github.com/tillmo/raspi_lcd">Ruby</a></li>
+</ul>
+<h2>Projects</h2>
+<ul>
+<li><a href="https://github.com/dbader/piradio">piradio</a></li>
+</ul>
+<h2>Misc</h2>
+<ul>
+<li><a href="https://github.com/captSL/RaspiLcd">Another implementation of the library?</a></li>
+<li>https://github.com/pboehm/libraspilcd</li>
+</ul>
+<h1>Display</h1>
+<p><img alt="alt text" src="/media/images/RaspiLCD-memory.png" title="RaspiLCD Memory" /></p>
+<p>The display used or its graphic controller is connected via SPI interface. In the current version this is emulated in the software (-&gt; no driver necessary). The display with its 128 x 64 pixels is in principle a 1kByte large memory, with which each bit corresponds to a pixel. In the software, the coordinates (x / y) correspond to the top left corner (0/0) and bottom right (127/63). Since the smallest organizational unit is one byte, 8 pixels are always transmitted and stored together. The least significant bit of the first byte is the origin in the upper left corner. Then follow for all 1024 bytes, the bits: D1 = (0/1), ... D7 = (0/7), etc. Since the memory of the display only describe, but not read, there is a small problem with the pixel-wise Presentation. Should a function change a single pixel, The other 7 bits of the associated byte must also be transferred. For this reason, a so-called frame buffer is implemented in the software. This is a 1: 1 memory image of the display. All operations are done with the framebuffer. With the function <code>LCD_WriteFramebuffer();</code> then the output and display is done on the display.</p>
+<p>Output of the text "Hello World":</p>
+<p><code>LCD_SetFont(0);
+LCD_PrintXY(0,0, "Hello World");</code></p>
+<p>Drawing a rectangle with transparent fill and two pixel line width:</p>
+<p><code>LCD_SetFillColor(-1);
+LCD_DrawRect(10,10,100,40,1);</code></p>
+<p>Bitmaps can be converted to C arrays using the BMP2C V1.0 program  . eg: <code>const uint8 bmp_raspi [458] = {57, 64, 0×00, ... 0×00};</code>
+Output of bitmap at position(0/0):
+<code>LCD_DrawBitmap(0,0, bmp_raspi);</code></p>
+<h1>Buttons</h1>
+<p>The individual keys switch to ground when the key is pressed. Since the corresponding GPIO PINs are configured as an input with pullup, a depressed key means logical 0, an unpressed key logical 1.</p>
+<p>The function <code>UpdateButtons();</code> ensures that the state of the buttons is stored in the two variables ButtonPressed and Button as one bit each. Macros such as: <code>BUTTON_PRESSED_UP</code>, <code>BUTTON_PRESSED_RIGHT</code>, ... allow comfortable use of the keyboard.</p>
+<h1>Backlight</h1>
+<p>On the Raspi LCD there is a switching transistor for controlling the LED background illumination. The corresponding GPIO pin can be set via the function <code>SetBacklight();</code> be controlled.</p>          </div>
+
+    <div class="card-footer">
+      <div id="disqus_thread"></div>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = '/blog\emsystech-raspi-lcd.html';  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = '/blog\emsystech-raspi-lcd.html'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://2e1hnk.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+    </div>
+
+  </div>  </div>
+
+                  
+                        
+  </body>
+</html>
