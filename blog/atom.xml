@@ -7,10 +7,80 @@
         <link href="/"/>
     
         
-    <updated>2019-04-16T11:52:31Z</updated>
+    <updated>2019-04-24T13:03:10Z</updated>
 
     <id>/blog/atom.xml/</id>
 
+            <entry>
+            <title type="html">Emsystech RaspiLCD</title>
+            <author><name>Matt, 2E1HNK</name></author>
+            <link href="/blog/emsystech-raspi-lcd.html"/>
+            <updated>2019-04-22T23:00:00Z</updated>
+            <published>2019-04-22T23:00:00Z</published>
+            <id>/blog/emsystech-raspi-lcd.html</id>
+                        <category   scheme="/blog/tags"
+                        term="Raspberry Pi"
+                        label="Raspberry Pi" />
+            
+            <content type="html">
+                                &lt;p&gt;A number of years ago I bought a neet little &lt;span class=&#34;caps&#34;&gt;LCD&lt;/span&gt;/Button add-on module for my 1st Gen Raspberry Pi. The company that produced these (Emsystech Engineering, Germany) no longer produce them and they no longer host information about them on their website. This is a mirror of the info that I&amp;#8217;ve managed to collate from a number of sources, primarity the &lt;a href=&#34;https://archive.org/web/&#34;&gt;Wayback Machine&lt;/a&gt;.
+The following is text that has been copied from Emsystech&amp;#8217;s website after being auto-translated by Google, as the original was in German which I don&amp;#8217;t understand. It has been lightly edited to remove information that is either no longer relevant or refers to websites/products that can no longer be found and to include additional information that was not originally provided (or available to) Emsystech. This includes projects that have implemented support for the module in other programming languages. I have also corrected some of Google Translate idiosyncrasies. I&amp;#8217;ve kept it here for my own reference, and to assist anyone else who may have purchased these modules and is struggling to find information on them. I can&amp;#8217;t offer any support on the product itself, other than what information is present&amp;nbsp;here.&lt;/p&gt;
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;img alt=&#34;RaspiLCD 1&#34; src=&#34;/media/images/raspberrypi-lcd-display-1.jpg&#34; title=&#34;RaspiLCD 1&#34; /&gt;
+&lt;img alt=&#34;RaspiLCD 2&#34; src=&#34;/media/images/raspberrypi-lcd-display-2.jpg&#34; title=&#34;RaspiLCD 2&#34; /&gt;
+&lt;img alt=&#34;RaspiLCD 1&#34; src=&#34;/media/images/Raspi-LCD-1.jpg&#34; title=&#34;RaspiLCD 1&#34; /&gt;
+&lt;img alt=&#34;RaspiLCD with PI R2&#34; src=&#34;/media/images/Raspi-LCD-Mit-Rev2.0.jpg&#34; title=&#34;RaspiLCD with RPi 2&#34; /&gt;
+&lt;img alt=&#34;RaspiLCD Retro&#34; src=&#34;/media/images/Raspi-LCD-Retro-1.jpg&#34; title=&#34;RaspiLCD Retro&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;With this module, a Raspberry Pi can be extended by a display and buttons. For many applications, a typical &lt;span class=&#34;caps&#34;&gt;PC&lt;/span&gt; monitor and keyboard is too large and unwieldy. This gap closes the Raspi &lt;span class=&#34;caps&#34;&gt;LCD&lt;/span&gt;. Projects such as web radios, streaming clients, home automation systems, &amp;#8230; can use this hardware. The circuit and a source code in C are available as open source. The basic &amp;#8220;driver functionality&amp;#8221; and necessary hardware access functions are implemented in this sample application. The keyboard area can be equipped with various buttons or separated. On the back of pads for receiving pin headers are already&amp;nbsp;provided.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;1.8 inch&amp;nbsp;display&lt;/li&gt;
+&lt;li&gt;Software adjustable&amp;nbsp;contrast&lt;/li&gt;
+&lt;li&gt;White &lt;span class=&#34;caps&#34;&gt;LED&lt;/span&gt; backlight (software&amp;nbsp;controllable)&lt;/li&gt;
+&lt;li&gt;5 buttons (6 × 6 or&amp;nbsp;12x12mm)&lt;/li&gt;
+&lt;li&gt;Connection possibility for &lt;span class=&#34;caps&#34;&gt;UART&lt;/span&gt; and &lt;span class=&#34;caps&#34;&gt;I2C&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Reference&amp;nbsp;Documents&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;/media/pdf/Raspi-LCD-SCHEMATIC.pdf&#34;&gt;Raspi-&lt;span class=&#34;caps&#34;&gt;LCD&lt;/span&gt; (&lt;span class=&#34;caps&#34;&gt;SCHEMATIC&lt;/span&gt;)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/media/pdf/Raspi-LCD-MECHANIC.pdf&#34;&gt;Raspi-&lt;span class=&#34;caps&#34;&gt;LCD&lt;/span&gt; (&lt;span class=&#34;caps&#34;&gt;MECHANIC&lt;/span&gt;)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/media/pdf/Raspi-LCD-PLACE.pdf&#34;&gt;Raspi-&lt;span class=&#34;caps&#34;&gt;LCD&lt;/span&gt; (&lt;span class=&#34;caps&#34;&gt;PLACE&lt;/span&gt;)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;/media/zip/RaspiLCD-V0.9.0.zip&#34;&gt;RaspiLCD V0.9.0 (Open-Source / &lt;span class=&#34;caps&#34;&gt;GPL&lt;/span&gt;)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Language&amp;nbsp;Bindings&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/StephanBeutel/RaspiLCD&#34;&gt;Java&lt;/a&gt;(Mirror:&amp;nbsp;(/media/zip/RaspiLCD-master.zip))&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://bitbucket.org/Svedrin/raspilcd&#34;&gt;Python&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://web.archive.org/web/20150112053140/http://www.nook24.eu/?p=678&#34;&gt;&lt;span class=&#34;caps&#34;&gt;PHP&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/tillmo/raspi_lcd&#34;&gt;Ruby&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Projects&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/dbader/piradio&#34;&gt;piradio&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/individual-it/RaspiLCDSysinfo&#34;&gt;RaspiLCD System&amp;nbsp;Information&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Misc&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;https://github.com/pboehm/libraspilcd&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;Display&lt;/h1&gt;
+&lt;p&gt;&lt;img alt=&#34;alt text&#34; src=&#34;/media/images/RaspiLCD-memory.png&#34; title=&#34;RaspiLCD Memory&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;The display used or its &lt;a href=&#34;/media/pdf/NT7532.pdf&#34;&gt;graphic controller&lt;/a&gt; is connected via &lt;span class=&#34;caps&#34;&gt;SPI&lt;/span&gt; interface. In the current version this is emulated in the software (-&amp;gt; no driver necessary). The display with its 128 x 64 pixels is in principle a 1kByte large memory, with which each bit corresponds to a pixel. In the software, the coordinates (x / y) correspond to the top left corner (0/0) and bottom right (127/63). Since the smallest organizational unit is one byte, 8 pixels are always transmitted and stored together. The least significant bit of the first byte is the origin in the upper left corner. Then follow for all 1024 bytes, the bits: D1 = (0/1), &amp;#8230; D7 = (0/7), etc. Since the memory of the display only describe, but not read, there is a small problem with the pixel-wise Presentation. Should a function change a single pixel, The other 7 bits of the associated byte must also be transferred. For this reason, a so-called frame buffer is implemented in the software. This is a 1: 1 memory image of the display. All operations are done with the framebuffer. With the function &lt;code&gt;LCD_WriteFramebuffer();&lt;/code&gt; then the output and display is done on the&amp;nbsp;display.&lt;/p&gt;
+&lt;p&gt;Output of the text &amp;#8220;Hello&amp;nbsp;World&amp;#8221;:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;LCD_SetFont(0);
+LCD_PrintXY(0,0, &#34;Hello World&#34;);&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Drawing a rectangle with transparent fill and two pixel line&amp;nbsp;width:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;LCD_SetFillColor(-1);
+LCD_DrawRect(10,10,100,40,1);&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Bitmaps can be converted to C arrays using the &lt;span class=&#34;caps&#34;&gt;BMP2C&lt;/span&gt; V1.0 program  . eg: &lt;code&gt;const uint8 bmp_raspi [458] = {57, 64, 0×00, ... 0×00};&lt;/code&gt;
+Output of bitmap at position(0/0):
+&lt;code&gt;LCD_DrawBitmap(0,0, bmp_raspi);&lt;/code&gt;&lt;/p&gt;
+&lt;h1&gt;Buttons&lt;/h1&gt;
+&lt;p&gt;The individual keys switch to ground when the key is pressed. Since the corresponding &lt;span class=&#34;caps&#34;&gt;GPIO&lt;/span&gt; PINs are configured as an input with pullup, a depressed key means logical 0, an unpressed key logical&amp;nbsp;1.&lt;/p&gt;
+&lt;p&gt;The function &lt;code&gt;UpdateButtons();&lt;/code&gt; ensures that the state of the buttons is stored in the two variables ButtonPressed and Button as one bit each. Macros such as: &lt;code&gt;BUTTON_PRESSED_UP&lt;/code&gt;, &lt;code&gt;BUTTON_PRESSED_RIGHT&lt;/code&gt;, &amp;#8230; allow comfortable use of the&amp;nbsp;keyboard.&lt;/p&gt;
+&lt;h1&gt;Backlight&lt;/h1&gt;
+&lt;p&gt;On the Raspi &lt;span class=&#34;caps&#34;&gt;LCD&lt;/span&gt; there is a switching transistor for controlling the &lt;span class=&#34;caps&#34;&gt;LED&lt;/span&gt; background illumination. The corresponding &lt;span class=&#34;caps&#34;&gt;GPIO&lt;/span&gt; pin can be set via the function &lt;code&gt;SetBacklight();&lt;/code&gt; be&amp;nbsp;controlled.&lt;/p&gt;            </content>
+        </entry>
             <entry>
             <title type="html">2m/70cm UKAC April 2019</title>
             <author><name>Matt, 2E1HNK</name></author>

@@ -7,10 +7,25 @@
         <link href="/"/>
     
         
-    <updated>2019-04-16T11:52:31Z</updated>
+    <updated>2019-04-24T13:03:11Z</updated>
 
     <id>/blog/excerpts.xml/</id>
 
+            <entry>
+            <title type="html">Emsystech RaspiLCD</title>
+            <author><name>Matt, 2E1HNK</name></author>
+            <link href="/blog/emsystech-raspi-lcd.html"/>
+            <updated>2019-04-22T23:00:00Z</updated>
+            <published>2019-04-22T23:00:00Z</published>
+            <id>/blog/emsystech-raspi-lcd.html</id>
+                        <category   scheme="/blog/tags"
+                        term="Raspberry Pi"
+                        label="Raspberry Pi" />
+            
+            <content type="html">
+                
+                &lt;p&gt;A number of years ago I bought a neet little &lt;span class=&#34;caps&#34;&gt;LCD&lt;/span&gt;/Button add-on module for my 1st Gen Raspberry Pi. The company that produced these (Emsystech Engineering, Germany) no longer produce them and they no longer host information about them on their website. This is a mirror of the info that I&amp;#8217;ve managed to collate from a number of sources, primarity the &lt;a href=&#34;https://archive.org/web/&#34;&gt;Wayback Machine&lt;/a&gt;.&lt;/p&gt;            </content>
+        </entry>
             <entry>
             <title type="html">2m/70cm UKAC April 2019</title>
             <author><name>Matt, 2E1HNK</name></author>

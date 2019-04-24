@@ -1,6 +1,16 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-138987624-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-138987624-1');
+    </script>
+
         <meta charset="utf-8">
     <meta name="description" content="Test
 ">
@@ -95,8 +105,8 @@
                   </div>
 
     <div class="card-content">
-      <p>A number of years ago I bought a neet little LCD/Button add-on module for my 1st Gen Raspberry Pi. The company that produced these (Emsystech Engineering, Germany) no longer produce them and they no longer host information about them on their website. This is a mirror of the info that I've managed to collate from a number of sources, primarity the <a href="https://archive.org/web/">Wayback Machine</a>.
-The following is text that has been copied from Emsystech's website after being auto-translated by Google, as the original was in German which I don't understand. It has been lightly edited to remove information that is either no longer relevant or refers to websites/products that can no longer be found and to include additional information that was not originally provided (or available to) Emsystech. This includes projects that have implemented support for the module in other programming languages. I have also corrected some of Google Translate idiosyncrasies. I've kept it here for my own reference, and to assist anyone else who may have purchased these modules and is struggling to find information on them. I can't offer any support on the product itself, other than what information is present here.</p>
+      <p>A number of years ago I bought a neet little LCD/Button add-on module for my 1st Gen Raspberry Pi. The company that produced these (Emsystech Engineering, Germany) no longer produce them and they no longer host information about them on their website. This is a mirror of the info that I've managed to collate from a number of sources, primarily the <a href="https://archive.org/web/">Wayback Machine</a>.
+The following is text that has been copied from Emsystech's website after being auto-translated by Google, as the original was in German which I don't understand. It has been lightly edited to remove information that is either no longer relevant or refers to websites/products that can no longer be found and to include additional information that was not originally provided (or available to) Emsystech. This includes projects that have implemented support for the module in other programming languages. I have also corrected some of Google Translate idiosyncrasies. I've kept it here for my own reference, and to assist anyone else who may have purchased these modules and is struggling to find information on them. I can't offer any support on the product itself, other than by providing the information present here.</p>
 <hr />
 
 <p><img alt="RaspiLCD 1" src="/media/images/raspberrypi-lcd-display-1.jpg" title="RaspiLCD 1" />
@@ -121,7 +131,7 @@ The following is text that has been copied from Emsystech's website after being 
 </ul>
 <h2>Language Bindings</h2>
 <ul>
-<li><a href="/media/zip/RaspiLCD-master.zip">Java</a></li>
+<li><a href="https://github.com/StephanBeutel/RaspiLCD">Java</a>(Mirror: (/media/zip/RaspiLCD-master.zip))</li>
 <li><a href="https://bitbucket.org/Svedrin/raspilcd">Python</a></li>
 <li><a href="https://web.archive.org/web/20150112053140/http://www.nook24.eu/?p=678">PHP</a></li>
 <li><a href="https://github.com/tillmo/raspi_lcd">Ruby</a></li>
@@ -129,15 +139,15 @@ The following is text that has been copied from Emsystech's website after being 
 <h2>Projects</h2>
 <ul>
 <li><a href="https://github.com/dbader/piradio">piradio</a></li>
+<li><a href="https://github.com/individual-it/RaspiLCDSysinfo">RaspiLCD System Information</a></li>
 </ul>
 <h2>Misc</h2>
 <ul>
-<li><a href="https://github.com/captSL/RaspiLcd">Another implementation of the library?</a></li>
 <li>https://github.com/pboehm/libraspilcd</li>
 </ul>
 <h1>Display</h1>
 <p><img alt="alt text" src="/media/images/RaspiLCD-memory.png" title="RaspiLCD Memory" /></p>
-<p>The display used or its graphic controller is connected via SPI interface. In the current version this is emulated in the software (-&gt; no driver necessary). The display with its 128 x 64 pixels is in principle a 1kByte large memory, with which each bit corresponds to a pixel. In the software, the coordinates (x / y) correspond to the top left corner (0/0) and bottom right (127/63). Since the smallest organizational unit is one byte, 8 pixels are always transmitted and stored together. The least significant bit of the first byte is the origin in the upper left corner. Then follow for all 1024 bytes, the bits: D1 = (0/1), ... D7 = (0/7), etc. Since the memory of the display only describe, but not read, there is a small problem with the pixel-wise Presentation. Should a function change a single pixel, The other 7 bits of the associated byte must also be transferred. For this reason, a so-called frame buffer is implemented in the software. This is a 1: 1 memory image of the display. All operations are done with the framebuffer. With the function <code>LCD_WriteFramebuffer();</code> then the output and display is done on the display.</p>
+<p>The display used or its <a href="/media/pdf/NT7532.pdf">graphic controller</a> is connected via SPI interface. In the current version this is emulated in the software (-&gt; no driver necessary). The display with its 128 x 64 pixels is in principle a 1kByte large memory, with which each bit corresponds to a pixel. In the software, the coordinates (x / y) correspond to the top left corner (0/0) and bottom right (127/63). Since the smallest organizational unit is one byte, 8 pixels are always transmitted and stored together. The least significant bit of the first byte is the origin in the upper left corner. Then follow for all 1024 bytes, the bits: D1 = (0/1), ... D7 = (0/7), etc. Since the memory of the display only describe, but not read, there is a small problem with the pixel-wise Presentation. Should a function change a single pixel, The other 7 bits of the associated byte must also be transferred. For this reason, a so-called frame buffer is implemented in the software. This is a 1: 1 memory image of the display. All operations are done with the framebuffer. With the function <code>LCD_WriteFramebuffer();</code> then the output and display is done on the display.</p>
 <p>Output of the text "Hello World":</p>
 <p><code>LCD_SetFont(0);
 LCD_PrintXY(0,0, "Hello World");</code></p>
