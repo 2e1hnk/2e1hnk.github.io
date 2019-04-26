@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <title>
-        BASIC blog excerpts feed    </title>
+        2E1HNK activation blog excerpts feed    </title>
         <link href="/blog\excerpts.xml" rel="self" />
     
         <link href="/"/>
     
         
-    <updated>2019-04-24T13:03:11Z</updated>
+    <updated>2019-04-26T13:53:59Z</updated>
 
     <id>/blog/excerpts.xml/</id>
 
@@ -24,7 +24,7 @@
             
             <content type="html">
                 
-                &lt;p&gt;A number of years ago I bought a neet little &lt;span class=&#34;caps&#34;&gt;LCD&lt;/span&gt;/Button add-on module for my 1st Gen Raspberry Pi. The company that produced these (Emsystech Engineering, Germany) no longer produce them and they no longer host information about them on their website. This is a mirror of the info that I&amp;#8217;ve managed to collate from a number of sources, primarity the &lt;a href=&#34;https://archive.org/web/&#34;&gt;Wayback Machine&lt;/a&gt;.&lt;/p&gt;            </content>
+                &lt;p&gt;A number of years ago I bought a neet little &lt;span class=&#34;caps&#34;&gt;LCD&lt;/span&gt;/Button add-on module for my 1st Gen Raspberry Pi. The company that produced these (Emsystech Engineering, Germany) no longer produce them and they no longer host information about them on their website. This is a mirror of the info that I&amp;#8217;ve managed to collate from a number of sources, primarily the &lt;a href=&#34;https://archive.org/web/&#34;&gt;Wayback Machine&lt;/a&gt;.&lt;/p&gt;            </content>
         </entry>
             <entry>
             <title type="html">2m/70cm UKAC April 2019</title>

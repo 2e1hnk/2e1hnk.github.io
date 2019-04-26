@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <title>
-        BASIC blog full text feed    </title>
+        2E1HNK activation blog full text feed    </title>
         <link href="/blog\atom.xml" rel="self" />
     
         <link href="/"/>
     
         
-    <updated>2019-04-24T13:03:10Z</updated>
+    <updated>2019-04-26T13:53:58Z</updated>
 
     <id>/blog/atom.xml/</id>
 
@@ -23,8 +23,8 @@
                         label="Raspberry Pi" />
             
             <content type="html">
-                                &lt;p&gt;A number of years ago I bought a neet little &lt;span class=&#34;caps&#34;&gt;LCD&lt;/span&gt;/Button add-on module for my 1st Gen Raspberry Pi. The company that produced these (Emsystech Engineering, Germany) no longer produce them and they no longer host information about them on their website. This is a mirror of the info that I&amp;#8217;ve managed to collate from a number of sources, primarity the &lt;a href=&#34;https://archive.org/web/&#34;&gt;Wayback Machine&lt;/a&gt;.
-The following is text that has been copied from Emsystech&amp;#8217;s website after being auto-translated by Google, as the original was in German which I don&amp;#8217;t understand. It has been lightly edited to remove information that is either no longer relevant or refers to websites/products that can no longer be found and to include additional information that was not originally provided (or available to) Emsystech. This includes projects that have implemented support for the module in other programming languages. I have also corrected some of Google Translate idiosyncrasies. I&amp;#8217;ve kept it here for my own reference, and to assist anyone else who may have purchased these modules and is struggling to find information on them. I can&amp;#8217;t offer any support on the product itself, other than what information is present&amp;nbsp;here.&lt;/p&gt;
+                                &lt;p&gt;A number of years ago I bought a neet little &lt;span class=&#34;caps&#34;&gt;LCD&lt;/span&gt;/Button add-on module for my 1st Gen Raspberry Pi. The company that produced these (Emsystech Engineering, Germany) no longer produce them and they no longer host information about them on their website. This is a mirror of the info that I&amp;#8217;ve managed to collate from a number of sources, primarily the &lt;a href=&#34;https://archive.org/web/&#34;&gt;Wayback Machine&lt;/a&gt;.
+The following is text that has been copied from Emsystech&amp;#8217;s website after being auto-translated by Google, as the original was in German which I don&amp;#8217;t understand. It has been lightly edited to remove information that is either no longer relevant or refers to websites/products that can no longer be found and to include additional information that was not originally provided (or available to) Emsystech. This includes projects that have implemented support for the module in other programming languages. I have also corrected some of Google Translate idiosyncrasies. I&amp;#8217;ve kept it here for my own reference, and to assist anyone else who may have purchased these modules and is struggling to find information on them. I can&amp;#8217;t offer any support on the product itself, other than by providing the information present&amp;nbsp;here.&lt;/p&gt;
 &lt;hr /&gt;
 
 &lt;p&gt;&lt;img alt=&#34;RaspiLCD 1&#34; src=&#34;/media/images/raspberrypi-lcd-display-1.jpg&#34; title=&#34;RaspiLCD 1&#34; /&gt;
@@ -49,7 +49,7 @@ The following is text that has been copied from Emsystech&amp;#8217;s website af
 &lt;/ul&gt;
 &lt;h2&gt;Language&amp;nbsp;Bindings&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/StephanBeutel/RaspiLCD&#34;&gt;Java&lt;/a&gt;(Mirror:&amp;nbsp;(/media/zip/RaspiLCD-master.zip))&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/StephanBeutel/RaspiLCD&#34;&gt;Java&lt;/a&gt;(&lt;a href=&#34;/media/zip/RaspiLCD-master.zip&#34;&gt;Mirror&lt;/a&gt;)&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://bitbucket.org/Svedrin/raspilcd&#34;&gt;Python&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://web.archive.org/web/20150112053140/http://www.nook24.eu/?p=678&#34;&gt;&lt;span class=&#34;caps&#34;&gt;PHP&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/tillmo/raspi_lcd&#34;&gt;Ruby&lt;/a&gt;&lt;/li&gt;

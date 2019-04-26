@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>
+        2E1HNK projects blog full text feed    </title>
+        <link href="/projects\atom.xml" rel="self" />
+    
+        <link href="/"/>
+    
+        
+    <updated>2019-04-26T13:54:01Z</updated>
+
+    <id>/projects/atom.xml/</id>
+
+            <entry>
+            <title type="html">HF Magnetic Loop Antenna</title>
+            <author><name>Matt, 2E1HNK</name></author>
+            <link href="/projects/magloop.html"/>
+            <updated>2019-04-11T23:00:00Z</updated>
+            <published>2019-04-11T23:00:00Z</published>
+            <id>/projects/magloop.html</id>
+            
+            <content type="html">
+                                &lt;table&gt;
+  &lt;tr&gt;
+    &lt;td&gt;
+      &lt;form action=&#34;javascript:calculate()&#34;&gt;
+        &lt;label for=&#34;frequency&#34;&gt;Frequency (MHz) &lt;input type=&#34;text&#34; name=&#34;frequency&#34; id=&#34;frequency&#34;&gt;&lt;/input&gt;&lt;/label&gt;&lt;br /&gt;
+        &lt;label for=&#34;frequency&#34;&gt;Loop Area (m²) &lt;input type=&#34;text&#34; name=&#34;area&#34; id=&#34;area&#34;&gt;&lt;/input&gt;&lt;/label&gt;&lt;br /&gt;
+        &lt;label for=&#34;frequency&#34;&gt;Loop Length (m) &lt;input type=&#34;text&#34; name=&#34;length&#34; id=&#34;length&#34;&gt;&lt;/input&gt;&lt;/label&gt;&lt;br /&gt;
+        &lt;label for=&#34;frequency&#34;&gt;Conductor Diameter (mm) &lt;input type=&#34;text&#34; name=&#34;diameter&#34; id=&#34;diameter&#34;&gt;&lt;/input&gt;&lt;/label&gt;&lt;br /&gt;
+        &lt;label for=&#34;frequency&#34;&gt;Power (Watts) &lt;input type=&#34;text&#34; name=&#34;power&#34; id=&#34;power&#34;&gt;&lt;/input&gt;&lt;/label&gt;&lt;br /&gt;
+        &lt;input type=&#34;submit&#34; /&gt;
+      &lt;/form&gt;
+    &lt;/td&gt;
+    &lt;td&gt;
+      &lt;div class=&#34;results&#34;&gt;
+        Radiation Resistance (mΩ) = &lt;span id=&#34;radiation_resistance&#34;&gt;&lt;/span&gt;&lt;br /&gt;
+        Loss Resistance (mΩ) = &lt;span id=&#34;loss_resistance&#34;&gt;&lt;/span&gt;&lt;br /&gt;
+        Efficiency (%) = &lt;span id=&#34;efficiency&#34;&gt;&lt;/span&gt;&lt;br /&gt;
+        Inductance (μH) = &lt;span id=&#34;inductance&#34;&gt;&lt;/span&gt;&lt;br /&gt;
+        Inductive Reactance (Ω) = &lt;span id=&#34;inductive_reactance&#34;&gt;&lt;/span&gt;&lt;br /&gt;
+        Tuning Capacitor (pF) = &lt;span id=&#34;tuning_capacitor&#34;&gt;&lt;/span&gt;&lt;br /&gt;
+        Q Factor = &lt;span id=&#34;q_factor&#34;&gt;&lt;/span&gt;&lt;br /&gt;
+        Bandwidth (Hz) = &lt;span id=&#34;bandwidth&#34;&gt;&lt;/span&gt;&lt;br /&gt;
+        Distributed Capacitance (pF) = &lt;span id=&#34;distributed_capacity&#34;&gt;&lt;/span&gt;&lt;br /&gt;
+        Capacitor Potential (V) = &lt;span id=&#34;capacitor_potential&#34;&gt;&lt;/span&gt;&lt;br /&gt;
+        Minimum Plate Spacing (mm) = &lt;span id=&#34;minimum_plate_spacing&#34;&gt;&lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;hr /&gt;
+
+&lt;table&gt;
+  &lt;tr&gt;
+    &lt;td&gt;
+      &lt;form action=&#34;javascript:sweep()&#34;&gt;
+        &lt;label for=&#34;frequency&#34;&gt;Start Frequency (MHz) &lt;input type=&#34;text&#34; name=&#34;sweep_start_frequency&#34; id=&#34;sweep_start_frequency&#34;&gt;&lt;/input&gt;&lt;/label&gt;&lt;br /&gt;
+        &lt;label for=&#34;frequency&#34;&gt;End Frequency (MHz) &lt;input type=&#34;text&#34; name=&#34;sweep_end_frequency&#34; id=&#34;sweep_end_frequency&#34;&gt;&lt;/input&gt;&lt;/label&gt;&lt;br /&gt;
+        &lt;label for=&#34;frequency&#34;&gt;Step Size (MHz) &lt;input type=&#34;text&#34; name=&#34;sweep_step_size&#34; id=&#34;sweep_step_size&#34;&gt;&lt;/input&gt;&lt;/label&gt;&lt;br /&gt;
+        &lt;label for=&#34;frequency&#34;&gt;Loop Area (m²) &lt;input type=&#34;text&#34; name=&#34;sweep_area&#34; id=&#34;sweep_area&#34;&gt;&lt;/input&gt;&lt;/label&gt;&lt;br /&gt;
+        &lt;label for=&#34;frequency&#34;&gt;Loop Length (m) &lt;input type=&#34;text&#34; name=&#34;sweep_length&#34; id=&#34;sweep_length&#34;&gt;&lt;/input&gt;&lt;/label&gt;&lt;br /&gt;
+        &lt;label for=&#34;frequency&#34;&gt;Conductor Diameter (mm) &lt;input type=&#34;text&#34; name=&#34;sweep_diameter&#34; id=&#34;sweep_diameter&#34;&gt;&lt;/input&gt;&lt;/label&gt;&lt;br /&gt;
+        &lt;label for=&#34;frequency&#34;&gt;Power (Watts) &lt;input type=&#34;text&#34; name=&#34;sweep_power&#34; id=&#34;sweep_power&#34;&gt;&lt;/input&gt;&lt;/label&gt;&lt;br /&gt;
+        &lt;input type=&#34;submit&#34; /&gt;
+      &lt;/form&gt;
+    &lt;/td&gt;
+    &lt;td&gt;
+      Minimum Plate Spacing (mm) = &lt;span id=&#34;sweep_minimum_plate_spacing&#34;&gt;&lt;/span&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;div style=&#34;width:100%;&#34;&gt;
+  &lt;canvas id=&#34;q_chart_canvas&#34;&gt;&lt;/canvas&gt;
+  &lt;canvas id=&#34;capacitor_chart_canvas&#34;&gt;&lt;/canvas&gt;
+&lt;/div&gt;
+
+&lt;script src=&#34;/media/js/calculators/small-transmitting-loop.js&#34;&gt;&lt;/script&gt;
+
+&lt;script src=&#34;/media/js/chart.min.js&#34;&gt;&lt;/script&gt;
+
+&lt;script&gt;
+  // Q chart
+  var q_chart_config = {
+    data: {
+      labels: [],
+      datasets: [{
+        label: &#39;Q Factor&#39;,
+        backgroundColor: &#39;rgb(255, 99, 132)&#39;,
+        borderColor: &#39;rgb(255, 99, 132)&#39;,
+        data: [],
+        yAxisID: &#39;y-axis-1&#39;,
+        fill: false,
+      },{
+        label: &#39;Efficiency&#39;,
+        backgroundColor: &#39;rgb(54, 162, 235)&#39;,
+        borderColor: &#39;rgb(54, 162, 235)&#39;,
+        data: [],
+        yAxisID: &#39;y-axis-2&#39;,
+        fill: false,
+      }]
+    },
+    options: {
+      scales: {
+                        yAxes: [{
+                            type: &#39;linear&#39;, // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
+                            display: true,
+                            position: &#39;left&#39;,
+                            id: &#39;y-axis-1&#39;,
+                        }, {
+                            type: &#39;linear&#39;, // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
+                            display: true,
+                            position: &#39;right&#39;,
+                            id: &#39;y-axis-2&#39;,
+
+                            // grid line settings
+                            gridLines: {
+                                drawOnChartArea: false, // only want the grid lines for one axis to show up
+                            },
+                        }],
+                    }
+    }
+  };
+
+  // Capacitor chart
+  var capacitor_chart_config = {
+    data: {
+      labels: [],
+      datasets: [{
+        label: &#39;Tuning Capacitor Value (pF)&#39;,
+        backgroundColor: &#39;rgb(255, 99, 132)&#39;,
+        borderColor: &#39;rgb(255, 99, 132)&#39;,
+        data: [],
+        yAxisID: &#39;y-axis-1&#39;,
+        fill: false,
+      },{
+        label: &#39;Tuning Capacitor Potential (V)&#39;,
+        backgroundColor: &#39;rgb(54, 162, 235)&#39;,
+        borderColor: &#39;rgb(54, 162, 235)&#39;,
+        data: [],
+        yAxisID: &#39;y-axis-2&#39;,
+        fill: false,
+      }]
+    },
+    options: {
+      scales: {
+                        yAxes: [{
+                            type: &#39;linear&#39;, // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
+                            display: true,
+                            position: &#39;left&#39;,
+                            id: &#39;y-axis-1&#39;,
+                        }, {
+                            type: &#39;linear&#39;, // only linear but allow scale type registration. This allows extensions to exist solely for log scale for instance
+                            display: true,
+                            position: &#39;right&#39;,
+                            id: &#39;y-axis-2&#39;,
+
+                            // grid line settings
+                            gridLines: {
+                                drawOnChartArea: false, // only want the grid lines for one axis to show up
+                            },
+                        }],
+                    }
+    }
+  };
+
+  function calculate() {
+    result = calculateSTL(document.getElementById(&#34;frequency&#34;).value, document.getElementById(&#34;area&#34;).value, document.getElementById(&#34;length&#34;).value, document.getElementById(&#34;diameter&#34;).value, document.getElementById(&#34;power&#34;).value);
+    document.getElementById(&#34;radiation_resistance&#34;).innerHTML = (result.radiation_resistance * 1e3).toFixed(2);
+    document.getElementById(&#34;loss_resistance&#34;).innerHTML = (result.loss_resistance * 1e3).toFixed(2);
+    document.getElementById(&#34;efficiency&#34;).innerHTML = (result.efficiency * 100).toFixed(2);
+    document.getElementById(&#34;inductance&#34;).innerHTML = (result.inductance_H * 1e6).toFixed(2);
+    document.getElementById(&#34;inductive_reactance&#34;).innerHTML = result.inductive_reactance_ohms.toFixed(2);
+    document.getElementById(&#34;tuning_capacitor&#34;).innerHTML = (result.tuning_capacitor_F * 1e12).toFixed(3);
+    document.getElementById(&#34;q_factor&#34;).innerHTML = result.q_factor.toFixed(1);
+    document.getElementById(&#34;bandwidth&#34;).innerHTML = Math.round(result.bandwidth_hz);
+    document.getElementById(&#34;distributed_capacity&#34;).innerHTML = (result.distributed_capacity_pF).toFixed(3);
+    document.getElementById(&#34;capacitor_potential&#34;).innerHTML = Math.round(result.capacitor_potential_V);
+    document.getElementById(&#34;minimum_plate_spacing&#34;).innerHTML = (result.minimum_plate_spacing_mm).toFixed(1);
+  }
+
+  function sweep() {
+    result = STLSweep(
+                parseFloat(document.getElementById(&#34;sweep_start_frequency&#34;).value),
+                parseFloat(document.getElementById(&#34;sweep_end_frequency&#34;).value),
+                parseFloat(document.getElementById(&#34;sweep_step_size&#34;).value),
+                parseFloat(document.getElementById(&#34;sweep_area&#34;).value),
+                parseFloat(document.getElementById(&#34;sweep_length&#34;).value),
+                parseFloat(document.getElementById(&#34;sweep_diameter&#34;).value),
+                parseFloat(document.getElementById(&#34;sweep_power&#34;).value)
+              );
+    q_chart_config.data.labels = [];
+    q_chart_config.data.datasets[0].data = [];
+    q_chart_config.data.datasets[1].data = [];
+
+    capacitor_chart_config.data.labels = [];
+    capacitor_chart_config.data.datasets[0].data = [];
+    capacitor_chart_config.data.datasets[1].data = [];
+
+    plateSpacing = 0;
+
+    for ( var i = 0; i &lt; result.length; i++ ) {
+      console.log()
+      q_chart_config.data.labels.push(result[i].frequency + &#34;MHz&#34;);
+      q_chart_config.data.datasets[0].data.push(result[i].q_factor);
+      q_chart_config.data.datasets[1].data.push(result[i].efficiency * 100);
+
+      capacitor_chart_config.data.labels.push(result[i].frequency + &#34;MHz&#34;);
+      capacitor_chart_config.data.datasets[0].data.push(result[i].tuning_capacitor_F*1e12);
+      capacitor_chart_config.data.datasets[1].data.push(result[i].capacitor_potential_V);
+
+      if ( parseFloat(result[i].minimum_plate_spacing_mm) &gt; plateSpacing ) {
+        plateSpacing = parseFloat(result[i].minimum_plate_spacing_mm);
+      }
+    }
+
+    console.log(q_chart_config);
+
+    var q_chart_ctx = document.getElementById(&#39;q_chart_canvas&#39;).getContext(&#39;2d&#39;);
+    window.q_chart = new Chart.Line(q_chart_ctx, q_chart_config);
+    window.q_chart.update();
+
+    var capacitor_chart_ctx = document.getElementById(&#39;capacitor_chart_canvas&#39;).getContext(&#39;2d&#39;);
+    window.capacitor_chart = new Chart.Line(capacitor_chart_ctx, capacitor_chart_config);
+    window.capacitor_chart.update();
+
+    document.getElementById(&#34;sweep_minimum_plate_spacing&#34;).innerHTML = Math.ceil(plateSpacing*10)/10;
+  }
+
+  calculateSTL(14.15, 0.5625, 3, 22, 20);
+  var sweepResults = STLSweep(10, 30, 0.5, 0.5625, 3, 22, 20);
+  console.log(sweepResults);
+&lt;/script&gt;            </content>
+        </entry>
+            <entry>
+            <title type="html">Suppliers</title>
+            <author><name>Matt, 2E1HNK</name></author>
+            <link href="/projects/suppliers.html"/>
+            <updated>2019-04-10T23:00:00Z</updated>
+            <published>2019-04-10T23:00:00Z</published>
+            <id>/projects/suppliers.html</id>
+            
+            <content type="html">
+                                &lt;h2&gt;Antenna&amp;nbsp;Parts&lt;/h2&gt;
+&lt;h3&gt;Aluminium&lt;/h3&gt;
+&lt;h4&gt;&lt;a href=&#34;https://www.aluminiumwarehouse.co.uk/&#34;&gt;Aluminium&amp;nbsp;Warehouse&lt;/a&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Aluminium stock up to 5m (metric and imperial&amp;nbsp;sizes)&lt;/li&gt;
+&lt;li&gt;Aluminium sheets up to 3mm, cut to&amp;nbsp;size&lt;/li&gt;
+&lt;li&gt;Collection&amp;nbsp;possible&lt;/li&gt;
+&lt;li&gt;Good&amp;nbsp;prices&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;&lt;a href=&#34;https://www.1stchoicemetals.co.uk/&#34;&gt;1st Choice&amp;nbsp;Metals&lt;/a&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Local (but collection probably not&amp;nbsp;possible)&lt;/li&gt;
+&lt;li&gt;All imperial&amp;nbsp;sizes&lt;/li&gt;
+&lt;li&gt;Aluminium stock up to&amp;nbsp;3m&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;&lt;a href=&#34;https://www.wickes.co.uk/&#34;&gt;Wickes&lt;/a&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Easy&amp;nbsp;collection&lt;/li&gt;
+&lt;li&gt;1m lengths, some 2m&amp;nbsp;lengths&lt;/li&gt;
+&lt;li&gt;Expensive compared to&amp;nbsp;others&lt;/li&gt;
+&lt;li&gt;Tends to be softer&amp;nbsp;grades&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;&lt;a href=&#34;https://www.diy.com/&#34;&gt;B&amp;amp;Q&lt;/a&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Easy&amp;nbsp;collection&lt;/li&gt;
+&lt;li&gt;1m lengths, some 2m&amp;nbsp;lengths&lt;/li&gt;
+&lt;li&gt;Very expensive compared to&amp;nbsp;others&lt;/li&gt;
+&lt;li&gt;Tends to be softer&amp;nbsp;grades&lt;/li&gt;
+&lt;li&gt;Only stockist of 20mm box section that I can&amp;nbsp;find!&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;&lt;span class=&#34;caps&#34;&gt;GRP&lt;/span&gt;&amp;nbsp;(Fibreglass)&lt;/h3&gt;
+&lt;h4&gt;&lt;a href=&#34;http://www.allproppedup.co.uk/&#34;&gt;All Propped&amp;nbsp;Up&lt;/a&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;5/6m lengths of fibreglass rods/tubes (other profiles available&amp;nbsp;too)&lt;/li&gt;
+&lt;li&gt;Delivery is £15+, unsure if collection is&amp;nbsp;possible&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Other antenna&amp;nbsp;parts&lt;/h3&gt;
+&lt;h4&gt;&lt;a href=&#34;https://www.tinos-funkshop.de/&#34;&gt;Tino&amp;#8217;s&amp;nbsp;Funkshop&lt;/a&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Taken over from&amp;nbsp;Nuxcomm.de&lt;/li&gt;
+&lt;li&gt;Good selection of element clamps, driven element separators&amp;nbsp;etc.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;&lt;a href=&#34;https://www.bpfonline.co.uk/search.asp?catid=3126&#34;&gt;&lt;span class=&#34;caps&#34;&gt;BPF&lt;/span&gt;&amp;nbsp;Components&lt;/a&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Clamps for telescopic&amp;nbsp;tubes&lt;/li&gt;
+&lt;li&gt;All imperial&amp;nbsp;sizing&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;&lt;a href=&#34;https://www.barenco.co.uk/&#34;&gt;Barenco&lt;/a&gt;&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;General Antenna&amp;nbsp;Parts&lt;/li&gt;
+&lt;/ul&gt;            </content>
+        </entry>
+            <entry>
+            <title type="html">6m 5-Element DK7ZB Yagi</title>
+            <author><name>Matt, 2E1HNK</name></author>
+            <link href="/projects/6m-5ele-yagi.html"/>
+            <updated>2019-04-02T23:00:00Z</updated>
+            <published>2019-04-02T23:00:00Z</published>
+            <id>/projects/6m-5ele-yagi.html</id>
+            
+            <content type="html">
+                                            </content>
+        </entry>
+            <entry>
+            <title type="html">6m Portable Moxon Antenna</title>
+            <author><name>Matt, 2E1HNK</name></author>
+            <link href="/projects/6m-portable-moxon.html"/>
+            <updated>2019-04-02T23:00:00Z</updated>
+            <published>2019-04-02T23:00:00Z</published>
+            <id>/projects/6m-portable-moxon.html</id>
+            
+            <content type="html">
+                                            </content>
+        </entry>
+            <entry>
+            <title type="html">70cm 7-element DK7ZB Yagi</title>
+            <author><name>Matt, 2E1HNK</name></author>
+            <link href="/projects/70cm-7ele-yagi.html"/>
+            <updated>2019-04-02T23:00:00Z</updated>
+            <published>2019-04-02T23:00:00Z</published>
+            <id>/projects/70cm-7ele-yagi.html</id>
+            
+            <content type="html">
+                                            </content>
+        </entry>
+            <entry>
+            <title type="html">Bitx40</title>
+            <author><name>Matt, 2E1HNK</name></author>
+            <link href="/projects/bitx40.html"/>
+            <updated>2019-04-02T23:00:00Z</updated>
+            <published>2019-04-02T23:00:00Z</published>
+            <id>/projects/bitx40.html</id>
+            
+            <content type="html">
+                                            </content>
+        </entry>
+            <entry>
+            <title type="html">FT-857d Installation in a Mitsubishi L200</title>
+            <author><name>Matt, 2E1HNK</name></author>
+            <link href="/projects/car-installation.html"/>
+            <updated>2019-04-02T23:00:00Z</updated>
+            <published>2019-04-02T23:00:00Z</published>
+            <id>/projects/car-installation.html</id>
+            
+            <content type="html">
+                                            </content>
+        </entry>
+            <entry>
+            <title type="html">Scouts JOTA Fox-Hunt (ARDF) Kit</title>
+            <author><name>Matt, 2E1HNK</name></author>
+            <link href="/projects/fox-hunt-kit.html"/>
+            <updated>2019-04-02T23:00:00Z</updated>
+            <published>2019-04-02T23:00:00Z</published>
+            <id>/projects/fox-hunt-kit.html</id>
+            
+            <content type="html">
+                                            </content>
+        </entry>
+            <entry>
+            <title type="html">ISS SSTV Reception Kit</title>
+            <author><name>Matt, 2E1HNK</name></author>
+            <link href="/projects/iss-sstv.html"/>
+            <updated>2019-04-02T23:00:00Z</updated>
+            <published>2019-04-02T23:00:00Z</published>
+            <id>/projects/iss-sstv.html</id>
+            
+            <content type="html">
+                                            </content>
+        </entry>
+            <entry>
+            <title type="html">3D-printed Morse Key/Sounder for JOTA</title>
+            <author><name>Matt, 2E1HNK</name></author>
+            <link href="/projects/morse-key.html"/>
+            <updated>2019-04-02T23:00:00Z</updated>
+            <published>2019-04-02T23:00:00Z</published>
+            <id>/projects/morse-key.html</id>
+            
+            <content type="html">
+                                            </content>
+        </entry>
+            <entry>
+            <title type="html">40cm CW Pixie Transceiver</title>
+            <author><name>Matt, 2E1HNK</name></author>
+            <link href="/projects/pixie.html"/>
+            <updated>2019-04-02T23:00:00Z</updated>
+            <published>2019-04-02T23:00:00Z</published>
+            <id>/projects/pixie.html</id>
+            
+            <content type="html">
+                                            </content>
+        </entry>
+            <entry>
+            <title type="html">Portable Mast</title>
+            <author><name>Matt, 2E1HNK</name></author>
+            <link href="/projects/portable-mast.html"/>
+            <updated>2019-04-02T23:00:00Z</updated>
+            <published>2019-04-02T23:00:00Z</published>
+            <id>/projects/portable-mast.html</id>
+            
+            <content type="html">
+                                            </content>
+        </entry>
+            <entry>
+            <title type="html">2m/70cm Handheld Satellite Antenna</title>
+            <author><name>Matt, 2E1HNK</name></author>
+            <link href="/projects/satellite-station.html"/>
+            <updated>2019-04-02T23:00:00Z</updated>
+            <published>2019-04-02T23:00:00Z</published>
+            <id>/projects/satellite-station.html</id>
+            
+            <content type="html">
+                                            </content>
+        </entry>
+            <entry>
+            <title type="html">Weather Satellite Reception Kit</title>
+            <author><name>Matt, 2E1HNK</name></author>
+            <link href="/projects/wx-sat.html"/>
+            <updated>2019-04-02T23:00:00Z</updated>
+            <published>2019-04-02T23:00:00Z</published>
+            <id>/projects/wx-sat.html</id>
+            
+            <content type="html">
+                                            </content>
+        </entry>
+    </feed>
