@@ -7,10 +7,75 @@
         <link href="/"/>
     
         
-    <updated>2019-04-26T13:54:01Z</updated>
+    <updated>2019-05-08T10:55:32Z</updated>
 
     <id>/projects/atom.xml/</id>
 
+            <entry>
+            <title type="html">2m/70cm Satellite Station</title>
+            <author><name>Matt, 2E1HNK</name></author>
+            <link href="/projects/satellite-station.html"/>
+            <updated>2019-04-26T08:00:00Z</updated>
+            <published>2019-04-26T08:00:00Z</published>
+            <id>/projects/satellite-station.html</id>
+            
+            <content type="html">
+                                &lt;h1&gt;Satellite Reception using &lt;span class=&#34;caps&#34;&gt;RTL&lt;/span&gt;-&lt;span class=&#34;caps&#34;&gt;SDR&lt;/span&gt;, &lt;span class=&#34;caps&#34;&gt;GQRX&lt;/span&gt; and&amp;nbsp;GPredict&lt;/h1&gt;
+&lt;p&gt;This is mostly sourced from http://teslaintheether.blogspot.com/2018/02/setting-up-gqrx-and-gpredict-for.html, all credit goes to Jacen Solo and it&amp;#8217;s only reproduced here in case the original disappears. All images come from his original blog&amp;nbsp;post.&lt;/p&gt;
+&lt;hr /&gt;
+
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Install and start both &lt;span class=&#34;caps&#34;&gt;GQRX&lt;/span&gt; and&amp;nbsp;GPredict&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;In GPredict, click &lt;code&gt;Edit&lt;/code&gt; &amp;gt; &lt;code&gt;Preferences&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Click &lt;code&gt;Interfaces&lt;/code&gt; then &lt;code&gt;Add New&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Fill in the&amp;nbsp;following:&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Name: &lt;span class=&#34;caps&#34;&gt;GQRX&lt;/span&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Host:&amp;nbsp;localhost&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Port:&amp;nbsp;7356&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Radio Type: &lt;span class=&#34;caps&#34;&gt;RX&lt;/span&gt;&amp;nbsp;Only&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Click &lt;code&gt;OK&lt;/code&gt; then &lt;code&gt;OK&lt;/code&gt; again.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;now bring up the interface by clicking on the down arrow at the upper-left of the main screen then &lt;code&gt;Radio Control&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;GPredict Connect to Radio&#34; src=&#34;/media/images/sat-station-1.png&#34; /&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Under &amp;#8216;Downlink&amp;#8217;, enter the downlink frequency of the&amp;nbsp;satellite.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;In &lt;span class=&#34;caps&#34;&gt;GQRX&lt;/span&gt;, click the two computers icon (below) to connect it to&amp;nbsp;GPredict.&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;GQRX Connect to GPredict&#34; src=&#34;/media/images/sat-station-2.png&#34; /&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Back in GPredict, select the target satellite in the drop-down menu and click &lt;code&gt;Track&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;GPredict Track Satellite&#34; src=&#34;/media/images/sat-station-3.png&#34; /&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Ensure that GPredict is linked to &lt;span class=&#34;caps&#34;&gt;GQRX&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;Ensure GPredict is linked to GQRX&#34; src=&#34;/media/images/sat-station-4.png&#34; /&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Now you will see the frequencies tracking in both the radio control window and in &lt;span class=&#34;caps&#34;&gt;GQRX&lt;/span&gt;. Next just hit play in &lt;span class=&#34;caps&#34;&gt;GQRX&lt;/span&gt; and you&amp;#8217;ll be all set to receive your target&amp;nbsp;satellite.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;            </content>
+        </entry>
             <entry>
             <title type="html">HF Magnetic Loop Antenna</title>
             <author><name>Matt, 2E1HNK</name></author>
@@ -401,17 +466,6 @@
             <updated>2019-04-02T23:00:00Z</updated>
             <published>2019-04-02T23:00:00Z</published>
             <id>/projects/portable-mast.html</id>
-            
-            <content type="html">
-                                            </content>
-        </entry>
-            <entry>
-            <title type="html">2m/70cm Handheld Satellite Antenna</title>
-            <author><name>Matt, 2E1HNK</name></author>
-            <link href="/projects/satellite-station.html"/>
-            <updated>2019-04-02T23:00:00Z</updated>
-            <published>2019-04-02T23:00:00Z</published>
-            <id>/projects/satellite-station.html</id>
             
             <content type="html">
                                             </content>

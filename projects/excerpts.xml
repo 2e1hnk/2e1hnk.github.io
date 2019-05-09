@@ -7,10 +7,22 @@
         <link href="/"/>
     
         
-    <updated>2019-04-26T13:54:01Z</updated>
+    <updated>2019-05-08T10:55:33Z</updated>
 
     <id>/projects/excerpts.xml/</id>
 
+            <entry>
+            <title type="html">2m/70cm Satellite Station</title>
+            <author><name>Matt, 2E1HNK</name></author>
+            <link href="/projects/satellite-station.html"/>
+            <updated>2019-04-26T08:00:00Z</updated>
+            <published>2019-04-26T08:00:00Z</published>
+            <id>/projects/satellite-station.html</id>
+            
+            <content type="html">
+                
+                            </content>
+        </entry>
             <entry>
             <title type="html">HF Magnetic Loop Antenna</title>
             <author><name>Matt, 2E1HNK</name></author>
@@ -150,18 +162,6 @@
             <updated>2019-04-02T23:00:00Z</updated>
             <published>2019-04-02T23:00:00Z</published>
             <id>/projects/portable-mast.html</id>
-            
-            <content type="html">
-                
-                            </content>
-        </entry>
-            <entry>
-            <title type="html">2m/70cm Handheld Satellite Antenna</title>
-            <author><name>Matt, 2E1HNK</name></author>
-            <link href="/projects/satellite-station.html"/>
-            <updated>2019-04-02T23:00:00Z</updated>
-            <published>2019-04-02T23:00:00Z</published>
-            <id>/projects/satellite-station.html</id>
             
             <content type="html">
                 
