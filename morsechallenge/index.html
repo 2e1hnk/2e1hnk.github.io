@@ -1,0 +1,68 @@
+<html>
+<head>
+  <link rel="stylesheet" href="./morsechallenge.css" />
+</head>
+<body>
+  <div class="grid">
+      <div id="quiz" class="centered grid__col--8">
+          <h1>Morse Challenge</h1>
+
+          <h2 id="question" class="headline-secondary--grouped"></h2>
+          <audio controls id="audioPlayer">
+            <source id="audioSource" src="" type="audio/wav">
+            Your browser does not support the audio element.
+          </audio>
+          <h3 id="score"></h3>
+
+          <p id="choice0"><input type="text" id="guess" placeholder="Type morse characters here" /></p>
+          <button id="submitAnswer" class="btn--default" onclick="submitAnswer()">Submit Answer</button>
+
+          <footer>
+              <p id="progress">Question x of y</p>
+              <p>
+                <table width="100%" class="morse-table">
+                  <tr>
+                    <td width="7.69%">A<br/><span class="morse-code">A</span></td>
+                    <td width="7.69%">B<br/><span class="morse-code">B</span></td>
+                    <td width="7.69%">C<br/><span class="morse-code">C</span></td>
+                    <td width="7.69%">D<br/><span class="morse-code">D</span></td>
+                    <td width="7.69%">E<br/><span class="morse-code">E</span></td>
+                    <td width="7.69%">F<br/><span class="morse-code">F</span></td>
+                    <td width="7.69%">G<br/><span class="morse-code">G</span></td>
+                    <td width="7.69%">H<br/><span class="morse-code">H</span></td>
+                    <td width="7.69%">I<br/><span class="morse-code">I</span></td>
+                    <td width="7.69%">J<br/><span class="morse-code">J</span></td>
+                    <td width="7.69%">K<br/><span class="morse-code">K</span></td>
+                    <td width="7.69%">L<br/><span class="morse-code">L</span></td>
+                    <td width="7.69%">M<br/><span class="morse-code">M</span></td>
+                  </tr>
+                  <tr>
+                    <td>N<br/><span class="morse-code">N</span></td>
+                    <td>O<br/><span class="morse-code">O</span></td>
+                    <td>P<br/><span class="morse-code">P</span></td>
+                    <td>Q<br/><span class="morse-code">Q</span></td>
+                    <td>R<br/><span class="morse-code">R</span></td>
+                    <td>S<br/><span class="morse-code">S</span></td>
+                    <td>T<br/><span class="morse-code">T</span></td>
+                    <td>U<br/><span class="morse-code">U</span></td>
+                    <td>V<br/><span class="morse-code">V</span></td>
+                    <td>W<br/><span class="morse-code">W</span></td>
+                    <td>X<br/><span class="morse-code">X</span></td>
+                    <td>Y<br/><span class="morse-code">Y</span></td>
+                    <td>Z<br/><span class="morse-code">Z</span></td>
+                  </tr>
+                </table>
+              </p>
+          </footer>
+      </div>
+  </div>
+  <script src="morsechallenge.js"></script>
+  <script>
+    function submitAnswer() {
+        quiz.guess(document.getElementById("guess").value.toUpperCase());
+        document.getElementById("guess").value="";
+        QuizUI.displayNext();
+    }
+  </script>
+</body>
+</html>
