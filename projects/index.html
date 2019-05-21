@@ -1,6 +1,12 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="author" content="Matt, 2E1HNK">
+    <meta name="viewport" content="">
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-138987624-1"></script>
     <script>
@@ -11,10 +17,31 @@
       gtag('config', 'UA-138987624-1');
     </script>
 
-        <meta charset="utf-8">
-    <meta name="description" content="">
-    <meta name="author" content="Matt, 2E1HNK">
-    <meta name="viewport" content="">
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/media/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/media/css/beantech.min.css">
+
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="/media/css/highlight.css">
+    <link rel="stylesheet" href="/media/css/widget.css">
+    <link rel="stylesheet" href="/media/css/rocket.css">
+    <link rel="stylesheet" href="/media/css/toc.css">
+
+    <!-- Custom Fonts -->
+    <link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    
     <title>Project Pages</title>
 
     <!-- Add to homescreen for Chrome on Android -->
@@ -46,442 +73,573 @@
     <link rel="canonical" href="http://www.example.com/">
     -->
 
-        <link rel="stylesheet" href="/media/css/framework.css">
-    <link rel="stylesheet" href="/media/css/style.css">
+    
+    <style type="text/css">
+      header.intro-header {
+        background-image: url(/media/images/antennafield.jpg);
+      }
+    </style>
     
         
           </head>
-  <body id="index">
+  <body id="index" ontouchstart="">
+  
+  <header class="intro-header" >
+      <!-- Signature -->
+      <div id="signature">
+          <div class="container">
+              <div class="row">
+                  <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                      <div class="site-heading">
+                          <h1>2E1HNK</h1>
+                          <!--<hr class="small">-->
+                          <span class="subheading">Project Pages</span>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </header>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">2E1HNK</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                  <li><a href="/">Home</a></li>
+                  <li><a href="/about.html">About</a></li>
+                  <li><a href="/blog">Blog</a></li>
+                  <li><a href="/contests">Contest Reports</a></li>
+                  <li><a href="/projects">Projects</a></li>
+                  <li><a href="/ogps">OGPS</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+  </nav>
+  <script>
+      // Drop Bootstrap low-performance Navbar
+      // Use customize navbar with high-quality material design animation
+      // in high-performance junk-free CSS3 implementation
+      var $body   = document.body;
+      var $toggle = document.querySelector('.navbar-toggle');
+      var $navbar = document.querySelector('#huxblog_navbar');
+      var $collapse = document.querySelector('.navbar-collapse');
+
+      $toggle.addEventListener('click', handleMagic)
+      function handleMagic(e){
+          if ($navbar.className.indexOf('in') > 0) {
+          // CLOSE
+              $navbar.className = " ";
+              // wait until animation end.
+              setTimeout(function(){
+                  // prevent frequently toggle
+                  if($navbar.className.indexOf('in') < 0) {
+                      $collapse.style.height = "0px"
+                  }
+              },400)
+          }else{
+          // OPEN
+              $collapse.style.height = "auto"
+              $navbar.className += " in";
+          }
+      }
+  </script>
+
+  <!-- Main Contents -->
+  <div class="container">
+    <div class="row">
+
+      <!-- Post Container -->
+      <div class="col-lg-8 col-lg-offset-1 col-md-8 col-md-offset-1 col-sm-12 col-xs-12 post-container">
+              /projects\index.html
+    
+<div class="post-preview">
+  <a href="/projects/satellite-station.html"><h2 class="post-title">2m/70cm Satellite Station</h2></a>
+
+      <div class="progress-bar status-in-progress" style="height: 2px; width: 50%;"></div>
+  
+  <h3 class="post-subtitle"></h3>
+
+  <div class="post-content-preview">
+    
+  </div>
+
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Matt, 2E1HNK on <time datetime="2019-04-26">Fri, 26 Apr 2019</time>
+  </p>
+
+  
+</div>
+
+<hr />
+
+      /projects\index.html
+    
+<div class="post-preview">
+  <a href="/projects/magloop.html"><h2 class="post-title">HF Magnetic Loop Antenna</h2></a>
+
+      <div class="progress-bar status-stalled" style="height: 2px; width: 20%;"></div>
+  
+  <h3 class="post-subtitle"></h3>
+
+  <div class="post-content-preview">
+    
+  </div>
+
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Matt, 2E1HNK on <time datetime="2019-04-11">Thu, 11 Apr 2019</time>
+  </p>
+
+  
+</div>
+
+<hr />
+
+      /projects\index.html
+    
+<div class="post-preview">
+  <a href="/projects/suppliers.html"><h2 class="post-title">Suppliers</h2></a>
+
+  
+  <h3 class="post-subtitle"></h3>
+
+  <div class="post-content-preview">
+    
+  </div>
+
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Matt, 2E1HNK on <time datetime="2019-04-10">Wed, 10 Apr 2019</time>
+  </p>
+
+  
+</div>
+
+<hr />
+
+      /projects\index.html
+    
+<div class="post-preview">
+  <a href="/projects/6m-5ele-yagi.html"><h2 class="post-title">6m 5-Element DK7ZB Yagi</h2></a>
+
+      <div class="progress-bar status-in-progress" style="height: 2px; width: 30%;"></div>
+  
+  <h3 class="post-subtitle"></h3>
+
+  <div class="post-content-preview">
+    
+  </div>
+
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Matt, 2E1HNK on <time datetime="2019-04-02">Tue, 02 Apr 2019</time>
+  </p>
+
+  
+</div>
+
+<hr />
+
+      /projects\index.html
+    
+<div class="post-preview">
+  <a href="/projects/6m-portable-moxon.html"><h2 class="post-title">6m Portable Moxon Antenna</h2></a>
+
+      <div class="progress-bar status-stalled" style="height: 2px; width: 10%;"></div>
+  
+  <h3 class="post-subtitle"></h3>
+
+  <div class="post-content-preview">
+    
+  </div>
+
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Matt, 2E1HNK on <time datetime="2019-04-02">Tue, 02 Apr 2019</time>
+  </p>
+
+  
+</div>
+
+<hr />
+
+      /projects\index.html
+    
+<div class="post-preview">
+  <a href="/projects/70cm-7ele-yagi.html"><h2 class="post-title">70cm 7-element DK7ZB Yagi</h2></a>
+
+      <div class="progress-bar status-completed" style="height: 2px; width: 99%;"></div>
+  
+  <h3 class="post-subtitle"></h3>
+
+  <div class="post-content-preview">
+    
+  </div>
+
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Matt, 2E1HNK on <time datetime="2019-04-02">Tue, 02 Apr 2019</time>
+  </p>
+
+  
+</div>
+
+<hr />
+
+      /projects\index.html
+    
+<div class="post-preview">
+  <a href="/projects/bitx40.html"><h2 class="post-title">Bitx40</h2></a>
+
+      <div class="progress-bar status-stalled" style="height: 2px; width: 50%;"></div>
+  
+  <h3 class="post-subtitle"></h3>
+
+  <div class="post-content-preview">
+    
+  </div>
+
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Matt, 2E1HNK on <time datetime="2019-04-02">Tue, 02 Apr 2019</time>
+  </p>
+
+  
+</div>
+
+<hr />
+
+      /projects\index.html
+    
+<div class="post-preview">
+  <a href="/projects/car-installation.html"><h2 class="post-title">FT-857d Installation in a Mitsubishi L200</h2></a>
+
+      <div class="progress-bar status-in-progress" style="height: 2px; width: 10%;"></div>
+  
+  <h3 class="post-subtitle"></h3>
+
+  <div class="post-content-preview">
+    
+  </div>
+
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Matt, 2E1HNK on <time datetime="2019-04-02">Tue, 02 Apr 2019</time>
+  </p>
+
+  
+</div>
+
+<hr />
+
+      /projects\index.html
+    
+<div class="post-preview">
+  <a href="/projects/fox-hunt-kit.html"><h2 class="post-title">Scouts JOTA Fox-Hunt (ARDF) Kit</h2></a>
+
+      <div class="progress-bar status-in-progress" style="height: 2px; width: 5%;"></div>
+  
+  <h3 class="post-subtitle"></h3>
+
+  <div class="post-content-preview">
+    
+  </div>
+
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Matt, 2E1HNK on <time datetime="2019-04-02">Tue, 02 Apr 2019</time>
+  </p>
+
+  
+</div>
+
+<hr />
+
+      /projects\index.html
+    
+<div class="post-preview">
+  <a href="/projects/iss-sstv.html"><h2 class="post-title">ISS SSTV Reception Kit</h2></a>
+
+      <div class="progress-bar status-future" style="height: 2px; width: 10%;"></div>
+  
+  <h3 class="post-subtitle"></h3>
+
+  <div class="post-content-preview">
+    
+  </div>
+
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Matt, 2E1HNK on <time datetime="2019-04-02">Tue, 02 Apr 2019</time>
+  </p>
+
+  
+</div>
+
+<hr />
+
+      /projects\index.html
+    
+<div class="post-preview">
+  <a href="/projects/morse-key.html"><h2 class="post-title">3D-printed Morse Key/Sounder for JOTA</h2></a>
+
+      <div class="progress-bar status-in-progress" style="height: 2px; width: 20%;"></div>
+  
+  <h3 class="post-subtitle"></h3>
+
+  <div class="post-content-preview">
+    
+  </div>
+
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Matt, 2E1HNK on <time datetime="2019-04-02">Tue, 02 Apr 2019</time>
+  </p>
+
+  
+</div>
+
+<hr />
+
+      /projects\index.html
+    
+<div class="post-preview">
+  <a href="/projects/pixie.html"><h2 class="post-title">40cm CW Pixie Transceiver</h2></a>
+
+      <div class="progress-bar status-stalled" style="height: 2px; width: 5%;"></div>
+  
+  <h3 class="post-subtitle"></h3>
+
+  <div class="post-content-preview">
+    
+  </div>
+
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Matt, 2E1HNK on <time datetime="2019-04-02">Tue, 02 Apr 2019</time>
+  </p>
+
+  
+</div>
+
+<hr />
+
+      /projects\index.html
+    
+<div class="post-preview">
+  <a href="/projects/portable-mast.html"><h2 class="post-title">Portable Mast</h2></a>
+
+  
+  <h3 class="post-subtitle"></h3>
+
+  <div class="post-content-preview">
+    
+  </div>
+
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Matt, 2E1HNK on <time datetime="2019-04-02">Tue, 02 Apr 2019</time>
+  </p>
+
+  
+</div>
+
+<hr />
+
+      /projects\index.html
+    
+<div class="post-preview">
+  <a href="/projects/wx-sat.html"><h2 class="post-title">Weather Satellite Reception Kit</h2></a>
+
+      <div class="progress-bar status-future" style="height: 2px; width: 5%;"></div>
+  
+  <h3 class="post-subtitle"></h3>
+
+  <div class="post-content-preview">
+    
+  </div>
+
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Matt, 2E1HNK on <time datetime="2019-04-02">Tue, 02 Apr 2019</time>
+  </p>
+
+  
+</div>
+
+<hr />
+
+        </div> <!-- /.post-container -->
+
+      <!-- Sidebar Container -->
+      <div class="col-lg-3 col-lg-offset-0 col-md-3 col-md-offset-0 col-sm-12 col-xs-12 sidebar-container">
+
+        <!-- Featured Tags -->
+          <section>
+          <!-- no hr -->
+            <h5>
+              <a href="/tags/">FEATURED TAGS</a>
+            </h5>
+            <div class="tags">
+              <a href="/blog/tags/UKAC.html" title="UKAC" rel="5">UKAC</a>
+              <a href="/blog/tags/Activation.html" title="Activation" rel="7">Activation</a>
+            </div>
+          </section>
+
+          <hr />
+
+          <!-- Short About -->
+          <section class="visible-md visible-lg">
+            <h5><a href="/about/">ABOUT ME</a></h5>
+            <div class="short-about">
+              <img id = "avatar_pic" src="/media/images/2m-UKAC.jpg" />
+              <p>Stay hungry,Stay foolish</p>
+              <!-- Social Media Links -->
+              <ul class="list-inline">
+                <li>
+                  <a target="_blank" href="https://twitter.com/2e1hnk">
+                    <span class="fa-stack fa-lg">
+                      <i class="fa fa-circle fa-stack-2x"></i>
+                      <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a target="_blank" href="https://github.com/2e1hnk">
+                    <span class="fa-stack fa-lg">
+                      <i class="fa fa-circle fa-stack-2x"></i>
+                      <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                    </span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </section>
+
+          <hr />
+
+          <h5>RECENT POSTS</h3>
+          <div class="widget">
+            <ul>
+                              <li><a href="/contests\ukac-may-2019.html">2m/70cm UKAC May 2019</a></li>                              <li><a href="/projects\satellite-station.html">2m/70cm Satellite Station</a></li>                              <li><a href="/blog\emsystech-raspi-lcd.html">Emsystech RaspiLCD</a></li>                              <li><a href="/projects\magloop.html">HF Magnetic Loop Antenna</a></li>                              <li><a href="/projects\suppliers.html">Suppliers</a></li>                          </ul>
+          </div>
+
+          <hr />
+
+          <!-- Friends Blog -->
+
+          <h5>FRIENDS</h5>
+            <ul class="list-inline">
+              <li><a href="https://g1ybb.uk/" target="_blank">G1YBB</a></li>
+            </ul>
+
+      </div> <!-- /.sidebar-container -->
+    </div> <!-- /.row -->
+  </div> <!-- /.container -->
+
+  <!-- Footer -->
+  <footer>
     <div class="container">
-    <div class="card drop-shadow">
-      <div class="card-header card-default">
-        2E1HNK Project Pages      </div>
-      <div class="card-content">
-        <div style="display: inline-block;">
-          <ul class="nav">
-            <li><a href="/">Home</a></li>
-            <li><a href="/about.html">About</a></li>
-            <li><a href="/blog">Blog</a></li>
-            <li><a href="/contests">Contest Reports</a></li>
-            <li><a href="/projects">Projects</a></li>
-            <li><a href="/ogps">OGPS</a></li>
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          <ul class="list-inline text-center">
+            <li>
+              <a target="_blank" href="https://twitter.com/2e1hnk">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a target="_blank"  href="https://github.com/2e1hnk">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
           </ul>
         </div>
-        <div style="display: inline-block; float: right;">
-          <ul class="nav">
-            <li><a href="/blog/atom.xml"><img src="/media/svg/rss.svg" style="height: 0.8em; width: 0.8em;" /> RSS</a></li>          </ul>
-        </div>
-
       </div>
     </div>
-  </div>
+  </footer>
+
+  <!-- jQuery -->
+  <script src="/media/js/jquery.min.js"></script>
+
+  <!-- Bootstrap Core JavaScript -->
+  <script src="/media/js/bootstrap.min.js"></script>
+
+  <!-- Custom Theme JavaScript -->
+  <script src="/media/js/hux-blog.min.js"></script>
+
+  <!-- TOC -->
+  <script type="text/javascript" src="/media/js/toc.js" async=""></script>
+
+
+  <!-- async load function -->
+  <script>
+  function async(u, c) {
+  var d = document, t = 'script',
+  o = d.createElement(t),
+  s = d.getElementsByTagName(t)[0];
+  o.src = u;
+  if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+  s.parentNode.insertBefore(o, s);
+  }
+  </script>
+
+  <!--
+  Because of the native support for backtick-style fenced code blocks
+  right within the Markdown is landed in Github Pages,
+  From V1.6, There is no need for Highlight.js,
+  so Huxblog drops it officially.
+
+  - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0
+  - https://help.github.com/articles/creating-and-highlighting-code-blocks/
+  -->
+  <!--
+  <script>
+  async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+    hljs.initHighlightingOnLoad();
+  })
+  </script>
+  <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+  -->
+
+
+  <!-- jquery.tagcloud.js -->
+  <script>
+  // only load tagcloud.js in tag.html
+  if($('#tag_cloud').length !== 0){
+  async("http://www.huweihuang.com/js/jquery.tagcloud.js",function(){
+    $.fn.tagcloud.defaults = {
+        //size: {start: 1, end: 1, unit: 'em'},
+        color: {start: '#bbbbee', end: '#0085a1'},
+    };
+    $('#tag_cloud a').tagcloud();
+  })
+  }
+  </script>
+
+  <!--fastClick.js -->
+  <script>
+  async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+  var $nav = document.querySelector("nav");
+  if($nav) FastClick.attach($nav);
+  })
+  </script>
 
-  <div class="container">
-          
-<div class="card drop-shadow">
-
-    <div class="card-header">
-      <a class="plain-link text-color" href="/projects/satellite-station.html">2m/70cm Satellite Station</a>
-              <div class="progress-bar status-in-progress" style="height: 2px; width: 50%;"></div>
-          </div>
-
-  <div class="card-meta">
-    <div class="avatar">&nbsp;</div><span>Matt, 2E1HNK</span>,
-    <span>
-      <time datetime="2019-04-26">
-        Fri, 26 Apr 2019
-      </time>
-    </span>
-    <br />
-      </div>
-
-  <div class="card-content">
-    
-    <div style="text-align: right;">
-      <a class="nav-next" href="/projects/satellite-station.html" title="read more">
-        Read more
-      </a>
-    </div>
-  </div>
-
-</div>
-
-      
-<div class="card drop-shadow">
-
-    <div class="card-header">
-      <a class="plain-link text-color" href="/projects/magloop.html">HF Magnetic Loop Antenna</a>
-              <div class="progress-bar status-stalled" style="height: 2px; width: 20%;"></div>
-          </div>
-
-  <div class="card-meta">
-    <div class="avatar">&nbsp;</div><span>Matt, 2E1HNK</span>,
-    <span>
-      <time datetime="2019-04-11">
-        Thu, 11 Apr 2019
-      </time>
-    </span>
-    <br />
-      </div>
-
-  <div class="card-content">
-    
-    <div style="text-align: right;">
-      <a class="nav-next" href="/projects/magloop.html" title="read more">
-        Read more
-      </a>
-    </div>
-  </div>
-
-</div>
-
-      
-<div class="card drop-shadow">
-
-    <div class="card-header">
-      <a class="plain-link text-color" href="/projects/suppliers.html">Suppliers</a>
-          </div>
-
-  <div class="card-meta">
-    <div class="avatar">&nbsp;</div><span>Matt, 2E1HNK</span>,
-    <span>
-      <time datetime="2019-04-10">
-        Wed, 10 Apr 2019
-      </time>
-    </span>
-    <br />
-      </div>
-
-  <div class="card-content">
-    
-    <div style="text-align: right;">
-      <a class="nav-next" href="/projects/suppliers.html" title="read more">
-        Read more
-      </a>
-    </div>
-  </div>
-
-</div>
-
-      
-<div class="card drop-shadow">
-
-    <div class="card-header">
-      <a class="plain-link text-color" href="/projects/6m-5ele-yagi.html">6m 5-Element DK7ZB Yagi</a>
-              <div class="progress-bar status-in-progress" style="height: 2px; width: 30%;"></div>
-          </div>
-
-  <div class="card-meta">
-    <div class="avatar">&nbsp;</div><span>Matt, 2E1HNK</span>,
-    <span>
-      <time datetime="2019-04-02">
-        Tue, 02 Apr 2019
-      </time>
-    </span>
-    <br />
-      </div>
-
-  <div class="card-content">
-    
-    <div style="text-align: right;">
-      <a class="nav-next" href="/projects/6m-5ele-yagi.html" title="read more">
-        Read more
-      </a>
-    </div>
-  </div>
-
-</div>
-
-      
-<div class="card drop-shadow">
-
-    <div class="card-header">
-      <a class="plain-link text-color" href="/projects/6m-portable-moxon.html">6m Portable Moxon Antenna</a>
-              <div class="progress-bar status-stalled" style="height: 2px; width: 10%;"></div>
-          </div>
-
-  <div class="card-meta">
-    <div class="avatar">&nbsp;</div><span>Matt, 2E1HNK</span>,
-    <span>
-      <time datetime="2019-04-02">
-        Tue, 02 Apr 2019
-      </time>
-    </span>
-    <br />
-      </div>
-
-  <div class="card-content">
-    
-    <div style="text-align: right;">
-      <a class="nav-next" href="/projects/6m-portable-moxon.html" title="read more">
-        Read more
-      </a>
-    </div>
-  </div>
-
-</div>
-
-      
-<div class="card drop-shadow">
-
-    <div class="card-header">
-      <a class="plain-link text-color" href="/projects/70cm-7ele-yagi.html">70cm 7-element DK7ZB Yagi</a>
-              <div class="progress-bar status-completed" style="height: 2px; width: 99%;"></div>
-          </div>
-
-  <div class="card-meta">
-    <div class="avatar">&nbsp;</div><span>Matt, 2E1HNK</span>,
-    <span>
-      <time datetime="2019-04-02">
-        Tue, 02 Apr 2019
-      </time>
-    </span>
-    <br />
-      </div>
-
-  <div class="card-content">
-    
-    <div style="text-align: right;">
-      <a class="nav-next" href="/projects/70cm-7ele-yagi.html" title="read more">
-        Read more
-      </a>
-    </div>
-  </div>
-
-</div>
-
-      
-<div class="card drop-shadow">
-
-    <div class="card-header">
-      <a class="plain-link text-color" href="/projects/bitx40.html">Bitx40</a>
-              <div class="progress-bar status-stalled" style="height: 2px; width: 50%;"></div>
-          </div>
-
-  <div class="card-meta">
-    <div class="avatar">&nbsp;</div><span>Matt, 2E1HNK</span>,
-    <span>
-      <time datetime="2019-04-02">
-        Tue, 02 Apr 2019
-      </time>
-    </span>
-    <br />
-      </div>
-
-  <div class="card-content">
-    
-    <div style="text-align: right;">
-      <a class="nav-next" href="/projects/bitx40.html" title="read more">
-        Read more
-      </a>
-    </div>
-  </div>
-
-</div>
-
-      
-<div class="card drop-shadow">
-
-    <div class="card-header">
-      <a class="plain-link text-color" href="/projects/car-installation.html">FT-857d Installation in a Mitsubishi L200</a>
-              <div class="progress-bar status-in-progress" style="height: 2px; width: 10%;"></div>
-          </div>
-
-  <div class="card-meta">
-    <div class="avatar">&nbsp;</div><span>Matt, 2E1HNK</span>,
-    <span>
-      <time datetime="2019-04-02">
-        Tue, 02 Apr 2019
-      </time>
-    </span>
-    <br />
-      </div>
-
-  <div class="card-content">
-    
-    <div style="text-align: right;">
-      <a class="nav-next" href="/projects/car-installation.html" title="read more">
-        Read more
-      </a>
-    </div>
-  </div>
-
-</div>
-
-      
-<div class="card drop-shadow">
-
-    <div class="card-header">
-      <a class="plain-link text-color" href="/projects/fox-hunt-kit.html">Scouts JOTA Fox-Hunt (ARDF) Kit</a>
-              <div class="progress-bar status-in-progress" style="height: 2px; width: 5%;"></div>
-          </div>
-
-  <div class="card-meta">
-    <div class="avatar">&nbsp;</div><span>Matt, 2E1HNK</span>,
-    <span>
-      <time datetime="2019-04-02">
-        Tue, 02 Apr 2019
-      </time>
-    </span>
-    <br />
-      </div>
-
-  <div class="card-content">
-    
-    <div style="text-align: right;">
-      <a class="nav-next" href="/projects/fox-hunt-kit.html" title="read more">
-        Read more
-      </a>
-    </div>
-  </div>
-
-</div>
-
-      
-<div class="card drop-shadow">
-
-    <div class="card-header">
-      <a class="plain-link text-color" href="/projects/iss-sstv.html">ISS SSTV Reception Kit</a>
-              <div class="progress-bar status-future" style="height: 2px; width: 10%;"></div>
-          </div>
-
-  <div class="card-meta">
-    <div class="avatar">&nbsp;</div><span>Matt, 2E1HNK</span>,
-    <span>
-      <time datetime="2019-04-02">
-        Tue, 02 Apr 2019
-      </time>
-    </span>
-    <br />
-      </div>
-
-  <div class="card-content">
-    
-    <div style="text-align: right;">
-      <a class="nav-next" href="/projects/iss-sstv.html" title="read more">
-        Read more
-      </a>
-    </div>
-  </div>
-
-</div>
-
-      
-<div class="card drop-shadow">
-
-    <div class="card-header">
-      <a class="plain-link text-color" href="/projects/morse-key.html">3D-printed Morse Key/Sounder for JOTA</a>
-              <div class="progress-bar status-in-progress" style="height: 2px; width: 20%;"></div>
-          </div>
-
-  <div class="card-meta">
-    <div class="avatar">&nbsp;</div><span>Matt, 2E1HNK</span>,
-    <span>
-      <time datetime="2019-04-02">
-        Tue, 02 Apr 2019
-      </time>
-    </span>
-    <br />
-      </div>
-
-  <div class="card-content">
-    
-    <div style="text-align: right;">
-      <a class="nav-next" href="/projects/morse-key.html" title="read more">
-        Read more
-      </a>
-    </div>
-  </div>
-
-</div>
-
-      
-<div class="card drop-shadow">
-
-    <div class="card-header">
-      <a class="plain-link text-color" href="/projects/pixie.html">40cm CW Pixie Transceiver</a>
-              <div class="progress-bar status-stalled" style="height: 2px; width: 5%;"></div>
-          </div>
-
-  <div class="card-meta">
-    <div class="avatar">&nbsp;</div><span>Matt, 2E1HNK</span>,
-    <span>
-      <time datetime="2019-04-02">
-        Tue, 02 Apr 2019
-      </time>
-    </span>
-    <br />
-      </div>
-
-  <div class="card-content">
-    
-    <div style="text-align: right;">
-      <a class="nav-next" href="/projects/pixie.html" title="read more">
-        Read more
-      </a>
-    </div>
-  </div>
-
-</div>
-
-      
-<div class="card drop-shadow">
-
-    <div class="card-header">
-      <a class="plain-link text-color" href="/projects/portable-mast.html">Portable Mast</a>
-          </div>
-
-  <div class="card-meta">
-    <div class="avatar">&nbsp;</div><span>Matt, 2E1HNK</span>,
-    <span>
-      <time datetime="2019-04-02">
-        Tue, 02 Apr 2019
-      </time>
-    </span>
-    <br />
-      </div>
-
-  <div class="card-content">
-    
-    <div style="text-align: right;">
-      <a class="nav-next" href="/projects/portable-mast.html" title="read more">
-        Read more
-      </a>
-    </div>
-  </div>
-
-</div>
-
-      
-<div class="card drop-shadow">
-
-    <div class="card-header">
-      <a class="plain-link text-color" href="/projects/wx-sat.html">Weather Satellite Reception Kit</a>
-              <div class="progress-bar status-future" style="height: 2px; width: 5%;"></div>
-          </div>
-
-  <div class="card-meta">
-    <div class="avatar">&nbsp;</div><span>Matt, 2E1HNK</span>,
-    <span>
-      <time datetime="2019-04-02">
-        Tue, 02 Apr 2019
-      </time>
-    </span>
-    <br />
-      </div>
-
-  <div class="card-content">
-    
-    <div style="text-align: right;">
-      <a class="nav-next" href="/projects/wx-sat.html" title="read more">
-        Read more
-      </a>
-    </div>
-  </div>
-
-</div>
-
-    </div>
 
                   
                         

@@ -1,6 +1,12 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="author" content="Matt, 2E1HNK">
+    <meta name="viewport" content="">
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-138987624-1"></script>
     <script>
@@ -11,10 +17,31 @@
       gtag('config', 'UA-138987624-1');
     </script>
 
-        <meta charset="utf-8">
-    <meta name="description" content="">
-    <meta name="author" content="Matt, 2E1HNK">
-    <meta name="viewport" content="">
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/media/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/media/css/beantech.min.css">
+
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="/media/css/highlight.css">
+    <link rel="stylesheet" href="/media/css/widget.css">
+    <link rel="stylesheet" href="/media/css/rocket.css">
+    <link rel="stylesheet" href="/media/css/toc.css">
+
+    <!-- Custom Fonts -->
+    <link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    
     <title></title>
 
     <!-- Add to homescreen for Chrome on Android -->
@@ -46,168 +73,635 @@
     <link rel="canonical" href="http://www.example.com/">
     -->
 
-        <link rel="stylesheet" href="/media/css/framework.css">
-    <link rel="stylesheet" href="/media/css/style.css">
+    
+    <style type="text/css">
+      header.intro-header {
+        background-image: url(/media/images/antennafield.jpg);
+      }
+    </style>
     
         
           </head>
-  <body id="Activation">
-    <div class="container">
-    <div class="card drop-shadow">
-      <div class="card-header card-default">
-        2E1HNK   Tagged with Activation
+  <body id="Activation" ontouchstart="">
+  
+  <header class="intro-header" >
+      <!-- Signature -->
+      <div id="signature">
+          <div class="container">
+              <div class="row">
+                  <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                      <div class="site-heading">
+                          <h1>2E1HNK</h1>
+                          <!--<hr class="small">-->
+                          <span class="subheading">  Tagged with Activation
+</span>
+                      </div>
+                  </div>
+              </div>
+          </div>
       </div>
-      <div class="card-content">
-        <div style="display: inline-block;">
-          <ul class="nav">
-            <li><a href="/">Home</a></li>
-            <li><a href="/about.html">About</a></li>
-            <li><a href="/blog">Blog</a></li>
-            <li><a href="/contests">Contest Reports</a></li>
-            <li><a href="/projects">Projects</a></li>
-            <li><a href="/ogps">OGPS</a></li>
-          </ul>
-        </div>
-        <div style="display: inline-block; float: right;">
-          <ul class="nav">
-                                  </ul>
+  </header>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">2E1HNK</a>
         </div>
 
-      </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                  <li><a href="/">Home</a></li>
+                  <li><a href="/about.html">About</a></li>
+                  <li><a href="/blog">Blog</a></li>
+                  <li><a href="/contests">Contest Reports</a></li>
+                  <li><a href="/projects">Projects</a></li>
+                  <li><a href="/ogps">OGPS</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
     </div>
-  </div>
+    <!-- /.container -->
+  </nav>
+  <script>
+      // Drop Bootstrap low-performance Navbar
+      // Use customize navbar with high-quality material design animation
+      // in high-performance junk-free CSS3 implementation
+      var $body   = document.body;
+      var $toggle = document.querySelector('.navbar-toggle');
+      var $navbar = document.querySelector('#huxblog_navbar');
+      var $collapse = document.querySelector('.navbar-collapse');
 
+      $toggle.addEventListener('click', handleMagic)
+      function handleMagic(e){
+          if ($navbar.className.indexOf('in') > 0) {
+          // CLOSE
+              $navbar.className = " ";
+              // wait until animation end.
+              setTimeout(function(){
+                  // prevent frequently toggle
+                  if($navbar.className.indexOf('in') < 0) {
+                      $collapse.style.height = "0px"
+                  }
+              },400)
+          }else{
+          // OPEN
+              $collapse.style.height = "auto"
+              $navbar.className += " in";
+          }
+      }
+  </script>
+
+  <!-- Main Contents -->
   <div class="container">
-    
-<div class="card drop-shadow">
+    <div class="row">
 
-  <div class="card-header">
-      Tagged with Activation
+      <!-- Post Container -->
+      <div class="col-lg-8 col-lg-offset-1 col-md-8 col-md-offset-1 col-sm-12 col-xs-12 post-container">
+          
+<div class="post-preview">
+  <a href="/contests/ukac-may-2019.html"><h2 class="post-title">2m/70cm UKAC May 2019</h2></a>
+
+  
+  <h3 class="post-subtitle"></h3>
+
+  <div class="post-content-preview">
+    <p>This was my best month to date, 2m felt fantastic and I kept up a good rate so even though others worked more bonus squares than me I&#8217;m still confident for a good result. 70cm was also good but felt frustrating - others were clearly taking advantage of tropo openings that I couldn&#8217;t seem to get in&nbsp;to.</p>
   </div>
 
-  <div class="card-meta">
-    <div class="avatar">&nbsp;</div><span>Matt, 2E1HNK</span>,
-    <span>
-      <time datetime="2010-01-01">
-        Fri, 01 Jan 2010
-      </time>
-    </span>
-    <br />
-      </div>
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Matt, 2E1HNK on <time datetime="2019-05-08">Wed, 08 May 2019</time>
+  </p>
 
-  <div class="card-content">
-    <p>
-    <time datetime="2019-05-08">
-        Wed, 08 May 2019
-    </time>
-    <a href="/contests/ukac-may-2019.html">2m/70cm UKAC May 2019</a>
-                      <a href="/blog/tags/UKAC.html" class="pill">UKAC</a>
-                  <a href="/blog/tags/Activation.html" class="pill">Activation</a>
-            </p><p>
-    <time datetime="2019-04-02">
-        Tue, 02 Apr 2019
-    </time>
-    <a href="/contests/ukac-april-2019.html">2m/70cm UKAC April 2019</a>
-                      <a href="/blog/tags/UKAC.html" class="pill">UKAC</a>
-                  <a href="/blog/tags/Activation.html" class="pill">Activation</a>
-            </p><p>
-    <time datetime="2019-03-12">
-        Tue, 12 Mar 2019
-    </time>
-    <a href="/contests/ukac-march-2019.html">2m/70cm UKAC March 2019</a>
-                      <a href="/blog/tags/UKAC.html" class="pill">UKAC</a>
-                  <a href="/blog/tags/Activation.html" class="pill">Activation</a>
-            </p><p>
-    <time datetime="2019-02-12">
-        Tue, 12 Feb 2019
-    </time>
-    <a href="/contests/ukac-february-2019.html">2m UKAC February 2019</a>
-                      <a href="/blog/tags/UKAC.html" class="pill">UKAC</a>
-                  <a href="/blog/tags/Activation.html" class="pill">Activation</a>
-            </p><p>
-    <time datetime="2019-01-01">
-        Tue, 01 Jan 2019
-    </time>
-    <a href="/contests/ukac-january-2019.html">2m UKAC January 2019</a>
-                      <a href="/blog/tags/UKAC.html" class="pill">UKAC</a>
-                  <a href="/blog/tags/Activation.html" class="pill">Activation</a>
-            </p><p>
-    <time datetime="2018-12-31">
-        Mon, 31 Dec 2018
-    </time>
-    <a href="/blog/2018-wrapup.html">2018 Wrap-up</a>
-                      <a href="/blog/tags/UKAC.html" class="pill">UKAC</a>
-                  <a href="/blog/tags/FMAC.html" class="pill">FMAC</a>
-                  <a href="/blog/tags/Activation.html" class="pill">Activation</a>
-                  <a href="/blog/tags/HF.html" class="pill">HF</a>
-                  <a href="/blog/tags/VHF.html" class="pill">VHF</a>
-                  <a href="/blog/tags/DATA.html" class="pill">DATA</a>
-            </p><p>
-    <time datetime="2018-12-04">
-        Tue, 04 Dec 2018
-    </time>
-    <a href="/contests/ukac-december-2018.html">2m FMAC/UKAC December 2018</a>
-                      <a href="/blog/tags/UKAC.html" class="pill">UKAC</a>
-                  <a href="/blog/tags/Activation.html" class="pill">Activation</a>
-            </p><p>
-    <time datetime="2018-11-08">
-        Thu, 08 Nov 2018
-    </time>
-    <a href="/contests/ukac-nov-2018.html">2m FMAC/UKAC November 2018</a>
-                      <a href="/blog/tags/UKAC.html" class="pill">UKAC</a>
-                  <a href="/blog/tags/Activation.html" class="pill">Activation</a>
-            </p><p>
-    <time datetime="2018-10-03">
-        Wed, 03 Oct 2018
-    </time>
-    <a href="/contests/fmac-ukac-october-2018.html">2m FMAC/UKAC October 2018</a>
-                      <a href="/blog/tags/FMAC.html" class="pill">FMAC</a>
-                  <a href="/blog/tags/UKAC.html" class="pill">UKAC</a>
-                  <a href="/blog/tags/Activation.html" class="pill">Activation</a>
-            </p><p>
-    <time datetime="2018-08-08">
-        Wed, 08 Aug 2018
-    </time>
-    <a href="/contests/fmac-ukac-august-2018.html">2m FMAC/UKAC August 2018</a>
-                      <a href="/blog/tags/FMAC.html" class="pill">FMAC</a>
-                  <a href="/blog/tags/UKAC.html" class="pill">UKAC</a>
-                  <a href="/blog/tags/Activation.html" class="pill">Activation</a>
-            </p><p>
-    <time datetime="2018-06-26">
-        Tue, 26 Jun 2018
-    </time>
-    <a href="/contests/fmac-ukac-june-2018.html">2m FMAC/UKAC June 2018</a>
-                      <a href="/blog/tags/FMAC.html" class="pill">FMAC</a>
-                  <a href="/blog/tags/UKAC.html" class="pill">UKAC</a>
-                  <a href="/blog/tags/Activation.html" class="pill">Activation</a>
-            </p><p>
-    <time datetime="2018-05-01">
-        Tue, 01 May 2018
-    </time>
-    <a href="/contests/fmac-ukac-may-2018.html">2m FMAC/UKAC May 2018</a>
-                      <a href="/blog/tags/FMAC.html" class="pill">FMAC</a>
-                  <a href="/blog/tags/UKAC.html" class="pill">UKAC</a>
-                  <a href="/blog/tags/Activation.html" class="pill">Activation</a>
-            </p><p>
-    <time datetime="2018-04-03">
-        Tue, 03 Apr 2018
-    </time>
-    <a href="/contests/fmac-ukac-april-2018.html">2m FMAC/UKAC April 2018</a>
-                      <a href="/blog/tags/FMAC.html" class="pill">FMAC</a>
-                  <a href="/blog/tags/UKAC.html" class="pill">UKAC</a>
-                  <a href="/blog/tags/Activation.html" class="pill">Activation</a>
-            </p><p>
-    <time datetime="2000-07-09">
-        Sun, 09 Jul 2000
-    </time>
-    <a href="/contests/wab6m-july-2000.html">6m Worked All Britain July 200</a>
-                      <a href="/blog/tags/WAB.html" class="pill">WAB</a>
-                  <a href="/blog/tags/Activation.html" class="pill">Activation</a>
-            </p>  </div>
-
+      <div class="tags">
+              <a class="pill" href="/blog/tags/UKAC.html">UKAC</a>
+              <a class="pill" href="/blog/tags/Activation.html">Activation</a>
+          </div>
+  
 </div>
 
+<hr />
+
+<div class="post-preview">
+  <a href="/contests/ukac-april-2019.html"><h2 class="post-title">2m/70cm UKAC April 2019</h2></a>
+
+  
+  <h3 class="post-subtitle"></h3>
+
+  <div class="post-content-preview">
+    <p>Two good <span class="caps">UKAC</span> sessions - 2m had some nice <span class="caps">DX</span>, not so much on 70cm but some fairly solid scores on&nbsp;both.</p>
   </div>
+
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Matt, 2E1HNK on <time datetime="2019-04-02">Tue, 02 Apr 2019</time>
+  </p>
+
+      <div class="tags">
+              <a class="pill" href="/blog/tags/UKAC.html">UKAC</a>
+              <a class="pill" href="/blog/tags/Activation.html">Activation</a>
+          </div>
+  
+</div>
+
+<hr />
+
+<div class="post-preview">
+  <a href="/contests/ukac-march-2019.html"><h2 class="post-title">2m/70cm UKAC March 2019</h2></a>
+
+  
+  <h3 class="post-subtitle"></h3>
+
+  <div class="post-content-preview">
+    <p>2m was a bust due to me being hit by a virus (human, not computer) about 20 minutes in to the <span class="caps">FMAC</span> section. I was down on Burson Moor in Cornwall (IO70sw) and taking down the station whilst in a &#8216;afflicted&#8217; state was no fun at all. The less said about that the better. 70cm was much better, although <span class="caps">RF</span> conditions were challenging and the <span class="caps">WX</span> was not great either - no rain but high winds and bitterly&nbsp;cold.</p>
+  </div>
+
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Matt, 2E1HNK on <time datetime="2019-03-12">Tue, 12 Mar 2019</time>
+  </p>
+
+      <div class="tags">
+              <a class="pill" href="/blog/tags/UKAC.html">UKAC</a>
+              <a class="pill" href="/blog/tags/Activation.html">Activation</a>
+          </div>
+  
+</div>
+
+<hr />
+
+<div class="post-preview">
+  <a href="/contests/ukac-february-2019.html"><h2 class="post-title">2m UKAC February 2019</h2></a>
+
+  
+  <h3 class="post-subtitle"></h3>
+
+  <div class="post-content-preview">
+    <p>This month I managed to take part in both the 2m and 70cm sections. The 2m section was my best (normalised) performance
+to date (performance was actually down compared to January, but it was for everyone). Additionally I managed to scope out a slightly better site for future use, once I manage to get in touch with the land owner. The 70cm section was not&nbsp;great.</p>
+  </div>
+
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Matt, 2E1HNK on <time datetime="2019-02-12">Tue, 12 Feb 2019</time>
+  </p>
+
+      <div class="tags">
+              <a class="pill" href="/blog/tags/UKAC.html">UKAC</a>
+              <a class="pill" href="/blog/tags/Activation.html">Activation</a>
+          </div>
+  
+</div>
+
+<hr />
+
+<div class="post-preview">
+  <a href="/contests/ukac-january-2019.html"><h2 class="post-title">2m UKAC January 2019</h2></a>
+
+  
+  <h3 class="post-subtitle"></h3>
+
+  <div class="post-content-preview">
+    <p>Surprisingly I was let out to take part in the <span class="caps">UKAC</span> on New Year&#8217;s Day! I had asumed that this event would
+be less-well attended than normal due to it being on January 1st, however that didn&#8217;t seem to deter many
+with activity levels being about normal, albeit with fewer people out portable. I was active again as
+<span class="caps">2E1HNK</span>/P from Sudeley Hill (<span class="caps">IO91AW</span>) using 10W from my <span class="caps">FT</span>-857d and the 8-Element Yagi at 4.5m as&nbsp;normal.</p>
+  </div>
+
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Matt, 2E1HNK on <time datetime="2019-01-01">Tue, 01 Jan 2019</time>
+  </p>
+
+      <div class="tags">
+              <a class="pill" href="/blog/tags/UKAC.html">UKAC</a>
+              <a class="pill" href="/blog/tags/Activation.html">Activation</a>
+          </div>
+  
+</div>
+
+<hr />
+
+<div class="post-preview">
+  <a href="/blog/2018-wrapup.html"><h2 class="post-title">2018 Wrap-up</h2></a>
+
+  
+  <h3 class="post-subtitle"></h3>
+
+  <div class="post-content-preview">
+    <p>Total QSOs -&nbsp;615</p>
+<p>Contests Entered -&nbsp;14</p>
+<p>Best <span class="caps">DX</span> - <span class="caps">WB2REM</span> @ 4267.8km (30m <span class="caps">FT8</span>)</p>
+<p><span class="caps">UKAC</span> Final Position - 304/733 (49/210 on&nbsp;2m)</p>
+  </div>
+
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Matt, 2E1HNK on <time datetime="2018-12-31">Mon, 31 Dec 2018</time>
+  </p>
+
+      <div class="tags">
+              <a class="pill" href="/blog/tags/UKAC.html">UKAC</a>
+              <a class="pill" href="/blog/tags/FMAC.html">FMAC</a>
+              <a class="pill" href="/blog/tags/Activation.html">Activation</a>
+              <a class="pill" href="/blog/tags/HF.html">HF</a>
+              <a class="pill" href="/blog/tags/VHF.html">VHF</a>
+              <a class="pill" href="/blog/tags/DATA.html">DATA</a>
+          </div>
+  
+</div>
+
+<hr />
+
+<div class="post-preview">
+  <a href="/contests/ukac-december-2018.html"><h2 class="post-title">2m FMAC/UKAC December 2018</h2></a>
+
+  
+  <h3 class="post-subtitle"></h3>
+
+  <div class="post-content-preview">
+    <p>I was active again as <span class="caps">2E1HNK</span>/P from Sudeley Hill (<span class="caps">IO91AW</span>) using
+10W from my <span class="caps">FT</span>-857d and the 8-Element Yagi at 4.5m. I may look at different sites as some post-contest
+analysis indicates that I have not managed any <span class="caps">UKAC</span> contacts in <span class="caps">JO02</span>. I suspect there is a hill in that&nbsp;direction!</p>
+  </div>
+
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Matt, 2E1HNK on <time datetime="2018-12-04">Tue, 04 Dec 2018</time>
+  </p>
+
+      <div class="tags">
+              <a class="pill" href="/blog/tags/UKAC.html">UKAC</a>
+              <a class="pill" href="/blog/tags/Activation.html">Activation</a>
+          </div>
+  
+</div>
+
+<hr />
+
+<div class="post-preview">
+  <a href="/contests/ukac-nov-2018.html"><h2 class="post-title">2m FMAC/UKAC November 2018</h2></a>
+
+  
+  <h3 class="post-subtitle"></h3>
+
+  <div class="post-content-preview">
+    <p>I was active again as <span class="caps">2E1HNK</span>/P from Sudeley Hill (<span class="caps">IO91AW</span>) using
+10W from my <span class="caps">FT</span>-857d and the 8-Element Yagi for the <span class="caps">UKAC</span> section
+this evening. It also marked the first <span class="caps">UKAC</span> activation that I
+used my Yaesu G450 rotator, which presented some additional&nbsp;challenges.</p>
+  </div>
+
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Matt, 2E1HNK on <time datetime="2018-11-08">Thu, 08 Nov 2018</time>
+  </p>
+
+      <div class="tags">
+              <a class="pill" href="/blog/tags/UKAC.html">UKAC</a>
+              <a class="pill" href="/blog/tags/Activation.html">Activation</a>
+          </div>
+  
+</div>
+
+<hr />
+
+<div class="post-preview">
+  <a href="/contests/fmac-ukac-october-2018.html"><h2 class="post-title">2m FMAC/UKAC October 2018</h2></a>
+
+  
+  <h3 class="post-subtitle"></h3>
+
+  <div class="post-content-preview">
+    <p>Active as <span class="caps">2E1HNK</span>/P from a new location - Sudeley Hill (<span class="caps">IO91AW</span>), using
+10W from the <span class="caps">FT</span>-857d to the borrowed 8 element yagi on a hand-held&nbsp;mast.</p>
+  </div>
+
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Matt, 2E1HNK on <time datetime="2018-10-03">Wed, 03 Oct 2018</time>
+  </p>
+
+      <div class="tags">
+              <a class="pill" href="/blog/tags/FMAC.html">FMAC</a>
+              <a class="pill" href="/blog/tags/UKAC.html">UKAC</a>
+              <a class="pill" href="/blog/tags/Activation.html">Activation</a>
+          </div>
+  
+</div>
+
+<hr />
+
+<div class="post-preview">
+  <a href="/contests/fmac-ukac-august-2018.html"><h2 class="post-title">2m FMAC/UKAC August 2018</h2></a>
+
+  
+  <h3 class="post-subtitle"></h3>
+
+  <div class="post-content-preview">
+    <p>Active as <span class="caps">2E1HNK</span>/P from a new location - Sudeley Hill (<span class="caps">IO91AW</span>), using
+10W from the <span class="caps">FT</span>-857d to the Diamond X200 for the <span class="caps">FMAC</span> section and a
+borrowed 8 element yagi for <span class="caps">UKAC</span>. Generally a good evening however it
+seemed to be harder work than it should have been, given that I was
+using a much better antenna than&nbsp;normal.</p>
+<p>Sudeley Hill is a good location, possibly not quite as good as Cutsdean
+Hill <span class="caps">RF</span>-wise but there is more space to set up antennas and to actually
+get the car off the road. Got some interesting looks form passers-by and
+one stopped to chat, who happened to be a G8 from Cheltenham who was out
+on his&nbsp;bike!</p>
+<p>I didn&#8217;t get on the air with enough time to make an impact on <span class="caps">FMAC</span> (currently
+in last place) but was reasonably busy for the whole of the <span class="caps">UKAC</span>.</p>
+<p>The beam was mounted on 2 sections of mast, giving a height of 3m. The mast
+was braced against the side of the car putting the antenna about 1.2m above
+the car, which probably isn&#8217;t high enough. Plan for next time is to use 3 or 4
+sections of mast putting the antenna at 4.5m or 6m <span class="caps">AGL</span>, however the two sections
+that I used this time refused to come apart again. As it happens I can just
+about fit the two sections in the car fitted together, however that won&#8217;t work
+if more sections get&nbsp;stuck!</p>
+  </div>
+
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Matt, 2E1HNK on <time datetime="2018-08-08">Wed, 08 Aug 2018</time>
+  </p>
+
+      <div class="tags">
+              <a class="pill" href="/blog/tags/FMAC.html">FMAC</a>
+              <a class="pill" href="/blog/tags/UKAC.html">UKAC</a>
+              <a class="pill" href="/blog/tags/Activation.html">Activation</a>
+          </div>
+  
+</div>
+
+<hr />
+
+<div class="post-preview">
+  <a href="/contests/fmac-ukac-june-2018.html"><h2 class="post-title">2m FMAC/UKAC June 2018</h2></a>
+
+  
+  <h3 class="post-subtitle"></h3>
+
+  <div class="post-content-preview">
+    <p>Active as <span class="caps">2E1HNK</span>/P from Cutsdean Hill (<span class="caps">IO91BX</span>) again, using
+10W from the <span class="caps">FT</span>-857d and the Diamond X200 vertical for the last half
+hour of the <span class="caps">FMAC</span> section then the same setup for the <span class="caps">UKAC</span>&nbsp;section.</p>
+  </div>
+
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Matt, 2E1HNK on <time datetime="2018-06-26">Tue, 26 Jun 2018</time>
+  </p>
+
+      <div class="tags">
+              <a class="pill" href="/blog/tags/FMAC.html">FMAC</a>
+              <a class="pill" href="/blog/tags/UKAC.html">UKAC</a>
+              <a class="pill" href="/blog/tags/Activation.html">Activation</a>
+          </div>
+  
+</div>
+
+<hr />
+
+<div class="post-preview">
+  <a href="/contests/fmac-ukac-may-2018.html"><h2 class="post-title">2m FMAC/UKAC May 2018</h2></a>
+
+  
+  <h3 class="post-subtitle"></h3>
+
+  <div class="post-content-preview">
+    <p>I was active as <span class="caps">2E1HNK</span>/P from Cutsdean Hill (<span class="caps">IO91BX</span>) using
+10W from my <span class="caps">FT</span>-857d and a Diamond X200 vertical for the last half
+hour of the <span class="caps">FMAC</span> section then the same setup for the <span class="caps">UKAC</span>&nbsp;section.</p>
+  </div>
+
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Matt, 2E1HNK on <time datetime="2018-05-01">Tue, 01 May 2018</time>
+  </p>
+
+      <div class="tags">
+              <a class="pill" href="/blog/tags/FMAC.html">FMAC</a>
+              <a class="pill" href="/blog/tags/UKAC.html">UKAC</a>
+              <a class="pill" href="/blog/tags/Activation.html">Activation</a>
+          </div>
+  
+</div>
+
+<hr />
+
+<div class="post-preview">
+  <a href="/contests/fmac-ukac-april-2018.html"><h2 class="post-title">2m FMAC/UKAC April 2018</h2></a>
+
+  
+  <h3 class="post-subtitle"></h3>
+
+  <div class="post-content-preview">
+    <p>Participated in both the 2m <span class="caps">FMAC</span> and <span class="caps">UKAC</span> events with a family meal
+in the&nbsp;middle.</p>
+  </div>
+
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Matt, 2E1HNK on <time datetime="2018-04-03">Tue, 03 Apr 2018</time>
+  </p>
+
+      <div class="tags">
+              <a class="pill" href="/blog/tags/FMAC.html">FMAC</a>
+              <a class="pill" href="/blog/tags/UKAC.html">UKAC</a>
+              <a class="pill" href="/blog/tags/Activation.html">Activation</a>
+          </div>
+  
+</div>
+
+<hr />
+
+<div class="post-preview">
+  <a href="/contests/wab6m-july-2000.html"><h2 class="post-title">6m Worked All Britain July 200</h2></a>
+
+  
+  <h3 class="post-subtitle"></h3>
+
+  <div class="post-content-preview">
+    
+  </div>
+
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Matt, 2E1HNK on <time datetime="2000-07-09">Sun, 09 Jul 2000</time>
+  </p>
+
+      <div class="tags">
+              <a class="pill" href="/blog/tags/WAB.html">WAB</a>
+              <a class="pill" href="/blog/tags/Activation.html">Activation</a>
+          </div>
+  
+</div>
+
+<hr />
+      </div> <!-- /.post-container -->
+
+      <!-- Sidebar Container -->
+      <div class="col-lg-3 col-lg-offset-0 col-md-3 col-md-offset-0 col-sm-12 col-xs-12 sidebar-container">
+
+        <!-- Featured Tags -->
+          <section>
+          <!-- no hr -->
+            <h5>
+              <a href="/tags/">FEATURED TAGS</a>
+            </h5>
+            <div class="tags">
+              <a href="/blog/tags/UKAC.html" title="UKAC" rel="5">UKAC</a>
+              <a href="/blog/tags/Activation.html" title="Activation" rel="7">Activation</a>
+            </div>
+          </section>
+
+          <hr />
+
+          <!-- Short About -->
+          <section class="visible-md visible-lg">
+            <h5><a href="/about/">ABOUT ME</a></h5>
+            <div class="short-about">
+              <img id = "avatar_pic" src="/media/images/2m-UKAC.jpg" />
+              <p>Stay hungry,Stay foolish</p>
+              <!-- Social Media Links -->
+              <ul class="list-inline">
+                <li>
+                  <a target="_blank" href="https://twitter.com/2e1hnk">
+                    <span class="fa-stack fa-lg">
+                      <i class="fa fa-circle fa-stack-2x"></i>
+                      <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a target="_blank" href="https://github.com/2e1hnk">
+                    <span class="fa-stack fa-lg">
+                      <i class="fa fa-circle fa-stack-2x"></i>
+                      <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                    </span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </section>
+
+          <hr />
+
+          <h5>RECENT POSTS</h3>
+          <div class="widget">
+            <ul>
+                              <li><a href="/contests\ukac-may-2019.html">2m/70cm UKAC May 2019</a></li>                              <li><a href="/projects\satellite-station.html">2m/70cm Satellite Station</a></li>                              <li><a href="/blog\emsystech-raspi-lcd.html">Emsystech RaspiLCD</a></li>                              <li><a href="/projects\magloop.html">HF Magnetic Loop Antenna</a></li>                              <li><a href="/projects\suppliers.html">Suppliers</a></li>                          </ul>
+          </div>
+
+          <hr />
+
+          <!-- Friends Blog -->
+
+          <h5>FRIENDS</h5>
+            <ul class="list-inline">
+              <li><a href="https://g1ybb.uk/" target="_blank">G1YBB</a></li>
+            </ul>
+
+      </div> <!-- /.sidebar-container -->
+    </div> <!-- /.row -->
+  </div> <!-- /.container -->
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          <ul class="list-inline text-center">
+            <li>
+              <a target="_blank" href="https://twitter.com/2e1hnk">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a target="_blank"  href="https://github.com/2e1hnk">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- jQuery -->
+  <script src="/media/js/jquery.min.js"></script>
+
+  <!-- Bootstrap Core JavaScript -->
+  <script src="/media/js/bootstrap.min.js"></script>
+
+  <!-- Custom Theme JavaScript -->
+  <script src="/media/js/hux-blog.min.js"></script>
+
+  <!-- TOC -->
+  <script type="text/javascript" src="/media/js/toc.js" async=""></script>
+
+
+  <!-- async load function -->
+  <script>
+  function async(u, c) {
+  var d = document, t = 'script',
+  o = d.createElement(t),
+  s = d.getElementsByTagName(t)[0];
+  o.src = u;
+  if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+  s.parentNode.insertBefore(o, s);
+  }
+  </script>
+
+  <!--
+  Because of the native support for backtick-style fenced code blocks
+  right within the Markdown is landed in Github Pages,
+  From V1.6, There is no need for Highlight.js,
+  so Huxblog drops it officially.
+
+  - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0
+  - https://help.github.com/articles/creating-and-highlighting-code-blocks/
+  -->
+  <!--
+  <script>
+  async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+    hljs.initHighlightingOnLoad();
+  })
+  </script>
+  <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+  -->
+
+
+  <!-- jquery.tagcloud.js -->
+  <script>
+  // only load tagcloud.js in tag.html
+  if($('#tag_cloud').length !== 0){
+  async("http://www.huweihuang.com/js/jquery.tagcloud.js",function(){
+    $.fn.tagcloud.defaults = {
+        //size: {start: 1, end: 1, unit: 'em'},
+        color: {start: '#bbbbee', end: '#0085a1'},
+    };
+    $('#tag_cloud a').tagcloud();
+  })
+  }
+  </script>
+
+  <!--fastClick.js -->
+  <script>
+  async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+  var $nav = document.querySelector("nav");
+  if($nav) FastClick.attach($nav);
+  })
+  </script>
+
 
                   
                         

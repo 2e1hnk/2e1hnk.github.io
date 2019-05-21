@@ -1,6 +1,13 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <meta charset="utf-8">
+    <meta name="description" content="Test
+">
+    <meta name="author" content="Matt, 2E1HNK">
+    <meta name="viewport" content="">
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-138987624-1"></script>
     <script>
@@ -11,11 +18,31 @@
       gtag('config', 'UA-138987624-1');
     </script>
 
-        <meta charset="utf-8">
-    <meta name="description" content="Test
-">
-    <meta name="author" content="Matt, 2E1HNK">
-    <meta name="viewport" content="">
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/media/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/media/css/beantech.min.css">
+
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="/media/css/highlight.css">
+    <link rel="stylesheet" href="/media/css/widget.css">
+    <link rel="stylesheet" href="/media/css/rocket.css">
+    <link rel="stylesheet" href="/media/css/toc.css">
+
+    <!-- Custom Fonts -->
+    <link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    
     <title>2m UKAC February 2019</title>
 
     <!-- Add to homescreen for Chrome on Android -->
@@ -47,8 +74,12 @@
     <link rel="canonical" href="http://www.example.com/">
     -->
 
-        <link rel="stylesheet" href="/media/css/framework.css">
-    <link rel="stylesheet" href="/media/css/style.css">
+    
+    <style type="text/css">
+      header.intro-header {
+        background-image: url(/media/images/antennafield.jpg);
+      }
+    </style>
     
     <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js" integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw==" crossorigin=""></script>
   <script src="/media/js/leaflet-heatmap.js"></script>
@@ -56,68 +87,108 @@
   <script src="/media/js/adif.js"></script>
   <script src="/media/js/chart.min.js"></script>
           </head>
-  <body id="ukac-february-2019">
-    <div class="container">
-    <div class="card drop-shadow">
-      <div class="card-header card-default">
-        2E1HNK       </div>
-      <div class="card-content">
-        <div style="display: inline-block;">
-          <ul class="nav">
-            <li><a href="/">Home</a></li>
-            <li><a href="/about.html">About</a></li>
-            <li><a href="/blog">Blog</a></li>
-            <li><a href="/contests">Contest Reports</a></li>
-            <li><a href="/projects">Projects</a></li>
-            <li><a href="/ogps">OGPS</a></li>
-          </ul>
-        </div>
-        <div style="display: inline-block; float: right;">
-          <ul class="nav">
-                                  </ul>
-        </div>
-
+  <body id="ukac-february-2019" ontouchstart="">
+  
+  <header class="intro-header" >
+      <!-- Signature -->
+      <div id="signature">
+          <div class="container">
+              <div class="row">
+                  <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                      <div class="site-heading">
+                          <h1>2E1HNK</h1>
+                          <!--<hr class="small">-->
+                          <span class="subheading"></span>
+                      </div>
+                  </div>
+              </div>
+          </div>
       </div>
-    </div>
-  </div>
+  </header>
 
+  <!-- Navigation -->
+  <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">2E1HNK</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                  <li><a href="/">Home</a></li>
+                  <li><a href="/about.html">About</a></li>
+                  <li><a href="/blog">Blog</a></li>
+                  <li><a href="/contests">Contest Reports</a></li>
+                  <li><a href="/projects">Projects</a></li>
+                  <li><a href="/ogps">OGPS</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+  </nav>
+  <script>
+      // Drop Bootstrap low-performance Navbar
+      // Use customize navbar with high-quality material design animation
+      // in high-performance junk-free CSS3 implementation
+      var $body   = document.body;
+      var $toggle = document.querySelector('.navbar-toggle');
+      var $navbar = document.querySelector('#huxblog_navbar');
+      var $collapse = document.querySelector('.navbar-collapse');
+
+      $toggle.addEventListener('click', handleMagic)
+      function handleMagic(e){
+          if ($navbar.className.indexOf('in') > 0) {
+          // CLOSE
+              $navbar.className = " ";
+              // wait until animation end.
+              setTimeout(function(){
+                  // prevent frequently toggle
+                  if($navbar.className.indexOf('in') < 0) {
+                      $collapse.style.height = "0px"
+                  }
+              },400)
+          }else{
+          // OPEN
+              $collapse.style.height = "auto"
+              $navbar.className += " in";
+          }
+      }
+  </script>
+
+  <!-- Main Contents -->
   <div class="container">
-    <div class="card drop-shadow">
-    <div class="card-content">
-      <div class="row">
-        <div class="col-6">
-                      <a class="nav-previous" href="/contests/ukac-january-2019.html">
-              2m UKAC January 2019
-            </a>
-                  </div>
-        <div class="col-6 right-align">
-                      <a class="nav-next" href="/contests/ukac-march-2019.html">
-              2m/70cm UKAC March 2019
-            </a>
-                  </div>
-      </div>
-    </div>
-  </div>
+    <div class="row">
 
-  <div class="card drop-shadow">
-    <div class="card-header">
-      2m UKAC February 2019
-    </div>
+      <!-- Post Container -->
+      <div class="col-lg-8 col-lg-offset-1 col-md-8 col-md-offset-1 col-sm-12 col-xs-12 post-container">
+        <h1>2m UKAC February 2019</h1>
 
-    <div class="card-meta">
-      <div class="avatar">&nbsp;</div><span>Matt, 2E1HNK</span>,
-      <span>
-        <time datetime="2019-02-12">
-          Tue, 12 Feb 2019
-        </time>
-      </span>
-      <br />
-                        <a class="pill" href="/blog/tags/UKAC.html" class="pill">UKAC</a>
-                  <a class="pill" href="/blog/tags/Activation.html" class="pill">Activation</a>
-                  </div>
+  <p class="post-meta" style="margin: 10px 0;">
+    Posted by Matt, 2E1HNK on <time datetime="2019-02-12">Tue, 12 Feb 2019</time>
+  </p>
 
-    <div class="card-content">
-      <p>This month I managed to take part in both the 2m and 70cm sections. The 2m section was my best (normalised) performance
+      <div class="tags">
+              <a class="pill" href="/blog/tags/UKAC.html">UKAC</a>
+              <a class="pill" href="/blog/tags/Activation.html">Activation</a>
+          </div>
+  
+  <p>This month I managed to take part in both the 2m and 70cm sections. The 2m section was my best (normalised) performance
 to date (performance was actually down compared to January, but it was for everyone). Additionally I managed to scope out a slightly better site for future use, once I manage to get in touch with the land owner. The 70cm section was not great.
 I was using my newly-constructed 7-element DK7ZB yagi which I
 hadn't had a chance to test (or even tune) beforehand. Fortunately I had a borrowed Bird 43 wattmeter with me which
@@ -141,8 +212,8 @@ so I could gt on and work the rest of the contest, albeit with a SWR of about 2.
 <p>Total Points: 5,844 (2,344 + 3,500 bonus)</p>
 <p>Normalised Points: 597</p>
 <p>Position: 32/77</p>
-<p>ODX: G3XDY (JO02ob - 218km)</p>              <h3>2M</h3>
-                  <div id="stats-2M">
+<p>ODX: G3XDY (JO02ob - 218km)</p>      <h3>2M</h3>
+          <div id="stats-2M">
   <p>Total QSOs: <span id="stats-2M-totalqsos">?</span></p>
   <p>Total Points: <span id="stats-2M-total">?</span> (<span id="stats-2M-points">?</span> QSO points + <span id="stats-2M-bonus">?</span> bonus points)</p>
   <p>ODX: <span id="stats-2M-odx">?</span></p>
@@ -180,11 +251,12 @@ so I could gt on and work the rest of the contest, albeit with a SWR of about 2.
 </script>
 
 
-                <div id="container" style="width: 100%;">
+        <div id="container" style="width: 100%;">
   <canvas id="rateChart-2M" class="rate-chart"></canvas>
 </div>
 <div style="height: 450px" id="map-2M"></div>
 
+<script src="/media/js/linealt.chart.js"></script>
 <script>
   var myLocation = [];
   gridSquareToLatLon("IO91aw", myLocation);
@@ -223,7 +295,7 @@ so I could gt on and work the rest of the contest, albeit with a SWR of about 2.
     popupAnchor:  [0, -30]  // point from which the popup should open relative to the iconAnchor
   });
 
-  var heatmapLayer2M = L.heatLayer([], {radius: 25, maxZoom: 8});
+  var heatmapLayer2M = L.heatLayer([], {radius: 50, maxZoom: 10});
 
   var stationsLayer2M = L.featureGroup([]);
 
@@ -238,11 +310,28 @@ so I could gt on and work the rest of the contest, albeit with a SWR of about 2.
 
   readTextFile("/media/logs/2E1HNK_2019_02_05_144 MHz.adi", function(log) {
     rate2M = {};
+    opmode2M = [];
+    var currMode = "s_p";
+    var lastRunStart = "";
+
     rateGroupInterval = 5;   // Interval (in minutes) to group QSOs for the rate graph
 
     for(var i=0; i<log.length; i++) {
       if ( log[i].latitude && log[i].longitude ) {
-        heatmapLayer2M.addLatLng([log[i].latitude, log[i].longitude, 1]);
+        var added = false;
+        for ( var j=0; j<heatmapLayer2M._latlngs.length; j++ ) {
+          if ( heatmapLayer2M._latlngs[j][0] == log[i].latitude && heatmapLayer2M._latlngs[j][1] == log[i].longitude ) {
+            var count = heatmapLayer2M._latlngs[j][2] + 1;
+            console.log("In heatmap, setting count to " + count);
+            heatmapLayer2M._latlngs[j] = [log[i].latitude, log[i].longitude, count];
+            added = true;
+          }
+        }
+        if ( !added ) {
+          heatmapLayer2M.addLatLng([log[i].latitude, log[i].longitude, 1]);
+        }
+
+        console.log(heatmapLayer2M);
         if ( log[i].callsign.endsWith("/P") ) {
           var iconType = portableIcon;
         } else if ( log[i].callsign.endsWith("/M") ) {
@@ -255,10 +344,14 @@ so I could gt on and work the rest of the contest, albeit with a SWR of about 2.
               [log[i].latitude, log[i].longitude],
               {icon: iconType}
             ).bindPopup(
-              "<b>" + log[i].callsign + "</b> (" + log[i].locator + ")<br />" +
-              log[i].date + " " + log[i].time + "<br />" +
-              "TX: " + log[i].rst_tx + " " + log[i].serial_tx + "<br />" +
-              "RX: " + log[i].rst_rx + " " + log[i].serial_rx + "<br />"
+              "<table>" +
+              "<tr><th colspan=2><b>" + log[i].callsign + "</b></th></tr>" +
+              "<tr><th>Locator:</th><td>" + log[i].locator + "</td></tr>" +
+              "<tr><th>Date:</th><td>" + log[i].date.substr(0,4) + "-" + log[i].date.substr(4,2) + "-" + log[i].date.substr(6,2) + "</td></tr>" +
+              "<tr><th>Time:</th><td>" + log[i].time.substr(0,2) +":" + log[i].time.substr(2,2) + "</td></tr>" +
+              "<tr><th>TX:</th><td>" + log[i].rst_tx + " / " + log[i].serial_tx + "</td></tr>" +
+              "<tr><th>RX:</th><td>" + log[i].rst_rx + " / " + log[i].serial_rx + "</td></tr>" +
+              "</table>"
             )
           );
       } else if ( log[i].locator ) {
@@ -269,6 +362,24 @@ so I could gt on and work the rest of the contest, albeit with a SWR of about 2.
       // Add QSO to rate object
       rateKey = log[i].date + " " + Math.floor(parseInt(log[i].time) / rateGroupInterval) * rateGroupInterval;
       rateKey in rate2M ? rate2M[rateKey]++ : rate2M[rateKey] = 1;
+
+      // Work out if we were running or S&P
+      if ( i > 1 && i < (log.length-1) ) {
+        if ( log[i].frequency == log[i+1].frequency || log[i].frequency == log[i-1].frequency ) {
+          // in run mode
+          if (currMode == "s_p") {
+            // Start a new run session
+            lastRunStart = log[i].date + " " + log[i].time;
+            currMode = "run";
+          } // else still running
+        } else {
+          if (currMode == "run") {
+            // End a run session
+            opmode2M.push([lastRunStart, log[i].date + " " + log[i].time]);
+            currMode = "s_p";
+          } // else still s_p
+        }
+      }
     }
 
     map2M.fitBounds(stationsLayer2M.getBounds().pad(0.5));
@@ -284,10 +395,18 @@ so I could gt on and work the rest of the contest, albeit with a SWR of about 2.
 				borderWidth: 1,
         fill: false,
 				data: Object.values(rate2M)
+      },{
+        label: "",
+        backgroundColor: '#5695c8',
+				borderColor: '#31517a',
+				borderWidth: 1,
+        fill: false,
+				data: opmode2M
       }]
     };
 
     console.log("chartData", chartData2M);
+
 
     // Draw the rate chart
     //window.onload = function() {
@@ -297,6 +416,10 @@ so I could gt on and work the rest of the contest, albeit with a SWR of about 2.
         data: chartData2M,
         options: {
           responsive: true,
+          run_periods: opmode2M,
+          chartArea: {
+            backgroundColor: 'rgba(251, 85, 85, 0.4)'
+          },
           legend: {
             position: 'top',
           },
@@ -306,7 +429,7 @@ so I could gt on and work the rest of the contest, albeit with a SWR of about 2.
           }
         }
       });
-
+      console.log("rate chart", window.rateBarChart2M);
     //};
   });
 
@@ -328,8 +451,8 @@ so I could gt on and work the rest of the contest, albeit with a SWR of about 2.
 </script>
 
 
-              <h3>70CM</h3>
-                  <div id="stats-70CM">
+      <h3>70CM</h3>
+          <div id="stats-70CM">
   <p>Total QSOs: <span id="stats-70CM-totalqsos">?</span></p>
   <p>Total Points: <span id="stats-70CM-total">?</span> (<span id="stats-70CM-points">?</span> QSO points + <span id="stats-70CM-bonus">?</span> bonus points)</p>
   <p>ODX: <span id="stats-70CM-odx">?</span></p>
@@ -367,11 +490,12 @@ so I could gt on and work the rest of the contest, albeit with a SWR of about 2.
 </script>
 
 
-                <div id="container" style="width: 100%;">
+        <div id="container" style="width: 100%;">
   <canvas id="rateChart-70CM" class="rate-chart"></canvas>
 </div>
 <div style="height: 450px" id="map-70CM"></div>
 
+<script src="/media/js/linealt.chart.js"></script>
 <script>
   var myLocation = [];
   gridSquareToLatLon("IO91aw", myLocation);
@@ -410,7 +534,7 @@ so I could gt on and work the rest of the contest, albeit with a SWR of about 2.
     popupAnchor:  [0, -30]  // point from which the popup should open relative to the iconAnchor
   });
 
-  var heatmapLayer70CM = L.heatLayer([], {radius: 25, maxZoom: 8});
+  var heatmapLayer70CM = L.heatLayer([], {radius: 50, maxZoom: 10});
 
   var stationsLayer70CM = L.featureGroup([]);
 
@@ -425,11 +549,28 @@ so I could gt on and work the rest of the contest, albeit with a SWR of about 2.
 
   readTextFile("/media/logs/2E1HNK_2019_02_12_432 MHz.adi", function(log) {
     rate70CM = {};
+    opmode70CM = [];
+    var currMode = "s_p";
+    var lastRunStart = "";
+
     rateGroupInterval = 5;   // Interval (in minutes) to group QSOs for the rate graph
 
     for(var i=0; i<log.length; i++) {
       if ( log[i].latitude && log[i].longitude ) {
-        heatmapLayer70CM.addLatLng([log[i].latitude, log[i].longitude, 1]);
+        var added = false;
+        for ( var j=0; j<heatmapLayer70CM._latlngs.length; j++ ) {
+          if ( heatmapLayer70CM._latlngs[j][0] == log[i].latitude && heatmapLayer70CM._latlngs[j][1] == log[i].longitude ) {
+            var count = heatmapLayer70CM._latlngs[j][2] + 1;
+            console.log("In heatmap, setting count to " + count);
+            heatmapLayer70CM._latlngs[j] = [log[i].latitude, log[i].longitude, count];
+            added = true;
+          }
+        }
+        if ( !added ) {
+          heatmapLayer70CM.addLatLng([log[i].latitude, log[i].longitude, 1]);
+        }
+
+        console.log(heatmapLayer70CM);
         if ( log[i].callsign.endsWith("/P") ) {
           var iconType = portableIcon;
         } else if ( log[i].callsign.endsWith("/M") ) {
@@ -442,10 +583,14 @@ so I could gt on and work the rest of the contest, albeit with a SWR of about 2.
               [log[i].latitude, log[i].longitude],
               {icon: iconType}
             ).bindPopup(
-              "<b>" + log[i].callsign + "</b> (" + log[i].locator + ")<br />" +
-              log[i].date + " " + log[i].time + "<br />" +
-              "TX: " + log[i].rst_tx + " " + log[i].serial_tx + "<br />" +
-              "RX: " + log[i].rst_rx + " " + log[i].serial_rx + "<br />"
+              "<table>" +
+              "<tr><th colspan=2><b>" + log[i].callsign + "</b></th></tr>" +
+              "<tr><th>Locator:</th><td>" + log[i].locator + "</td></tr>" +
+              "<tr><th>Date:</th><td>" + log[i].date.substr(0,4) + "-" + log[i].date.substr(4,2) + "-" + log[i].date.substr(6,2) + "</td></tr>" +
+              "<tr><th>Time:</th><td>" + log[i].time.substr(0,2) +":" + log[i].time.substr(2,2) + "</td></tr>" +
+              "<tr><th>TX:</th><td>" + log[i].rst_tx + " / " + log[i].serial_tx + "</td></tr>" +
+              "<tr><th>RX:</th><td>" + log[i].rst_rx + " / " + log[i].serial_rx + "</td></tr>" +
+              "</table>"
             )
           );
       } else if ( log[i].locator ) {
@@ -456,6 +601,24 @@ so I could gt on and work the rest of the contest, albeit with a SWR of about 2.
       // Add QSO to rate object
       rateKey = log[i].date + " " + Math.floor(parseInt(log[i].time) / rateGroupInterval) * rateGroupInterval;
       rateKey in rate70CM ? rate70CM[rateKey]++ : rate70CM[rateKey] = 1;
+
+      // Work out if we were running or S&P
+      if ( i > 1 && i < (log.length-1) ) {
+        if ( log[i].frequency == log[i+1].frequency || log[i].frequency == log[i-1].frequency ) {
+          // in run mode
+          if (currMode == "s_p") {
+            // Start a new run session
+            lastRunStart = log[i].date + " " + log[i].time;
+            currMode = "run";
+          } // else still running
+        } else {
+          if (currMode == "run") {
+            // End a run session
+            opmode70CM.push([lastRunStart, log[i].date + " " + log[i].time]);
+            currMode = "s_p";
+          } // else still s_p
+        }
+      }
     }
 
     map70CM.fitBounds(stationsLayer70CM.getBounds().pad(0.5));
@@ -471,10 +634,18 @@ so I could gt on and work the rest of the contest, albeit with a SWR of about 2.
 				borderWidth: 1,
         fill: false,
 				data: Object.values(rate70CM)
+      },{
+        label: "",
+        backgroundColor: '#5695c8',
+				borderColor: '#31517a',
+				borderWidth: 1,
+        fill: false,
+				data: opmode70CM
       }]
     };
 
     console.log("chartData", chartData70CM);
+
 
     // Draw the rate chart
     //window.onload = function() {
@@ -484,6 +655,10 @@ so I could gt on and work the rest of the contest, albeit with a SWR of about 2.
         data: chartData70CM,
         options: {
           responsive: true,
+          run_periods: opmode70CM,
+          chartArea: {
+            backgroundColor: 'rgba(251, 85, 85, 0.4)'
+          },
           legend: {
             position: 'top',
           },
@@ -493,7 +668,7 @@ so I could gt on and work the rest of the contest, albeit with a SWR of about 2.
           }
         }
       });
-
+      console.log("rate chart", window.rateBarChart70CM);
     //};
   });
 
@@ -515,33 +690,168 @@ so I could gt on and work the rest of the contest, albeit with a SWR of about 2.
 </script>
 
 
+        </div> <!-- /.post-container -->
+
+      <!-- Sidebar Container -->
+      <div class="col-lg-3 col-lg-offset-0 col-md-3 col-md-offset-0 col-sm-12 col-xs-12 sidebar-container">
+
+        <!-- Featured Tags -->
+          <section>
+          <!-- no hr -->
+            <h5>
+              <a href="/tags/">FEATURED TAGS</a>
+            </h5>
+            <div class="tags">
+              <a href="/blog/tags/UKAC.html" title="UKAC" rel="5">UKAC</a>
+              <a href="/blog/tags/Activation.html" title="Activation" rel="7">Activation</a>
+            </div>
+          </section>
+
+          <hr />
+
+          <!-- Short About -->
+          <section class="visible-md visible-lg">
+            <h5><a href="/about/">ABOUT ME</a></h5>
+            <div class="short-about">
+              <img id = "avatar_pic" src="/media/images/2m-UKAC.jpg" />
+              <p>Stay hungry,Stay foolish</p>
+              <!-- Social Media Links -->
+              <ul class="list-inline">
+                <li>
+                  <a target="_blank" href="https://twitter.com/2e1hnk">
+                    <span class="fa-stack fa-lg">
+                      <i class="fa fa-circle fa-stack-2x"></i>
+                      <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                    </span>
+                  </a>
+                </li>
+                <li>
+                  <a target="_blank" href="https://github.com/2e1hnk">
+                    <span class="fa-stack fa-lg">
+                      <i class="fa fa-circle fa-stack-2x"></i>
+                      <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                    </span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </section>
+
+          <hr />
+
+          <h5>RECENT POSTS</h3>
+          <div class="widget">
+            <ul>
+                              <li><a href="/contests\ukac-may-2019.html">2m/70cm UKAC May 2019</a></li>                              <li><a href="/projects\satellite-station.html">2m/70cm Satellite Station</a></li>                              <li><a href="/blog\emsystech-raspi-lcd.html">Emsystech RaspiLCD</a></li>                              <li><a href="/projects\magloop.html">HF Magnetic Loop Antenna</a></li>                              <li><a href="/projects\suppliers.html">Suppliers</a></li>                          </ul>
           </div>
 
-    <div class="card-footer">
-      <div id="disqus_thread"></div>
-<script>
+          <hr />
 
-/**
-*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
-/*
-var disqus_config = function () {
-this.page.url = '/contests\ukac-february-2019.html';  // Replace PAGE_URL with your page's canonical URL variable
-this.page.identifier = '/contests\ukac-february-2019.html'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-};
-*/
-(function() { // DON'T EDIT BELOW THIS LINE
-var d = document, s = d.createElement('script');
-s.src = 'https://2e1hnk.disqus.com/embed.js';
-s.setAttribute('data-timestamp', +new Date());
-(d.head || d.body).appendChild(s);
-})();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+          <!-- Friends Blog -->
 
+          <h5>FRIENDS</h5>
+            <ul class="list-inline">
+              <li><a href="https://g1ybb.uk/" target="_blank">G1YBB</a></li>
+            </ul>
+
+      </div> <!-- /.sidebar-container -->
+    </div> <!-- /.row -->
+  </div> <!-- /.container -->
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          <ul class="list-inline text-center">
+            <li>
+              <a target="_blank" href="https://twitter.com/2e1hnk">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a target="_blank"  href="https://github.com/2e1hnk">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
+  </footer>
 
-  </div>  </div>
+  <!-- jQuery -->
+  <script src="/media/js/jquery.min.js"></script>
+
+  <!-- Bootstrap Core JavaScript -->
+  <script src="/media/js/bootstrap.min.js"></script>
+
+  <!-- Custom Theme JavaScript -->
+  <script src="/media/js/hux-blog.min.js"></script>
+
+  <!-- TOC -->
+  <script type="text/javascript" src="/media/js/toc.js" async=""></script>
+
+
+  <!-- async load function -->
+  <script>
+  function async(u, c) {
+  var d = document, t = 'script',
+  o = d.createElement(t),
+  s = d.getElementsByTagName(t)[0];
+  o.src = u;
+  if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+  s.parentNode.insertBefore(o, s);
+  }
+  </script>
+
+  <!--
+  Because of the native support for backtick-style fenced code blocks
+  right within the Markdown is landed in Github Pages,
+  From V1.6, There is no need for Highlight.js,
+  so Huxblog drops it officially.
+
+  - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0
+  - https://help.github.com/articles/creating-and-highlighting-code-blocks/
+  -->
+  <!--
+  <script>
+  async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+    hljs.initHighlightingOnLoad();
+  })
+  </script>
+  <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+  -->
+
+
+  <!-- jquery.tagcloud.js -->
+  <script>
+  // only load tagcloud.js in tag.html
+  if($('#tag_cloud').length !== 0){
+  async("http://www.huweihuang.com/js/jquery.tagcloud.js",function(){
+    $.fn.tagcloud.defaults = {
+        //size: {start: 1, end: 1, unit: 'em'},
+        color: {start: '#bbbbee', end: '#0085a1'},
+    };
+    $('#tag_cloud a').tagcloud();
+  })
+  }
+  </script>
+
+  <!--fastClick.js -->
+  <script>
+  async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+  var $nav = document.querySelector("nav");
+  if($nav) FastClick.attach($nav);
+  })
+  </script>
+
 
                   
                         

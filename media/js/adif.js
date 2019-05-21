@@ -11,12 +11,12 @@ function readAdiManifest(file, callback)
         var path = file.substring(0, file.lastIndexOf("/"));
 
         for(var i = 0;i < lines.length;i++){
-          console.log(path + "/" + lines[i]);
+          //console.log(path + "/" + lines[i]);
           readTextFile(path + "/" + lines[i], callback);
         }
       } else {
         // something went wrong
-        console.log("oops", rawFile);
+        //console.log("oops", rawFile);
       }
     }
 
@@ -35,7 +35,7 @@ function readTextFile(file, callback)
                 var allText = rawFile.responseText;
                 var lines = allText.toUpperCase().split('<EOR>');
                 for(var i = 0;i < lines.length;i++){
-                  console.log("Parsing " + i + ": " + lines[i]);
+                  //console.log("Parsing " + i + ": " + lines[i]);
                     if ( lines[i].match(/<[A-Z0-9_]+:[0-9]+>.*/i) ) {
                       var record = {};
                       if ( lines[i].match(/<QSO_DATE:[0-9]+>([0-9]+)/i) ) {
@@ -47,6 +47,9 @@ function readTextFile(file, callback)
                       if ( lines[i].match(/<BAND:[0-9]+>([0-9a-zA-Z]+)/i) ) {
                         record.band = lines[i].match(/<BAND:[0-9]+>([0-9a-zA-Z]+)/i)[1];
                       }
+                      if ( lines[i].match(/<FREQ:[0-9]+>([0-9.]+)/i) ) {
+                        record.frequency = parseFloat(lines[i].match(/<FREQ:[0-9]+>([0-9.]+)/i)[1]);
+                      }
                       if ( lines[i].match(/<MODE:[0-9]+>([0-9a-zA-Z]+)/i) ) {
                         record.mode = lines[i].match(/<MODE:[0-9]+>([0-9a-zA-Z]+)/i)[1];
                       }
@@ -57,13 +60,13 @@ function readTextFile(file, callback)
                         record.rst_tx = parseInt(lines[i].match(/<RST_SENT:[0-9]+>([0-9]{2,3})/i)[1], 10);
                       }
                       if ( lines[i].match(/<STX:[0-9]+>([0-9]{1,4})/i) ) {
-                        record.serial_tx = parseInt(lines[i].match(/<STX:[0-9]+>([0-9]{1,4})/i)[1], 10);
+                        record.serial_tx = parseInt(lines[i].match(/<STX:[0-9]+>([0-9]{1,4})/i)[1], 10).pad(3);
                       }
                       if ( lines[i].match(/<RST_RCVD:[0-9]+>([0-9]{2,3})/i) ) {
                         record.rst_rx = parseInt(lines[i].match(/<RST_RCVD:[0-9]+>([0-9]{2,3})/i)[1], 10);
                       }
                       if ( lines[i].match(/<SRX:[0-9]+>([0-9]{1,4})/i) ) {
-                        record.serial_rx = parseInt(lines[i].match(/<SRX:[0-9]+>([0-9]{1,4})/i)[1], 10);
+                        record.serial_rx = parseInt(lines[i].match(/<SRX:[0-9]+>([0-9]{1,4})/i)[1], 10).pad(3);
                       }
                       if ( lines[i].match(/<QSO_PTS:[0-9]+>([0-9]{1,4})/i) ) {
                         record.points = parseInt(lines[i].match(/<QSO_PTS:[0-9]+>([0-9]{1,4})/i)[1], 10);
@@ -78,7 +81,7 @@ function readTextFile(file, callback)
                           record.locator.charAt(3) +
                           record.locator.charAt(4).toLowerCase() +
                           record.locator.charAt(5).toLowerCase();
-                            console.log(record.locator);
+                            //console.log(record.locator);
                           }
                         var latLon = gridSquareToLatLon(record.locator);
                         record.latitude = latLon[0];
@@ -116,7 +119,7 @@ function readTextFile(file, callback)
 //                        if ( lines[i].match(/<LON:[0-9]+>[EW][0-9]{2,3] [0-9]{2}.[0-9]{3}/) ) {
 //                          record.longitude = lines[i].match(/<LON:[0-9]+>[EW][0-9]{2,3] [0-9]{2}.[0-9]{3}/)[1];
 //                        }
-                      console.log(record);
+                      //console.log(record);
                       log.push(record);
                     }
 
@@ -126,4 +129,10 @@ function readTextFile(file, callback)
     }
     rawFile.open("GET", file);
     rawFile.send();
+}
+
+Number.prototype.pad = function(size) {
+    var s = String(this);
+    while (s.length < (size || 2)) {s = "0" + s;}
+    return s;
 }
