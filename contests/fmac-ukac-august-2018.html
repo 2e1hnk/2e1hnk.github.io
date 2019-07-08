@@ -86,6 +86,7 @@
   <script src="/media/js/HamGridSquare.js"></script>
   <script src="/media/js/adif.js"></script>
   <script src="/media/js/chart.min.js"></script>
+  <link rel="stylesheet" href="/media/css/L.fullscreen.css" />
           </head>
   <body id="fmac-ukac-august-2018" ontouchstart="">
   
@@ -265,15 +266,30 @@ Position: 31 (of 70) in AL section</p>      <h3>UKAC</h3>
 </div>
 <div style="height: 450px" id="map-UKAC"></div>
 
-<script src="/media/js/linealt.chart.js"></script>
+<script src="/media/js/chartjs.plugin.annotation.js"></script>
+<script src="/media/js/L.maidenheadcoloured.js"></script>
+<script src="/media/js/L.fullscreen.js"></script>
 <script>
   var myLocation = [];
+
   gridSquareToLatLon("IO91aw", myLocation);
 
   var osmLayerUKAC = L.tileLayer('//tileserver.eastus.cloudapp.azure.com/{id}/{z}/{x}/{y}.png', {
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery &copy; <a href="https://www.mapbox.com/">Mapbox</a>',
     maxZoom: 18,
     id: 'ham'
+  });
+
+  var lightTilesUKAC = L.tileLayer('//cartodb-basemaps-{s}.global.ssl.fastly.net/{id}/{z}/{x}/{y}.png', {
+    attribution: 'Map tiles by Carto, under CC BY 3.0. Data by <a href="//www.openstreetmap.org/">OpenStreetMap</a>, under ODbL.',
+    maxZoom: 18,
+    id: 'light_all'
+  });
+
+  var darkTilesUKAC = L.tileLayer('//cartodb-basemaps-{s}.global.ssl.fastly.net/{id}/{z}/{x}/{y}.png', {
+    attribution: 'Map tiles by Carto, under CC BY 3.0. Data by <a href="//www.openstreetmap.org/">OpenStreetMap</a>, under ODbL.',
+    maxZoom: 18,
+    id: 'dark_all'
   });
 
   var portableIcon = L.icon({
@@ -304,9 +320,12 @@ Position: 31 (of 70) in AL section</p>      <h3>UKAC</h3>
     popupAnchor:  [0, -30]  // point from which the popup should open relative to the iconAnchor
   });
 
-  var heatmapLayerUKAC = L.heatLayer([], {radius: 50, maxZoom: 10});
+  var heatmapLayerUKAC = L.heatLayer([], {radius: 80, maxZoom: 16});
 
   var stationsLayerUKAC = L.featureGroup([]);
+
+  var gridLayerUKAC = L.maidenhead({ worked: [], confirmed: [] });
+  gridLayerUKAC._map = mapUKAC;
 
   stationsLayerUKAC.addLayer(
     L.marker(
@@ -367,6 +386,12 @@ Position: 31 (of 70) in AL section</p>      <h3>UKAC</h3>
         latlng = gridSquareToLatLon(log[i].locator, log[i]);
         heatmapLayerUKAC.addLatLng([log[i].lat, log[i].lon, 1]);
       }
+
+      // Add to grid shading
+      if ( log[i].locator ) {
+        gridLayerUKAC.grids.worked.push(log[i].locator);
+      }
+      gridLayerUKAC.redraw();
 
       // Add QSO to rate object
       rateKey = log[i].date + " " + Math.floor(parseInt(log[i].time) / rateGroupInterval) * rateGroupInterval;
@@ -436,6 +461,26 @@ Position: 31 (of 70) in AL section</p>      <h3>UKAC</h3>
             display: true,
             text: 'UKAC Rate Chart'
           }
+        },
+        plugins: {
+          annotation: {
+            drawTime: 'afterDatasetsDraw',
+            annotations: [{
+      				id: 'a-line-1', // optional
+      				type: 'line',
+      				mode: 'horizontal',
+      				scaleID: 'y-axis-0',
+      				value: '2',
+      				borderColor: 'red',
+      				borderWidth: 2,
+
+      				// Fires when the user clicks this annotation on the chart
+      				// (be sure to enable the event in the events array below).
+      				onClick: function(e) {
+      					// `this` is bound to the annotation element
+      				}
+      			}]
+          }
         }
       });
       console.log("rate chart", window.rateBarChartUKAC);
@@ -444,13 +489,14 @@ Position: 31 (of 70) in AL section</p>      <h3>UKAC</h3>
 
   heatmapLayerUKAC.redraw();
 
-  var basemapsUKAC = {"OpenStreetMap": osmLayerUKAC};
-  var overlayMapsUKAC = {"Heatmap (UKAC)": heatmapLayerUKAC, "Stations": stationsLayerUKAC};
+  var basemapsUKAC = {"OpenStreetMap": osmLayerUKAC, "Carto Light": lightTilesUKAC, "Carto Dark": darkTilesUKAC};
+  var overlayMapsUKAC = {"Grid": gridLayerUKAC, "Heatmap": heatmapLayerUKAC, "Stations": stationsLayerUKAC};
 
   var mapUKAC = new L.map('map-UKAC', {
     zoom: 6,
     attributionControl: true,
-    layers: [osmLayerUKAC, heatmapLayerUKAC, stationsLayerUKAC]
+    fullscreenControl: true,
+    layers: [lightTilesUKAC, heatmapLayerUKAC, gridLayerUKAC, stationsLayerUKAC]
   });
   //mapUKAC.setView([51.945732, -1.926986], 6);
   mapUKAC.fitBounds(stationsLayerUKAC.getBounds().pad(0.5));
@@ -504,15 +550,30 @@ Position: 31 (of 70) in AL section</p>      <h3>UKAC</h3>
 </div>
 <div style="height: 450px" id="map-FMAC"></div>
 
-<script src="/media/js/linealt.chart.js"></script>
+<script src="/media/js/chartjs.plugin.annotation.js"></script>
+<script src="/media/js/L.maidenheadcoloured.js"></script>
+<script src="/media/js/L.fullscreen.js"></script>
 <script>
   var myLocation = [];
+
   gridSquareToLatLon("IO91aw", myLocation);
 
   var osmLayerFMAC = L.tileLayer('//tileserver.eastus.cloudapp.azure.com/{id}/{z}/{x}/{y}.png', {
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery &copy; <a href="https://www.mapbox.com/">Mapbox</a>',
     maxZoom: 18,
     id: 'ham'
+  });
+
+  var lightTilesFMAC = L.tileLayer('//cartodb-basemaps-{s}.global.ssl.fastly.net/{id}/{z}/{x}/{y}.png', {
+    attribution: 'Map tiles by Carto, under CC BY 3.0. Data by <a href="//www.openstreetmap.org/">OpenStreetMap</a>, under ODbL.',
+    maxZoom: 18,
+    id: 'light_all'
+  });
+
+  var darkTilesFMAC = L.tileLayer('//cartodb-basemaps-{s}.global.ssl.fastly.net/{id}/{z}/{x}/{y}.png', {
+    attribution: 'Map tiles by Carto, under CC BY 3.0. Data by <a href="//www.openstreetmap.org/">OpenStreetMap</a>, under ODbL.',
+    maxZoom: 18,
+    id: 'dark_all'
   });
 
   var portableIcon = L.icon({
@@ -543,9 +604,12 @@ Position: 31 (of 70) in AL section</p>      <h3>UKAC</h3>
     popupAnchor:  [0, -30]  // point from which the popup should open relative to the iconAnchor
   });
 
-  var heatmapLayerFMAC = L.heatLayer([], {radius: 50, maxZoom: 10});
+  var heatmapLayerFMAC = L.heatLayer([], {radius: 80, maxZoom: 16});
 
   var stationsLayerFMAC = L.featureGroup([]);
+
+  var gridLayerFMAC = L.maidenhead({ worked: [], confirmed: [] });
+  gridLayerFMAC._map = mapFMAC;
 
   stationsLayerFMAC.addLayer(
     L.marker(
@@ -606,6 +670,12 @@ Position: 31 (of 70) in AL section</p>      <h3>UKAC</h3>
         latlng = gridSquareToLatLon(log[i].locator, log[i]);
         heatmapLayerFMAC.addLatLng([log[i].lat, log[i].lon, 1]);
       }
+
+      // Add to grid shading
+      if ( log[i].locator ) {
+        gridLayerFMAC.grids.worked.push(log[i].locator);
+      }
+      gridLayerFMAC.redraw();
 
       // Add QSO to rate object
       rateKey = log[i].date + " " + Math.floor(parseInt(log[i].time) / rateGroupInterval) * rateGroupInterval;
@@ -675,6 +745,26 @@ Position: 31 (of 70) in AL section</p>      <h3>UKAC</h3>
             display: true,
             text: 'FMAC Rate Chart'
           }
+        },
+        plugins: {
+          annotation: {
+            drawTime: 'afterDatasetsDraw',
+            annotations: [{
+      				id: 'a-line-1', // optional
+      				type: 'line',
+      				mode: 'horizontal',
+      				scaleID: 'y-axis-0',
+      				value: '2',
+      				borderColor: 'red',
+      				borderWidth: 2,
+
+      				// Fires when the user clicks this annotation on the chart
+      				// (be sure to enable the event in the events array below).
+      				onClick: function(e) {
+      					// `this` is bound to the annotation element
+      				}
+      			}]
+          }
         }
       });
       console.log("rate chart", window.rateBarChartFMAC);
@@ -683,13 +773,14 @@ Position: 31 (of 70) in AL section</p>      <h3>UKAC</h3>
 
   heatmapLayerFMAC.redraw();
 
-  var basemapsFMAC = {"OpenStreetMap": osmLayerFMAC};
-  var overlayMapsFMAC = {"Heatmap (FMAC)": heatmapLayerFMAC, "Stations": stationsLayerFMAC};
+  var basemapsFMAC = {"OpenStreetMap": osmLayerFMAC, "Carto Light": lightTilesFMAC, "Carto Dark": darkTilesFMAC};
+  var overlayMapsFMAC = {"Grid": gridLayerFMAC, "Heatmap": heatmapLayerFMAC, "Stations": stationsLayerFMAC};
 
   var mapFMAC = new L.map('map-FMAC', {
     zoom: 6,
     attributionControl: true,
-    layers: [osmLayerFMAC, heatmapLayerFMAC, stationsLayerFMAC]
+    fullscreenControl: true,
+    layers: [lightTilesFMAC, heatmapLayerFMAC, gridLayerFMAC, stationsLayerFMAC]
   });
   //mapFMAC.setView([51.945732, -1.926986], 6);
   mapFMAC.fitBounds(stationsLayerFMAC.getBounds().pad(0.5));
@@ -753,7 +844,7 @@ Position: 31 (of 70) in AL section</p>      <h3>UKAC</h3>
           <h5>RECENT POSTS</h3>
           <div class="widget">
             <ul>
-                              <li><a href="/contests\ukac-june-2019.html">2m/70cm UKAC June 2019</a></li>                              <li><a href="/contests\ukac-may-2019.html">2m/70cm UKAC May 2019</a></li>                              <li><a href="/projects\satellite-station.html">2m/70cm Satellite Station</a></li>                              <li><a href="/blog\emsystech-raspi-lcd.html">Emsystech RaspiLCD</a></li>                              <li><a href="/projects\magloop.html">HF Magnetic Loop Antenna</a></li>                          </ul>
+                              <li><a href="/contests\ukac-july-2019.html">2m/70cm UKAC July 2019</a></li>                              <li><a href="/contests\ukac-june-2019.html">2m/70cm UKAC June 2019</a></li>                              <li><a href="/contests\ukac-may-2019.html">2m/70cm UKAC May 2019</a></li>                              <li><a href="/projects\satellite-station.html">2m/70cm Satellite Station</a></li>                              <li><a href="/blog\emsystech-raspi-lcd.html">Emsystech RaspiLCD</a></li>                          </ul>
           </div>
 
           <hr />

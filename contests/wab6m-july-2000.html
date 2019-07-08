@@ -86,6 +86,7 @@
   <script src="/media/js/HamGridSquare.js"></script>
   <script src="/media/js/adif.js"></script>
   <script src="/media/js/chart.min.js"></script>
+  <link rel="stylesheet" href="/media/css/L.fullscreen.css" />
           </head>
   <body id="wab6m-july-2000" ontouchstart="">
   
@@ -232,15 +233,30 @@
 </div>
 <div style="height: 450px" id="map-6m"></div>
 
-<script src="/media/js/linealt.chart.js"></script>
+<script src="/media/js/chartjs.plugin.annotation.js"></script>
+<script src="/media/js/L.maidenheadcoloured.js"></script>
+<script src="/media/js/L.fullscreen.js"></script>
 <script>
   var myLocation = [];
+
   gridSquareToLatLon("IO92de", myLocation);
 
   var osmLayer6m = L.tileLayer('//tileserver.eastus.cloudapp.azure.com/{id}/{z}/{x}/{y}.png', {
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery &copy; <a href="https://www.mapbox.com/">Mapbox</a>',
     maxZoom: 18,
     id: 'ham'
+  });
+
+  var lightTiles6m = L.tileLayer('//cartodb-basemaps-{s}.global.ssl.fastly.net/{id}/{z}/{x}/{y}.png', {
+    attribution: 'Map tiles by Carto, under CC BY 3.0. Data by <a href="//www.openstreetmap.org/">OpenStreetMap</a>, under ODbL.',
+    maxZoom: 18,
+    id: 'light_all'
+  });
+
+  var darkTiles6m = L.tileLayer('//cartodb-basemaps-{s}.global.ssl.fastly.net/{id}/{z}/{x}/{y}.png', {
+    attribution: 'Map tiles by Carto, under CC BY 3.0. Data by <a href="//www.openstreetmap.org/">OpenStreetMap</a>, under ODbL.',
+    maxZoom: 18,
+    id: 'dark_all'
   });
 
   var portableIcon = L.icon({
@@ -271,9 +287,12 @@
     popupAnchor:  [0, -30]  // point from which the popup should open relative to the iconAnchor
   });
 
-  var heatmapLayer6m = L.heatLayer([], {radius: 50, maxZoom: 10});
+  var heatmapLayer6m = L.heatLayer([], {radius: 80, maxZoom: 16});
 
   var stationsLayer6m = L.featureGroup([]);
+
+  var gridLayer6m = L.maidenhead({ worked: [], confirmed: [] });
+  gridLayer6m._map = map6m;
 
   stationsLayer6m.addLayer(
     L.marker(
@@ -334,6 +353,12 @@
         latlng = gridSquareToLatLon(log[i].locator, log[i]);
         heatmapLayer6m.addLatLng([log[i].lat, log[i].lon, 1]);
       }
+
+      // Add to grid shading
+      if ( log[i].locator ) {
+        gridLayer6m.grids.worked.push(log[i].locator);
+      }
+      gridLayer6m.redraw();
 
       // Add QSO to rate object
       rateKey = log[i].date + " " + Math.floor(parseInt(log[i].time) / rateGroupInterval) * rateGroupInterval;
@@ -403,6 +428,26 @@
             display: true,
             text: '6m Rate Chart'
           }
+        },
+        plugins: {
+          annotation: {
+            drawTime: 'afterDatasetsDraw',
+            annotations: [{
+      				id: 'a-line-1', // optional
+      				type: 'line',
+      				mode: 'horizontal',
+      				scaleID: 'y-axis-0',
+      				value: '2',
+      				borderColor: 'red',
+      				borderWidth: 2,
+
+      				// Fires when the user clicks this annotation on the chart
+      				// (be sure to enable the event in the events array below).
+      				onClick: function(e) {
+      					// `this` is bound to the annotation element
+      				}
+      			}]
+          }
         }
       });
       console.log("rate chart", window.rateBarChart6m);
@@ -411,13 +456,14 @@
 
   heatmapLayer6m.redraw();
 
-  var basemaps6m = {"OpenStreetMap": osmLayer6m};
-  var overlayMaps6m = {"Heatmap (6m)": heatmapLayer6m, "Stations": stationsLayer6m};
+  var basemaps6m = {"OpenStreetMap": osmLayer6m, "Carto Light": lightTiles6m, "Carto Dark": darkTiles6m};
+  var overlayMaps6m = {"Grid": gridLayer6m, "Heatmap": heatmapLayer6m, "Stations": stationsLayer6m};
 
   var map6m = new L.map('map-6m', {
     zoom: 6,
     attributionControl: true,
-    layers: [osmLayer6m, heatmapLayer6m, stationsLayer6m]
+    fullscreenControl: true,
+    layers: [lightTiles6m, heatmapLayer6m, gridLayer6m, stationsLayer6m]
   });
   //map6m.setView([51.945732, -1.926986], 6);
   map6m.fitBounds(stationsLayer6m.getBounds().pad(0.5));
@@ -481,7 +527,7 @@
           <h5>RECENT POSTS</h3>
           <div class="widget">
             <ul>
-                              <li><a href="/contests\ukac-june-2019.html">2m/70cm UKAC June 2019</a></li>                              <li><a href="/contests\ukac-may-2019.html">2m/70cm UKAC May 2019</a></li>                              <li><a href="/projects\satellite-station.html">2m/70cm Satellite Station</a></li>                              <li><a href="/blog\emsystech-raspi-lcd.html">Emsystech RaspiLCD</a></li>                              <li><a href="/projects\magloop.html">HF Magnetic Loop Antenna</a></li>                          </ul>
+                              <li><a href="/contests\ukac-july-2019.html">2m/70cm UKAC July 2019</a></li>                              <li><a href="/contests\ukac-june-2019.html">2m/70cm UKAC June 2019</a></li>                              <li><a href="/contests\ukac-may-2019.html">2m/70cm UKAC May 2019</a></li>                              <li><a href="/projects\satellite-station.html">2m/70cm Satellite Station</a></li>                              <li><a href="/blog\emsystech-raspi-lcd.html">Emsystech RaspiLCD</a></li>                          </ul>
           </div>
 
           <hr />

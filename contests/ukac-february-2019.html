@@ -86,6 +86,7 @@
   <script src="/media/js/HamGridSquare.js"></script>
   <script src="/media/js/adif.js"></script>
   <script src="/media/js/chart.min.js"></script>
+  <link rel="stylesheet" href="/media/css/L.fullscreen.css" />
           </head>
   <body id="ukac-february-2019" ontouchstart="">
   
@@ -256,15 +257,30 @@ so I could gt on and work the rest of the contest, albeit with a SWR of about 2.
 </div>
 <div style="height: 450px" id="map-2M"></div>
 
-<script src="/media/js/linealt.chart.js"></script>
+<script src="/media/js/chartjs.plugin.annotation.js"></script>
+<script src="/media/js/L.maidenheadcoloured.js"></script>
+<script src="/media/js/L.fullscreen.js"></script>
 <script>
   var myLocation = [];
+
   gridSquareToLatLon("IO91aw", myLocation);
 
   var osmLayer2M = L.tileLayer('//tileserver.eastus.cloudapp.azure.com/{id}/{z}/{x}/{y}.png', {
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery &copy; <a href="https://www.mapbox.com/">Mapbox</a>',
     maxZoom: 18,
     id: 'ham'
+  });
+
+  var lightTiles2M = L.tileLayer('//cartodb-basemaps-{s}.global.ssl.fastly.net/{id}/{z}/{x}/{y}.png', {
+    attribution: 'Map tiles by Carto, under CC BY 3.0. Data by <a href="//www.openstreetmap.org/">OpenStreetMap</a>, under ODbL.',
+    maxZoom: 18,
+    id: 'light_all'
+  });
+
+  var darkTiles2M = L.tileLayer('//cartodb-basemaps-{s}.global.ssl.fastly.net/{id}/{z}/{x}/{y}.png', {
+    attribution: 'Map tiles by Carto, under CC BY 3.0. Data by <a href="//www.openstreetmap.org/">OpenStreetMap</a>, under ODbL.',
+    maxZoom: 18,
+    id: 'dark_all'
   });
 
   var portableIcon = L.icon({
@@ -295,9 +311,12 @@ so I could gt on and work the rest of the contest, albeit with a SWR of about 2.
     popupAnchor:  [0, -30]  // point from which the popup should open relative to the iconAnchor
   });
 
-  var heatmapLayer2M = L.heatLayer([], {radius: 50, maxZoom: 10});
+  var heatmapLayer2M = L.heatLayer([], {radius: 80, maxZoom: 16});
 
   var stationsLayer2M = L.featureGroup([]);
+
+  var gridLayer2M = L.maidenhead({ worked: [], confirmed: [] });
+  gridLayer2M._map = map2M;
 
   stationsLayer2M.addLayer(
     L.marker(
@@ -358,6 +377,12 @@ so I could gt on and work the rest of the contest, albeit with a SWR of about 2.
         latlng = gridSquareToLatLon(log[i].locator, log[i]);
         heatmapLayer2M.addLatLng([log[i].lat, log[i].lon, 1]);
       }
+
+      // Add to grid shading
+      if ( log[i].locator ) {
+        gridLayer2M.grids.worked.push(log[i].locator);
+      }
+      gridLayer2M.redraw();
 
       // Add QSO to rate object
       rateKey = log[i].date + " " + Math.floor(parseInt(log[i].time) / rateGroupInterval) * rateGroupInterval;
@@ -427,6 +452,26 @@ so I could gt on and work the rest of the contest, albeit with a SWR of about 2.
             display: true,
             text: '2M Rate Chart'
           }
+        },
+        plugins: {
+          annotation: {
+            drawTime: 'afterDatasetsDraw',
+            annotations: [{
+      				id: 'a-line-1', // optional
+      				type: 'line',
+      				mode: 'horizontal',
+      				scaleID: 'y-axis-0',
+      				value: '2',
+      				borderColor: 'red',
+      				borderWidth: 2,
+
+      				// Fires when the user clicks this annotation on the chart
+      				// (be sure to enable the event in the events array below).
+      				onClick: function(e) {
+      					// `this` is bound to the annotation element
+      				}
+      			}]
+          }
         }
       });
       console.log("rate chart", window.rateBarChart2M);
@@ -435,13 +480,14 @@ so I could gt on and work the rest of the contest, albeit with a SWR of about 2.
 
   heatmapLayer2M.redraw();
 
-  var basemaps2M = {"OpenStreetMap": osmLayer2M};
-  var overlayMaps2M = {"Heatmap (2M)": heatmapLayer2M, "Stations": stationsLayer2M};
+  var basemaps2M = {"OpenStreetMap": osmLayer2M, "Carto Light": lightTiles2M, "Carto Dark": darkTiles2M};
+  var overlayMaps2M = {"Grid": gridLayer2M, "Heatmap": heatmapLayer2M, "Stations": stationsLayer2M};
 
   var map2M = new L.map('map-2M', {
     zoom: 6,
     attributionControl: true,
-    layers: [osmLayer2M, heatmapLayer2M, stationsLayer2M]
+    fullscreenControl: true,
+    layers: [lightTiles2M, heatmapLayer2M, gridLayer2M, stationsLayer2M]
   });
   //map2M.setView([51.945732, -1.926986], 6);
   map2M.fitBounds(stationsLayer2M.getBounds().pad(0.5));
@@ -495,15 +541,30 @@ so I could gt on and work the rest of the contest, albeit with a SWR of about 2.
 </div>
 <div style="height: 450px" id="map-70CM"></div>
 
-<script src="/media/js/linealt.chart.js"></script>
+<script src="/media/js/chartjs.plugin.annotation.js"></script>
+<script src="/media/js/L.maidenheadcoloured.js"></script>
+<script src="/media/js/L.fullscreen.js"></script>
 <script>
   var myLocation = [];
+
   gridSquareToLatLon("IO91aw", myLocation);
 
   var osmLayer70CM = L.tileLayer('//tileserver.eastus.cloudapp.azure.com/{id}/{z}/{x}/{y}.png', {
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery &copy; <a href="https://www.mapbox.com/">Mapbox</a>',
     maxZoom: 18,
     id: 'ham'
+  });
+
+  var lightTiles70CM = L.tileLayer('//cartodb-basemaps-{s}.global.ssl.fastly.net/{id}/{z}/{x}/{y}.png', {
+    attribution: 'Map tiles by Carto, under CC BY 3.0. Data by <a href="//www.openstreetmap.org/">OpenStreetMap</a>, under ODbL.',
+    maxZoom: 18,
+    id: 'light_all'
+  });
+
+  var darkTiles70CM = L.tileLayer('//cartodb-basemaps-{s}.global.ssl.fastly.net/{id}/{z}/{x}/{y}.png', {
+    attribution: 'Map tiles by Carto, under CC BY 3.0. Data by <a href="//www.openstreetmap.org/">OpenStreetMap</a>, under ODbL.',
+    maxZoom: 18,
+    id: 'dark_all'
   });
 
   var portableIcon = L.icon({
@@ -534,9 +595,12 @@ so I could gt on and work the rest of the contest, albeit with a SWR of about 2.
     popupAnchor:  [0, -30]  // point from which the popup should open relative to the iconAnchor
   });
 
-  var heatmapLayer70CM = L.heatLayer([], {radius: 50, maxZoom: 10});
+  var heatmapLayer70CM = L.heatLayer([], {radius: 80, maxZoom: 16});
 
   var stationsLayer70CM = L.featureGroup([]);
+
+  var gridLayer70CM = L.maidenhead({ worked: [], confirmed: [] });
+  gridLayer70CM._map = map70CM;
 
   stationsLayer70CM.addLayer(
     L.marker(
@@ -597,6 +661,12 @@ so I could gt on and work the rest of the contest, albeit with a SWR of about 2.
         latlng = gridSquareToLatLon(log[i].locator, log[i]);
         heatmapLayer70CM.addLatLng([log[i].lat, log[i].lon, 1]);
       }
+
+      // Add to grid shading
+      if ( log[i].locator ) {
+        gridLayer70CM.grids.worked.push(log[i].locator);
+      }
+      gridLayer70CM.redraw();
 
       // Add QSO to rate object
       rateKey = log[i].date + " " + Math.floor(parseInt(log[i].time) / rateGroupInterval) * rateGroupInterval;
@@ -666,6 +736,26 @@ so I could gt on and work the rest of the contest, albeit with a SWR of about 2.
             display: true,
             text: '70CM Rate Chart'
           }
+        },
+        plugins: {
+          annotation: {
+            drawTime: 'afterDatasetsDraw',
+            annotations: [{
+      				id: 'a-line-1', // optional
+      				type: 'line',
+      				mode: 'horizontal',
+      				scaleID: 'y-axis-0',
+      				value: '2',
+      				borderColor: 'red',
+      				borderWidth: 2,
+
+      				// Fires when the user clicks this annotation on the chart
+      				// (be sure to enable the event in the events array below).
+      				onClick: function(e) {
+      					// `this` is bound to the annotation element
+      				}
+      			}]
+          }
         }
       });
       console.log("rate chart", window.rateBarChart70CM);
@@ -674,13 +764,14 @@ so I could gt on and work the rest of the contest, albeit with a SWR of about 2.
 
   heatmapLayer70CM.redraw();
 
-  var basemaps70CM = {"OpenStreetMap": osmLayer70CM};
-  var overlayMaps70CM = {"Heatmap (70CM)": heatmapLayer70CM, "Stations": stationsLayer70CM};
+  var basemaps70CM = {"OpenStreetMap": osmLayer70CM, "Carto Light": lightTiles70CM, "Carto Dark": darkTiles70CM};
+  var overlayMaps70CM = {"Grid": gridLayer70CM, "Heatmap": heatmapLayer70CM, "Stations": stationsLayer70CM};
 
   var map70CM = new L.map('map-70CM', {
     zoom: 6,
     attributionControl: true,
-    layers: [osmLayer70CM, heatmapLayer70CM, stationsLayer70CM]
+    fullscreenControl: true,
+    layers: [lightTiles70CM, heatmapLayer70CM, gridLayer70CM, stationsLayer70CM]
   });
   //map70CM.setView([51.945732, -1.926986], 6);
   map70CM.fitBounds(stationsLayer70CM.getBounds().pad(0.5));
@@ -744,7 +835,7 @@ so I could gt on and work the rest of the contest, albeit with a SWR of about 2.
           <h5>RECENT POSTS</h3>
           <div class="widget">
             <ul>
-                              <li><a href="/contests\ukac-june-2019.html">2m/70cm UKAC June 2019</a></li>                              <li><a href="/contests\ukac-may-2019.html">2m/70cm UKAC May 2019</a></li>                              <li><a href="/projects\satellite-station.html">2m/70cm Satellite Station</a></li>                              <li><a href="/blog\emsystech-raspi-lcd.html">Emsystech RaspiLCD</a></li>                              <li><a href="/projects\magloop.html">HF Magnetic Loop Antenna</a></li>                          </ul>
+                              <li><a href="/contests\ukac-july-2019.html">2m/70cm UKAC July 2019</a></li>                              <li><a href="/contests\ukac-june-2019.html">2m/70cm UKAC June 2019</a></li>                              <li><a href="/contests\ukac-may-2019.html">2m/70cm UKAC May 2019</a></li>                              <li><a href="/projects\satellite-station.html">2m/70cm Satellite Station</a></li>                              <li><a href="/blog\emsystech-raspi-lcd.html">Emsystech RaspiLCD</a></li>                          </ul>
           </div>
 
           <hr />

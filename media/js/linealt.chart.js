@@ -8,16 +8,21 @@ Chart.pluginService.register({
 
     var meta = chart.getDatasetMeta(1);
 
-    var start = meta.data[1]._model.x;
-    var stop  = meta.data[2]._model.x;
+    console.log("chart", chart);
+
+    meta.data.forEach(function (element) {
+      var start = element._model.x;
+      var stop  = element._model.x + 10;
+
+      ctx.save();
+      ctx.fillStyle = chart.config.options.chartArea.backgroundColor;
+      console.log (chartArea);
+      ctx.fillRect(start, chartArea.top, stop - start, chartArea.bottom - chartArea.top);
+      ctx.restore();
+    });
 
     console.log("run_periods", chart.config.options.run_periods);
 
-    ctx.save();
-    ctx.fillStyle = chart.config.options.chartArea.backgroundColor;
-    console.log (chartArea);
-    ctx.fillRect(start, chartArea.top, stop - start, chartArea.bottom - chartArea.top);
-    ctx.restore();
 
     }
   }

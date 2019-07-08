@@ -3,7 +3,10 @@
  */
 
 L.Maidenhead = L.LayerGroup.extend({
-
+  grids: {
+    worked: [],
+    confirmed: []
+  },
 
 	options: {
 		// Line and label color
@@ -12,10 +15,10 @@ L.Maidenhead = L.LayerGroup.extend({
 		redraw: 'move'
 	},
 
-	initialize: function (options) {
+	initialize: function (grids, options) {
 		L.LayerGroup.prototype.initialize.call(this);
 		L.Util.setOptions(this, options);
-
+    this.grids = grids;
 	},
 
 	onAdd: function (map) {
@@ -53,13 +56,51 @@ L.Maidenhead = L.LayerGroup.extend({
 		var top = Math.ceil(n/unit)*unit;
 		var bottom = Math.floor(s/unit)*unit;
 		this.eachLayer(this.removeLayer, this);
-		for (var lon = left; lon < right; lon += (unit*2)) {
-			for (var lat = bottom; lat < top; lat += unit) {
-			var bounds = [[lat,lon],[lat+unit,lon+(unit*2)]];
-			this.addLayer(L.rectangle(bounds, {color: this.options.color, weight: 1, fill:false, interactive: false}));
-			//var pont = map.latLngToLayerPoint([lat,lon]);
+
+    // Build up arrays of grid squares and fields
+    var grid_two = [];
+    var grid_two_confirmed = [];
+    var grid_four = [];
+    var grid_four_confirmed = [];
+
+    this.grids.worked.forEach(function(grid) {
+      grid_two.push(grid.substring(0,4).toUpperCase());
+      grid_four.push(grid.substring(0,6).toUpperCase());
+    });
+
+    this.grids.confirmed.forEach(function(grid) {
+      grid_two_confirmed.push(grid.substring(0,4).toUpperCase());
+      grid_four_confirmed.push(grid.substring(0,6).toUpperCase());
+    });
+
+    console.log("grid_two", grid_two);
+    console.log("grid_two_confirmed", grid_two_confirmed);
+    console.log("grid_four", grid_four);
+    console.log("grid_four_confirmed", grid_four_confirmed);
+
+
+		for (var gridLon = left; gridLon < right; gridLon += (unit*2)) {
+			for (var gridLat = bottom; gridLat < top; gridLat += unit) {
+			var bounds = [[gridLat,gridLon],[gridLat+unit,gridLon+(unit*2)]];
+
+      console.log("Checking:", bounds);
+      console.log("Locator:", this._getLocator(gridLon+unit,gridLat+unit/2));
+
+			if(grid_two.includes(this._getLocator(gridLon,gridLat)) || grid_four.includes(this._getLocator(gridLon,gridLat))) {
+
+				if(grid_two_confirmed.includes(this._getLocator(gridLon,gridLat)) || grid_four_confirmed.includes(this._getLocator(gridLon,gridLat))) {
+
+					this.addLayer(L.rectangle(bounds, {color: 'rgb(144,238,144)', weight: 1, fillOpacity: 0.6, fill:true, interactive: false}));
+				} else {
+
+				this.addLayer(L.rectangle(bounds, {color: this.options.color, weight: 1, fillOpacity: 0.6, fill:true, interactive: false}));
+				}
+			} else {
+				this.addLayer(L.rectangle(bounds, {color: this.options.color, weight: 1, fill:false, interactive: false}));
+			}
+			//var pont = map.latLngToLayerPoint([gridLat,gridLon]);
 			//console.log(pont.x);
-			this.addLayer(this._getLabel(lon+unit-(unit/lcor),lat+(unit/2)+(unit/lcor*c)));
+			this.addLayer(this._getLabel(gridLon+unit-(unit/lcor),gridLat+(unit/2)+(unit/lcor*c)));
 			}
 		}
 		return this;
@@ -108,6 +149,10 @@ L.Maidenhead = L.LayerGroup.extend({
 
 });
 
-L.maidenhead = function (options) {
-	return new L.Maidenhead(options);
+// Grids should be an object of two arrays, grids are expected to be 6-figure grids:
+//
+// { worked: ["AB01cd", "EF23gh"], confirmed: ["AB01cd"] }
+//
+L.maidenhead = function (grids, options) {
+	return new L.Maidenhead(grids, options);
 };
