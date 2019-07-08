@@ -86,9 +86,11 @@ L.Maidenhead = L.LayerGroup.extend({
       console.log("Checking:", bounds);
       console.log("Locator:", this._getLocator(gridLon+unit,gridLat+unit/2));
 
-			if(grid_two.includes(this._getLocator(gridLon,gridLat)) || grid_four.includes(this._getLocator(gridLon,gridLat))) {
+			if(grid_two.includes(this._getLocator(gridLon+unit,gridLat+unit/2)) || grid_four.includes(this._getLocator(gridLon+unit,gridLat+unit/2))) {
 
-				if(grid_two_confirmed.includes(this._getLocator(gridLon,gridLat)) || grid_four_confirmed.includes(this._getLocator(gridLon,gridLat))) {
+        console.log("Found!");
+
+				if(grid_two_confirmed.includes(this._getLocator(gridLon+unit,gridLat+unit/2)) || grid_four_confirmed.includes(this._getLocator(gridLon+unit,gridLat+unit/2))) {
 
 					this.addLayer(L.rectangle(bounds, {color: 'rgb(144,238,144)', weight: 1, fillOpacity: 0.6, fill:true, interactive: false}));
 				} else {
