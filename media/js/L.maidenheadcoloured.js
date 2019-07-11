@@ -112,7 +112,7 @@ L.Maidenhead = L.LayerGroup.extend({
 	  var title_size = new Array(0 ,10,12,16,20,26,12,16,24,36,12  ,14  ,20  ,36  ,60  ,12   ,20   ,36   ,60   ,12      ,24       );
 	  var zoom = this._map.getZoom();
 	  var size = title_size[zoom]+'px';
-	  var title = '<span style="cursor: default;"><font style="color:'+this.options.color+'; font-size:'+size+'; font-weight: 900; ">' + this._getLocator(lon,lat) + '</font></span>';
+	  var title = '<span style="cursor: default;"><font style="color:'+this.options.color+'; font-size:'+size+'; font-weight: 900; word-wrap: normal;">' + this._getLocator(lon,lat) + '</font></span>';
       var myIcon = L.divIcon({className: 'my-div-icon', html: title});
       var marker = L.marker([lat,lon], {icon: myIcon}, clickable=false);
       return marker;
