@@ -3,7 +3,7 @@
   <head>
     <!-- Required meta tags -->
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     
     <!-- Bootstrap CSS -->
@@ -47,16 +47,16 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
                                     <li class="nav-item">
-              <a class="nav-link" href="/about.html">About</span></a>
+              <a class="nav-link" href="/about.html">About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/blog/">Blog</span></a>
+              <a class="nav-link" href="/blog/">Blog</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/contests/">Contest Reports</span></a>
+              <a class="nav-link" href="/contests/">Contest Reports</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/projects/">Projects</span></a>
+              <a class="nav-link" href="/projects/">Projects</a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -71,13 +71,13 @@
             </li>
           </ul>
           <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search the Logbook" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            <input id="searchCallsign" class="form-control mr-sm-2" type="search" placeholder="Search the Logbook" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" id="btnLogSearch">Search</button>
           </form>
         </div>
       </nav>
 
-      <h1 class="header-text">Title</h1>
+      <h1 class="header-text">2E1HNK</h1>
     </div>
 
     <div class="container-fluid">
@@ -86,13 +86,9 @@
           
   
     <a href="/blog/2m-channels.html">
-      <h2 class="align-center pb-3 mbr-fonts-style display-5 text-black">UK 2m Channels</h2>
+      <h2>UK 2m Channels</h2>
           </a>
-    <h3 class="mbr-section-subtitle align-center mbr-light mbr-fonts-style display-7">
-      <em>
-        By Matt, 2E1HNK on <time datetime="2019-07-17">Wed, 17 Jul 2019</time>
-      </em>
-    </h3>
+    <em class="text-muted">By Matt, 2E1HNK on <time datetime="2019-07-17">Wed, 17 Jul 2019</time></em>
 
           <div class="tags">
               <a class="btn btn-outline-secondary btn-sm" href="/blog/tags/TechNote.html">TechNote</a>
@@ -216,13 +212,9 @@
 
   
     <a href="/contests/ukac-july-2019.html">
-      <h2 class="align-center pb-3 mbr-fonts-style display-5 text-black">2m/70cm UKAC July 2019</h2>
+      <h2>2m/70cm UKAC July 2019</h2>
           </a>
-    <h3 class="mbr-section-subtitle align-center mbr-light mbr-fonts-style display-7">
-      <em>
-        By Matt, 2E1HNK on <time datetime="2019-07-02">Tue, 02 Jul 2019</time>
-      </em>
-    </h3>
+    <em class="text-muted">By Matt, 2E1HNK on <time datetime="2019-07-02">Tue, 02 Jul 2019</time></em>
 
           <div class="tags">
               <a class="btn btn-outline-secondary btn-sm" href="/blog/tags/UKAC.html">UKAC</a>
@@ -239,13 +231,9 @@
 
   
     <a href="/contests/ukac-june-2019.html">
-      <h2 class="align-center pb-3 mbr-fonts-style display-5 text-black">2m/70cm UKAC June 2019</h2>
+      <h2>2m/70cm UKAC June 2019</h2>
           </a>
-    <h3 class="mbr-section-subtitle align-center mbr-light mbr-fonts-style display-7">
-      <em>
-        By Matt, 2E1HNK on <time datetime="2019-06-04">Tue, 04 Jun 2019</time>
-      </em>
-    </h3>
+    <em class="text-muted">By Matt, 2E1HNK on <time datetime="2019-06-04">Tue, 04 Jun 2019</time></em>
 
           <div class="tags">
               <a class="btn btn-outline-secondary btn-sm" href="/blog/tags/UKAC.html">UKAC</a>
@@ -261,13 +249,9 @@
 
   
     <a href="/contests/ukac-may-2019.html">
-      <h2 class="align-center pb-3 mbr-fonts-style display-5 text-black">2m/70cm UKAC May 2019</h2>
+      <h2>2m/70cm UKAC May 2019</h2>
           </a>
-    <h3 class="mbr-section-subtitle align-center mbr-light mbr-fonts-style display-7">
-      <em>
-        By Matt, 2E1HNK on <time datetime="2019-05-08">Wed, 08 May 2019</time>
-      </em>
-    </h3>
+    <em class="text-muted">By Matt, 2E1HNK on <time datetime="2019-05-08">Wed, 08 May 2019</time></em>
 
           <div class="tags">
               <a class="btn btn-outline-secondary btn-sm" href="/blog/tags/UKAC.html">UKAC</a>
@@ -293,5 +277,14 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+        document.getElementById("btnLogSearch").onclick = function () {
+            var url = "/logsearch.html?callsign=" + document.getElementById("searchCallsign").value;
+            location.href(url);
+            return false;
+        };
+    </script>
+
   </body>
 </html>

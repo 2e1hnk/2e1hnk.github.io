@@ -3,7 +3,7 @@
   <head>
     <!-- Required meta tags -->
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     
     <!-- Bootstrap CSS -->
@@ -71,8 +71,8 @@
             </li>
           </ul>
           <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search the Logbook" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            <input id="searchCallsign" class="form-control mr-sm-2" type="search" placeholder="Search the Logbook" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" id="btnLogSearch">Search</button>
           </form>
         </div>
       </nav>
@@ -86,13 +86,9 @@
         <div class="col-md-8 offset-md-2">
             
     <a href="/blog/2m-channels.html">
-      <h2 class="align-center pb-3 mbr-fonts-style display-5 text-black">UK 2m Channels</h2>
+      <h2>UK 2m Channels</h2>
           </a>
-    <h3 class="mbr-section-subtitle align-center mbr-light mbr-fonts-style display-7">
-      <em>
-        By Matt, 2E1HNK on <time datetime="2019-07-17">Wed, 17 Jul 2019</time>
-      </em>
-    </h3>
+    <em class="text-muted">By Matt, 2E1HNK on <time datetime="2019-07-17">Wed, 17 Jul 2019</time></em>
 
           <div class="tags">
               <a class="btn btn-outline-secondary btn-sm" href="/blog/tags/TechNote.html">TechNote</a>
@@ -216,13 +212,9 @@
 
 
     <a href="/blog/ft857-cat-settings.html">
-      <h2 class="align-center pb-3 mbr-fonts-style display-5 text-black">Yaesu FT-857d CAT Settings</h2>
+      <h2>Yaesu FT-857d CAT Settings</h2>
           </a>
-    <h3 class="mbr-section-subtitle align-center mbr-light mbr-fonts-style display-7">
-      <em>
-        By Matt, 2E1HNK on <time datetime="2018-11-05">Mon, 05 Nov 2018</time>
-      </em>
-    </h3>
+    <em class="text-muted">By Matt, 2E1HNK on <time datetime="2018-11-05">Mon, 05 Nov 2018</time></em>
 
           <div class="tags">
               <a class="btn btn-outline-secondary btn-sm" href="/blog/tags/TechNote.html">TechNote</a>
@@ -243,13 +235,9 @@
 
 
     <a href="/blog/finding-good-hilltop-sites-2.html">
-      <h2 class="align-center pb-3 mbr-fonts-style display-5 text-black">Finding Good Hill-Top Portable Sites (2)</h2>
+      <h2>Finding Good Hill-Top Portable Sites (2)</h2>
           </a>
-    <h3 class="mbr-section-subtitle align-center mbr-light mbr-fonts-style display-7">
-      <em>
-        By Matt, 2E1HNK on <time datetime="2018-06-27">Wed, 27 Jun 2018</time>
-      </em>
-    </h3>
+    <em class="text-muted">By Matt, 2E1HNK on <time datetime="2018-06-27">Wed, 27 Jun 2018</time></em>
 
           <div class="tags">
               <a class="btn btn-outline-secondary btn-sm" href="/blog/tags/TechNote.html">TechNote</a>
@@ -266,13 +254,9 @@
 
 
     <a href="/blog/finding-good-hilltop-sites.html">
-      <h2 class="align-center pb-3 mbr-fonts-style display-5 text-black">Finding Good Hill-Top Portable Sites</h2>
+      <h2>Finding Good Hill-Top Portable Sites</h2>
           </a>
-    <h3 class="mbr-section-subtitle align-center mbr-light mbr-fonts-style display-7">
-      <em>
-        By Matt, 2E1HNK on <time datetime="2018-04-26">Thu, 26 Apr 2018</time>
-      </em>
-    </h3>
+    <em class="text-muted">By Matt, 2E1HNK on <time datetime="2018-04-26">Thu, 26 Apr 2018</time></em>
 
           <div class="tags">
               <a class="btn btn-outline-secondary btn-sm" href="/blog/tags/TechNote.html">TechNote</a>
@@ -296,13 +280,9 @@ be a better&nbsp;way&#8230;</p>
 
 
     <a href="/blog/ft857-power-output-stuck.html">
-      <h2 class="align-center pb-3 mbr-fonts-style display-5 text-black">Yaesu FT-857d Power Output Stuck</h2>
+      <h2>Yaesu FT-857d Power Output Stuck</h2>
           </a>
-    <h3 class="mbr-section-subtitle align-center mbr-light mbr-fonts-style display-7">
-      <em>
-        By Matt, 2E1HNK on <time datetime="2018-04-04">Wed, 04 Apr 2018</time>
-      </em>
-    </h3>
+    <em class="text-muted">By Matt, 2E1HNK on <time datetime="2018-04-04">Wed, 04 Apr 2018</time></em>
 
           <div class="tags">
               <a class="btn btn-outline-secondary btn-sm" href="/blog/tags/TechNote.html">TechNote</a>
@@ -330,5 +310,14 @@ rotating the <span class="caps">VFO</span> knob as it&nbsp;should.</p>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+        document.getElementById("btnLogSearch").onclick = function () {
+            var url = "/logsearch.html?callsign=" + document.getElementById("searchCallsign").value;
+            location.href(url);
+            return false;
+        };
+    </script>
+
   </body>
 </html>

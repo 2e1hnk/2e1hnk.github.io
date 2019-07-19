@@ -7,10 +7,134 @@
         <link href="/"/>
     
         
-    <updated>2019-07-11T12:27:14Z</updated>
+    <updated>2019-07-19T11:25:14Z</updated>
 
     <id>/blog/atom.xml/</id>
 
+            <entry>
+            <title type="html">UK 2m Channels</title>
+            <author><name>Matt, 2E1HNK</name></author>
+            <link href="/blog/2m-channels.html"/>
+            <updated>2019-07-17T20:00:00Z</updated>
+            <published>2019-07-17T20:00:00Z</published>
+            <id>/blog/2m-channels.html</id>
+                        <category   scheme="/blog/tags"
+                        term="TechNote"
+                        label="Technote" />
+            
+            <content type="html">
+                                &lt;p&gt;I seem to have needed to look this up quite a lot recently, so I thought I should copy it&amp;nbsp;here&amp;#8230;&lt;/p&gt;
+&lt;table class=&#34;table&#34;&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Channel Name&lt;/th&gt;
+      &lt;th&gt;Frequency&lt;/th&gt;
+      &lt;th&gt;Use&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;S8/V16&lt;/td&gt;&lt;td&gt;145.200MHz&lt;/td&gt;&lt;td&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;V17&lt;/td&gt;&lt;td&gt;145.2125MHz&lt;/td&gt;&lt;td&gt;Internet Voice Gateways&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;S9/V18&lt;/td&gt;&lt;td&gt;145.225MHz&lt;/td&gt;&lt;td&gt;&lt;span class=&#34;caps&#34;&gt;RAYNET&lt;/span&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;V19&lt;/td&gt;&lt;td&gt;145.2375MHz&lt;/td&gt;&lt;td&gt;&lt;span class=&#34;caps&#34;&gt;FM&lt;/span&gt; Internet Voice Gateway&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;S10/V20&lt;/td&gt;&lt;td&gt;145.250MHz&lt;/td&gt;&lt;td&gt;Slow Morse&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;V21&lt;/td&gt;&lt;td&gt;145.2625MHz&lt;/td&gt;&lt;td&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;S11/V22&lt;/td&gt;&lt;td&gt;145.275MHz&lt;/td&gt;&lt;td&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;V23&lt;/td&gt;&lt;td&gt;145.2875MHz&lt;/td&gt;&lt;td&gt;&lt;span class=&#34;caps&#34;&gt;FM&lt;/span&gt; Internet Voice Gateway&lt;/td&gt;&lt;td&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;S12/V24&lt;/td&gt;&lt;td&gt;145.300MHz&lt;/td&gt;&lt;td&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;V25&lt;/td&gt;&lt;td&gt;145.3125MHz&lt;/td&gt;&lt;td&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;S13/V26&lt;/td&gt;&lt;td&gt;145.325MHz&lt;/td&gt;&lt;td&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;V27&lt;/td&gt;&lt;td&gt;145.3375MHz&lt;/td&gt;&lt;td&gt;&lt;span class=&#34;caps&#34;&gt;FM&lt;/span&gt; Internet Voice Gateway&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;S14/V28&lt;/td&gt;&lt;td&gt;145.350MHz&lt;/td&gt;&lt;td&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;V29&lt;/td&gt;&lt;td&gt;145.3625MHz&lt;/td&gt;&lt;td&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;S15/V30&lt;/td&gt;&lt;td&gt;145.375MHz&lt;/td&gt;&lt;td&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;V31&lt;/td&gt;&lt;td&gt;145.3875MHz&lt;/td&gt;&lt;td&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;S16/V32&lt;/td&gt;&lt;td&gt;145.400MHz&lt;/td&gt;&lt;td&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;V33&lt;/td&gt;&lt;td&gt;145.4125MHz&lt;/td&gt;&lt;td&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;S17/V34&lt;/td&gt;&lt;td&gt;145.425MHz&lt;/td&gt;&lt;td&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;V35&lt;/td&gt;&lt;td&gt;145.4375MHz&lt;/td&gt;&lt;td&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;S18/V36&lt;/td&gt;&lt;td&gt;145.450MHz&lt;/td&gt;&lt;td&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;V37&lt;/td&gt;&lt;td&gt;145.4625MHz&lt;/td&gt;&lt;td&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;S19/V38&lt;/td&gt;&lt;td&gt;145.475MHz&lt;/td&gt;&lt;td&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;V39&lt;/td&gt;&lt;td&gt;145.3875MHz&lt;/td&gt;&lt;td&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;S20/V40&lt;/td&gt;&lt;td&gt;145.500MHz&lt;/td&gt;&lt;td&gt;Calling Channel&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;V41&lt;/td&gt;&lt;td&gt;145.5125MHz&lt;/td&gt;&lt;td&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;S21/V42&lt;/td&gt;&lt;td&gt;145.525MHz&lt;/td&gt;&lt;td&gt;&lt;span class=&#34;caps&#34;&gt;GB2RS&lt;/span&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;V43&lt;/td&gt;&lt;td&gt;145.5375MHz&lt;/td&gt;&lt;td&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;S22/V44&lt;/td&gt;&lt;td&gt;145.550MHz&lt;/td&gt;&lt;td&gt;Rally Talk-in&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;V45&lt;/td&gt;&lt;td&gt;145.5625MHz&lt;/td&gt;&lt;td&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;S23/V46&lt;/td&gt;&lt;td&gt;145.575MHz&lt;/td&gt;&lt;td&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;V47&lt;/td&gt;&lt;td&gt;145.5875MHz&lt;/td&gt;&lt;td&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;S24/V48&lt;/td&gt;&lt;td&gt;145.600MHz&lt;/td&gt;&lt;td&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;            </content>
+        </entry>
             <entry>
             <title type="html">Emsystech RaspiLCD</title>
             <author><name>Matt, 2E1HNK</name></author>

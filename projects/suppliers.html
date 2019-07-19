@@ -1,149 +1,97 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" sizes="192x192" href="/media/images/favicon.png">
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  
-  <meta name="description" content="List of useful suppliers
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Suppliers</title>
+    <meta name="description" content="List of useful suppliers
 ">
-  <title>Suppliers</title>
 
-  <link rel="stylesheet" href="/media/css/theme/mobirise-icons.css">
-  <link rel="stylesheet" href="/media/css/theme/tether.min.css">
-  <link rel="stylesheet" href="/media/css/theme/bootstrap.min.css">
-  <link rel="stylesheet" href="/media/css/theme/bootstrap-grid.min.css">
-  <link rel="stylesheet" href="/media/css/theme/bootstrap-reboot.min.css">
-  <link rel="stylesheet" href="/media/css/theme/bootstrap-dropdown.css">
-  <link rel="stylesheet" href="/media/css/theme/style.css">
-  <link rel="stylesheet" href="/media/css/theme/mbr-additional.css" type="text/css">
-
-    <!-- LeafletJS CSS -->
+      <!-- LeafletJS CSS -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css" integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ==" crossorigin="">
   <link rel="stylesheet" href="/media/css/L.fullscreen.css" />
-  <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js" integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw==" crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js" integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw==" crossorigin=""></script>
   <script src="/media/js/leaflet-heatmap.js"></script>
   <script src="/media/js/HamGridSquare.js"></script>
   <script src="/media/js/adif.js"></script>
   <script src="/media/js/chart.min.js"></script>
-    
-</head>
-<body id="suppliers">
+        
+    <style>
+      .header {
+        background-image: url(/media/images/antennafield.jpg);
+        background-position-x: 50%;
+        background-position-y: 50%;
+        background-size: 100%;
+        display: block;
+        background-attachment: fixed;
+        color: white;
+        text-align: center;
+        vertical-align: middle;
+        margin-bottom: 20px;
+      }
 
-<section>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Navbar</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+      .header-text {
+        padding-top: 100px;
+        padding-bottom: 100px;
+      }
+    </style>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Dropdown
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Something else here</a>
-          </div>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#">Disabled</a>
-        </li>
-      </ul>
-      <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-      </form>
-    </div>
-  </nav>
-</section>
-
-<section class="menu cid-qv1frvgcz3" once="menu" id="menu1-7v" data-rv-view="3579">
-    <!-- add .navbar-fixed-top to pin the nav bar -->
-    <nav class="navbar navbar-expand-lg beta-menu navbar-dropdown align-items-center navbar-toggleable-sm">
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+  </head>
+  <body id="suppliers">
+    <div class="container-fluid header">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
+        <a class="navbar-brand" href="#">2E1HNK</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="menu-logo">
-            <div class="navbar-brand">
-                <span class="navbar-caption-wrap">
-                  <a class="navbar-caption text-white display-4" href="/">2E1HNK</a>
-                </span>
-            </div>
-        </div>
+
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true">
-                                          <li class="nav-item">
-                <a class="nav-link link display-4 text-white" href="/about.html">About</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link link display-4 text-white" href="/blog">Blog</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link link display-4 text-white" href="/contests">Contest Reports</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link link display-4 text-white" href="/projects">Projects</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link link dropdown-toggle display-4 text-white" href="#" aria-expanded="false" data-toggle="dropdown-submenu">Tools</a>
-                <div class="dropdown-menu"><a class="dropdown-item display-4 text-white" href="/ogps/" aria-expanded="false">OGPS</a></div>
-              </li>
-            </ul>
-            <!--
-            <div class="navbar-buttons mbr-section-btn"><a class="btn btn-sm btn-black display-4" href="https://mobirise.com/mobirise-free-templates.zip">
-              DOWNLOAD NOW</a></div>
-            </div>
-            -->
-    </nav>
-</section>
-
-<section class="mbr-section content5 cid-qvbiXHsAN2 mbr-parallax-background" id="header" data-rv-view="3581">
-
-    <!--
-    <div class="mbr-overlay" style="opacity: 0.6; background-color: rgb(35, 35, 35);">
-    </div>
-  -->
-
-    <div class="container">
-        <div class="media-container-row">
-            <div class="title col-12 col-md-8">
-                <h1 class="align-center mbr-bold mbr-white pb-3 mbr-fonts-style display-1">
-                  2E1HNK
-                </h1>
-                <h3 class="mbr-section-subtitle align-center mbr-light mbr-white pb-3 mbr-fonts-style display-5"></h3>
-            </div>
+          <ul class="navbar-nav mr-auto">
+                                    <li class="nav-item">
+              <a class="nav-link" href="/about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/blog/">Blog</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/contests/">Contest Reports</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/projects/">Projects</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Tools
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="/ogps/">OGPS</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input id="searchCallsign" class="form-control mr-sm-2" type="search" placeholder="Search the Logbook" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" id="btnLogSearch">Search</button>
+          </form>
         </div>
-    </div>
-</section>
+      </nav>
 
-<section class="mbr-section content4 cid-qvbjfGj2Ze" id="content4-7x" data-rv-view="3584">
-  <div class="container">
-    <div class="media-container-row">
-      <div class="title col-12 col-md-8">
-        <h2 class="align-center pb-3 mbr-fonts-style display-5">Suppliers</h2>
-  <h3 class="mbr-section-subtitle align-center mbr-light mbr-fonts-style display-7">
-    <em>
-      By Matt, 2E1HNK on <time datetime="2019-04-10">Wed, 10 Apr 2019</time>
-    </em>
-  </h3>
+      <h1 class="header-text">  Suppliers
+</h1>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-8 offset-md-2">
+          <em class="text-muted">By Matt, 2E1HNK on <time datetime="2019-04-10">Wed, 10 Apr 2019</time></em>
     
 
   <h2>Antenna Parts</h2>
@@ -208,936 +156,25 @@
 <h2>Enclosures</h2>
 <h3><a href="https://www.lincolnbinns.com/en/">Lincoln Binns</a></h3>
 
-        </div>
+          </div>
+      </div>
     </div>
-  </div>
-</section>
 
-<!--
 
-<section class="mbr-section content4 cid-qB2eauL9sR" id="content4-v4" data-rv-view="3613">
-    <div class="container">
-        <div class="media-container-row">
-            <div class="title col-12 col-md-8">
-                <h2 class="align-center pb-3 mbr-fonts-style display-2">BOOTSTRAP 4 <strong>SITE TEMPLATES</strong></h2>
-            </div>
-        </div>
-    </div>
-</section>
 
-<section class="features2 cid-qB2eb22JBF" id="features2-v5" data-rv-view="3615">
-    <div class="container">
-        <div class="media-container-row">
-            <div class="card p-3 col-12 col-md-6 col-lg-3">
-                <div class="card-wrapper">
-                    <div class="card-img">
-                        <a href="one-page.html"><img src="assets/images/one-page-1.jpg" alt="Responsive One Page Template – Free Download" title="" media-simple="true"></a>
-                    </div>
-                    <div class="card-box">
-                        <h4 class="card-title pb-3 mbr-fonts-style display-7"><a href="one-page.html" class="text-white"><strong>Bootstrap 4 One Page Bootstrap Template Demo</strong></a></h4>
-                    </div>
-                </div>
-            </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-            <div class="card p-3 col-12 col-md-6 col-lg-3">
-                <div class="card-wrapper">
-                    <div class="card-img">
-                        <a href="blog.html"><img src="assets/images/blog.jpg" alt="Bootstrap Blog Template – Free Download" title="" media-simple="true"></a>
-                    </div>
-                    <div class="card-box ">
-                        <h4 class="card-title pb-3 mbr-fonts-style display-7"><a href="blog.html" class="text-white"><strong>Bootstrap 4 Blog Template Demo</strong></a></h4>
-                    </div>
-                </div>
-            </div>
+    <script type="text/javascript">
+        document.getElementById("btnLogSearch").onclick = function () {
+            var url = "/logsearch.html?callsign=" + document.getElementById("searchCallsign").value;
+            location.href(url);
+            return false;
+        };
+    </script>
 
-            <div class="card p-3 col-12 col-md-6 col-lg-3">
-                <div class="card-wrapper">
-                    <div class="card-img">
-                        <a href="about-us-page-template/"><img src="assets/images/about-us-page-template.jpg" alt="HTML About Us Template – Free Download" title="" media-simple="true"></a>
-                    </div>
-                    <div class="card-box">
-                        <h4 class="card-title pb-3 mbr-fonts-style display-7"><a href="about-us-page-template/" class="text-white" style="font-weight: bold;">Bootstrap 4 About Us Page Template</a></h4>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card p-3 col-12 col-md-6 col-lg-3">
-                <div class="card-wrapper">
-                    <div class="card-img">
-                        <a href="agency-template/"><img src="assets/images/agency-template.jpg" alt="HTML Agency Template – Free Download" title="" media-simple="true"></a>
-                    </div>
-                    <div class="card-box">
-                        <h4 class="card-title pb-3 mbr-fonts-style display-7"><a href="agency-template/" class="text-white"><strong>Bootstrap 4 Agency Template</strong></a></h4>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="features2 cid-qB2ebPlaeB" id="features2-v7" data-rv-view="3618">
-    <div class="container">
-        <div class="media-container-row">
-            <div class="card p-3 col-12 col-md-6 col-lg-3">
-                <div class="card-wrapper">
-                    <div class="card-img">
-                        <a href="magazine-template/"><img src="assets/images/magazine-template.jpg" alt="Responsive Magazine Template – Free Download" title="" media-simple="true"></a>
-                    </div>
-                    <div class="card-box">
-                        <h4 class="card-title pb-3 mbr-fonts-style display-7"><a href="magazine-template/" class="text-white"><strong>Bootstrap 4 Magazine Template</strong></a></h4>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card p-3 col-12 col-md-6 col-lg-3">
-                <div class="card-wrapper">
-                    <div class="card-img">
-                        <a href="agency-template/multi-page-template.html"><img src="assets/images/multi-page-template.jpg" alt="Bootstrap Multi Page Template – Free Download" title="" media-simple="true"></a>
-                    </div>
-                    <div class="card-box ">
-                        <h4 class="card-title pb-3 mbr-fonts-style display-7"><a href="agency-template/multi-page-template.html" class="text-white"><strong>Bootstrap 4 Multi Page Template</strong></a></h4>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card p-3 col-12 col-md-6 col-lg-3">
-                <div class="card-wrapper">
-                    <div class="card-img">
-                        <a href="personal-website-template/"><img src="assets/images/personal-website-template.jpg" alt="HTML Personal Website Template – Free Download" title="" media-simple="true"></a>
-                    </div>
-                    <div class="card-box">
-                        <h4 class="card-title pb-3 mbr-fonts-style display-7"><a href="personal-website-template/" class="text-white"><strong>Bootstrap 4 Personal Website Template</strong></a></h4>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card p-3 col-12 col-md-6 col-lg-3">
-                <div class="card-wrapper">
-                    <div class="card-img">
-                        <a href="photography-template/"><img src="assets/images/photography-template.jpg" alt="HTML Photography Template – Free Download" title="" media-simple="true"></a>
-                    </div>
-                    <div class="card-box">
-                        <h4 class="card-title pb-3 mbr-fonts-style display-7"><a href="photography-template/" class="text-white"><strong>Bootstrap 4 Photography Template</strong></a></h4>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="features2 cid-qB2ebC6tWd" id="features2-v6" data-rv-view="3621">
-    <div class="container">
-        <div class="media-container-row">
-            <div class="card p-3 col-12 col-md-6 col-lg-3">
-                <div class="card-wrapper">
-                    <div class="card-img">
-                        <a href="application-template/"><img src="assets/images/application-template.jpg" alt="Responsive Application Template – Free Download" title="" media-simple="true"></a>
-                    </div>
-                    <div class="card-box">
-                        <h4 class="card-title pb-3 mbr-fonts-style display-7"><a href="application-template/" class="text-white"><strong>Bootstrap 4 Application Template</strong></a></h4>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card p-3 col-12 col-md-6 col-lg-3">
-                <div class="card-wrapper">
-                    <div class="card-img">
-                        <a href="business-template/"><img src="assets/images/business-template.jpg" alt="Bootstrap Business Template – Free Download" title="" media-simple="true"></a>
-                    </div>
-                    <div class="card-box ">
-                        <h4 class="card-title pb-3 mbr-fonts-style display-7"><a href="business-template/" class="text-white"><strong>Bootstrap 4 Business Template</strong></a></h4>
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="card p-3 col-12 col-md-6 col-lg-3">
-                <div class="card-wrapper">
-                    <div class="card-img">
-                        <a href="corporate-template/"><img src="assets/images/corporate-template.jpg" alt="HTML Corporate Template – Free Download" title="" media-simple="true"></a>
-                    </div>
-                    <div class="card-box">
-                        <h4 class="card-title pb-3 mbr-fonts-style display-7"><a href="corporate-template/" class="text-white"><strong>Bootstrap 4 Corporate Template</strong></a></h4>
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="card p-3 col-12 col-md-6 col-lg-3">
-                <div class="card-wrapper">
-                    <div class="card-img">
-                        <a href="homepage-template/"><img src="assets/images/homepage-template.jpg" alt="HTML Homeage Template – Free Download" title="" media-simple="true"></a>
-                    </div>
-                    <div class="card-box">
-                        <h4 class="card-title pb-3 mbr-fonts-style display-7"><a href="homepage-template/" class="text-white"><strong>Bootstrap 4 Homepage Template</strong></a></h4>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="features2 cid-qB2ecwSlet" id="features2-v8" data-rv-view="3624">
-    <div class="container">
-        <div class="media-container-row">
-            <div class="card p-3 col-12 col-md-6 col-lg-3">
-                <div class="card-wrapper">
-                    <div class="card-img">
-                        <a href="one-page.html"><img src="assets/images/one-page-1.jpg" alt="Responsive One Page Template – Free Download" title="" media-simple="true"></a>
-                    </div>
-                    <div class="card-box">
-                        <h4 class="card-title pb-3 mbr-fonts-style display-7"><a href="one-page.html" class="text-white"><strong>Bootstrap 4 One Page Bootstrap Template Demo</strong></a></h4>
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="card p-3 col-12 col-md-6 col-lg-3">
-                <div class="card-wrapper">
-                    <div class="card-img">
-                        <a href="blog.html"><img src="assets/images/blog.jpg" alt="Bootstrap Blog Template – Free Download" title="" media-simple="true"></a>
-                    </div>
-                    <div class="card-box ">
-                        <h4 class="card-title pb-3 mbr-fonts-style display-7"><a href="blog.html" class="text-white"><strong>Bootstrap 4 Blog Template Demo</strong></a></h4>
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="card p-3 col-12 col-md-6 col-lg-3">
-                <div class="card-wrapper">
-                    <div class="card-img">
-                        <a href="store-template/"><img src="assets/images/store-template.jpg" alt="HTML Store Template – Free Download" title="" media-simple="true"></a>
-                    </div>
-                    <div class="card-box">
-                        <h4 class="card-title pb-3 mbr-fonts-style display-7"><a href="store-template/" class="text-white"><strong>Bootstrap 4 Store Template</strong></a></h4>
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="card p-3 col-12 col-md-6 col-lg-3">
-                <div class="card-wrapper">
-                    <div class="card-img">
-                        <a href="web-application-template/"><img src="assets/images/web-application-template.jpg" alt="HTML Web Application Template – Free Download" title="" media-simple="true"></a>
-                    </div>
-                    <div class="card-box">
-                        <h4 class="card-title pb-3 mbr-fonts-style display-7"><a href="web-application-template/" class="text-white"><strong>Bootstrap 4 Web Application Template</strong></a></h4>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="features2 cid-qB2ed2ljNG" id="features2-v9" data-rv-view="3627">
-
-
-
-
-
-    <div class="container">
-        <div class="media-container-row">
-            <div class="card p-3 col-12 col-md-6 col-lg-3">
-                <div class="card-wrapper">
-                    <div class="card-img">
-                        <a href="real-estate-template/"><img src="assets/images/real-estate-template.jpg" alt="Responsive Real Estate Template – Free Download" title="" media-simple="true"></a>
-                    </div>
-                    <div class="card-box">
-                        <h4 class="card-title pb-3 mbr-fonts-style display-7"><a href="real-estate-template/" class="text-white"><strong>Bootstrap 4 Real Estate Template</strong></a></h4>
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="card p-3 col-12 col-md-6 col-lg-3">
-                <div class="card-wrapper">
-                    <div class="card-img">
-                        <a href="restaurant-template/"><img src="assets/images/restaurant-template.jpg" alt="Bootstrap Restaurant Template – Free Download" title="" media-simple="true"></a>
-                    </div>
-                    <div class="card-box ">
-                        <h4 class="card-title pb-3 mbr-fonts-style display-7"><a href="restaurant-template/" class="text-white"><strong>Bootstrap 4 Restaurant Template</strong></a></h4>
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="card p-3 col-12 col-md-6 col-lg-3">
-                <div class="card-wrapper">
-                    <div class="card-img">
-                        <a href="travel-template/"><img src="assets/images/travel-template.jpg" alt="HTML Travel Template – Free Download" title="" media-simple="true"></a>
-                    </div>
-                    <div class="card-box">
-                        <h4 class="card-title pb-3 mbr-fonts-style display-7"><a href="travel-template/" class="text-white" style="font-weight: bold;">Bootstrap 4 Travel Template</a></h4>
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="card p-3 col-12 col-md-6 col-lg-3">
-                <div class="card-wrapper">
-                    <div class="card-img">
-                        <a href="wedding-template/"><img src="assets/images/wedding-template.jpg" alt="HTML Wedding Template – Free Download" title="" media-simple="true"></a>
-                    </div>
-                    <div class="card-box">
-                        <h4 class="card-title pb-3 mbr-fonts-style display-7"><a href="wedding-template/" class="text-white"><strong>Bootstrap 4 Wedding Template</strong></a></h4>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="features2 cid-qB2egUR5Rw" id="features2-vc" data-rv-view="3630">
-
-
-
-
-
-    <div class="container">
-        <div class="media-container-row">
-            <div class="card p-3 col-12 col-md-6 col-lg-3">
-                <div class="card-wrapper">
-                    <div class="card-img">
-                        <a href="hotel-template/"><img src="assets/images/hotel-template.jpg" alt="Responsive Hotel Template – Free Download" title="" media-simple="true"></a>
-                    </div>
-                    <div class="card-box">
-                        <h4 class="card-title pb-3 mbr-fonts-style display-7"><a href="hotel-template/" class="text-white"><strong>Bootstrap 4 Hotel Template</strong></a></h4>
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="card p-3 col-12 col-md-6 col-lg-3">
-                <div class="card-wrapper">
-                    <div class="card-img">
-                        <a href="landing-page-template/"><img src="assets/images/landing-page-template.jpg" alt="Bootstrap Landing Page Template – Free Download" title="" media-simple="true"></a>
-                    </div>
-                    <div class="card-box ">
-                        <h4 class="card-title pb-3 mbr-fonts-style display-7"><a href="landing-page-template/" class="text-white"><strong>Bootstrap 4 Landing Page Template</strong></a></h4>
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="card p-3 col-12 col-md-6 col-lg-3">
-                <div class="card-wrapper">
-                    <div class="card-img">
-                        <a href="news-template/"><img src="assets/images/news-template.jpg" alt="HTML News Template – Free Download" title="" media-simple="true"></a>
-                    </div>
-                    <div class="card-box">
-                        <h4 class="card-title pb-3 mbr-fonts-style display-7"><a href="news-template/" class="text-white"><strong>Bootstrap 4 News Template</strong></a></h4>
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="card p-3 col-12 col-md-6 col-lg-3">
-                <div class="card-wrapper">
-                    <div class="card-img">
-                        <a href="profile-template/"><img src="assets/images/profile-template.jpg" alt="HTML Profile Template – Free Download" title="" media-simple="true"></a>
-                    </div>
-                    <div class="card-box">
-                        <h4 class="card-title pb-3 mbr-fonts-style display-7"><a href="profile-template/" class="text-white"><strong>Bootstrap 4 P</strong><strong>rofile Template</strong></a></h4>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="features2 cid-qB2ehBCtBh" id="features2-vd" data-rv-view="3633">
-
-
-
-
-
-    <div class="container">
-        <div class="media-container-row">
-            <div class="card p-3 col-12 col-md-6 col-lg-3">
-                <div class="card-wrapper">
-                    <div class="card-img">
-                        <a href="education-template/"><img src="assets/images/education-template.jpg" alt="Responsive Education Template – Free Download" title="" media-simple="true"></a>
-                    </div>
-                    <div class="card-box">
-                        <h4 class="card-title pb-3 mbr-fonts-style display-7"><a href="education-template/" class="text-white"><strong>Bootstrap 4 Education&nbsp;Template</strong></a></h4>
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="card p-3 col-12 col-md-6 col-lg-3">
-                <div class="card-wrapper">
-                    <div class="card-img">
-                        <a href="coming-soon-template/"><img src="assets/images/coming-soon-template.jpg" alt="Bootstrap 4 Coming Soon Template – Free Download" title="" media-simple="true"></a>
-                    </div>
-                    <div class="card-box ">
-                        <h4 class="card-title pb-3 mbr-fonts-style display-7"><a href="coming-soon-template/" class="text-white"><strong>Bootstrap 4 Coming Soon Template</strong></a></h4>
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="card p-3 col-12 col-md-6 col-lg-3">
-                <div class="card-wrapper">
-                    <div class="card-img">
-                        <a href="error-page-template/"><img src="assets/images/error-template.jpg" alt="HTML Error Page Template – Free Download" title="" media-simple="true"></a>
-                    </div>
-                    <div class="card-box">
-                        <h4 class="card-title pb-3 mbr-fonts-style display-7"><a href="error-page-template/" class="text-white"><strong>Bootstrap 4 Error Page Template</strong></a></h4>
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="card p-3 col-12 col-md-6 col-lg-3">
-                <div class="card-wrapper">
-                    <div class="card-img">
-                        <a href="event-template/"><img src="assets/images/event-template.jpg" alt="HTML Event Template – Free Download" title="" media-simple="true"></a>
-                    </div>
-                    <div class="card-box">
-                        <h4 class="card-title pb-3 mbr-fonts-style display-7"><a href="event-template/" class="text-white"><strong>Bootstrap 4 Event Template</strong></a></h4>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="mbr-section content4 cid-qB2ehUHOTP" id="content4-ve" data-rv-view="3636">
-
-
-
-    <div class="container">
-        <div class="media-container-row">
-            <div class="title col-12 col-md-8">
-                <h2 class="align-center pb-3 mbr-fonts-style display-2">MORE <strong>BOOTSTRAP 4&nbsp;BLOCK TEMPLATES</strong></h2>
-
-
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="features2 cid-qB2eioG0wY" id="features2-vf" data-rv-view="3638">
-
-
-
-
-
-    <div class="container">
-        <div class="media-container-row">
-            <div class="card p-3 col-12 col-md-6 col-lg-3">
-                <div class="card-wrapper">
-                    <div class="card-img">
-                        <a href="slider-template.html"><img src="assets/images/slider-template-1.jpg" alt="Bootstrap 4 Responsive Slider Template – Free Download" title="" media-simple="true"></a>
-                    </div>
-                    <div class="card-box">
-                        <h4 class="card-title pb-3 mbr-fonts-style display-7"><a href="slider-template.html" class="text-white"><strong>Bootstrap 4 Slider Template</strong></a></h4>
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="card p-3 col-12 col-md-6 col-lg-3">
-                <div class="card-wrapper">
-                    <div class="card-img">
-                        <a href="header-template.html"><img src="assets/images/header-template-1.jpg" alt="Bootstrap 4 Header Template – Free Download" title="" media-simple="true"></a>
-                    </div>
-                    <div class="card-box ">
-                        <h4 class="card-title pb-3 mbr-fonts-style display-7"><a href="header-template.html" class="text-white"><strong>Bootstrap 4 Header Template</strong></a></h4>
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="card p-3 col-12 col-md-6 col-lg-3">
-                <div class="card-wrapper">
-                    <div class="card-img">
-                        <a href="carousel-template.html"><img src="assets/images/carousel-template-1.jpg" alt="Bootstrap 4 HTML Carousel Template – Free Download" title="" media-simple="true"></a>
-                    </div>
-                    <div class="card-box">
-                        <h4 class="card-title pb-3 mbr-fonts-style display-7"><a href="carousel-template.html" class="text-white"><strong>Bootstrap 4 Carousel Template</strong></a></h4>
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="card p-3 col-12 col-md-6 col-lg-3">
-                <div class="card-wrapper">
-                    <div class="card-img">
-                        <a href="parallax-scrolling-template.html"><img src="assets/images/parallax-scrolling-template-1.jpg" alt="Bootstrap 4 HTML Parallax Scrolling Template – Free Download" title="" media-simple="true"></a>
-                    </div>
-                    <div class="card-box">
-                        <h4 class="card-title pb-3 mbr-fonts-style display-7"><a href="parallax-scrolling-template.html" class="text-white"><strong>Bootstrap 4 Parallax Scrolling Template</strong></a></h4>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="features2 cid-qB2eiVsD0A" id="features2-vg" data-rv-view="3641">
-
-
-
-
-
-    <div class="container">
-        <div class="media-container-row">
-            <div class="card p-3 col-12 col-md-6 col-lg-3">
-                <div class="card-wrapper">
-                    <div class="card-img">
-                        <a href="article-template.html"><img src="assets/images/article-template-1.jpg" alt="Bootstrap 4 HTML5 Article Template – Free Download" title="" media-simple="true"></a>
-                    </div>
-                    <div class="card-box">
-                        <h4 class="card-title pb-3 mbr-fonts-style display-7"><a href="article-template.html" class="text-white"><strong>Bootstrap 4 Article Template</strong></a></h4>
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="card p-3 col-12 col-md-6 col-lg-3">
-                <div class="card-wrapper">
-                    <div class="card-img">
-                        <a href="documentation-template.html"><img src="assets/images/documentation-template-1.jpg" alt="Bootstrap 4 HTML Documentation Template – Free Download" title="" media-simple="true"></a>
-                    </div>
-                    <div class="card-box ">
-                        <h4 class="card-title pb-3 mbr-fonts-style display-7"><a href="documentation-template.html" class="text-white"><strong>Bootstrap 4 Documentation Template</strong></a></h4>
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="card p-3 col-12 col-md-6 col-lg-3">
-                <div class="card-wrapper">
-                    <div class="card-img">
-                        <a href="faq-template.html"><img src="assets/images/faq-template-1.jpg" alt="Bootstrap 4 FAQ Template – Free Download" title="" media-simple="true"></a>
-                    </div>
-                    <div class="card-box">
-                        <h4 class="card-title pb-3 mbr-fonts-style display-7"><a href="faq-template.html" class="text-white"><strong>Bootstrap 4 FAQ Template</strong></a></h4>
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="card p-3 col-12 col-md-6 col-lg-3">
-                <div class="card-wrapper">
-                    <div class="card-img">
-                        <a href="footer-template.html"><img src="assets/images/footer-template-1.jpg" alt="Bootstrap 4 Footer Template – Free Download" title="" media-simple="true"></a>
-                    </div>
-                    <div class="card-box">
-                        <h4 class="card-title pb-3 mbr-fonts-style display-7"><a href="footer-template.html" class="text-white"><strong>Bootstrap 4 Footer Template</strong></a></h4>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="features2 cid-qB2ejppRJJ" id="features2-vh" data-rv-view="3644">
-
-
-
-
-
-    <div class="container">
-        <div class="media-container-row">
-            <div class="card p-3 col-12 col-md-6 col-lg-3">
-                <div class="card-wrapper">
-                    <div class="card-img">
-                        <a href="form-templates.html"><img src="assets/images/form-templates-1.jpg" alt="Bootstrap 4 Form Templates – Free Download" title="" media-simple="true"></a>
-                    </div>
-                    <div class="card-box">
-                        <h4 class="card-title pb-3 mbr-fonts-style display-7"><a href="form-templates.html" class="text-white"><strong>Bootstrap 4 Form Template</strong></a></h4>
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="card p-3 col-12 col-md-6 col-lg-3">
-                <div class="card-wrapper">
-                    <div class="card-img">
-                        <a href="gallery-template.html"><img src="assets/images/gallery-template-1.jpg" alt="Bootstrap 4 HTML5 Gallery Template – Free Download" title="" media-simple="true"></a>
-                    </div>
-                    <div class="card-box ">
-                        <h4 class="card-title pb-3 mbr-fonts-style display-7"><a href="gallery-template.html" class="text-white"><strong>Bootstrap 4 Gallery Template</strong></a></h4>
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="card p-3 col-12 col-md-6 col-lg-3">
-                <div class="card-wrapper">
-                    <div class="card-img">
-                        <a href="grid-template.html"><img src="assets/images/grid-template-1.jpg" alt="Bootstrap 4 HTML Grid Template – Free Download" title="" media-simple="true"></a>
-                    </div>
-                    <div class="card-box">
-                        <h4 class="card-title pb-3 mbr-fonts-style display-7"><a href="grid-template.html" class="text-white"><strong>Bootstrap 4 Grid Template</strong></a></h4>
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="card p-3 col-12 col-md-6 col-lg-3">
-                <div class="card-wrapper">
-                    <div class="card-img">
-                        <a href="list-template.html"><img src="assets/images/list-template-1.jpg" alt="Bootstrap 4 HTML5 List Template – Free Download" title="" media-simple="true"></a>
-                    </div>
-                    <div class="card-box">
-                        <h4 class="card-title pb-3 mbr-fonts-style display-7"><a href="list-template.html" class="text-white"><strong>Bootstrap 4 List Template</strong></a></h4>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="features2 cid-qB2ekYsEso" id="features2-vi" data-rv-view="3647">
-
-
-
-
-
-    <div class="container">
-        <div class="media-container-row">
-            <div class="card p-3 col-12 col-md-6 col-lg-3">
-                <div class="card-wrapper">
-                    <div class="card-img">
-                        <a href="map-template.html"><img src="assets/images/map-template-1.jpg" alt="Bootstrap 4 HTML5 Map Template – Free Download" title="" media-simple="true"></a>
-                    </div>
-                    <div class="card-box">
-                        <h4 class="card-title pb-3 mbr-fonts-style display-7"><a href="map-template.html" class="text-white"><strong>Bootstrap 4 Map Template</strong></a></h4>
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="card p-3 col-12 col-md-6 col-lg-3">
-                <div class="card-wrapper">
-                    <div class="card-img">
-                        <a href="parallax-template.html"><img src="assets/images/parallax-template-1.jpg" alt="Bootstrap 4 Parallax Template – Free Download" title="" media-simple="true"></a>
-                    </div>
-                    <div class="card-box ">
-                        <h4 class="card-title pb-3 mbr-fonts-style display-7"><a href="parallax-template.html" class="text-white"><strong>Bootstrap 4 Parallax Template</strong></a></h4>
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="card p-3 col-12 col-md-6 col-lg-3">
-                <div class="card-wrapper">
-                    <div class="card-img">
-                        <a href="photo-gallery-template.html"><img src="assets/images/photo-gallery-template-1.jpg" alt="HTML Photo Gallery Template – Free Download" title="" media-simple="true"></a>
-                    </div>
-                    <div class="card-box">
-                        <h4 class="card-title pb-3 mbr-fonts-style display-7">
-                            <a href="photo-gallery-template.html" class="text-white"><strong>Bootstrap 4 Photo Gallery Template</strong></a></h4>
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="card p-3 col-12 col-md-6 col-lg-3">
-                <div class="card-wrapper">
-                    <div class="card-img">
-                        <a href="registration-form-template.html"><img src="assets/images/registration-form-template-1.jpg" alt="Responsive Registration Form Template – Free Download" title="" media-simple="true"></a>
-                    </div>
-                    <div class="card-box">
-                        <h4 class="card-title pb-3 mbr-fonts-style display-7"><a href="registration-form-template.html" class="text-white"><strong>Bootstrap 4 Registration Form Template</strong></a></h4>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="features2 cid-qB2elrmJT9" id="features2-vj" data-rv-view="3650">
-
-
-
-
-
-    <div class="container">
-        <div class="media-container-row">
-            <div class="card p-3 col-12 col-md-6 col-lg-3">
-                <div class="card-wrapper">
-                    <div class="card-img">
-                        <a href="social-network-template.html"><img src="assets/images/social-network-template-1.jpg" alt="HTML5 Social Network Template – Free Download" title="" media-simple="true"></a>
-                    </div>
-                    <div class="card-box">
-                        <h4 class="card-title pb-3 mbr-fonts-style display-7"><a href="social-network-template.html" class="text-white"><strong>Bootstrap 4 Social Network Template</strong></a></h4>
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="card p-3 col-12 col-md-6 col-lg-3">
-                <div class="card-wrapper">
-                    <div class="card-img">
-                        <a href="table-template.html"><img src="assets/images/table-template-1.jpg" alt="Responsive Table Template – Free Download" title="" media-simple="true"></a>
-                    </div>
-                    <div class="card-box ">
-                        <h4 class="card-title pb-3 mbr-fonts-style display-7">
-                            <a href="table-template.html" class="text-white"><strong>Bootstrap 4 Table Template</strong></a></h4>
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="card p-3 col-12 col-md-6 col-lg-3">
-                <div class="card-wrapper">
-                    <div class="card-img">
-                        <a href="background-template.html"><img src="assets/images/video-bg-template-1.jpg" alt="Responsive Video Background Template – Free Download" title="" media-simple="true"></a>
-                    </div>
-                    <div class="card-box">
-                        <h4 class="card-title pb-3 mbr-fonts-style display-7">
-                            <a href="background-template.html" class="text-white"><strong>Bootstrap 4 Video Background Template</strong></a></h4>
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="card p-3 col-12 col-md-6 col-lg-3">
-                <div class="card-wrapper">
-                    <div class="card-img">
-                        <a href="video-gallery-template.html"><img src="assets/images/video-gallery-template-1.jpg" alt="HTML5 Video Gallery Template – Free Download" title="" media-simple="true"></a>
-                    </div>
-                    <div class="card-box">
-                        <h4 class="card-title pb-3 mbr-fonts-style display-7"><a href="video-gallery-template.html" class="text-white"><strong>Bootstrap 4 Video Gallery Template</strong></a></h4>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="features2 cid-qB2elSb7iH" id="features2-vk" data-rv-view="3653">
-
-
-
-
-
-    <div class="container">
-        <div class="media-container-row">
-            <div class="card p-3 col-12 col-md-6 col-lg-3">
-                <div class="card-wrapper">
-                    <div class="card-img">
-                        <a href="shopping-cart-template.html"><img src="assets/images/shopping-cart-1.jpg" alt="HTML5 Shopping Cart Template – Free Download" title="" media-simple="true"></a>
-                    </div>
-                    <div class="card-box">
-                        <h4 class="card-title pb-3 mbr-fonts-style display-7">
-                            <a href="shopping-cart-template.html" class="text-white"><strong>Bootstrap 4 Shopping Cart Template</strong></a></h4>
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="card p-3 col-12 col-md-6 col-lg-3">
-                <div class="card-wrapper">
-                    <div class="card-img">
-                        <a href="tab-template.html"><img src="assets/images/tab-template-1.jpg" alt="Responsive Tab Template – Free Download" title="" media-simple="true"></a>
-                    </div>
-                    <div class="card-box ">
-                        <h4 class="card-title pb-3 mbr-fonts-style display-7"><a href="tab-template.html" class="text-white"><strong>Bootstrap 4 Tab Template</strong></a></h4>
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="card p-3 col-12 col-md-6 col-lg-3">
-                <div class="card-wrapper">
-                    <div class="card-img">
-                        <a href="google-maps-template.html"><img src="assets/images/google-maps-template-1.jpg" alt="Bootstrap Google Maps Template – Free Download" title="" media-simple="true"></a>
-                    </div>
-                    <div class="card-box">
-                        <h4 class="card-title pb-3 mbr-fonts-style display-7"><a href="google-maps-template.html" class="text-white"><strong>Bootstrap 4 Google Maps Template</strong></a></h4>
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="card p-3 col-12 col-md-6 col-lg-3">
-                <div class="card-wrapper">
-                    <div class="card-img">
-                        <a href="navbar-template.html"><img src="assets/images/contact-form-template-2.jpg" alt="Responsive Navbar Template – Free Download" title="" media-simple="true"></a>
-                    </div>
-                    <div class="card-box">
-                        <h4 class="card-title pb-3 mbr-fonts-style display-7"><a href="navbar-template.html" class="text-white"><strong>Bootstrap 4 Navbar Template</strong></a></h4>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="features2 cid-qB2emhgmCR" id="features2-vl" data-rv-view="3656">
-
-
-
-
-
-    <div class="container">
-        <div class="media-container-row">
-            <div class="card p-3 col-12 col-md-6 col-lg-3">
-                <div class="card-wrapper">
-                    <div class="card-img">
-                        <a href="video-template.html"><img src="assets/images/video-template-1.jpg" alt="Responsive Video Template – Free Download" title="" media-simple="true"></a>
-                    </div>
-                    <div class="card-box">
-                        <h4 class="card-title pb-3 mbr-fonts-style display-7"><a href="video-template.html" class="text-white"><strong>Bootstrap 4 Video Template</strong></a></h4>
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="card p-3 col-12 col-md-6 col-lg-3">
-                <div class="card-wrapper">
-                    <div class="card-img">
-                        <a href="menu-template.html"><img src="assets/images/menu-template-1.jpg" alt="Bootstrap Menu Template – Free Download" title="" media-simple="true"></a>
-                    </div>
-                    <div class="card-box ">
-                        <h4 class="card-title pb-3 mbr-fonts-style display-7"><a href="menu-template.html" class="text-white"><strong>Bootstrap 4 Menu Template</strong></a></h4>
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="card p-3 col-12 col-md-6 col-lg-3">
-                <div class="card-wrapper">
-                    <div class="card-img">
-                        <a href="navigation-menu-template.html"><img src="assets/images/navigation-menu-1.jpg" alt="HTML Navigation Menu Template – Free Download" title="" media-simple="true"></a>
-                    </div>
-                    <div class="card-box">
-                        <h4 class="card-title pb-3 mbr-fonts-style display-7"><a href="navigation-menu-template.html" class="text-white"><strong>Bootstrap 4 Navigation Menu Template</strong></a></h4>
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="card p-3 col-12 col-md-6 col-lg-3">
-                <div class="card-wrapper">
-                    <div class="card-img">
-                        <a href="navbar-template.html"><img src="assets/images/navbar-template-1.jpg" alt="Responsive Navbar Template – Free Download" title="" media-simple="true"></a>
-                    </div>
-                    <div class="card-box">
-                        <h4 class="card-title pb-3 mbr-fonts-style display-7"><a href="navbar-template.html" class="text-white"><strong>Bootstrap 4 Navbar Template</strong></a></h4>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="features2 cid-qB2enF9V2x" id="features2-vm" data-rv-view="3659">
-
-
-
-
-
-    <div class="container">
-        <div class="media-container-row">
-            <div class="card p-3 col-12 col-md-6 col-lg-3">
-                <div class="card-wrapper">
-                    <div class="card-img">
-                        <a href="slider.html"><img src="assets/images/slider-1.jpg" alt="HTML Slider Template – Free Download" title="" media-simple="true"></a>
-                    </div>
-                    <div class="card-box">
-                        <h4 class="card-title pb-3 mbr-fonts-style display-7"><a href="slider.html" class="text-white"><strong>Bootstrap 4 Full-Screen Slider Header Demo</strong></a></h4>
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="card p-3 col-12 col-md-6 col-lg-3">
-                <div class="card-wrapper">
-                    <div class="card-img">
-                        <a href="parallax-template.html"><img src="assets/images/parallax-template-1.jpg" alt="HTML Parallax Template – Free Download" title="" media-simple="true"></a>
-                    </div>
-                    <div class="card-box ">
-                        <h4 class="card-title pb-3 mbr-fonts-style display-7"><a href="parallax-template.html" class="text-white"><strong>Bootstrap 4 Parallax Template</strong></a></h4>
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="card p-3 col-12 col-md-6 col-lg-3">
-                <div class="card-wrapper">
-                    <div class="card-img">
-                        <a href="video-background.html"><img src="assets/images/video-bg-3.jpg" alt="Free Download Video Background Bootstrap Template" title="" media-simple="true"></a>
-                    </div>
-                    <div class="card-box">
-                        <h4 class="card-title pb-3 mbr-fonts-style display-7"><a href="video-background.html" class="text-white"><strong>Bootstrap 4 Video Background Jumbotron Demo</strong></a></h4>
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="card p-3 col-12 col-md-6 col-lg-3">
-                <div class="card-wrapper">
-                    <div class="card-img">
-                        <a href="registration-form-template.html"><img src="assets/images/registration-form-template-1.jpg" alt="Responsive Registration Form Template – Free Download" title="" media-simple="true"></a>
-                    </div>
-                    <div class="card-box">
-                        <h4 class="card-title pb-3 mbr-fonts-style display-7"><a href="registration-form-template.html" class="text-white"><strong>Bootstrap 4 Registration Form Template</strong></a></h4>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="cid-qvRdQNPdCl" id="video3-mh" data-rv-view="3662">
-
-
-
-    <figure class="mbr-figure align-center container">
-        <div class="video-block" style="width: 80%;">
-            <div><iframe class="mbr-embedded-video" src="https://www.youtube.com/embed/hGaQaBeUfGw?rel=0&amp;amp;showinfo=0&amp;autoplay=0&amp;loop=0" width="1280" height="720" frameborder="0" allowfullscreen></iframe></div>
-        </div>
-    </figure>
-</section>
-
--->
-
-<section once="" class="cid-qvbpqoTMWJ" id="footer6-8d" data-rv-view="3664">
-    <div class="container">
-        <div class="media-container-row align-center mbr-white">
-            <div class="col-12">
-                <p class="mbr-text mb-0 mbr-fonts-style display-7">
-                    © Copyright 2019 2E1HNK - All Rights Reserved
-                </p>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-  <script src="/media/js/theme/jquery.min.js"></script>
-  <script src="/media/js/theme/popper.min.js"></script>
-  <script src="/media/js/theme/tether.min.js"></script>
-  <script src="/media/js/theme/bootstrap.min.js"></script>
-  <script src="/media/js/theme/dropdown.min.js"></script>
-
-  <script src="/media/js/theme/bootstrap-carousel-swipe.js"></script>
-  <script src="/media/js/theme/smooth-scroll.js"></script>
-  <script src="/media/js/theme/jarallax.min.js"></script>
-  <script src="/media/js/theme/jquery.touch-swipe.min.js"></script>
-  <script src="/media/js/theme/script.js"></script>
-
-
-</body>
+  </body>
 </html>
