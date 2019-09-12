@@ -7,10 +7,46 @@
         <link href="/"/>
     
         
-    <updated>2019-07-19T11:25:14Z</updated>
+    <updated>2019-09-12T11:36:50Z</updated>
 
     <id>/blog/excerpts.xml/</id>
 
+            <entry>
+            <title type="html">Common 3.5mm Audio Jack Wiring Standards</title>
+            <author><name>Matt, 2E1HNK</name></author>
+            <link href="/blog/3.5mm-jack-wiring.html"/>
+            <updated>2019-09-12T08:00:00Z</updated>
+            <published>2019-09-12T08:00:00Z</published>
+            <id>/blog/3.5mm-jack-wiring.html</id>
+                        <category   scheme="/blog/tags"
+                        term="TechNote"
+                        label="Technote" />
+                        <category   scheme="/blog/tags"
+                        term="Standards"
+                        label="Standards" />
+            
+            <content type="html">
+                
+                            </content>
+        </entry>
+            <entry>
+            <title type="html">2E1HNK Interconnection Standards</title>
+            <author><name>Matt, 2E1HNK</name></author>
+            <link href="/blog/standards.html"/>
+            <updated>2019-09-11T08:00:00Z</updated>
+            <published>2019-09-11T08:00:00Z</published>
+            <id>/blog/standards.html</id>
+                        <category   scheme="/blog/tags"
+                        term="TechNote"
+                        label="Technote" />
+                        <category   scheme="/blog/tags"
+                        term="Standards"
+                        label="Standards" />
+            
+            <content type="html">
+                
+                &lt;p&gt;Standards exist to promote interoperability between systems. They define the physical and electrical characteristics of interconnections, such that two systems both implementing the same standard are able to connect to each other and interoperate without any concern about misunderstanding. Given that amateur radio deployments often consist of multiple different &amp;#8216;boxes&amp;#8217; which need to be connected, it seems sensible to adhere to standards where possible. This is a list of the standards which I adhere to. It is primarily for my own reference although if anyone else decides to adopt these standards then that&amp;#8217;s great. In most cases I&amp;#8217;ve tried to use publically-available already-published&amp;nbsp;standards.&lt;/p&gt;            </content>
+        </entry>
             <entry>
             <title type="html">UK 2m Channels</title>
             <author><name>Matt, 2E1HNK</name></author>

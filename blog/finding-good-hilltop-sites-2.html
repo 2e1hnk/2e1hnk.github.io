@@ -95,15 +95,21 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-8 offset-md-2">
-          <em class="text-muted">By Matt, 2E1HNK on <time datetime="2018-06-27">Wed, 27 Jun 2018</time></em>
-        <div class="tags">
+          <section>
+    <em class="text-muted">By Matt, 2E1HNK on <time datetime="2018-06-27">Wed, 27 Jun 2018</time></em>
+          <div class="tags">
               <a class="btn btn-outline-secondary btn-sm" href="/blog/tags/TechNote.html">TechNote</a>
               <a class="btn btn-outline-secondary btn-sm" href="/blog/tags/UKAC.html">UKAC</a>
               <a class="btn btn-outline-secondary btn-sm" href="/blog/tags/FMAC.html">FMAC</a>
           </div>
   
+  </section>
 
-  <p>This is a quick update to the blog post about <a href="/blog/finding-good-hilltop-sites.html">Finding Good Hilltop Sites</a>.
+  <section>
+      </section>
+
+  <section>
+    <p>This is a quick update to the blog post about <a href="/blog/finding-good-hilltop-sites.html">Finding Good Hilltop Sites</a>.
 The Overpass API code given in the original blog post didn't take into account the presence of points in the vacinity with a higher elevation that the point in question. That is to say that it would find 'good' sites which were elevate and had road access but which might also have other land around which is more elevated than the site itself (think of something like a mountain pass - elevated but probably going between two large mountains). This update should resolve that by excluding any sites which have any features with a greated elevation within 2km of the site.</p>
 <pre><code class="json">
   [out:json][timeout:800];
@@ -134,7 +140,8 @@ The Overpass API code given in the original blog post didn't take into account t
 
   (.matchingSummits; .streets;);
   out geom;
-</code></pre>
+</code></pre>  </section>
+
 
           </div>
       </div>

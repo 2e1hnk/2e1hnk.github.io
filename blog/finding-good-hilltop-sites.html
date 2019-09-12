@@ -3,7 +3,7 @@
   <head>
     <!-- Required meta tags -->
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     
     <!-- Bootstrap CSS -->
@@ -45,61 +45,71 @@
   </head>
   <body id="finding-good-hilltop-sites">
     <div class="container-fluid header">
-      <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
-        <a class="navbar-brand" href="#">2E1HNK</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+      <div class="col-md-8 offset-md-2">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
+          <a class="navbar-brand" href="#">2E1HNK</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-                                    <li class="nav-item">
-              <a class="nav-link" href="/about.html">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/blog/">Blog</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/contests/">Contest Reports</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/projects/">Projects</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Tools
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="/ogps/">OGPS</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Something else here</a>
-              </div>
-            </li>
-          </ul>
-          <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search the Logbook" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-          </form>
-        </div>
-      </nav>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                                          <li class="nav-item">
+                <a class="nav-link" href="/about.html">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/blog/">Blog</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/contests/">Contest Reports</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/projects/">Projects</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Tools
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="/ogps/">OGPS</a>
+                  <a class="dropdown-item" href="#">Another action</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+              </li>
+            </ul>
+            <!--
+            <form class="form-inline my-2 my-lg-0">
+              <input id="searchCallsign" class="form-control mr-sm-2" type="search" placeholder="Search the Logbook" aria-label="Search">
+              <button class="btn btn-outline-success my-2 my-sm-0" id="btnLogSearch">Search</button>
+            </form>
+            -->
+          </div>
+        </nav>
 
-      <h1 class="header-text">  Finding Good Hill-Top Portable Sites
+        <h1 class="header-text display-1">  Finding Good Hill-Top Portable Sites
 </h1>
+      </div>
     </div>
 
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-8 offset-md-2">
-          <em class="text-muted">By Matt, 2E1HNK on <time datetime="2018-04-26">Thu, 26 Apr 2018</time></em>
-        <div class="tags">
+          <section>
+    <em class="text-muted">By Matt, 2E1HNK on <time datetime="2018-04-26">Thu, 26 Apr 2018</time></em>
+          <div class="tags">
               <a class="btn btn-outline-secondary btn-sm" href="/blog/tags/TechNote.html">TechNote</a>
               <a class="btn btn-outline-secondary btn-sm" href="/blog/tags/UKAC.html">UKAC</a>
               <a class="btn btn-outline-secondary btn-sm" href="/blog/tags/FMAC.html">FMAC</a>
           </div>
   
+  </section>
 
-  <p>Finding good portable operating sites historically relied on local
+  <section>
+      </section>
+
+  <section>
+    <p>Finding good portable operating sites historically relied on local
 knowledge, anecdotal evidence from other amateurs, plenty of
 experimentation and a good dose of luck. Whilst there's nothing
 wrong with this approach it does rely on either knowing the local
@@ -175,7 +185,8 @@ need.
 tools for assessing a site's radio coverage. Their use cannot be
 described briefly here but there are plenty of tutorials
 available. One I particularly like for Radio Mobile's offline
-versions can be found <a href="http://radiomobile.pe1mew.nl/?How_to:A_first_example">here</a></p>
+versions can be found <a href="http://radiomobile.pe1mew.nl/?How_to:A_first_example">here</a></p>  </section>
+
 
           </div>
       </div>
@@ -188,5 +199,14 @@ versions can be found <a href="http://radiomobile.pe1mew.nl/?How_to:A_first_exam
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+        document.getElementById("btnLogSearch").onclick = function () {
+            var url = "/logsearch.html?callsign=" + document.getElementById("searchCallsign").value;
+            location.href(url);
+            return false;
+        };
+    </script>
+
   </body>
 </html>

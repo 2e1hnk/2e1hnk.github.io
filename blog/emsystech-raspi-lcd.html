@@ -95,13 +95,22 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-8 offset-md-2">
-          <em class="text-muted">By Matt, 2E1HNK on <time datetime="2019-04-22">Mon, 22 Apr 2019</time></em>
-        <div class="tags">
+          <section>
+    <em class="text-muted">By Matt, 2E1HNK on <time datetime="2019-04-22">Mon, 22 Apr 2019</time></em>
+          <div class="tags">
               <a class="btn btn-outline-secondary btn-sm" href="/blog/tags/Raspberry%20Pi.html">Raspberry Pi</a>
           </div>
   
+  </section>
 
-  <p>A number of years ago I bought a neat little LCD/Button add-on module for my 1st Gen Raspberry Pi. The company that produced these (Emsystech Engineering, Germany) no longer produce them and they no longer host information about them on their website. This is a mirror of the info that I've managed to collate from a number of sources, primarily the <a href="https://archive.org/web/">Wayback Machine</a>.
+  <section>
+          <center>
+        <img src="/media/images/Raspi-LCD-1.jpg" />
+      </center>
+      </section>
+
+  <section>
+    <p>A number of years ago I bought a neat little LCD/Button add-on module for my 1st Gen Raspberry Pi. The company that produced these (Emsystech Engineering, Germany) no longer produce them and they no longer host information about them on their website. This is a mirror of the info that I've managed to collate from a number of sources, primarily the <a href="https://archive.org/web/">Wayback Machine</a>.
 The following is text that has been copied from Emsystech's website after being auto-translated by Google, as the original was in German which I don't understand. It has been lightly edited to remove information that is either no longer relevant or refers to websites/products that can no longer be found and to include additional information that was not originally provided (or available to) Emsystech. This includes projects that have implemented support for the module in other programming languages. I have also corrected some of Google Translate idiosyncrasies. I've kept it here for my own reference, and to assist anyone else who may have purchased these modules and is struggling to find information on them. I can't offer any support on the product itself, other than by providing the information present here.</p>
 <hr />
 
@@ -157,7 +166,8 @@ Output of bitmap at position(0/0):
 <p>The individual keys switch to ground when the key is pressed. Since the corresponding GPIO PINs are configured as an input with pullup, a depressed key means logical 0, an unpressed key logical 1.</p>
 <p>The function <code>UpdateButtons();</code> ensures that the state of the buttons is stored in the two variables ButtonPressed and Button as one bit each. Macros such as: <code>BUTTON_PRESSED_UP</code>, <code>BUTTON_PRESSED_RIGHT</code>, ... allow comfortable use of the keyboard.</p>
 <h1>Backlight</h1>
-<p>On the Raspi LCD there is a switching transistor for controlling the LED background illumination. The corresponding GPIO pin can be set via the function <code>SetBacklight();</code> be controlled.</p>
+<p>On the Raspi LCD there is a switching transistor for controlling the LED background illumination. The corresponding GPIO pin can be set via the function <code>SetBacklight();</code> be controlled.</p>  </section>
+
 
           </div>
       </div>

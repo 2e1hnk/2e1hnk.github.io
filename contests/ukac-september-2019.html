@@ -95,14 +95,21 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-8 offset-md-2">
-          <em class="text-muted">By Matt, 2E1HNK on <time datetime="2019-09-03">Tue, 03 Sep 2019</time></em>
-        <div class="tags">
+          <section>
+    <em class="text-muted">By Matt, 2E1HNK on <time datetime="2019-09-03">Tue, 03 Sep 2019</time></em>
+          <div class="tags">
               <a class="btn btn-outline-secondary btn-sm" href="/blog/tags/UKAC.html">UKAC</a>
               <a class="btn btn-outline-secondary btn-sm" href="/blog/tags/Activation.html">Activation</a>
           </div>
   
+  </section>
 
-  
+  <section>
+      </section>
+
+  <section>
+      </section>
+
 
       <br />
     <h2>2M</h2>
@@ -408,7 +415,7 @@
   var myLocation = [];
   gridSquareToLatLon("IO92ba", myLocation);
 
-  readTextFile("/media/logs/2E1HNK_2019_08_13_432 MHz_TEMP.adi", function(log) {
+  readTextFile("/media/logs/2E1HNK_2019_09_10_432 MHz.adi", function(log) {
     totalQsos = 0;
     odxDist = 0;
     points = 0;
@@ -511,7 +518,7 @@
     )
   );
 
-  readTextFile("/media/logs/2E1HNK_2019_08_13_432 MHz_TEMP.adi", function(log) {
+  readTextFile("/media/logs/2E1HNK_2019_09_10_432 MHz.adi", function(log) {
     rate70CM = {};
     opmode70CM = [];
     var currMode = "s_p";
