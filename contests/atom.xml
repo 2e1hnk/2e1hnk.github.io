@@ -7,10 +7,27 @@
         <link href="/"/>
     
         
-    <updated>2019-09-12T11:36:52Z</updated>
+    <updated>2019-10-04T15:18:24Z</updated>
 
     <id>/contests/atom.xml/</id>
 
+            <entry>
+            <title type="html">2m/70cm UKAC October 2019</title>
+            <author><name>Matt, 2E1HNK</name></author>
+            <link href="/contests/ukac-october-2019.html"/>
+            <updated>2019-10-03T23:00:00Z</updated>
+            <published>2019-10-03T23:00:00Z</published>
+            <id>/contests/ukac-october-2019.html</id>
+                        <category   scheme="/blog/tags"
+                        term="UKAC"
+                        label="Ukac" />
+                        <category   scheme="/blog/tags"
+                        term="Activation"
+                        label="Activation" />
+            
+            <content type="html">
+                                            </content>
+        </entry>
             <entry>
             <title type="html">2m/70cm UKAC September 2019</title>
             <author><name>Matt, 2E1HNK</name></author>
