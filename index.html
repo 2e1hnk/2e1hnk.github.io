@@ -9,6 +9,8 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
+    <link rel="stylesheet" href="/media/css/all.css">
+
     <title>2E1HNK</title>
     <meta name="description" content="Home page for the Amateur Radio Station 2E1HNK">
 
@@ -32,6 +34,15 @@
       .header-text {
         padding-top: 100px;
         padding-bottom: 100px;
+      }
+
+      section {
+        padding-top: 20px;
+      }
+
+      footer {
+        padding-top: 20px;
+        padding-bottom: 20px;
       }
     </style>
 
@@ -89,6 +100,20 @@
         <div class="col-md-8 offset-md-2">
           
   
+    <a href="/blog/full-license.html">
+      <h2>Full License</h2>
+          </a>
+    <em class="text-muted">By Matt, 2E1HNK on <time datetime="2019-10-13">Sun, 13 Oct 2019</time></em>
+
+      
+
+    <p>I sat my full license exam at the 2019 <span class="caps">RSGB</span> convention, and&nbsp;passed!</p>
+
+    <a href="/blog/full-license.html">Read more...</a>
+
+<hr />
+
+  
     <a href="/contests/ukac-october-2019.html">
       <h2>2m/70cm UKAC October 2019</h2>
           </a>
@@ -142,37 +167,32 @@
 
 <hr />
 
-  
-    <a href="/contests/ukac-september-2019.html">
-      <h2>2m/70cm UKAC September 2019</h2>
-          </a>
-    <em class="text-muted">By Matt, 2E1HNK on <time datetime="2019-09-03">Tue, 03 Sep 2019</time></em>
-
-          <div class="tags">
-              <a class="btn btn-outline-secondary btn-sm" href="/blog/tags/UKAC.html">UKAC</a>
-              <a class="btn btn-outline-secondary btn-sm" href="/blog/tags/Activation.html">Activation</a>
-          </div>
-  
-
-    
-
-    <a href="/contests/ukac-september-2019.html">Read more...</a>
-
-<hr />
-
 
         </div>
       </div>
     </div>
 
-
+    <footer class="bg-dark">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-2 offset-md-3 text-center">
+            <a href="https://twitter.com/2e1hnk"><i class="fab fa-twitter display-4 text-light"></i></a>
+          </div>
+          <div class="col-md-2 text-center">
+            <a href="https://github.com/2e1hnk"><i class="fab fa-github display-4 text-light"></i></a>
+          </div>
+          <div class="col-md-2 text-center">
+            <a href="https://reddit.com/user/2e1hnk"><i class="fab fa-reddit display-4 text-light"></i></a>
+          </div>
+        </div>
+      </div>
+    </footer>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
     <script type="text/javascript">
         document.getElementById("btnLogSearch").onclick = function () {
             var url = "/logsearch.html?callsign=" + document.getElementById("searchCallsign").value;
@@ -180,6 +200,5 @@
             return false;
         };
     </script>
-
   </body>
 </html>
