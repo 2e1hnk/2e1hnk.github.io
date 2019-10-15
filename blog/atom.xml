@@ -7,10 +7,30 @@
         <link href="/"/>
     
         
-    <updated>2019-10-14T12:18:14Z</updated>
+    <updated>2019-10-15T14:57:45Z</updated>
 
     <id>/blog/atom.xml/</id>
 
+            <entry>
+            <title type="html">Rules for a Good Callsign</title>
+            <author><name>Matt, 2E1HNK</name></author>
+            <link href="/blog/rules-for-a-good-callsign.html"/>
+            <updated>2019-10-14T23:00:00Z</updated>
+            <published>2019-10-14T23:00:00Z</published>
+            <id>/blog/rules-for-a-good-callsign.html</id>
+            
+            <content type="html">
+                                &lt;p&gt;Having passed my full license exam, and now that you can essentially pick whichever (unissued) callsign you want, my mind has turned to trying to work out how to define a &amp;#8216;good&amp;#8217; callsign. What I settled on is&amp;#8230;
+1. Callsign should not contain character combinations that are used for other purposes, e.g. &amp;#8216;&lt;span class=&#34;caps&#34;&gt;CQ&lt;/span&gt;&amp;#8217;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Callsign should not end in &amp;#8216;K&amp;#8217;, as that could be confusing in&amp;nbsp;Morse.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Ideally, the callsign should be available to register on social media/other online services such as&amp;nbsp;Twitter.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;            </content>
+        </entry>
             <entry>
             <title type="html">Full License</title>
             <author><name>Matt, 2E1HNK</name></author>
