@@ -1,0 +1,182 @@
+<html>
+<head>
+  <title>The Mainframe</title>
+  <style>
+    /*basic reset*/
+    * {margin: 0; padding: 0;}
+    /*adding a black bg to the body to make things clearer*/
+    body {
+      background: black;
+    }
+    canvas {
+      display: block;
+    }
+    input {
+      border: solid 3px #030;
+      background-color: #000;
+      color: #090;
+      font-size: 2em;
+      text-transform: uppercase;
+    }
+    .valid {
+      border: #0F0 solid 3px !important;
+    }
+    .invalid {
+      border: #F00 solid 3px !important;
+    }
+
+    #message {
+      background-color: #000;
+      border: #0F0 solid 3px !important;
+      padding: 20px;
+      color: #0F0;
+      width: 300px;
+      height: 100px;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      font-family: Arial;
+    }
+
+    .hidden {
+      visibility: hidden;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="c"></canvas>
+  <div id="input-panel" style="position: absolute; bottom: 20px; width: 100%;">
+    <table style="width: 100%;">
+      <tr>
+        <td><input type="text" id="code-1" size="4" /></td>
+        <td><input type="text" id="code-2" size="4" /></td>
+        <td><input type="text" id="code-3" size="4" /></td>
+        <td><input type="text" id="code-4" size="4" /></td>
+        <td><input type="text" id="code-5" size="4" /></td>
+        <td><input type="button" id="check-button" size="4" value="Check Codes >>" onclick="checkCodes()" /></td>
+      </tr>
+    </table>
+  </div>
+  <div id="message" class="hidden">
+    <h1 id="message-header">Congratulation!</h1>
+    <p id="message-body">You have disabled the mainframe. Good Job!</p>
+  </div>
+  <script>
+    var c = document.getElementById("c");
+    var ctx = c.getContext("2d");
+
+    //making the canvas full screen
+    c.height = window.innerHeight;
+    c.width = window.innerWidth;
+
+    //chinese characters - taken from the unicode charset
+    var chinese = "田由甲申甴电甶男甸甹町画甼甽甾甿畀畁畂畃畄畅畆畇畈畉畊畋界畍畎畏畐畑";
+    //converting the string into an array of single characters
+    chinese = chinese.split("");
+
+    var font_size = 10;
+    var columns = c.width/font_size; //number of columns for the rain
+    //an array of drops - one per column
+    var drops = [];
+    //x below is the x coordinate
+    //1 = y co-ordinate of the drop(same for every drop initially)
+    for(var x = 0; x < columns; x++)
+    	drops[x] = 1;
+
+    //drawing the characters
+    function draw()
+    {
+    	//Black BG for the canvas
+    	//translucent BG to show trail
+    	ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
+    	ctx.fillRect(0, 0, c.width, c.height);
+
+    	ctx.fillStyle = "#090"; //green text
+    	ctx.font = font_size + "px arial";
+    	//looping over drops
+    	for(var i = 0; i < drops.length; i++)
+    	{
+    		//a random chinese character to print
+    		var text = chinese[Math.floor(Math.random()*chinese.length)];
+    		//x = i*font_size, y = value of drops[i]*font_size
+    		ctx.fillText(text, i*font_size, drops[i]*font_size);
+
+    		//sending the drop back to the top randomly after it has crossed the screen
+    		//adding a randomness to the reset to make the drops scattered on the Y axis
+    		if(drops[i]*font_size > c.height && Math.random() > 0.975)
+    			drops[i] = 0;
+
+    		//incrementing Y coordinate
+    		drops[i]++;
+    	}
+    }
+
+    var intervalTimer = setInterval(draw, 33);
+
+    function checkCodes() {
+      var validCodes = ["A-01", "B-02", "C-03", "D-04", "E-05"];
+      var code1 = document.getElementById("code-1");
+      var code2 = document.getElementById("code-2");
+      var code3 = document.getElementById("code-3");
+      var code4 = document.getElementById("code-4");
+      var code5 = document.getElementById("code-5");
+
+      var correctCounter = 0;
+
+      code1.classList.add("invalid");
+      if ( validCodes.includes(code1.value.toUpperCase()) ) {
+        code1.classList.remove("invalid");
+        code1.classList.add("valid");
+        validCodes = removeValueFromArray(validCodes, code1.value.toUpperCase());
+        correctCounter++;
+      }
+      code2.classList.add("invalid");
+      if ( validCodes.includes(code2.value.toUpperCase()) ) {
+        code2.classList.remove("invalid");
+        code2.classList.add("valid");
+        validCodes = removeValueFromArray(validCodes, code2.value.toUpperCase());
+        correctCounter++;
+      }
+      code3.classList.add("invalid");
+      if ( validCodes.includes(code3.value.toUpperCase()) ) {
+        code3.classList.remove("invalid");
+        code3.classList.add("valid");
+        validCodes = removeValueFromArray(validCodes, code3.value.toUpperCase());
+        correctCounter++;
+      }
+      code4.classList.add("invalid");
+      if ( validCodes.includes(code4.value.toUpperCase()) ) {
+        code4.classList.remove("invalid");
+        code4.classList.add("valid");
+        validCodes = removeValueFromArray(validCodes, code4.value.toUpperCase());
+        correctCounter++;
+      }
+      code5.classList.add("invalid");
+      if ( validCodes.includes(code5.value.toUpperCase()) ) {
+        code5.classList.remove("invalid");
+        code5.classList.add("valid");
+        validCodes = removeValueFromArray(validCodes, code5.value.toUpperCase());
+        correctCounter++;
+      }
+
+      console.log("correctCounter", correctCounter);
+
+      if ( correctCounter >= 5 ) {
+        clearInterval(intervalTimer);
+        document.getElementById("message").classList.remove("hidden");
+      }
+
+    }
+
+    function removeValueFromArray(arr, value) {
+      for( var i = 0; i < arr.length; i++){
+         if ( arr[i] === value) {
+           arr.splice(i, 1);
+         }
+      }
+      return arr;
+    }
+  </script>
+</body>
+</html>
