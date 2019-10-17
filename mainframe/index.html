@@ -112,10 +112,11 @@
     	}
     }
 
-    var intervalTimer = setInterval(draw, 33);
+    var intervalTimer = setInterval(draw, 66);
 
     function checkCodes() {
-      var validCodes = ["A-01", "B-02", "C-03", "D-04", "E-05"];
+      // Valid codes should be upper case with no punctuation
+      var validCodes = ["A01", "B02", "C03", "D04", "E05"];
       var code1 = document.getElementById("code-1");
       var code2 = document.getElementById("code-2");
       var code3 = document.getElementById("code-3");
@@ -125,38 +126,38 @@
       var correctCounter = 0;
 
       code1.classList.add("invalid");
-      if ( validCodes.includes(code1.value.toUpperCase()) ) {
+      if ( validCodes.includes(code1.value.toUpperCase().replace(/\W/g, '')) ) {
         code1.classList.remove("invalid");
         code1.classList.add("valid");
-        validCodes = removeValueFromArray(validCodes, code1.value.toUpperCase());
+        validCodes = removeValueFromArray(validCodes, code1.value.toUpperCase().replace(/\W/g, ''));
         correctCounter++;
       }
       code2.classList.add("invalid");
-      if ( validCodes.includes(code2.value.toUpperCase()) ) {
+      if ( validCodes.includes(code2.value.toUpperCase().replace(/\W/g, '')) ) {
         code2.classList.remove("invalid");
         code2.classList.add("valid");
-        validCodes = removeValueFromArray(validCodes, code2.value.toUpperCase());
+        validCodes = removeValueFromArray(validCodes, code2.value.toUpperCase().replace(/\W/g, ''));
         correctCounter++;
       }
       code3.classList.add("invalid");
-      if ( validCodes.includes(code3.value.toUpperCase()) ) {
+      if ( validCodes.includes(code3.value.toUpperCase().replace(/\W/g, '')) ) {
         code3.classList.remove("invalid");
         code3.classList.add("valid");
-        validCodes = removeValueFromArray(validCodes, code3.value.toUpperCase());
+        validCodes = removeValueFromArray(validCodes, code3.value.toUpperCase().replace(/\W/g, ''));
         correctCounter++;
       }
       code4.classList.add("invalid");
-      if ( validCodes.includes(code4.value.toUpperCase()) ) {
+      if ( validCodes.includes(code4.value.toUpperCase().replace(/\W/g, '')) ) {
         code4.classList.remove("invalid");
         code4.classList.add("valid");
-        validCodes = removeValueFromArray(validCodes, code4.value.toUpperCase());
+        validCodes = removeValueFromArray(validCodes, code4.value.toUpperCase().replace(/\W/g, ''));
         correctCounter++;
       }
       code5.classList.add("invalid");
-      if ( validCodes.includes(code5.value.toUpperCase()) ) {
+      if ( validCodes.includes(code5.value.toUpperCase().replace(/\W/g, '')) ) {
         code5.classList.remove("invalid");
         code5.classList.add("valid");
-        validCodes = removeValueFromArray(validCodes, code5.value.toUpperCase());
+        validCodes = removeValueFromArray(validCodes, code5.value.toUpperCase().replace(/\W/g, ''));
         correctCounter++;
       }
 
