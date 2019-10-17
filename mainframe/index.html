@@ -50,20 +50,22 @@
 <body>
   <canvas id="c"></canvas>
   <div id="input-panel" style="position: absolute; bottom: 20px; width: 100%;">
-    <table style="width: 100%;">
-      <tr>
-        <td style="text-align: center;"><input type="text" id="code-1" size="4" /></td>
-        <td style="text-align: center;"><input type="text" id="code-2" size="4" /></td>
-        <td style="text-align: center;"><input type="text" id="code-3" size="4" /></td>
-        <td style="text-align: center;"><input type="text" id="code-4" size="4" /></td>
-        <td style="text-align: center;"><input type="text" id="code-5" size="4" /></td>
-        <td style="text-align: center;"><input type="button" id="check-button" size="4" value="Check Codes >>" onclick="checkCodes()" /></td>
-      </tr>
-    </table>
+    <form onsubmit="return checkCodes()">
+      <table style="width: 100%;">
+        <tr>
+          <td style="text-align: center;"><input type="text" id="code-1" size="4" /></td>
+          <td style="text-align: center;"><input type="text" id="code-2" size="4" /></td>
+          <td style="text-align: center;"><input type="text" id="code-3" size="4" /></td>
+          <td style="text-align: center;"><input type="text" id="code-4" size="4" /></td>
+          <td style="text-align: center;"><input type="text" id="code-5" size="4" /></td>
+          <td style="text-align: center;"><input type="submit" id="check-button" size="4" value="Check Codes >>" /></td>
+        </tr>
+      </table>
+    </form>
   </div>
   <div id="message" class="hidden">
     <h1 id="message-header">Congratulation!</h1>
-    <p id="message-body">You have disabled the mainframe. Good Job!</p>
+    <p id="message-body">You have disabled the mainframe.<br />Good Job!</p>
   </div>
   <script>
     var c = document.getElementById("c");
@@ -104,7 +106,7 @@
     	for(var i = 0; i < drops.length; i++)
     	{
     		//a random chinese character to print
-    		var text = characters[Math.floor(Math.random()*characters.length)];
+    		var text = characters[Math.floor(Math.random()*characters .length)];
     		//x = i*font_size, y = value of drops[i]*font_size
     		ctx.fillText(text, i*font_size, drops[i]*font_size);
 
@@ -177,6 +179,7 @@
         document.getElementById("message").classList.remove("hidden");
       }
 
+      return false;
     }
 
     function removeValueFromArray(arr, value) {
