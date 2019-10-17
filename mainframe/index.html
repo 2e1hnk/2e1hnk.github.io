@@ -3,6 +3,11 @@
   <meta charset="UTF-8">
   <title>The Mainframe</title>
   <style>
+    @font-face {
+      font-family: "Matrix";
+      src: url("/media/webfonts/matrix.otf") format("opentype"),
+      url("/media/webfonts/matrix.ttf") format("ttf");
+    }
     /*basic reset*/
     * {margin: 0; padding: 0;}
     /*adding a black bg to the body to make things clearer*/
@@ -75,8 +80,9 @@
     c.height = window.innerHeight;
     c.width = window.innerWidth;
 
-    //chinese characters - taken from the unicode charset
+    // Chinese characters - taken from the unicode charset
     var characters = "田由甲申甴电甶男甸甹町画甼甽甾甿畀畁畂畃畄畅畆畇畈畉畊畋界畍畎畏畐畑";
+    // Inuktituk characters
     var characters = "ᐁᐯᑌᑫᕴᒉᒣᓀᓭᓓᔦᑦᔦᕓᕂᙯᖅᑫᙰᐃᐱᑎᑭᕵᒋᒥᓂᓯᓯ̵ᓯˋᓕᔨᑦᔨᖨᕕᕆᕿᖅᑭᖏᙱᖠ";
     //converting the string into an array of single characters
     characters = characters.split("");
@@ -126,7 +132,7 @@
 
     function checkCodes() {
       // Valid codes should be upper case with no punctuation
-      var validCodes = ["A01", "B02", "C03", "D04", "E05"];
+      var validCodes = ["G45", "F82", "D83", "X09", "S07", "A22"];
       var code1 = document.getElementById("code-1");
       var code2 = document.getElementById("code-2");
       var code3 = document.getElementById("code-3");
