@@ -7,10 +7,28 @@
         <link href="/"/>
     
         
-    <updated>2019-10-18T11:00:13Z</updated>
+    <updated>2019-11-13T10:59:11Z</updated>
 
     <id>/contests/atom.xml/</id>
 
+            <entry>
+            <title type="html">70cm UKAC October 2019</title>
+            <author><name>Matt, 2E1HNK</name></author>
+            <link href="/contests/ukac-november-2019.html"/>
+            <updated>2019-11-13T07:00:00Z</updated>
+            <published>2019-11-13T07:00:00Z</published>
+            <id>/contests/ukac-november-2019.html</id>
+                        <category   scheme="/blog/tags"
+                        term="UKAC"
+                        label="Ukac" />
+                        <category   scheme="/blog/tags"
+                        term="Activation"
+                        label="Activation" />
+            
+            <content type="html">
+                                &lt;p&gt;No 2m entry this month due to family duties, however I did make it out for 70cm.
+This was the first appearance of my newly-finished 23-element yagi. Unfortunately conditions were not good so there wasn&amp;#8217;t much demonstrable improvement over the old 7-element one. An additional problem was that whilst it is quite easy to get the 7-element up to the full 6m mast height (and I think 9m might be quite straightforward too, if I don&amp;#8217;t put the rotator too far up), I had to limit the mast to 4.5m as the weight is just too much to raise safely on my own. This height puts the boom at about 3.5-4m agl, as the boom is long enough to need stays, meaning that there needs to be sufficient height above the boom for the stays to attach to the mast. This reduced height probably had an impact on performance&amp;nbsp;too.&lt;/p&gt;            </content>
+        </entry>
             <entry>
             <title type="html">2m/70cm UKAC October 2019</title>
             <author><name>Matt, 2E1HNK</name></author>
