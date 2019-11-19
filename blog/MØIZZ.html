@@ -11,7 +11,7 @@
 
     <link rel="stylesheet" href="/media/css/all.css">
 
-    <title>Finding Good Hill-Top Portable Sites</title>
+    <title>MØIZZ</title>
     <meta name="description" content="Test
 ">
 
@@ -55,7 +55,7 @@
     </style>
 
   </head>
-  <body id="finding-good-hilltop-sites">
+  <body id="MØIZZ">
     <div class="container-fluid header">
       <div class="col-md-8 offset-md-2">
         <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
@@ -101,7 +101,7 @@
           </div>
         </nav>
 
-        <h1 class="header-text display-1">  Finding Good Hill-Top Portable Sites
+        <h1 class="header-text display-1">  MØIZZ
 </h1>
         <h4 class="header-text display-4"></h4>
       </div>
@@ -111,99 +111,22 @@
       <div class="row">
         <div class="col-md-8 offset-md-2">
           <section>
-    <em class="text-muted">By Matt, 2E1HNK on <time datetime="2018-04-26">Thu, 26 Apr 2018</time></em>
+    <em class="text-muted">By Matt, MØIZZ on <time datetime="2019-11-19">Tue, 19 Nov 2019</time></em>
   </section>
 
   <section>
-          <div class="tags">
-              <a class="btn btn-outline-secondary btn-sm" href="/blog/tags/TechNote.html">TechNote</a>
-              <a class="btn btn-outline-secondary btn-sm" href="/blog/tags/UKAC.html">UKAC</a>
-              <a class="btn btn-outline-secondary btn-sm" href="/blog/tags/FMAC.html">FMAC</a>
-          </div>
-  
+      
   </section>
 
   <section>
+          <center>
+        <img class="img-fluid" style="margin-top: 20px; margin-bottom: 20px;" src="/media/images/mØizz.jpg" />
+      </center>
       </section>
 
   <section>
-    <p>Finding good portable operating sites historically relied on local
-knowledge, anecdotal evidence from other amateurs, plenty of
-experimentation and a good dose of luck. Whilst there's nothing
-wrong with this approach it does rely on either knowing the local
-area well, or having contact with someone who does. This isn't
-always available, for example holiday operation, moving to a new
-area or simply that all the good peaks have been taken. There must
-be a better way...
-My approach to finding new hilltops to
-activate involves finding candidate hilltops, assessing whether
-operation is possible from that location, and then working out
-whether it's worth the effort of attempting to activate it. These
-are some of the resources I use to do this.</p>
-<h3>Find Candidate Sites</h3>
-<h4>Overpass Turbo</h4>
-<p><a href="http://overpass-turbo.eu">Overpass Turbo</a> allows users to run scripts against the Overpass API, part
-of the OpenStreetMap project. The script below finds ways, nodes
-and relationships (i.e. any object) with an elevation greater
-than 300m a.s.l (which works well for the area I'm interested in,
-depending on your local area you might need to change this). It
-then searches the area around those objects up to a radius to
-100m (you can tune this too, if you need to) to see if there are
-any highways, but excluding footpaths, bridleways, tracks,
-service roads, unclassified roads etc. This theoretically returns
-a list/map of summits which are accessible by car.</p>
-<pre><code class="json">
-[out:json][timeout:800];
-(
-  way()(if:t["ele"] > 300);
-  node()(if:t["ele"] > 300);
-  rel()(if:t["ele"] > 300);
-)->.summits;
-
-way
-  (around.summits:100)
-  [highway]
-  [highway!~"^(footway|path|bridleway|track|unclassified|cycleway|service)$"]
-->.streets;
-
-(
-  node.summits(around.streets:100);
-  way.summits(around.streets:100);
-  rel.summits(around.streets:100);
-)->.matchingSummits;
-
-(.matchingSummits; .streets;);
-out geom;
-</code></pre>
-
-<h4>UKACMap</h4>
-<p><a href="ukacmap.html">UKACMap</a> queries the Google
-Maps API to try to find the highest point in view. In some ways
-this is more reliable that the OverPass API approach as the
-Google Maps elevation data comes from surveys rather than
-user-entered data, however there are limitations in how many
-times the Google Maps API can be queried, so the application is
-not as accurate as it could be.</p>
-<h3>Assess Accessability</h3>
-<ul>
-<li>Is the land privately owned?</li>
-<li>Is it possible to get a vehicle to the site?</li>
-<li>Are there time restrictions (for example a car park that closes at dusk)?</li>
-<li>Is there sufficient space to set up antennas?</li>
-</ul>
-<p>The answers to many of these questions can be found using online
-mapping services including <a href="https://www.bing.com/maps">Bing Maps</a> which has Ordnance Survey maps available and Google Maps
-which has aerial photography and also Google's fantastic Street
-View service.</p>
-<h3>Assess Radio Coverage</h3>
-<p>Of cource there's no point investing time and energy into
-climbing a peak is it's not going to give you the coverage you
-need.
-<a href="http://www.ve2dbe.com/rmonline.html">Radio Mobile Online</a> (and also the offline version) and Splat! are fantastic
-tools for assessing a site's radio coverage. Their use cannot be
-described briefly here but there are plenty of tutorials
-available. One I particularly like for Radio Mobile's offline
-versions can be found <a href="http://radiomobile.pe1mew.nl/?How_to:A_first_example">here</a></p>  </section>
+    <p>I'm now MØIZZ!
+After a fair amount of wrangling with Ofcom, including being issued G2KS for a period of 49 minutes, they have finally ignored my request for M5MAT and issued me MØIZZ. This callsign breaks a few of my self-imposed rules, notable it has a repeating character (Z) and also the twitter username @M0IZZ is not available, so on twitter I'll be <a href="http://twitter.com/M0IZZ_Matt">@M0IZZ_Matt</a>.</p>  </section>
 
 
           </div>
@@ -214,10 +137,10 @@ versions can be found <a href="http://radiomobile.pe1mew.nl/?How_to:A_first_exam
       <div class="container">
         <div class="row">
           <div class="col-md-2 offset-md-3 text-center">
-            <a href="https://twitter.com/2e1hnk"><i class="fab fa-twitter display-4 text-light"></i></a>
+            <a href="https://twitter.com/"><i class="fab fa-twitter display-4 text-light"></i></a>
           </div>
           <div class="col-md-2 text-center">
-            <a href="https://github.com/"><i class="fab fa-github display-4 text-light"></i></a>
+            <a href="https://github.com/2e1hnk"><i class="fab fa-github display-4 text-light"></i></a>
           </div>
           <div class="col-md-2 text-center">
             <a href="https://reddit.com/user/2e1hnk"><i class="fab fa-reddit display-4 text-light"></i></a>

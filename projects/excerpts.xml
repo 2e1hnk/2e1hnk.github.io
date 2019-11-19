@@ -7,13 +7,13 @@
         <link href="/"/>
     
         
-    <updated>2019-11-13T10:59:32Z</updated>
+    <updated>2019-11-19T12:51:32Z</updated>
 
     <id>/projects/excerpts.xml/</id>
 
             <entry>
             <title type="html">2m/70cm Satellite Station</title>
-            <author><name>Matt, 2E1HNK</name></author>
+            <author><name>Matt, M5MAT</name></author>
             <link href="/projects/satellite-station.html"/>
             <updated>2019-04-26T08:00:00Z</updated>
             <published>2019-04-26T08:00:00Z</published>
@@ -25,7 +25,7 @@
         </entry>
             <entry>
             <title type="html">HF Magnetic Loop Antenna</title>
-            <author><name>Matt, 2E1HNK</name></author>
+            <author><name>Matt, M5MAT</name></author>
             <link href="/projects/magloop.html"/>
             <updated>2019-04-11T23:00:00Z</updated>
             <published>2019-04-11T23:00:00Z</published>
@@ -37,7 +37,7 @@
         </entry>
             <entry>
             <title type="html">Suppliers</title>
-            <author><name>Matt, 2E1HNK</name></author>
+            <author><name>Matt, M5MAT</name></author>
             <link href="/projects/suppliers.html"/>
             <updated>2019-04-10T23:00:00Z</updated>
             <published>2019-04-10T23:00:00Z</published>
@@ -49,7 +49,7 @@
         </entry>
             <entry>
             <title type="html">6m 5-Element DK7ZB Yagi</title>
-            <author><name>Matt, 2E1HNK</name></author>
+            <author><name>Matt, M5MAT</name></author>
             <link href="/projects/6m-5ele-yagi.html"/>
             <updated>2019-04-02T23:00:00Z</updated>
             <published>2019-04-02T23:00:00Z</published>
@@ -61,7 +61,7 @@
         </entry>
             <entry>
             <title type="html">6m Portable Moxon Antenna</title>
-            <author><name>Matt, 2E1HNK</name></author>
+            <author><name>Matt, M5MAT</name></author>
             <link href="/projects/6m-portable-moxon.html"/>
             <updated>2019-04-02T23:00:00Z</updated>
             <published>2019-04-02T23:00:00Z</published>
@@ -73,7 +73,7 @@
         </entry>
             <entry>
             <title type="html">70cm 7-element DK7ZB Yagi</title>
-            <author><name>Matt, 2E1HNK</name></author>
+            <author><name>Matt, M5MAT</name></author>
             <link href="/projects/70cm-7ele-yagi.html"/>
             <updated>2019-04-02T23:00:00Z</updated>
             <published>2019-04-02T23:00:00Z</published>
@@ -85,7 +85,7 @@
         </entry>
             <entry>
             <title type="html">Bitx40</title>
-            <author><name>Matt, 2E1HNK</name></author>
+            <author><name>Matt, M5MAT</name></author>
             <link href="/projects/bitx40.html"/>
             <updated>2019-04-02T23:00:00Z</updated>
             <published>2019-04-02T23:00:00Z</published>
@@ -97,7 +97,7 @@
         </entry>
             <entry>
             <title type="html">FT-857d Installation in a Mitsubishi L200</title>
-            <author><name>Matt, 2E1HNK</name></author>
+            <author><name>Matt, M5MAT</name></author>
             <link href="/projects/car-installation.html"/>
             <updated>2019-04-02T23:00:00Z</updated>
             <published>2019-04-02T23:00:00Z</published>
@@ -109,7 +109,7 @@
         </entry>
             <entry>
             <title type="html">Scouts JOTA Fox-Hunt (ARDF) Kit</title>
-            <author><name>Matt, 2E1HNK</name></author>
+            <author><name>Matt, M5MAT</name></author>
             <link href="/projects/fox-hunt-kit.html"/>
             <updated>2019-04-02T23:00:00Z</updated>
             <published>2019-04-02T23:00:00Z</published>
@@ -121,7 +121,7 @@
         </entry>
             <entry>
             <title type="html">ISS SSTV Reception Kit</title>
-            <author><name>Matt, 2E1HNK</name></author>
+            <author><name>Matt, M5MAT</name></author>
             <link href="/projects/iss-sstv.html"/>
             <updated>2019-04-02T23:00:00Z</updated>
             <published>2019-04-02T23:00:00Z</published>
@@ -133,7 +133,7 @@
         </entry>
             <entry>
             <title type="html">3D-printed Morse Key/Sounder for JOTA</title>
-            <author><name>Matt, 2E1HNK</name></author>
+            <author><name>Matt, M5MAT</name></author>
             <link href="/projects/morse-key.html"/>
             <updated>2019-04-02T23:00:00Z</updated>
             <published>2019-04-02T23:00:00Z</published>
@@ -145,7 +145,7 @@
         </entry>
             <entry>
             <title type="html">40cm CW Pixie Transceiver</title>
-            <author><name>Matt, 2E1HNK</name></author>
+            <author><name>Matt, M5MAT</name></author>
             <link href="/projects/pixie.html"/>
             <updated>2019-04-02T23:00:00Z</updated>
             <published>2019-04-02T23:00:00Z</published>
@@ -157,7 +157,7 @@
         </entry>
             <entry>
             <title type="html">Portable Mast</title>
-            <author><name>Matt, 2E1HNK</name></author>
+            <author><name>Matt, M5MAT</name></author>
             <link href="/projects/portable-mast.html"/>
             <updated>2019-04-02T23:00:00Z</updated>
             <published>2019-04-02T23:00:00Z</published>
@@ -169,7 +169,7 @@
         </entry>
             <entry>
             <title type="html">Weather Satellite Reception Kit</title>
-            <author><name>Matt, 2E1HNK</name></author>
+            <author><name>Matt, M5MAT</name></author>
             <link href="/projects/wx-sat.html"/>
             <updated>2019-04-02T23:00:00Z</updated>
             <published>2019-04-02T23:00:00Z</published>
