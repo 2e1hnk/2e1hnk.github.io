@@ -7,10 +7,84 @@
         <link href="/"/>
     
         
-    <updated>2019-12-04T15:24:54Z</updated>
+    <updated>2019-12-09T16:30:07Z</updated>
 
     <id>/blog/atom.xml/</id>
 
+            <entry>
+            <title type="html">Avatar</title>
+            <author><name>Matt, MØIZZ</name></author>
+            <link href="/blog/app-server-avatar.html"/>
+            <updated>2019-12-09T18:30:00Z</updated>
+            <published>2019-12-09T18:30:00Z</published>
+            <id>/blog/app-server-avatar.html</id>
+                        <category   scheme="/blog/tags"
+                        term="AppServer"
+                        label="Appserver" />
+            
+            <content type="html">
+                                &lt;p&gt;Avatar is a simple avatar generator. Styles and colours are derived from the &lt;span class=&#34;caps&#34;&gt;MD5&lt;/span&gt; hash of the &amp;#8216;name&amp;#8217; provided. Two generators are included - &amp;#8216;robot&amp;#8217; and &amp;#8216;face&amp;#8217;.
+Some examples are given below. The format for the url&amp;nbsp;is&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;https://app.deadbeef.cafe/avatar/{style}/{name}&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;e.g. For an 8-Bit style face avatar of &lt;span class=&#34;caps&#34;&gt;M0IZZ&lt;/span&gt;:&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;M0IZZ Face&#34; src=&#34;https://app.deadbeef.cafe/avatar/face/m0izz&#34; title=&#34;M0IZZ Face&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;https://app.deadbeef.cafe/avatar/face/m0izz&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Some other&amp;nbsp;examples&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;M0IZZ Robot&#34; src=&#34;https://app.deadbeef.cafe/avatar/robot/m0izz&#34; title=&#34;M0IZZ Robot&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;https://app.deadbeef.cafe/avatar/robot/m0izz&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;2E1HNK Face&#34; src=&#34;https://app.deadbeef.cafe/avatar/face/2e1hnk&#34; title=&#34;2E1HNK Robot&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;https://app.deadbeef.cafe/avatar/face/2e1hnk&lt;/code&gt;&lt;/p&gt;            </content>
+        </entry>
+            <entry>
+            <title type="html">DXClusterBridge</title>
+            <author><name>Matt, MØIZZ</name></author>
+            <link href="/blog/app-server-dxclusterbridge.html"/>
+            <updated>2019-12-09T18:00:00Z</updated>
+            <published>2019-12-09T18:00:00Z</published>
+            <id>/blog/app-server-dxclusterbridge.html</id>
+                        <category   scheme="/blog/tags"
+                        term="AppServer"
+                        label="Appserver" />
+            
+            <content type="html">
+                                &lt;p&gt;Deadbeef Cafe appserver DXClusterBridge setup. This is mostly for my own&amp;nbsp;reference&lt;/p&gt;
+&lt;h1&gt;Admin&lt;/h1&gt;
+&lt;h1&gt;Add a&amp;nbsp;user&lt;/h1&gt;
+&lt;p&gt;&lt;code&gt;sudo mosquitto_passwd /etc/mosquitto/passwd &amp;lt;callsign&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Stop and start the broker (note that a restart doesn&amp;#8217;t seem to&amp;nbsp;work)&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;sudo systemctl stop mosquitto&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;wait a&amp;nbsp;bit&amp;#8230;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;sudo systemctl start mosquitto&lt;/code&gt;&lt;/p&gt;            </content>
+        </entry>
+            <entry>
+            <title type="html">Deadbeef Cafe App Server</title>
+            <author><name>Matt, MØIZZ</name></author>
+            <link href="/blog/app-server.html"/>
+            <updated>2019-12-09T17:30:00Z</updated>
+            <published>2019-12-09T17:30:00Z</published>
+            <id>/blog/app-server.html</id>
+                        <category   scheme="/blog/tags"
+                        term="AppServer"
+                        label="Appserver" />
+            
+            <content type="html">
+                                &lt;p&gt;Deadbeef Cafe appserver setup. This is mostly for my own reference
+Inbound connections permitted on 80, 443 and 8080. 8080 goes directly to Tomcat, 80 &lt;span class=&#34;amp&#34;&gt;&amp;amp;&lt;/span&gt; 443 are terminated by an nginx reverse proxy. This proxy redirects 80 to 443 and terminates &lt;span class=&#34;caps&#34;&gt;SSL&lt;/span&gt; with a LetsEncrypt Cert (for app.deadbeef.cafe, other subdomains not implemented). LetsEncrypt cert is managed by&amp;nbsp;certbot.&lt;/p&gt;
+&lt;h1&gt;Services&lt;/h1&gt;
+&lt;p&gt;The following services are running on the app&amp;nbsp;server:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Tomcat&lt;/li&gt;
+&lt;li&gt;Nginx (as reverse proxy for&amp;nbsp;tomcat)&lt;/li&gt;
+&lt;li&gt;MySQL server (not accessible to anything other than&amp;nbsp;localhost)&lt;/li&gt;
+&lt;li&gt;Mosquitto &lt;span class=&#34;caps&#34;&gt;MQTT&lt;/span&gt; broker&amp;nbsp;(app.deadbeef.cafe:1883)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;Sites&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;Avatar&amp;nbsp;(https://app.deadbeef.cafe/avatar)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;app-server-dxclusterbridge.html&#34;&gt;DXClusterBridge&lt;/a&gt; - Bridges DXCluster messages to an &lt;span class=&#34;caps&#34;&gt;MQTT&lt;/span&gt; Broker which is accessible on app.deadbeef.cafe:1883. Messages are posted to the broker using the username &lt;code&gt;admin&lt;/code&gt;. You&amp;#8217;ll need a user account on the broker to get access to messages. Request access from Matt MØ&lt;span class=&#34;caps&#34;&gt;IZZ&lt;/span&gt;. At this time messages posted to the broker do not go out to the wider DXCluster&amp;nbsp;servers.&lt;/li&gt;
+&lt;li&gt;Weblog (in&amp;nbsp;progress)&lt;/li&gt;
+&lt;/ul&gt;            </content>
+        </entry>
             <entry>
             <title type="html">MØIZZ</title>
             <author><name>Matt, MØIZZ</name></author>
