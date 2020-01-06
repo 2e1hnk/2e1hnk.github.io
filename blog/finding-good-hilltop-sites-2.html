@@ -77,7 +77,7 @@
   </head>
   <body id="finding-good-hilltop-sites-2">
     <div class="container-fluid header">
-      <div class="col-md-6 offset-md-3">
+      <div class="col-md-8 offset-md-2">
         <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
           <a class="navbar-brand" href="#">MØIZZ</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -149,6 +149,9 @@
       </section>
 
   <section>
+      </section>
+
+  <section>
     <p>This is a quick update to the blog post about <a href="/blog/finding-good-hilltop-sites.html">Finding Good Hilltop Sites</a>.
 The Overpass API code given in the original blog post didn't take into account the presence of points in the vacinity with a higher elevation that the point in question. That is to say that it would find 'good' sites which were elevate and had road access but which might also have other land around which is more elevated than the site itself (think of something like a mountain pass - elevated but probably going between two large mountains). This update should resolve that by excluding any sites which have any features with a greated elevation within 2km of the site.</p>
 <pre><code class="json">
@@ -185,7 +188,6 @@ The Overpass API code given in the original blog post didn't take into account t
 
           </div>
         <div class="col-md-2 offset-md-1">
-
           <div class="profile-sidebar">
     				<!-- SIDEBAR USERPIC -->
     				<div class="profile-userpic ">
